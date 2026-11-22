@@ -1,0 +1,23 @@
+{
+  "id": 517,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "verdict": "reject",
+      "reason": "原文只写“对命中的目标造成……法术伤害”，没有范围或多目标表述。"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "verdict": "accept",
+      "reason": "原文“挥戈对前方敌人造成……物理伤害”且“魂链对每一个印记目标施加同样的额外伤害”，可伤害多个敌人。"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "verdict": "accept",
+      "reason": "原文“大司命可再次使用该技能唤回戈”，同一技能可多段释放。"
+    }
+  ]
+}

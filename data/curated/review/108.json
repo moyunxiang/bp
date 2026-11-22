@@ -1,0 +1,113 @@
+{
+  "id": 108,
+  "name": "墨子",
+  "tags": [
+    {
+      "tag": "displace_enemy",
+      "slot": "被动",
+      "quote": "法术伤害和0.75秒击退"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "被动",
+      "quote": "墨子释放技能时获得300(+35%法术攻击)护盾"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "墨子驾驶机关人向指定方向突进"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对路径上的敌人造成250/300"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "炮弹命中敌人时会发生范围爆炸造成"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "并将范围内敌人眩晕1秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "并将范围内敌人眩晕1秒"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对触碰到屏障的敌人每0.5秒造成"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "点法术伤害并将其晕眩在原地"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "对触碰到屏障的敌人每0.5秒造成"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

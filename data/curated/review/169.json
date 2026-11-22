@@ -1,0 +1,98 @@
+{
+  "id": 169,
+  "name": "后羿",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "并对面前区域内另外2名敌人造成50%伤害"
+    },
+    {
+      "tag": "reveal",
+      "slot": "2技能",
+      "quote": "获取施法区域视野并显形区域内敌方目标"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "短暂时间后对指定范围敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "并减少其25%~30%移速，持续2秒"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "击中敌方英雄时会将其晕眩"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "引发爆炸对范围内的敌人造成800/1200/1600"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "被火焰箭爆炸溅射到的目标将受到30/45/60%减速"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

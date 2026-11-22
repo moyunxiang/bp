@@ -1,0 +1,113 @@
+{
+  "id": 154,
+  "name": "花木兰",
+  "tags": [
+    {
+      "tag": "silence",
+      "slot": "被动",
+      "quote": "物理伤害、沉默和极限减速"
+    },
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "沉默和极限减速(持续1秒)"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "并获得80/160(+1%额外生命值)回复"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "被动",
+      "quote": "重剑技能期间获得霸体和40%减伤"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "被动",
+      "quote": "重剑技能期间获得霸体和40%减伤"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "花木兰冲锋后向指定方向挥砍"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "可在5秒内发起第二次空裂斩"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对路径上的敌人造成300/360/420/480/540/600"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "并减少25/30/35/40/45/50%移速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "花木兰拔出重剑横扫对附近的敌人造成"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

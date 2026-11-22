@@ -1,0 +1,123 @@
+{
+  "id": 124,
+  "name": "周瑜",
+  "tags": [
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "并减少其15~30%移动速度持续1秒"
+    },
+    {
+      "tag": "ally_buff",
+      "slot": "1技能",
+      "quote": "风区内己方英雄加速5/6/7/8/9/10%"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "敌方英雄减速10/12/14/16/18/20%"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "会将身边敌人击退并造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "狂风吹起瞬间，会将身边敌人击退并造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "每0.5秒对火区内敌人造成"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "秒可储备1次，最多储备3次"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "周瑜处于火区之中每0.5秒回复"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "向指定范围方向召唤一片火焰，造成"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "并将敌人晕眩1秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "火焰掠过火区会激起一道火风"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

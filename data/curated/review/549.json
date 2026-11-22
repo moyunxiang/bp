@@ -1,0 +1,123 @@
+{
+  "id": 549,
+  "name": "心魔六耳",
+  "tags": [
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "quote": "最后一击造成物理伤害并突进一段距离"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "附带晕眩(0.5秒)和陷地(1秒减速)"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "附带晕眩(0.5秒)和陷地(1秒减速)"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "每命中一个目标获得回复(非英雄单位减半)"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "释放后位移至指定目标处劈击"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "附带晕眩(0.5秒)和陷地(1秒减速)"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "附带晕眩(0.5秒)和陷地(1秒减速)"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "取消蓄力返还20%冷却"
+    },
+    {
+      "tag": "untargetable",
+      "slot": "3技能",
+      "quote": "自身进入无法选中状态"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "随后向移动指令方向蓄势冲刺"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "伤害提升50%并造成击退和击飞(持续0.5秒)"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "伤害提升25%并造成击退(无控制效果)"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "其他技能打断，返还30%冷却"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

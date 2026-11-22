@@ -1,0 +1,113 @@
+{
+  "id": 156,
+  "name": "张良",
+  "tags": [
+    {
+      "tag": "true_damage",
+      "slot": "被动",
+      "quote": "会使该敌人额外承受100（+50%法术加成）点真实伤害"
+    },
+    {
+      "tag": "terrain",
+      "slot": "1技能",
+      "quote": "张良召唤法术壁垒"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "法术伤害、0.75秒晕眩"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "0.75秒晕眩和之后0.5秒25/30/35/40/45/50%减速"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "最多存储3次，每个法阵持续5.5秒"
+    },
+    {
+      "tag": "reveal",
+      "slot": "2技能",
+      "quote": "法阵可提供视野"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "张良以言灵之术抓住一名敌方英雄"
+    },
+    {
+      "tag": "suppress",
+      "slot": "3技能",
+      "quote": "并持续压制对方"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "对踏进其中的敌人造成240/300/360"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "生成一个法术区域，对踏进其中的敌人造成"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

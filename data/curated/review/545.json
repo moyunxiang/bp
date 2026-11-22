@@ -1,0 +1,103 @@
+{
+  "id": 545,
+  "name": "莱西奥",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "普攻发射的炮弹具有范围攻击效果"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "被动",
+      "quote": "额外造成0.5%目标最大生命伤害"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "强化普攻拥有更大的范围攻击效果"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "1技能",
+      "quote": "额外造成1%目标最大生命"
+    },
+    {
+      "tag": "stealth",
+      "slot": "2技能",
+      "quote": "处于烟雾中的自身与友军获得隐身效果"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "跃向高空获得短暂霸体"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "每发飞弹对爆炸范围内的目标造成"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "3技能",
+      "quote": "(+6%目标已损生命)物理伤害"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

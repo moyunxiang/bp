@@ -1,0 +1,11 @@
+{
+  "id": 152,
+  "decisions": [
+    {
+      "tag": "shield_self",
+      "slot": "3技能",
+      "verdict": "reject",
+      "reason": "原文只写“召唤暴风雪时会刷新寒冰护盾”，未写明护盾给谁及其内容，需依赖技能外信息。"
+    }
+  ]
+}

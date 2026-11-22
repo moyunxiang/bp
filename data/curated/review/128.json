@@ -1,0 +1,113 @@
+{
+  "id": 128,
+  "name": "曹操",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "并在命中时提供90~180(+1.4%额外生命)回复"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "曹操向前突袭对路径上的敌人造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对路径上的敌人造成300/360/420/480/540/600"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "物理伤害(最多3次)，第三次突袭"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "第三次突袭造成击飞(0.5秒)"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "第三次突袭造成击飞(0.5秒)"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对路径上的敌人造成320/384/448/512/576/640"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "并减少其25/30/35/40/45/50%移速"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "每命中一名敌方英雄回复200/240/280/320/360/400"
+    },
+    {
+      "tag": "cleanse",
+      "slot": "3技能",
+      "quote": "曹操以鲜血意志解除控制并造成"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

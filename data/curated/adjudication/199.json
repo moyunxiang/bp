@@ -1,0 +1,17 @@
+{
+  "id": 199,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“阿离击退前方的敌人，造成……法术伤害”，作用于前方敌人。"
+    },
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "verdict": "accept",
+      "reason": "原文“在释放技能后再次使用技能回归到纸伞的位置”，写明自身移动到纸伞位置。"
+    }
+  ]
+}

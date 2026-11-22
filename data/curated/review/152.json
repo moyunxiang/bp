@@ -1,0 +1,103 @@
+{
+  "id": 152,
+  "name": "王昭君",
+  "tags": [
+    {
+      "tag": "shield_self",
+      "slot": "被动",
+      "quote": "脱战后获得450~900(+58%法术攻击)点寒冰护盾"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "寒冰护盾破裂对附近敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "冰冷效果：减少目标25~50%移速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对范围内的敌人造成350/420/490/560/630/700"
+    },
+    {
+      "tag": "reveal",
+      "slot": "1技能",
+      "quote": "王昭君获得施法区域和被【凋零冰晶】命中的目标视野"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对范围内敌人造成250/300/350/400/450/500"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "并对其冰冻2.5秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "并对其冰冻2.5秒"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "王昭君召唤暴风雪对范围内敌人每次打击造成"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "3技能",
+      "quote": "召唤暴风雪时会刷新寒冰护盾"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

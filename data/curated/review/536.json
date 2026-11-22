@@ -1,0 +1,108 @@
+{
+  "id": 536,
+  "name": "夏洛特",
+  "tags": [
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "每段造成50~120(+25%物理攻击)物理伤害和10~20%减速"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "被动",
+      "quote": "最后一段额外造成12%已损生命的物理伤害"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "被动",
+      "quote": "释放期间获得21%~35%免伤"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对路径上的敌人造成"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "向指定方向冲刺"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "并回复65/78/91/104/117/130(+1%额外生命值)生命"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "物理伤害和25/37.5/50%减速"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "技能释放期间处于霸体状态"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "3技能",
+      "quote": "并获得免伤被动"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

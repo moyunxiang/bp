@@ -1,0 +1,109 @@
+{
+  "id": 537,
+  "name": "司空震",
+  "tags": [
+    {
+      "tag": "reset",
+      "slot": "被动",
+      "quote": "获得一次额外释放基础技能的机会"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "对大范围内敌人额外造成"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "并回复75~150(1.2%额外生命值)点生命"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "司空震化身奔雷向前疾行"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对路径上敌人造成"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "1技能",
+      "quote": "(+5%额外生命值)点护盾，持续2.5秒"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "离司空震距离越近的单位被击退得越远"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "期间获得霸体"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "3技能",
+      "quote": "(+2.5%额外生命值)点护盾，持续2秒"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "落地时对附近敌人造成"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "unsupported",
+      "reason": "原文中天雷之力满后获得额外释放基础技能的机会，强化普攻来自释放基础技能，并非天雷之力直接强化普攻"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

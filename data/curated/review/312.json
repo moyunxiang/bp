@@ -1,0 +1,88 @@
+{
+  "id": 312,
+  "name": "沈梦溪",
+  "tags": [
+    {
+      "tag": "reveal",
+      "slot": "被动",
+      "quote": "沈梦溪的技能会点燃敌人并暴露其视野"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "最多拥有10颗炸弹，每次投掷消耗1颗"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "主动引爆炸弹朝指定方向冲刺"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "使命中单位击飞并造成"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "以自身为圆心爆炸使命中单位击飞"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "以自身为圆心爆炸使命中单位击飞"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "分裂出3枚猫咪炸蛋朝四周散落"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

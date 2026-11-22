@@ -1,0 +1,128 @@
+{
+  "id": 505,
+  "name": "瑶",
+  "tags": [
+    {
+      "tag": "cleanse",
+      "slot": "被动",
+      "quote": "会立即解除控制并变为鹿灵"
+    },
+    {
+      "tag": "reset",
+      "slot": "被动",
+      "quote": "鹿灵状态将会刷新技能冷却"
+    },
+    {
+      "tag": "untargetable",
+      "slot": "被动",
+      "quote": "免疫所有效果但也失去攻击能力"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "被动",
+      "quote": "免疫所有效果但也失去攻击能力"
+    },
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "灵鹿静怡的灵光会将敌人减速15~30%"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "瑶举杖引魄击退敌人"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "法术伤害和0.5秒击飞"
+    },
+    {
+      "tag": "reveal",
+      "slot": "1技能",
+      "quote": "0.5秒击飞和5秒显形效果"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "清除所有技能冷却进入战斗"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "自动打击身边敌人，最多3个目标"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "鹿灵状态：白鹿·动跳跃一段距离"
+    },
+    {
+      "tag": "shield_ally",
+      "slot": "3技能",
+      "quote": "(+8%目标额外生命值)点真实护盾"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "主动脱离附灵目标会返还50%冷却"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

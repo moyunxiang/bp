@@ -1,0 +1,11 @@
+{
+  "id": 502,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“第二击会对面前的敌人造成……法术伤害”，作用于面前敌人。"
+    }
+  ]
+}

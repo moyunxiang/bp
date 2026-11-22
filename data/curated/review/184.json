@@ -1,0 +1,93 @@
+{
+  "id": 184,
+  "name": "蔡文姬",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "同时每秒回复250~530(+50%法术攻击)生命"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "1技能",
+      "quote": "为己方英雄每0.5秒回复60/72/84/96/108/120"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "法术伤害和0.75秒晕眩"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "蔡文姬发出音波在敌人间弹射"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "发出音波在敌人间弹射，每次弹射造成"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "3技能",
+      "quote": "为范围内血量最低的友方英雄回复90/135/180"
+    },
+    {
+      "tag": "ally_buff",
+      "slot": "3技能",
+      "quote": "同时为其增加200/300/400(+30%法术攻击)点物理和法术防御"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

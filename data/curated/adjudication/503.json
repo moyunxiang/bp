@@ -1,0 +1,11 @@
+{
+  "id": 503,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "verdict": "accept",
+      "reason": "原文“向前冲锋对路径上的敌人造成……物理伤害”。"
+    }
+  ]
+}

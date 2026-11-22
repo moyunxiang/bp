@@ -1,0 +1,124 @@
+{
+  "id": 180,
+  "name": "哪吒",
+  "tags": [
+    {
+      "tag": "shield_self",
+      "slot": "被动",
+      "quote": "伤害获得70~150(+1.5%额外生命值)真实护盾"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "使用火焰三尖枪对周围目标造成345/460/575/690"
+    },
+    {
+      "tag": "true_damage",
+      "slot": "1技能",
+      "quote": "每秒对敌人造成45/60/75/90(+16%额外物理攻击)真实伤害"
+    },
+    {
+      "tag": "anti_heal",
+      "slot": "1技能",
+      "quote": "炙炼火种会减少目标15%生命回复"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "翻滚至目标身后并对其造成"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "2技能",
+      "quote": "额外获得24/32/40/48(+0.5%额外生命)真实护盾"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "哪吒选择一名敌方英雄飞行至目标位置"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "物理伤害并将其击退"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "3技能",
+      "quote": "哪吒获得10%/13.33%/16.67%/20%减伤"
+    },
+    {
+      "tag": "global",
+      "slot": "4技能",
+      "quote": "对全图范围内的敌方英雄造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "4技能",
+      "quote": "哪吒放出乾坤圈，对全图范围内的敌方英雄造成"
+    },
+    {
+      "tag": "reveal",
+      "slot": "4技能",
+      "quote": "(+45%额外攻击)物理伤害并获得视野"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "unsupported",
+      "reason": "原文只写“视飞行距离进入50%~100%冷却”，未写明飞行距离与冷却比例的增减方向，“飞行距离越大”一句无法从原文验证"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "id": 652,
+  "name": "索文",
+  "tags": [
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "黄色：附带减速(持续0.5/0.75/1秒)"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对目标及目标2.5/3.5/4.5米半径内的其它敌人造成物理伤害"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "索文朝指定方向快速位移"
+    },
+    {
+      "tag": "true_damage",
+      "slot": "2技能",
+      "quote": "紫色：附带目标真实伤害"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "黄色：附带0.5/0.75/1秒眩晕"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "米半径内的所有敌人造成物理伤害"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对前方巨大矩形范围内的敌人造成物理伤害"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "unsupported",
+      "reason": "原文只写击杀或助攻英雄会缩减二技能剩余冷却，没有限定为通过1技能强化的普攻击杀"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

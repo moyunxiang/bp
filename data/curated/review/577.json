@@ -1,0 +1,153 @@
+{
+  "id": 577,
+  "name": "少司缘",
+  "tags": [
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "quote": "荡秋千至敌人身前"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "被动",
+      "quote": "法术伤害和击退，并借力向后跳跃"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "1技能",
+      "quote": "使双方各回复400/480/560/640/720/800"
+    },
+    {
+      "tag": "ally_buff",
+      "slot": "1技能",
+      "quote": "英雄相互移动时获得60~120移速"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "重复释放时少司缘位移跟随目标"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "且自身额外回复8%额外生命"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "5秒内，少司缘可以再次施放本技能"
+    },
+    {
+      "tag": "reveal",
+      "slot": "2技能",
+      "quote": "造成5秒显形、每秒造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "英雄相互移动时减速25/30/35/40/45/50%"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "少司缘朝目标位移并进行"
+    },
+    {
+      "tag": "root",
+      "slot": "2技能",
+      "quote": "使目标定身0.75秒"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "2技能",
+      "quote": "期间少司缘受到伤害降低25%"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "5秒内可再次施放，若未施放则刷新"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "3技能",
+      "quote": "和250/375/500(+40%法术攻击)生命回复"
+    },
+    {
+      "tag": "ally_buff",
+      "slot": "3技能",
+      "quote": "生命回复并提升30%移速2秒"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对沿途敌人施加\"冤缘\"和300/450/600(+50%法术攻击)法术伤害"
+    },
+    {
+      "tag": "root",
+      "slot": "3技能",
+      "quote": "法术伤害并定身1秒"
+    },
+    {
+      "tag": "scaling",
+      "slot": "3技能",
+      "quote": "【因缘际会】造成的基础生命回复和法术伤害增加1点"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": 186,
+  "name": "太乙真人",
+  "tags": [
+    {
+      "tag": "shield_self",
+      "slot": "1技能",
+      "quote": "同时获得300/350/400/450/500/550护盾"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "炼制完毕或提前结束炼制对周围敌人造成"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "法术伤害并将其晕眩0.5秒-0.75秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "炼制完毕或提前结束炼制对周围敌人造成"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "爆炸命中英雄单位可自动刷新并再释放本技能"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "会将自身拉向命中的第一个目标"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "点法术伤害并将其眩晕0.5秒"
+    },
+    {
+      "tag": "summon",
+      "slot": "3技能",
+      "quote": "太乙真人召唤替身傀儡"
+    },
+    {
+      "tag": "revive",
+      "slot": "3技能",
+      "quote": "若在傀儡保护下死亡，2秒后将在原地复活"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "未复活任一友方时返还30%冷却"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": 138,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "verdict": "accept",
+      "reason": "原文“命中敌人后分叉出至多两道支流追逐敌人，造成50%伤害”，可伤害多个敌人。"
+    }
+  ]
+}

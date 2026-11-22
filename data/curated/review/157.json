@@ -1,0 +1,98 @@
+{
+  "id": 157,
+  "name": "不知火舞",
+  "tags": [
+    {
+      "tag": "displace_enemy",
+      "slot": "被动",
+      "quote": "法术伤害和击退，并回复10点能量"
+    },
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "quote": "不知火舞使用技能后能翻滚一段距离"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "法术伤害和0.75秒击飞"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "对命中的目标造成550/620/690/760/830/900"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "法术伤害和90%减速，持续0.5秒"
+    },
+    {
+      "tag": "shred",
+      "slot": "2技能",
+      "quote": "同时减少50/70/90/110/130/150点法术防御"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "不知火舞向前冲刺"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "(+110%法术攻击)法术伤害和击退"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

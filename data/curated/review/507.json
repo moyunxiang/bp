@@ -1,0 +1,83 @@
+{
+  "id": 507,
+  "name": "李信",
+  "tags": [
+    {
+      "tag": "shred",
+      "slot": "被动",
+      "quote": "每1%额外攻击速度提供0.15%物理穿透"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "李信向指定方向突进"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对穿过的敌人造成"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "(+3%额外生命值)生命恢复"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对路径上的敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "持续2秒的25/30/35/40/45/50%减速"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

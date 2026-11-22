@@ -1,0 +1,11 @@
+{
+  "id": 501,
+  "decisions": [
+    {
+      "tag": "heal_self",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“明世隐消耗的生命会在5秒内缓慢恢复”，写明为自身回复生命。"
+    }
+  ]
+}

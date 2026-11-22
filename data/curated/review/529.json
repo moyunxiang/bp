@@ -1,0 +1,99 @@
+{
+  "id": 529,
+  "name": "盘古",
+  "tags": [
+    {
+      "tag": "reset",
+      "slot": "被动",
+      "quote": "并刷新1技能50%最大冷却时间"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "盘古跃向指定位置"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "击退路径上敌人并造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "击退路径上敌人并造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "物理伤害和15/18/21/24/27/30%减速"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "盘古普攻命中标记目标会回复"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "并造成缴械和90%减速并标记敌人"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "技能释放过程获得霸体效果"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "unsupported",
+      "reason": "3技能原文只写“跃到空中”，未写明发生位移；“进场手段多”为评价性说法"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

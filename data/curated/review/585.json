@@ -1,0 +1,128 @@
+{
+  "id": 585,
+  "name": "元流之子(辅助)",
+  "tags": [
+    {
+      "tag": "heal_ally",
+      "slot": "被动",
+      "quote": "弹射友方英雄时则提供生命回复"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "向附近单位弹射，对敌方单位造成等量伤害"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对附近敌人造成法术伤害和击退（无控制效果）"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "对附近敌人造成法术伤害和击退（无控制效果）"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "并获得生命回复和5层"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "击退(无控制效果)附近敌人"
+    },
+    {
+      "tag": "shield_ally",
+      "slot": "2技能",
+      "quote": "(+5%额外生命值)共享护盾"
+    },
+    {
+      "tag": "reveal",
+      "slot": "2技能",
+      "quote": "施法台上的队友获得视野和"
+    },
+    {
+      "tag": "ally_buff",
+      "slot": "2技能",
+      "quote": "35/42/49/56/63/70普攻和技能射程"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "在施法台上连续使用会依次改变技能效果"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "3技能",
+      "quote": "命中时为自身提供60/90/120(+9%额外生命值)回复"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "3技能",
+      "quote": "命中友方:提供60/90/120(+9%法术伤害)回复"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "使用额外的【余音绕梁"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

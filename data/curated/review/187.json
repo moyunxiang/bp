@@ -1,0 +1,113 @@
+{
+  "id": 187,
+  "name": "东皇太一",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "同时自身回复100(+40%法术攻击)(+3%最大生命)点生命"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "被动",
+      "quote": "附带的目标3%最大生命的法术伤害"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "释放力量对周围造成"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "若已有三个黑暗能量体，则回复150/180/210/240/270/300"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "释放技能时命中目标会返还50%冷却和法力值"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "1秒30/36/42/48/54/60%和极限减速"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "第三枚造成1秒眩晕"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "被压制目标和自身无法进行任何操作"
+    },
+    {
+      "tag": "suppress",
+      "slot": "3技能",
+      "quote": "压制敌方目标2秒"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": 155,
+  "name": "艾琳",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "强化普攻，对路径上的目标造成70"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "展开成环，对触碰的敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "法术伤害和15/18/21/24/27/30%减速"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

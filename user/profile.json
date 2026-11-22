@@ -1,0 +1,17 @@
+{
+  "note": "我的英雄池、偏好、收藏与自定义阵容。网站首次打开时以此为默认值；在“我的”页面修改后可导出覆盖本文件并提交。",
+  "updatedAt": "2026-11-22",
+  "pool": [],
+  "prefs": {
+    "mySide": "blue",
+    "myFloor": null,
+    "myLane": null,
+    "mode": "ranked",
+    "banPerSide": 5,
+    "usePool": false,
+    "research": false
+  },
+  "favoriteHeroes": [],
+  "favoriteComps": [],
+  "customComps": []
+}

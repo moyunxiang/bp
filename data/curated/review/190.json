@@ -1,0 +1,103 @@
+{
+  "id": 190,
+  "name": "诸葛亮",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "向指定方向发射三颗法球，对路径上的敌人造成"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "最多可储备2次【东风破袭】"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "朝指定方向闪烁，在起始位置和终点位置"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "在起始位置和终点位置各对范围内敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "会在3秒内减少90%移速"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "最多可储备2次【时空穿梭】"
+    },
+    {
+      "tag": "execute",
+      "slot": "3技能",
+      "quote": "目标每损失1%最大生命就会增加2%伤害"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

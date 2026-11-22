@@ -1,0 +1,21 @@
+node_modules/
+dist/
+.vite/
+*.log
+!log.md
+.DS_Store
+
+# 第三方原始数据：只留本地，不公开分发
+data/raw/
+
+# 凭据
+.env
+.env.*
+!.env.example
+
+# 测试产物
+test-results/
+playwright-report/
+
+# 提取/盲审的临时批次输入
+data/curated/_work/

@@ -1,0 +1,133 @@
+{
+  "id": 197,
+  "name": "弈星",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "被棋阵中心吸引，对连线上敌人造成"
+    },
+    {
+      "tag": "untargetable",
+      "slot": "被动",
+      "quote": "免疫所有伤害并提升30%移速"
+    },
+    {
+      "tag": "revive",
+      "slot": "被动",
+      "quote": "受到致命伤害会遁入虚无"
+    },
+    {
+      "tag": "scaling",
+      "slot": "被动",
+      "quote": "每颗会累积1点法术攻击"
+    },
+    {
+      "tag": "reveal",
+      "slot": "1技能",
+      "quote": "获取施法区域视野"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "会被中心吸引，对连线上敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "法术伤害和25/30/35/40/45/50%减速持续1秒"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "棋子每6秒存储一颗，上限两颗"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对指定区域造成160/192/224/256/288/320"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "同时使中心范围敌人被吸向棋阵中心一段距离"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "对范围内敌人击飞0.5秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "对范围内敌人击飞0.5秒"
+    },
+    {
+      "tag": "reveal",
+      "slot": "3技能",
+      "quote": "同时会暴露视野"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "如果成功困住敌方英雄，弈星存储一次【飞攻】"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

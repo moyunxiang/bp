@@ -1,0 +1,108 @@
+{
+  "id": 547,
+  "name": "卢雅那",
+  "tags": [
+    {
+      "tag": "reveal",
+      "slot": "被动",
+      "quote": "并获得切割目标视野"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "期间可以快速翻越墙壁"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对沿途敌人造成法术伤害和减速"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "对沿途敌人造成法术伤害和减速(持续2秒)"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "若没有环刃则返还【蛇吻突袭】50%冷却"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对沿途敌人造成法术伤害和致盲"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "火雨对范围内的敌人造成法术伤害和击飞"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "火雨对范围内的敌人造成法术伤害和击飞"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

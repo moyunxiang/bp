@@ -1,0 +1,133 @@
+{
+  "id": 583,
+  "name": "元流之子(刺客)",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对附近敌人造成物理伤害和击退(无控制效果)"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "对附近敌人造成物理伤害和击退(无控制效果)"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "并获得回复和5层"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "元流之子向指定方向位移"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "获得回复(对非英雄单位减半)"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "前两次穿梭对范围内敌人造成物理伤害"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "最后一击造成物理伤害并略微吸引敌人"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "2秒内连续释放会依次改变技能效果"
+    },
+    {
+      "tag": "execute",
+      "slot": "2技能",
+      "quote": "并附带目标已损生命值物理伤害"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "向指定位置突进并获得霸体"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "向指定位置突进并获得霸体"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对掠过路径上的敌人造成200/300/400(+65%ad)物理伤害"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "物理伤害并击退敌人"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "使用额外的【断生双狩】"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

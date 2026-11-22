@@ -1,0 +1,103 @@
+{
+  "id": 114,
+  "name": "刘禅",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "掠夺零件为自身回复225~450(+4.5%额外生命值)点生命值"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "1技能",
+      "quote": "刘禅开启护盾发起冲锋"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "物理伤害和1秒击飞"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "1技能",
+      "quote": "并对英雄造成目标10%生命值撞击伤害"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对范围内的敌人造成125/150"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "物理伤害和1秒眩晕"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "对范围内的敌人造成125/150"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "旋转期间每秒会对敌人造成15/22.5/30%减速"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

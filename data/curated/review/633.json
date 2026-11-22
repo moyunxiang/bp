@@ -1,0 +1,89 @@
+{
+  "id": 633,
+  "name": "卡芬妮",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "每穿透一个目标伤害会降低10%"
+    },
+    {
+      "tag": "shred",
+      "slot": "2技能",
+      "quote": "获得移动速度(随时间衰减)和满层物理穿透"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "卡芬妮朝指定方向位移并重置普攻"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "卡芬妮朝前方区域造成物理伤害"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "unsupported",
+      "reason": "原文2技能分两段（以换行分隔、与1技能“转换二技能”对应）：获得移速和物理穿透是一种效果，位移并重置普攻是另一种效果，原文没有写同时获得"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

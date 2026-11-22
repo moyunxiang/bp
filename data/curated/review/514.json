@@ -1,0 +1,163 @@
+{
+  "id": 514,
+  "name": "亚连",
+  "tags": [
+    {
+      "tag": "true_damage",
+      "slot": "被动",
+      "quote": "造成33~66(随等级成长)(+45%物理攻击)真实伤害"
+    },
+    {
+      "tag": "shred",
+      "slot": "被动",
+      "quote": "最大提高自身40%物理、法术穿透"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "被动",
+      "quote": "法术穿透以及20%免伤"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "怒气积累满时一次性回复200~400"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "击飞正前方目标0.75秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "二层：扩大击飞范围"
+    },
+    {
+      "tag": "true_damage",
+      "slot": "1技能",
+      "quote": "(+75%物理攻击)真实伤害"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "1技能",
+      "quote": "可以缓慢移动释放并获得霸体"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "视为一次普攻行为并可暴击吸血"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "亚连朝指定方向突进"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对路径上的敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "并减少15/18/21/24/27/30%移速"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "最多可储备2次【逐月闪】"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "亚连选定目标英雄跃向天空"
+    },
+    {
+      "tag": "untargetable",
+      "slot": "3技能",
+      "quote": "不可选中，持续1.5秒，期间可以移动"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "猛击大地对敌方英雄造成"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "3技能",
+      "quote": "下落时为友方目标/自身增加"
+    },
+    {
+      "tag": "shield_ally",
+      "slot": "3技能",
+      "quote": "下落时为友方目标/自身增加"
+    },
+    {
+      "tag": "ally_cc_immune",
+      "slot": "3技能",
+      "quote": "选定友方刀锋宝贝释放，额外赋予其霸体"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

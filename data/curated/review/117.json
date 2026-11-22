@@ -1,0 +1,98 @@
+{
+  "id": 117,
+  "name": "钟无艳",
+  "tags": [
+    {
+      "tag": "shield_self",
+      "slot": "被动",
+      "quote": "获得300~600(+8%额外生命值)护盾"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "被动",
+      "quote": "对敌方英雄造成伤害时50%概率造成石化"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "钟无艳向前突进"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "物理伤害和25/30/35/40/45/50％减速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "用大锤猛击地面，对范围内的敌人造成"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "3技能",
+      "quote": "80/120/160(+3%额外生命值)护盾"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对外圈的敌人额外造成50%伤害"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

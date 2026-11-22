@@ -1,0 +1,78 @@
+{
+  "id": 142,
+  "name": "安琪拉",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "火焰漩涡每0.5秒对周围的敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "同时范围内的敌人会减少30/36/42/48/54/60%移速"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "当火种直接命中敌人时还会将其晕眩1秒"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "3技能",
+      "quote": "并获得850/1300/1750(+88%法术攻击)点护盾"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "护盾存在期间免控"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": 198,
+  "name": "梦奇",
+  "tags": [
+    {
+      "tag": "shield_self",
+      "slot": "1技能",
+      "quote": "(+150%物理攻击)点护盾，持续4秒"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对周围敌人造成250/300/350/400/450/500"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "梦力泡泡对路径上的敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "法术伤害和减速效果"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对路径上的敌人造成150/225/300"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "开始环游时获得短暂霸体"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "法术伤害和0.75秒击飞"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "环游停止时对周围敌人造成"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

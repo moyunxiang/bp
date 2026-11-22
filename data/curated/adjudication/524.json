@@ -1,0 +1,11 @@
+{
+  "id": 524,
+  "decisions": [
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“取消搜索或打断会返还25%冷却时间”，写明返还冷却。"
+    }
+  ]
+}

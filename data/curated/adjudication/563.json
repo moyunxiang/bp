@@ -1,0 +1,11 @@
+{
+  "id": 563,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "verdict": "accept",
+      "reason": "原文“近战：海诺挥动命刃对自身周围进行无死角打击，造成……物理伤害”。"
+    }
+  ]
+}

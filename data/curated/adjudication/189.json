@@ -1,0 +1,17 @@
+{
+  "id": 189,
+  "decisions": [
+    {
+      "tag": "stealth",
+      "slot": "1技能",
+      "verdict": "reject",
+      "reason": "原文只写“进入伪装状态”，未写明敌方看不到（隐身、隐匿、潜行）。"
+    },
+    {
+      "tag": "stealth",
+      "slot": "3技能",
+      "verdict": "reject",
+      "reason": "原文只写“1秒后进入伪装状态”，未写明敌方看不到（隐身、隐匿、潜行）。"
+    }
+  ]
+}

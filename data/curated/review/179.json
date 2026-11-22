@@ -1,0 +1,118 @@
+{
+  "id": 179,
+  "name": "女娲",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "女娲释放能量，对路径上的敌人造成"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "法术伤害和击退效果，撞到敌人后逐渐停下"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "女娲创造一个持续3.5秒的矩阵空间，自身可迁跃"
+    },
+    {
+      "tag": "terrain",
+      "slot": "2技能",
+      "quote": "自身可迁跃，并阻止敌方英雄通过"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "矩阵最多存储3个，多个矩阵同时爆炸"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "都会引发爆炸对附近的敌人造成"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "和0.33秒击退效果"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "女娲创造裂隙将自己传送到指定位置"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "3技能",
+      "quote": "(+9%额外生命值)护盾并增加30%移速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "同时对周围的敌人造成300/400/500/600"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "法术伤害和25/33.33/41.67/50%减速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "4技能",
+      "quote": "对路径上的敌人造成600/900/1200"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

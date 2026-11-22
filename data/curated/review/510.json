@@ -1,0 +1,113 @@
+{
+  "id": 510,
+  "name": "孙策",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "并获得120~240(+1.8%额外生命值)生命回复"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "向前冲锋，对路径上敌人造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "到终点后造成一次范围"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "短暂延迟后该范围再次造成相同伤害和1秒击飞效果"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "短暂延迟后该范围再次造成相同伤害和1秒击飞效果"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "每次命中敌人造成15/18/21/24/27/30%减速"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "行船期间持续霸体"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "航行过程中可弃船朝选定方向跳跃"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "物理伤害和击飞，击飞时间1~1.5秒"
+    },
+    {
+      "tag": "ally_reposition",
+      "slot": "3技能",
+      "quote": "附近一个队友可以通过点击按键上船"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

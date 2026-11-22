@@ -1,0 +1,11 @@
+{
+  "id": 312,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "verdict": "accept",
+      "reason": "原文“以自身为圆心爆炸使命中单位击飞并造成……法术伤害”，为范围爆炸伤害。"
+    }
+  ]
+}

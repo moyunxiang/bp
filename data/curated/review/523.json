@@ -1,0 +1,113 @@
+{
+  "id": 523,
+  "name": "西施",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对区域内的敌人造成120/144/168/192/216/240"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "纱会牵引敌人移动一段距离"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "5秒内再次点【纱缚之印】"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "每0.5秒会攻击附近的敌人"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "首次命中减少敌人15/18/21/24/27/30%移速"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "并刷新【幻纱之灵】的冷却"
+    },
+    {
+      "tag": "reveal",
+      "slot": "3技能",
+      "quote": "西施强化自身，获得视野提升"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

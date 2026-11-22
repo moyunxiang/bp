@@ -1,0 +1,108 @@
+{
+  "id": 166,
+  "name": "亚瑟",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "每2秒回复100~200(+2.5%额外生命)点生命"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "跳斩并标记目标(持续5秒)"
+    },
+    {
+      "tag": "silence",
+      "slot": "1技能",
+      "quote": "同时将目标沉默(1.25秒)"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "1技能",
+      "quote": "额外对目标造成1%最大生命的法术伤害"
+    },
+    {
+      "tag": "ally_buff",
+      "slot": "1技能",
+      "quote": "并使附近队友获得10%移速"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "亚瑟举起圣剑跃向敌方英雄"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "3技能",
+      "quote": "造成其16/20/24%最大生命的法术伤害"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "并会将范围内的敌人击飞0.5秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "并会将范围内的敌人击飞0.5秒"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "同时召唤圣印对范围内敌人造成每秒"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

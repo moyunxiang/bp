@@ -1,0 +1,138 @@
+{
+  "id": 544,
+  "name": "赵怀真",
+  "tags": [
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "quote": "满精力时怀真将突进至敌人身边"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "并回复60~120(+1.5%额外生命值)点生命"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "被动",
+      "quote": "(+3%目标已损生命值)物理伤害"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "风卷裹挟敌人一起移动"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "稍后发出冲拳，对路径造成"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "2技能",
+      "quote": "(+20%额外生命值)护盾，持续4秒"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "2技能",
+      "quote": "招架第一次受到的硬控"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "物理伤害和晕眩与击退效果"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "物理伤害和晕眩与击退效果"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "以及15%~30%减速效果"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "结束招架姿态时视蓄力时长对周围造成"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "怀真打出云手并持续霸体"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对周围敌人造成"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "3技能",
+      "quote": "气旋为怀真吸收即将到来40%伤害"
+    },
+    {
+      "tag": "projectile_block",
+      "slot": "3技能",
+      "quote": "并吸纳来袭的飞行物"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

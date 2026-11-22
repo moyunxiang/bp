@@ -1,0 +1,103 @@
+{
+  "id": 177,
+  "name": "苍",
+  "tags": [
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "quote": "离开草丛时，消耗潜伏值进行一次跳跃"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "则自身在射箭后向左摇杆方向额外进行一小段反冲位移"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "物理伤害并击退(无控制效果)敌人"
+    },
+    {
+      "tag": "reveal",
+      "slot": "2技能",
+      "quote": "敌人踩中后暴露视野并受到"
+    },
+    {
+      "tag": "summon",
+      "slot": "2技能",
+      "quote": "同时在陷阱处召唤一只狼魂对触发者进行攻击"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "狼魂每次攻击会降低目标5%~10%移速"
+    },
+    {
+      "tag": "summon",
+      "slot": "3技能",
+      "quote": "向指定方向召唤(2+二技能数量)只狼魂冲锋"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "潜伏值满进行一次跳跃"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

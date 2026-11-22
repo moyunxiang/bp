@@ -1,0 +1,144 @@
+{
+  "id": 191,
+  "name": "大乔",
+  "tags": [
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "法术伤害和30~60%减速效果，持续1秒"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对沿途目标造成300/400/500/600"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "(+55%法术攻击)法术伤害并将其击飞0.5秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "对沿途目标造成300/400/500/600"
+    },
+    {
+      "tag": "reveal",
+      "slot": "2技能",
+      "quote": "大乔召唤一个附带视野的法阵"
+    },
+    {
+      "tag": "ally_reposition",
+      "slot": "2技能",
+      "quote": "法阵结束后可将一名友方英雄传送回出生点"
+    },
+    {
+      "tag": "ally_cc_immune",
+      "slot": "2技能",
+      "quote": "被传送的英雄清除所有负面效果"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "若没有传回英雄，则返还50%冷却时间"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对沿途目标造成300/400/500/600"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "(+55%法术攻击)法术伤害并将其击飞0.5秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "对沿途目标造成300/400/500/600"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "4技能",
+      "quote": "大乔在指定位置召唤法阵，对范围内敌人造成"
+    },
+    {
+      "tag": "global",
+      "slot": "4技能",
+      "quote": "队友可点击漩涡之门传送至法阵位置"
+    },
+    {
+      "tag": "ally_reposition",
+      "slot": "4技能",
+      "quote": "队友可点击漩涡之门传送至法阵位置"
+    },
+    {
+      "tag": "shield_ally",
+      "slot": "4技能",
+      "quote": "法阵内大乔和友方英雄获得350/525/700"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "4技能",
+      "quote": "自身额外获得7%额外生命值护盾"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "unsupported",
+      "reason": "2技能原文写明“大乔会优先被法阵传送”回出生点且触碰标记可往返回城，自身存在传送类移动，“没有自身位移技能”与原文不符"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "id": 531,
+  "name": "镜",
+  "tags": [
+    {
+      "tag": "reset",
+      "slot": "被动",
+      "quote": "同时刷新镜【开锋】和【裂空】的冷却时间"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "镜快速朝前突进"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对路径上的敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "物理伤害和15/18/21/24/27/30%减速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "镜对周围的敌人造成"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "(+2%额外生命值)生命恢复(从第二个目标开始衰减至1/4)"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "镜本体与镜像冲向彼此的位置"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "每10秒储存一次【移形】，最多储存4次"
+    },
+    {
+      "tag": "summon",
+      "slot": "3技能",
+      "quote": "会产生镜像(持续2秒)与镜一起行动"
+    },
+    {
+      "tag": "dash",
+      "slot": "4技能",
+      "quote": "镜朝前飞出并将路径上的敌人"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "4技能",
+      "quote": "将路径上的敌人拉到镜像空间中心定身"
+    },
+    {
+      "tag": "root",
+      "slot": "4技能",
+      "quote": "拉到镜像空间中心定身(1秒)"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "4技能",
+      "quote": "镜在镜像空间内获得70/105/140(+0.9%额外生命值)生命回复"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "4技能",
+      "quote": "和10%/15%/20%减伤"
+    },
+    {
+      "tag": "reset",
+      "slot": "4技能",
+      "quote": "如果对敌人造成伤害【移形】会获得一次充能"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

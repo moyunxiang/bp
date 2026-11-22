@@ -1,0 +1,123 @@
+{
+  "id": 125,
+  "name": "元歌",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "并使自身获得70~140(+1%额外生命)回复"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "元歌掷出傀儡对路径上敌人造成"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "(+100%额外物理攻击)物理伤害和击飞"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "元歌掷出傀儡对路径上敌人造成"
+    },
+    {
+      "tag": "summon",
+      "slot": "1技能",
+      "quote": "并开始操控傀儡，傀儡的普攻造成100%物理伤害"
+    },
+    {
+      "tag": "cleanse",
+      "slot": "1技能",
+      "quote": "回收傀儡时本体净化控制效果"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "1技能",
+      "quote": "420/560/700/840(+6%额外生命)护盾"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "元歌掷出4枚暗器。对路径上敌人造成"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "3技能",
+      "quote": "将会受到额外16%已损生命的物理伤害"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "30/40/50/60%减速持续2秒"
+    },
+    {
+      "tag": "cleanse",
+      "slot": "4技能",
+      "quote": "元歌立即消失清除控制效果"
+    },
+    {
+      "tag": "dash",
+      "slot": "4技能",
+      "quote": "在短暂延迟后出现在范围内的另一位置"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

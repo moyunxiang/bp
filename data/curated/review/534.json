@@ -1,0 +1,138 @@
+{
+  "id": 534,
+  "name": "桑启",
+  "tags": [
+    {
+      "tag": "reveal",
+      "slot": "被动",
+      "quote": "法术伤害并显形3秒"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "被动",
+      "quote": "周期性为附近生命值最低的友方英雄回复"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "可使用蓄力普攻为自己回复"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "法术伤害和1秒击飞"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "桑启在指定区域引导萤火之力，对敌人造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "桑启在指定区域引导萤火之力，对敌人造成"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "1技能",
+      "quote": "消耗萤火之力治疗生命值最低的友方英雄"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "桑启飞往选定的草丛"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "该技能可充能3次"
+    },
+    {
+      "tag": "reveal",
+      "slot": "2技能",
+      "quote": "法术伤害并显形3秒"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "2技能",
+      "quote": "或为友方英雄回复"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "飞至被召唤的草丛"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "每隔1秒将向周围最多5名英雄发射萤火虫"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "3技能",
+      "quote": "或治疗友方英雄"
+    },
+    {
+      "tag": "reveal",
+      "slot": "3技能",
+      "quote": "敌方单位进入光之草丛会暴露视野"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

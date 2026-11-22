@@ -1,0 +1,148 @@
+{
+  "id": 550,
+  "name": "空空儿",
+  "tags": [
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "quote": "能量满时松开移动键空空儿将向前瞬移"
+    },
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "15%/30%减速(1.5秒)"
+    },
+    {
+      "tag": "summon",
+      "slot": "1技能",
+      "quote": "分身会尽量模仿本体行为"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "向前释放分身(持续5秒)对落点周围造成"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "(+2.5%生命值)生命回复"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "空空儿将与分身交换位置并对周围造成伤害"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "再次使用【瞒天】空空儿将与分身交换位置"
+    },
+    {
+      "tag": "summon",
+      "slot": "2技能",
+      "quote": "分身会尽量模仿本体行为"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "同时向前位移对落点周围造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "向前位移对落点周围造成"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "(+2.5%生命值)生命回复"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "再次使用【过海】空空儿将与分身交换位置"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "随后对范围内敌人每0.45秒造成"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "并将外围敌人向自身牵引"
+    },
+    {
+      "tag": "summon",
+      "slot": "3技能",
+      "quote": "呈三角位置释放分身并旋转"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "可以与每个分身换位最多一次"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

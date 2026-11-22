@@ -1,0 +1,98 @@
+{
+  "id": 524,
+  "name": "蒙犽",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "每0.25秒回复80~160+1.2%额外生命"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "子弹具备贯穿效果，对后续敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "和25%/30%/35%/40%/45%/50%/减速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "分裂出7颗可在墙体间弹射的飞星霰弹"
+    },
+    {
+      "tag": "reveal",
+      "slot": "3技能",
+      "quote": "标记范围内受到友方英雄伤害的敌人位置"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "取消搜索或打断会返还25%冷却时间"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": 523,
+  "decisions": [
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "verdict": "accept",
+      "reason": "原文“5秒内再次点【纱缚之印】，纱会牵引敌人移动一段距离”，同一技能可多段释放。"
+    },
+    {
+      "tag": "reveal",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“西施强化自身，获得视野提升，持续8秒”，写明获得视野。"
+    }
+  ]
+}

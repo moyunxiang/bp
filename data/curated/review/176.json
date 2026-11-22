@@ -1,0 +1,118 @@
+{
+  "id": 176,
+  "name": "杨玉环",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "释放技能对800范围内敌方单位造成"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "被动",
+      "quote": "对友军造成35~70(+6%法术攻击)点生命回复"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "对自身额外回复(+5%额外生命值)生命"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "并减少目标25/30/35/40/45/50%移速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对位于杨玉环600~800范围内的敌人造成"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "法术伤害与晕眩效果持续0.75秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "对位于杨玉环600~800范围内的敌人造成"
+    },
+    {
+      "tag": "untargetable",
+      "slot": "3技能",
+      "quote": "杨玉环跃向空中演奏(期间无法被选中"
+    },
+    {
+      "tag": "cleanse",
+      "slot": "3技能",
+      "quote": "无法被选中并解除所有控制效果"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "3技能",
+      "quote": "演奏后治疗自身750/1125/1500"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "3技能",
+      "quote": "对500范围内的友方单位造成50%治疗效果"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "并对范围内敌人造成500/750/1000"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

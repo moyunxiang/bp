@@ -1,0 +1,11 @@
+{
+  "id": 171,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“怒吼形成狂风通路……狂风会对敌人造成……物理伤害和击退”，为路径型伤害。"
+    }
+  ]
+}

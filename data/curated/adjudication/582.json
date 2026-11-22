@@ -1,0 +1,17 @@
+{
+  "id": 582,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "verdict": "accept",
+      "reason": "原文“法球……爆炸造成……法术伤害”且“【三星连珠】提升25范围”，爆炸有范围。"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“可消耗5层“流”使用额外的【万妙之法】”，可额外获得一次使用机会。"
+    }
+  ]
+}

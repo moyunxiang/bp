@@ -1,0 +1,113 @@
+{
+  "id": 137,
+  "name": "司马懿",
+  "tags": [
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "quote": "召唤镰刀后的首次攻击可位移到目标身后"
+    },
+    {
+      "tag": "true_damage",
+      "slot": "被动",
+      "quote": "和幽影之力等额的真实伤害"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "司马懿移动至灵体位置"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "并对路径上的敌人造成115/138/161/184/207/230"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "司马懿释放灵力压制周围区域造成"
+    },
+    {
+      "tag": "silence",
+      "slot": "2技能",
+      "quote": "法术伤害和沉默(3/4秒)"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "司马懿将承受法术伤害的25%转化为回复"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "进行短暂蓄力后向指定地点冲击"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对冲击路径触碰的敌人造成50%伤害"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "施法被打断返还90%冷却时间"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "id": 646,
+  "name": "刀锋宝贝",
+  "tags": [
+    {
+      "tag": "reset",
+      "slot": "被动",
+      "quote": "3层印记时下个释放的技能不进入冷却"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "刀锋宝贝对附近敌人造成物理伤害"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "1技能",
+      "quote": "同时获得护盾(持续2秒)"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "刀锋宝贝对前方敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "并减少移速(持续1.5秒)"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "刀锋宝贝跳向指定目标"
+    },
+    {
+      "tag": "true_damage",
+      "slot": "3技能",
+      "quote": "如果目标已被标记会附带已损生命真实伤害"
+    },
+    {
+      "tag": "execute",
+      "slot": "3技能",
+      "quote": "如果目标已被标记会附带已损生命真实伤害"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "3技能",
+      "quote": "期间自身受到敌方英雄的普攻伤害降低25%"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "若目标死亡，立即重置【暗杀术】"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "3技能",
+      "quote": "对该英雄造成伤害的35%转化为回复"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

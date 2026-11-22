@@ -1,0 +1,11 @@
+{
+  "id": 538,
+  "decisions": [
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“激活技能二段【啸日】”，同一技能可多段释放。"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "id": 153,
+  "name": "兰陵王",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "兰陵王挥砍身边的敌人"
+    },
+    {
+      "tag": "summon",
+      "slot": "1技能",
+      "quote": "召唤出影分身随机攻击附近一名敌人"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对路径上的敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "并减少其90%移速，持续2秒"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "期间兰陵王攻击会将其晕眩1秒"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "并回复350/420/490/560/630/700(+10%额外生命)点生命"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "2技能",
+      "quote": "+12%目标已损生命"
+    },
+    {
+      "tag": "execute",
+      "slot": "2技能",
+      "quote": "+12%目标已损生命"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "向指定方向冲锋并对路径上敌人造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对路径上敌人造成"
+    },
+    {
+      "tag": "stealth",
+      "slot": "4技能",
+      "quote": "兰陵王1.5秒后进入隐身状态，持续30秒"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

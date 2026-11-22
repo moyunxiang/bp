@@ -1,0 +1,128 @@
+{
+  "id": 525,
+  "name": "鲁班大师",
+  "tags": [
+    {
+      "tag": "shield_self",
+      "slot": "被动",
+      "quote": "鲁班大师施放技能时获得280/560"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "(+50%法术攻击)范围法术伤害"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "借助机械臂喷气动力向前跳跃"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "并在落地时展开力场击飞周围敌人0.5秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "并在落地时展开力场击飞周围敌人0.5秒"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "击飞周围敌人0.5秒并造成"
+    },
+    {
+      "tag": "shield_ally",
+      "slot": "2技能",
+      "quote": "为其提供35/42/49/56/63/70(+7%额外生命)护盾"
+    },
+    {
+      "tag": "ally_reposition",
+      "slot": "2技能",
+      "quote": "队友确认交互后会立即位移到鲁班大师的位置"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "鲁班大师将自身牵引至墙体"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "4技能",
+      "quote": "向前方扇形区域发射机械臂连接区域内的敌人"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "4技能",
+      "quote": "将目标向自身方向牵引一小段距离"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "4技能",
+      "quote": "并造成晕眩(持续1秒)"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "4技能",
+      "quote": "鲁班大师将连接的敌人牵引至身边并造成晕眩"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

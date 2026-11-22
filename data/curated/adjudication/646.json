@@ -1,0 +1,17 @@
+{
+  "id": 646,
+  "decisions": [
+    {
+      "tag": "execute",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“如果目标已被标记会附带已损生命真实伤害”，按目标已损生命增伤。"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "3技能",
+      "verdict": "reject",
+      "reason": "原文“附带已损生命真实伤害”没有写出百分比数值。"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "id": 130,
+  "name": "宫本武藏",
+  "tags": [
+    {
+      "tag": "percent_hp_damage",
+      "slot": "被动",
+      "quote": "并附带目标6%已损生命的物理伤害"
+    },
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "quote": "宫本武藏挥刀突进至目标身前"
+    },
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "物理伤害和25~50%减速，持续1秒"
+    },
+    {
+      "tag": "projectile_block",
+      "slot": "1技能",
+      "quote": "斩出一道剑气击落路径上的敌方飞行物"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "同时对路径上的敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "和25/30/35/40/45/50%减速，持续1秒"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "1技能",
+      "quote": "释放【空明斩】时宫本武藏处于霸体状态"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "宫本武藏向前冲刺，对路径上的敌人造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对路径上的敌人造成210/252/294/336/378/420"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "2技能",
+      "quote": "300/360/420/480/540/600(+5%额外生命值)护盾"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "向目标所在区域突进"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对范围内的目标造成400/600/800"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "物理伤害和1秒击飞"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "对范围内的目标造成400/600/800"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "宫本武藏在突进期间处于霸体状态"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "3技能",
+      "quote": "并减少50%所受伤害"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 4,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

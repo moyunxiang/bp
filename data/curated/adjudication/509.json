@@ -1,0 +1,17 @@
+{
+  "id": 509,
+  "decisions": [
+    {
+      "tag": "ally_reposition",
+      "slot": "1技能",
+      "verdict": "reject",
+      "reason": "原文“期间双方的移动由队友操作”，是队友带着盾山移动，不是盾山带动、拉回或交换友方位置。"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "verdict": "accept",
+      "reason": "原文“【盾甲庇护】生效期间普攻切换为远程范围效果”，且普攻额外造成物理伤害，为范围伤害。"
+    }
+  ]
+}

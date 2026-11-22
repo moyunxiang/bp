@@ -1,0 +1,23 @@
+{
+  "id": 550,
+  "decisions": [
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“可以与每个分身换位最多一次”，写明自身与分身换位的位移。"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "verdict": "accept",
+      "reason": "原文“再次使用【瞒天】空空儿将与分身交换位置”，同一技能可多段释放。"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "verdict": "accept",
+      "reason": "原文“再次使用【过海】空空儿将与分身交换位置”，同一技能可多段释放。"
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "id": 183,
+  "name": "雅典娜",
+  "tags": [
+    {
+      "tag": "revive",
+      "slot": "被动",
+      "quote": "死亡后以真神形态获得30~60移速自由移动"
+    },
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "quote": "复活时会飞向距离最近的友方防御塔"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "对起飞范围内敌人造成600~1200(+180%额外物理攻击)物理伤害和击飞"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "被动",
+      "quote": "对起飞范围内敌人造成600~1200(+180%额外物理攻击)物理伤害和击飞"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "被动",
+      "quote": "对起飞范围内敌人造成600~1200(+180%额外物理攻击)物理伤害和击飞"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "举盾突进获得500/600/700/800/900/1200"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "1技能",
+      "quote": "(+6%额外生命值)护盾(1秒免控)"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "1技能",
+      "quote": "(+6%额外生命值)护盾(1秒免控)"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "(+125%额外物理攻击)法术伤害和击退"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "向指定方向跳跃并强化下次普攻"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "2技能",
+      "quote": "并附带6%目标已损生命的物理伤害"
+    },
+    {
+      "tag": "execute",
+      "slot": "2技能",
+      "quote": "并附带6%目标已损生命的物理伤害"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "命中敌人时刷新【贯穿之枪】冷却"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "3技能",
+      "quote": "(+16%额外生命值)护盾(期间免控)"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "(+16%额外生命值)护盾(期间免控)"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "使用圣盾反击，对范围内敌人造成"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

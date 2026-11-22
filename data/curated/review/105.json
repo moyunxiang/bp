@@ -1,0 +1,153 @@
+{
+  "id": 105,
+  "name": "廉颇",
+  "tags": [
+    {
+      "tag": "cc_immune",
+      "slot": "被动",
+      "quote": "廉颇释放技能时处于霸体状态"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "被动",
+      "quote": "最多获得20%减伤"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "转化为每次70-140(+1.5%额外生命值)点生命回复"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "廉颇向前冲锋并对路径上的敌人造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对路径上的敌人造成"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "击飞(持续0.5秒)"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "对路径上的敌人造成"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "1技能",
+      "quote": "对英雄造成目标5%敌方英雄最大生命撞击伤害"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "2技能",
+      "quote": "(+10%额外生命值)点护盾，1秒后地面崩裂"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "距离中心越近伤害越高，最高提升100%"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "技能范围内有敌人时会刷新【爆裂冲撞】的冷却"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "敌人会减少15/18/21/24/27/30%移速"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "非英雄单位会被拉向范围中心"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "廉颇跳向指定区域连续锤击地面三次"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对锤击中心区域额外造成60%额外物理攻击物理伤害"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "物理伤害和15/22.5/30%减速"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "物理伤害和1秒击飞"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "跳向指定区域连续锤击地面三次"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "3技能",
+      "quote": "对英雄造成目标10%敌敌方英雄最大生命的撞击伤害"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

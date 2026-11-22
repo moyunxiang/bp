@@ -1,0 +1,11 @@
+{
+  "id": 150,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“最后一次攻击会将范围内的敌人击飞”，长枪乱舞的伤害作用于范围内敌人。"
+    }
+  ]
+}

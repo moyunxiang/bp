@@ -1,0 +1,73 @@
+{
+  "id": 106,
+  "name": "小乔",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "小乔在指定区域召唤出一道旋风，对区域内敌人造成"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "点法术伤害并击飞1.5秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "召唤出一道旋风，对区域内敌人造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "小乔召唤流星并不断向附近的敌人坠落"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

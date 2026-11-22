@@ -1,0 +1,148 @@
+{
+  "id": 632,
+  "name": "绯泪",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "对自身周围外圈内的敌人造成物理伤害并获得回复"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "造成物理伤害并获得回复"
+    },
+    {
+      "tag": "cleanse",
+      "slot": "被动",
+      "quote": "释放时立即解除控制效果"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "被动",
+      "quote": "期间可以移动并获得霸体"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对路径上的敌人造成物理伤害和减速(持续1秒)"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "对路径上的敌人造成物理伤害和减速(持续1秒)"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "若敌人被两段伤害同时击中将会受到晕眩"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "若敌人被两段伤害同时击中将会受到晕眩"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "推开近端并拉近远端敌人"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "推开近端并拉近远端敌人，分别造成物理伤害"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "同时附带减速(持续1秒)和晕眩(持续0.5秒)"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "同时附带减速(持续1秒)和晕眩(持续0.5秒)"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "分别造成物理伤害，同时附带减速(持续1秒)和晕眩(持续0.5秒)"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "绯泪跳向指定位置"
+    },
+    {
+      "tag": "true_damage",
+      "slot": "3技能",
+      "quote": "对前方扇形范围内的敌人造成真实伤害"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对前方扇形范围内的敌人造成真实伤害"
+    },
+    {
+      "tag": "shred",
+      "slot": "3技能",
+      "quote": "自身获得攻击力和物理穿透"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

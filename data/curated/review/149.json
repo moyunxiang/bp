@@ -1,0 +1,118 @@
+{
+  "id": 149,
+  "name": "刘邦",
+  "tags": [
+    {
+      "tag": "shield_self",
+      "slot": "1技能",
+      "quote": "(+18%额外生命值)护盾，持续5秒"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "结束时对周围造成500/600/700/800/900/1000"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "刘邦蓄力挥剑冲锋275~550距离"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对路径上敌人造成300/360/420/480/540/600"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "0.75秒晕眩效果"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "0.75秒晕眩效果"
+    },
+    {
+      "tag": "global",
+      "slot": "3技能",
+      "quote": "2.2秒后传送至其位置"
+    },
+    {
+      "tag": "shield_ally",
+      "slot": "3技能",
+      "quote": "960/1440/1920(+24%额外生命值)护盾"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "3技能",
+      "quote": "落地后刘邦为自己和周围友军恢复300/450/600"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "3技能",
+      "quote": "落地后刘邦为自己和周围友军恢复300/450/600"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "并对周围造成200/300/400(+40%法术攻击)"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

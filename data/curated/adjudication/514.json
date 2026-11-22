@@ -1,0 +1,23 @@
+{
+  "id": 514,
+  "decisions": [
+    {
+      "tag": "ally_cc_immune",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“选定友方刀锋宝贝释放，额外赋予其霸体”，为友方英雄提供霸体。"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "verdict": "reject",
+      "reason": "原文“选定目标英雄跃向天空，不可选中……期间可以移动”属腾空，未写明自身被位移到某处。"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "verdict": "reject",
+      "reason": "原文“视为一次普攻行为并可暴击吸血”只说明可触发吸血，未写明技能本身为自身回复生命。"
+    }
+  ]
+}

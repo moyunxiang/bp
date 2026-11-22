@@ -1,0 +1,118 @@
+{
+  "id": 582,
+  "name": "元流之子(法师)",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "回复150/180/210/240/270/300(+4%额外生命值)生命"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "元流之子对近处的敌人造成"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "法术伤害和击退(无控制效果)"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "25%/30%/35%/40%/45%/50%减速(持续0.75秒)"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "【双曜交辉】造成晕眩(0.33秒)而非减速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "【三星连珠】提升25范围，造成晕眩而非减速"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "2秒内连续释放会提升效果"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "25%/37.5%/50%减速(持续0.75秒)"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "并形成光束吸附周围所有敌人"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "吸附周围所有敌人造成共计600/900/1200"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "使用额外的【万妙之法】"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

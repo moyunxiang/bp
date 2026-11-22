@@ -1,0 +1,118 @@
+{
+  "id": 113,
+  "name": "庄周",
+  "tags": [
+    {
+      "tag": "cleanse",
+      "slot": "被动",
+      "quote": "庄周解除并免疫所有控制效果"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "被动",
+      "quote": "庄周解除并免疫所有控制效果"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "被动",
+      "quote": "所有控制效果，获得15%减伤"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "额外获得40~80(+0.6%额外生命)生命回复"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对路径上的敌人造成400/480"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "法术伤害和30/36/42/48/54/60%减速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对附近的敌人造成250/300"
+    },
+    {
+      "tag": "ally_buff",
+      "slot": "2技能",
+      "quote": "并增加范围内友军3%移速"
+    },
+    {
+      "tag": "ally_cc_immune",
+      "slot": "3技能",
+      "quote": "解除范围内队友所受的控制效果并使他们免控"
+    },
+    {
+      "tag": "shield_ally",
+      "slot": "3技能",
+      "quote": "免控和获得500/750/1000(+12%额外生命值)护盾"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

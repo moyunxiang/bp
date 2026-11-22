@@ -1,0 +1,88 @@
+{
+  "id": 139,
+  "name": "老夫子",
+  "tags": [
+    {
+      "tag": "true_damage",
+      "slot": "被动",
+      "quote": "普攻附带90~180(+28%额外物理攻击)真实伤害"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "将命中的敌人拉拽到自己身前"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "并减少其25/30/35/40/45/50%移速"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "2技能",
+      "quote": "减少45/49/53/57/61/65%受到的伤害"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "造成15/18/21/24/27/30%减速效果"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "老夫子向指定方向冲锋"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

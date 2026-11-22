@@ -1,0 +1,89 @@
+{
+  "id": 502,
+  "name": "裴擒虎",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "发出气功对路径上的敌人造成"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "1技能",
+      "quote": "目标额外8%当前生命的法术伤害"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "并减少其25/30/35/40/45/50%移速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对附近敌人造成100/150/200/250/300/350"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "2技能",
+      "quote": "并形成400(+150%额外物理攻击)点护盾"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "第一击扑向目标造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "物理伤害和1秒90%减速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "第二击会对面前的敌人造成"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "unsupported",
+      "reason": "“贴身作战”是打法评价，原文没有写明；原文反而写人形态普攻距离得到提升"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

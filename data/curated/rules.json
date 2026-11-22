@@ -1,0 +1,163 @@
+{
+  "version": 1,
+  "note": "机制规则表。每条规则由双方已核实的机制标签（带原文引用）或官方职业触发，得到的是“机制倾向”，不是胜负结论。weight 为计分权重（官方关系为1.0）。basis 是规则依赖的通用机制，人工审定。",
+  "rules": [
+    {
+      "id": "anti_heal_vs_heal",
+      "type": "counter",
+      "name": "重伤压制回复",
+      "a": { "tags": ["anti_heal"] },
+      "b": { "tags": ["heal_self", "heal_ally"], "min": 2 },
+      "weight": 0.6,
+      "scenes": ["对线", "团战"],
+      "reason": "{a}自带重伤效果，{b}有多个技能依赖生命回复",
+      "condition": "重伤要在对方回复时覆盖到目标才有效；对方也可以靠爆发或拉开距离规避。",
+      "basis": "重伤效果会降低目标的生命回复。"
+    },
+    {
+      "id": "block_vs_marksman",
+      "type": "counter",
+      "name": "阻挡飞行物限制射手",
+      "a": { "tags": ["projectile_block"] },
+      "b": { "heroType": [5] },
+      "weight": 0.6,
+      "scenes": ["团战", "对线"],
+      "reason": "{a}可以阻挡飞行物，{b}是以远程普攻为主要输出的射手",
+      "condition": "需要挡在射手与其目标之间；射手绕到侧面或后方输出时挡不住。",
+      "basis": "多数射手的普攻和技能属于飞行物。"
+    },
+    {
+      "id": "pct_vs_tank",
+      "type": "counter",
+      "name": "百分比/真实伤害针对坦克",
+      "a": { "tags": ["percent_hp_damage", "true_damage"], "min": 2 },
+      "b": { "heroType": [3] },
+      "weight": 0.4,
+      "scenes": ["团战", "后期"],
+      "reason": "{a}有多个技能造成百分比生命伤害或真实伤害，{b}是依靠生命值和防御承伤的坦克",
+      "condition": "需要有持续输出的空间；坦克生命值越高、防御装越多，这类伤害的收益越大。",
+      "basis": "百分比生命伤害随目标生命值提高，真实伤害不受防御减免。"
+    },
+    {
+      "id": "suppress_vs_cc_immune",
+      "type": "counter",
+      "name": "压制针对依赖免控进场的英雄",
+      "a": { "tags": ["suppress"] },
+      "b": { "all": [{ "heroType": [1, 4] }, { "tags": ["cc_immune", "cleanse"] }] },
+      "weight": 0.4,
+      "scenes": ["团战"],
+      "reason": "{a}拥有压制，{b}依靠免控或解控来保证进场",
+      "condition": "压制通常是单体、冷却较长的技能，需要留给对方最关键的进场英雄。",
+      "basis": "压制效果不受霸体免疫，也无法被解控效果解除。"
+    },
+    {
+      "id": "reveal_vs_stealth",
+      "type": "counter",
+      "name": "视野克制隐身",
+      "a": { "tags": ["reveal"] },
+      "b": { "tags": ["stealth"] },
+      "weight": 0.5,
+      "scenes": ["对线", "团战"],
+      "reason": "{a}能获取视野或使敌人显形，{b}依赖隐身接近目标",
+      "condition": "视野技能需要覆盖到隐身英雄的进场路线和时机。",
+      "basis": "隐身单位被显形后失去先手优势。"
+    },
+    {
+      "id": "stealth_vs_immobile_carry",
+      "type": "counter",
+      "name": "隐身切入缺少自保的后排",
+      "a": { "tags": ["stealth"] },
+      "b": { "all": [{ "heroType": [2, 5] }, { "none": ["dash", "untargetable", "cc_immune", "revive"] }] },
+      "weight": 0.4,
+      "scenes": ["对线", "前期"],
+      "reason": "{a}可以隐身接近，{b}的技能里没有位移、免控、不可选中或免死手段",
+      "condition": "对方有队友贴身保护、带了保命召唤师技能或有视野手段时难以成立。",
+      "basis": "没有位移和保命技能的后排被近身后难以脱身。"
+    },
+    {
+      "id": "dive_vs_immobile_carry",
+      "type": "counter",
+      "name": "突进加硬控威胁无位移后排",
+      "a": { "all": [{ "heroType": [1, 3, 4] }, { "tags": ["dash", "global"] }, { "tags": ["cc_hard"] }] },
+      "b": { "all": [{ "heroType": [2, 5] }, { "none": ["dash", "untargetable", "cc_immune", "revive"] }] },
+      "weight": 0.3,
+      "scenes": ["团战"],
+      "reason": "{a}同时具备突进和硬控，{b}的技能里没有位移、免控、不可选中或免死手段",
+      "condition": "需要能越过对方前排；对方有保护型辅助或反手控制时效果下降。",
+      "basis": "没有位移和保命技能的后排被突进并控住后难以脱身。"
+    },
+    {
+      "id": "cc_vs_mobile_assassin",
+      "type": "counter",
+      "name": "多段硬控限制靠位移进出的刺客",
+      "a": { "tags": ["cc_hard"], "min": 2 },
+      "b": { "all": [{ "heroType": [4] }, { "tags": ["dash"], "min": 2 }, { "none": ["cc_immune", "untargetable", "cleanse"] }] },
+      "weight": 0.3,
+      "scenes": ["团战"],
+      "reason": "{a}有多个硬控技能，{b}依靠多段位移进出且没有免控、解控或不可选中",
+      "condition": "控制要留给刺客进场的时机；控制被骗出后刺客可以自由进出。",
+      "basis": "被硬控期间无法使用位移技能脱身。"
+    },
+    {
+      "id": "anti_dash_vs_dash",
+      "type": "counter",
+      "name": "限制位移针对多位移英雄",
+      "a": { "tags": ["anti_dash"] },
+      "b": { "tags": ["dash"], "min": 2 },
+      "weight": 0.5,
+      "scenes": ["团战", "对线"],
+      "reason": "{a}能限制或打断位移，{b}有多个位移技能",
+      "condition": "限制效果需要覆盖到对方准备位移的时机和区域。",
+      "basis": "依赖位移的英雄在无法位移时进攻和逃生能力都会下降。"
+    },
+    {
+      "id": "kite_vs_immobile_melee",
+      "type": "counter",
+      "name": "远程减速风筝无位移近战",
+      "a": { "all": [{ "heroType": [2, 5] }, { "tags": ["slow", "root"], "min": 2 }] },
+      "b": { "all": [{ "heroType": [1, 3] }, { "none": ["dash", "cc_immune", "untargetable", "global"] }] },
+      "weight": 0.3,
+      "scenes": ["对线", "团战"],
+      "reason": "{a}是远程英雄且有多个减速或定身技能，{b}是近战英雄且技能里没有位移、免控或不可选中",
+      "condition": "需要保持距离；被对方闪现近身或被其队友先手控制时不成立。",
+      "basis": "没有位移的近战被持续减速后难以接近远程目标。"
+    },
+    {
+      "id": "protect_carry",
+      "type": "synergy",
+      "name": "保护与增益射手",
+      "a": { "tags": ["heal_ally", "shield_ally", "ally_cc_immune", "ally_buff"] },
+      "b": { "heroType": [5] },
+      "weight": 0.4,
+      "scenes": ["团战", "后期"],
+      "reason": "{a}能为队友提供治疗、护盾、免控或增益，{b}是需要输出环境的射手",
+      "condition": "要求队伍愿意围绕射手打；前期节奏偏慢。",
+      "basis": "射手的持续输出依赖生存时间。"
+    },
+    {
+      "id": "aoe_cc_aoe_damage",
+      "type": "synergy",
+      "name": "范围硬控接范围伤害",
+      "a": { "all": [{ "heroType": [1, 3, 6] }, { "tags": ["cc_hard_aoe"] }] },
+      "b": { "all": [{ "heroType": [2] }, { "tags": ["aoe_damage"], "min": 2 }] },
+      "weight": 0.3,
+      "scenes": ["团战"],
+      "reason": "{a}有范围硬控，{b}有多个范围伤害技能",
+      "condition": "需要控制先命中多人，伤害技能再跟上。",
+      "basis": "被控制的敌人无法躲开后续的范围伤害。"
+    },
+    {
+      "id": "global_pair",
+      "type": "synergy",
+      "name": "多点超远支援",
+      "a": { "tags": ["global"] },
+      "b": { "tags": ["global"] },
+      "symmetric": true,
+      "weight": 0.4,
+      "scenes": ["前期", "全局"],
+      "reason": "{a}和{b}都有超远距离支援手段",
+      "condition": "需要队伍有统一的支援信号，并且边线能守住。",
+      "basis": "多个英雄能同时赶到同一处时，容易在局部形成人数优势。"
+    }
+  ]
+}

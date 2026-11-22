@@ -1,0 +1,98 @@
+{
+  "id": 112,
+  "name": "鲁班七号",
+  "tags": [
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "物理伤害和25/30/35/40/45/50%减速"
+    },
+    {
+      "tag": "reveal",
+      "slot": "1技能",
+      "quote": "同时还会获得敌人视野"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "火箭炮可击退身前敌人"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "2技能",
+      "quote": "并附带目标已损生命5/6/7/8/9/10%法术伤害"
+    },
+    {
+      "tag": "execute",
+      "slot": "2技能",
+      "quote": "附带目标已损生命5/6/7/8/9/10%法术伤害"
+    },
+    {
+      "tag": "summon",
+      "slot": "3技能",
+      "quote": "鲁班召唤河豚飞艇向指定方向进行空中支援"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "命中的敌人受到25/37.5/50%减速"
+    },
+    {
+      "tag": "reveal",
+      "slot": "3技能",
+      "quote": "河豚飞艇支援时会照亮区域内的视野"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

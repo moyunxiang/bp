@@ -1,0 +1,118 @@
+{
+  "id": 195,
+  "name": "百里玄策",
+  "tags": [
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "同时减少目标15%移速"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "玄策向指定方向突进并强化下一次普攻"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "1技能",
+      "quote": "额外造成目标4%最大生命值的物理伤害"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "将目标朝自身位移拖动一段距离"
+    },
+    {
+      "tag": "root",
+      "slot": "2技能",
+      "quote": "物理伤害和短暂定身"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "钩镰甩出，对路径上的敌人造成"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "消耗狩猎标记将目标甩向身后"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "将立即返还【梦魇钩锁】40/48/56/64/72/80%的冷却"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "2技能",
+      "quote": "减少15/18/21/24/27/30%该目标对自己的伤害"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "玄策突进到【梦魇钩锁】命中的目标身后"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "命中的目标身后，对路径上的敌人造成"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "3技能",
+      "quote": "玄策在位移期间减少50%所受到的伤害"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "最多可储备3次【瞬镰闪】"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

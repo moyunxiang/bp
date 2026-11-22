@@ -1,0 +1,17 @@
+{
+  "id": 141,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“结成一个生成及消失都会造成……法术伤害的法阵”且提到“法阵范围”，为区域伤害。"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "verdict": "reject",
+      "reason": "原文只写“减少【缘·心结】的冷却时间，最多3秒”，属减少冷却。"
+    }
+  ]
+}

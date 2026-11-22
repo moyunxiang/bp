@@ -1,0 +1,143 @@
+{
+  "id": 178,
+  "name": "杨戬",
+  "tags": [
+    {
+      "tag": "cc_immune",
+      "slot": "被动",
+      "quote": "达到上限进入临界状态(霸体)"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "被动",
+      "quote": "将进入法天象地状态，击退周围敌人"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "并获得60~120(+1%额外生命)生命回复"
+    },
+    {
+      "tag": "reveal",
+      "slot": "1技能",
+      "quote": "标记敌人获取视野(持续5秒)"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "期间可再次释放该技能冲向敌人"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "敌人在被标记期间内死亡则刷新【逆转乾坤】冷却"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "1技能",
+      "quote": "并附加目标15%已损生命的物理伤害"
+    },
+    {
+      "tag": "execute",
+      "slot": "1技能",
+      "quote": "并附加目标15%已损生命的物理伤害"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "杨戬挥枪横扫对范围内敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "15%/18%/21%/24%/27%/30%减速(1.5秒)"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "以及晕眩(1/2秒，目标生命百分比高于杨戬时翻倍)"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "杨戬挥枪横扫对范围内敌人造成"
+    },
+    {
+      "tag": "true_damage",
+      "slot": "2技能",
+      "quote": "(+36%额外物理攻击)真实伤害"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "释放3次激光对路径上的敌人造成"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "3技能",
+      "quote": "并回复自身300/450/600(+4.5%额外生命)生命回复"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

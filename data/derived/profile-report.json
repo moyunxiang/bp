@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-11-22T05:11:54.393Z",
+  "heroes": 140,
+  "reviewed": 140,
+  "needsReview": 0,
+  "tagsVerified": 1429,
+  "tagsDisputed": 0,
+  "tagsAdjudicated": 103,
+  "quoteInvalidA": 0,
+  "quoteInvalidB": 0,
+  "agreeNum": 1326,
+  "agreeDen": 1474,
+  "proseOk": 1363,
+  "proseDropped": 15,
+  "proseUnreviewed": 0,
+  "tagAgreement": 0.8996,
+  "missing": [],
+  "lowAgreement": [
+    "孙权 3/6"
+  ]
+}

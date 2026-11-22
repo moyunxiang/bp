@@ -1,0 +1,118 @@
+{
+  "id": 542,
+  "name": "暃",
+  "tags": [
+    {
+      "tag": "execute",
+      "slot": "被动",
+      "quote": "非英雄单位血量低于500~1000则必被暃玉化击碎"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "暃踏玉穿行，对路径上的敌人造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对路径上的敌人造成"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "并将其击飞(3/4秒)"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "对路径上的敌人造成"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "(+1.5%额外生命值)生命回复"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "暃在地面纵身跃向指定的墙体"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "可储备一次【踏玉飞檐】(最多可储备四次)"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "墙上可使用带位移的凝玉之印"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对每个目标造成四次无视不可选中的"
+    },
+    {
+      "tag": "execute",
+      "slot": "3技能",
+      "quote": "若目标降至1/8生命值以下，则必被玉化击碎"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

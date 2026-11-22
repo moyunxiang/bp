@@ -1,0 +1,83 @@
+{
+  "id": 508,
+  "name": "伽罗",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "向指定方向射出破魔之箭，对路径上的敌人造成"
+    },
+    {
+      "tag": "silence",
+      "slot": "2技能",
+      "quote": "法术伤害与0.5秒沉默"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "及25/30/35/40/45/50%减速持续1秒"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "法阵在张开和关闭的瞬间会对范围内敌军造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "暴击会对目标造成30%减速持续0.5秒"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

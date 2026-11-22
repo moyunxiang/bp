@@ -1,0 +1,123 @@
+{
+  "id": 506,
+  "name": "云中君",
+  "tags": [
+    {
+      "tag": "percent_hp_damage",
+      "slot": "被动",
+      "quote": "敌人移动时对其造成0.24%最大生命值的物理伤害"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "向前俯冲，击退非英雄单位"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "1技能",
+      "quote": "(+100%额外物理攻击)护盾并对命中目标造成0.5秒眩晕"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "护盾并对命中目标造成0.5秒眩晕"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "取消蓄力可以返还20%冷却"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "1秒12.5/15/17.5/20/22.5/25%减速"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "3技能",
+      "quote": "云中君获得短暂的30/45/60%免伤"
+    },
+    {
+      "tag": "cleanse",
+      "slot": "3技能",
+      "quote": "加速卷起圈内目标英雄飞入高空，解除控制效果"
+    },
+    {
+      "tag": "untargetable",
+      "slot": "3技能",
+      "quote": "期间无法选中并可以移动"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "物理伤害和0.5秒击飞"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "加速卷起圈内目标英雄飞入高空"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "卷起圈内目标英雄飞入高空，解除控制效果，期间无法选中并可以移动"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

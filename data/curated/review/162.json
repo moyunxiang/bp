@@ -1,0 +1,108 @@
+{
+  "id": 162,
+  "name": "娜可露露",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "对范围内敌人打出对应的叠加次数伤害"
+    },
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "quote": "并获得一次可位移的强化普攻"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "1技能",
+      "quote": "造成目标6%最大生命值物理伤害"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "娜可露露向指定方向冲刺"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对路径上的敌人造成400/480/560/640/720/800"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "每命中一名敌方英雄将回复400/480/560/640/720/800"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "再次释放【飞鹰急袭】，娜可露露将发起进攻"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "并减少25/37.5/50%移速，持续3秒"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

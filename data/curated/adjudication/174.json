@@ -1,0 +1,11 @@
+{
+  "id": 174,
+  "decisions": [
+    {
+      "tag": "damage_reduction",
+      "slot": "2技能",
+      "verdict": "accept",
+      "reason": "原文“持续2秒，期间免疫物理攻击”，写明自身对物理攻击免伤。"
+    }
+  ]
+}

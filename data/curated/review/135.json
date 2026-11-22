@@ -1,0 +1,128 @@
+{
+  "id": 135,
+  "name": "项羽",
+  "tags": [
+    {
+      "tag": "damage_reduction",
+      "slot": "被动",
+      "quote": "获得40%减伤，持续6秒"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "项羽向前冲撞将敌人击退"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "向前冲撞将敌人击退"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "发起挑斩将敌人击飞0.5秒"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "减速附近范围内的敌人15/18/21/24/27/30%移速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "强普对面前进行大范围横扫"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "并回复自身330/396/462/528/594/660"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "技能释放期间霸体并获得不屈意志"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对路径上的敌人造成900/1350/1800"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "额外50％伤害并将其晕眩0.75秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "对被枪刃命中的敌人会造成额外50％伤害"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "3技能",
+      "quote": "造成伤害的20%转化为生命"
+    },
+    {
+      "tag": "revive",
+      "slot": "3技能",
+      "quote": "项羽免疫死亡，生命最低降至1点"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

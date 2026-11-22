@@ -1,0 +1,88 @@
+{
+  "id": 503,
+  "name": "狂铁",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "并回复70~150(+1%额外生命值)点生命"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "(+1.5%额外生命值)点生命值和附带的2%已损生命值"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "向前冲锋对路径上的敌人造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对路径上的敌人造成270/324/378"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "和25/30/35/40/45/50%减速效果持续2秒"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "物理伤和击飞(持续1秒)"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "物理伤害和30/45/60%减速(持续1.5秒)"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "3技能",
+      "quote": "同时获得900/1350/1800(+14%额外生命值)点护盾"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

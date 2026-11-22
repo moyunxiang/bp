@@ -1,0 +1,98 @@
+{
+  "id": 501,
+  "name": "明世隐",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "自己额外回复4%额外生命值点生命"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "被动",
+      "quote": "为自己和法器连接队友回复225~450"
+    },
+    {
+      "tag": "ally_buff",
+      "slot": "1技能",
+      "quote": "明世隐投掷法器连接队友，提供25/30/35/40/45/50"
+    },
+    {
+      "tag": "shred",
+      "slot": "2技能",
+      "quote": "明世隐投掷法器连接敌人降低12.5%"
+    },
+    {
+      "tag": "reveal",
+      "slot": "2技能",
+      "quote": "(0.5秒1次)并获得其视野"
+    },
+    {
+      "tag": "true_damage",
+      "slot": "3技能",
+      "quote": "对法器连接的敌人造成真实伤害"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "3技能",
+      "quote": "对法器连接的队友回复等量生命"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "3技能",
+      "quote": "明世隐消耗的生命会在5秒内缓慢恢复"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "在吟唱期间法器连接的目标全部死亡将返还70%冷却时间"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

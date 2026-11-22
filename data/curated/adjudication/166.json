@@ -1,0 +1,11 @@
+{
+  "id": 166,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "verdict": "accept",
+      "reason": "原文“召唤圣盾围绕自身旋转，每秒对敌人造成……物理伤害”，伤害作用于自身周围。"
+    }
+  ]
+}

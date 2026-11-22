@@ -1,0 +1,83 @@
+{
+  "id": 199,
+  "name": "公孙离",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "叠满四层后对周围敌人造成150~300"
+    },
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "quote": "再次使用技能回归到纸伞的位置"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "阿离向指定方向瞬步"
+    },
+    {
+      "tag": "projectile_block",
+      "slot": "2技能",
+      "quote": "击落飞行物对范围内敌人造成两段打击"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对范围内敌人造成两段打击"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "阿离击退前方的敌人"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "阿离击退前方的敌人，造成400/600/900"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

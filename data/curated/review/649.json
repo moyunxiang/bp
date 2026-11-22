@@ -1,0 +1,138 @@
+{
+  "id": 649,
+  "name": "皮皮",
+  "tags": [
+    {
+      "tag": "damage_reduction",
+      "slot": "被动",
+      "quote": "变胖之后获得25%减伤"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "对目标造成法术伤害和晕眩(持续0.5秒)"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "则对目标造成极限减速(持续1.5秒)"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "皮皮对敌方造成减速(持续0.5秒)"
+    },
+    {
+      "tag": "ally_reposition",
+      "slot": "2技能",
+      "quote": "将前方范围内友军英雄和小兵吸入肚子中"
+    },
+    {
+      "tag": "shield_ally",
+      "slot": "2技能",
+      "quote": "被吸入后释放的友方英雄，获得护盾"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "皮皮每吸入一个单位可获得回复"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "2技能",
+      "quote": "吸入过程中，皮皮处于霸体状态"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "若提前终止吸入过程，可返还30%冷却"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "皮皮向指定方向【滚动】加速自身"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "【滚动】期间，皮皮处于霸体状态"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "对沿途敌人造成法术伤害和击飞(持续1秒)"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "对沿途敌人造成法术伤害和击飞(持续1秒)"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对沿途敌人造成法术伤害和击飞(持续1秒)"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "结束时将对范围内的敌人造成减速(持续3秒)"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "并根据已滚动时间返还冷却"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

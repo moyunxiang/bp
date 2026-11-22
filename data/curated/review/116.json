@@ -1,0 +1,98 @@
+{
+  "id": 116,
+  "name": "阿轲",
+  "tags": [
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "阿轲向前快速位移"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "攻击会附带25/30/35/40/45/50%减速"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "2技能",
+      "quote": "标记目标对阿轲减少30%伤害输出"
+    },
+    {
+      "tag": "stealth",
+      "slot": "3技能",
+      "quote": "阿轲短暂准备后进入隐身状态"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "3技能",
+      "quote": "隐身时增加40%移速，每0.5秒回复150/225/300"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "击杀英雄或者助攻时刷新所有技能冷却时间"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 3,
+      "verdict": "ok"
+    }
+  ]
+}

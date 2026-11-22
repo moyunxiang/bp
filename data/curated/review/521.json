@@ -1,0 +1,113 @@
+{
+  "id": 521,
+  "name": "海月",
+  "tags": [
+    {
+      "tag": "reset",
+      "slot": "被动",
+      "quote": "时会消耗一个月盘，全部消耗后"
+    },
+    {
+      "tag": "true_damage",
+      "slot": "1技能",
+      "quote": "(+14%法术攻击)真实伤害"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "若命中自己获得200/240/280/320/360/400"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "2技能",
+      "quote": "(+40%法术攻击)的护盾，持续3秒"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "对目标造成晕眩(1/3秒)"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "3技能",
+      "quote": "期间获得30%/45%/60%伤害减免"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "3技能",
+      "quote": "获得470/705/940(+7%额外生命)护盾"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "可朝指定方向位移"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "并返还【幻海映月】75%冷却时间"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

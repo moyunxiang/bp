@@ -1,0 +1,108 @@
+{
+  "id": 171,
+  "name": "张飞",
+  "tags": [
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "附近的敌人将会减少25~50%移速"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "命中敌方英雄时会将其击退"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "张飞向指定区域跳跃"
+    },
+    {
+      "tag": "shield_ally",
+      "slot": "2技能",
+      "quote": "落地时启动机关印记给范围内友军生成"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "3技能",
+      "quote": "获得1700/2550/3400(+35%生命值)护盾"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "怒吼期间获得霸体和无敌"
+    },
+    {
+      "tag": "untargetable",
+      "slot": "3技能",
+      "quote": "怒吼期间获得霸体和无敌"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "物理伤害和击退，狂风末端的敌人被眩晕"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "狂风末端的敌人被眩晕(持续1.5秒)"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "狂风末端的敌人被眩晕(持续1.5秒)"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    }
+  ]
+}

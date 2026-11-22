@@ -1,0 +1,124 @@
+{
+  "id": 159,
+  "name": "朵莉亚",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "并且每秒回复60~120点生命和5~10点法力"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "人鱼形态的普攻会射出水箭，造成范围伤害"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对触碰的敌人造成150/180/210/240/270/300"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "法术伤害和7.5%减速"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "还会激起水浪击退近处敌人"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "对自身周围的敌人的击退附带晕眩效果"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "对自身周围的敌人的击退附带晕眩效果"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "朵莉亚向前腾空跃起化为人鱼形态"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "2技能",
+      "quote": "落地时为附近友方英雄回复300/360/420/480/540/600"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "则返还25%/30%/35%/40%/45%/50%冷却时间"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "刷新范围内一名友军当前冷却时间最长的技能"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "unsupported",
+      "reason": "原文写明若附近没有队友则刷新自己的技能，刷新失败会返还大部分冷却，并非必须有冷却中的友军技能"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

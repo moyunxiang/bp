@@ -1,0 +1,17 @@
+{
+  "id": 504,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "verdict": "accept",
+      "reason": "原文“在指定区域召唤机械仆从同时造成……法术伤害”，为区域伤害。"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "verdict": "accept",
+      "reason": "原文“再次释放技能可让飞行器一分为二进行攻击”，同一技能可多段释放。"
+    }
+  ]
+}

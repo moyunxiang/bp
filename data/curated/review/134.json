@@ -1,0 +1,133 @@
+{
+  "id": 134,
+  "name": "达摩",
+  "tags": [
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "并对目标造成15~30%减速效果"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "达摩冲刺挥出冲拳"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对路径上的敌人造成180/216/252/288/324/360"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "物理伤害并击飞目标0.5秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "对路径上的敌人造成180/216/252/288/324/360"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "最多可以储备2次"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "1技能",
+      "quote": "并附带目标15%已损生命值的物理伤害"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "2技能",
+      "quote": "并附带目标0.35%最大生命"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "回复85/102/119/136/153/170(+2.5%额外生命)点生命"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对范围内敌人造成200/300/400"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "物理伤害和击退"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "物理伤害并晕眩1秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "如果被击退的敌人碰撞到墙体将会再次受到"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

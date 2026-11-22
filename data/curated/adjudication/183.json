@@ -1,0 +1,17 @@
+{
+  "id": 183,
+  "decisions": [
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "verdict": "accept",
+      "reason": "原文“复活时会飞向距离最近的友方防御塔”，写明自身飞向某处的位移。"
+    },
+    {
+      "tag": "execute",
+      "slot": "2技能",
+      "verdict": "accept",
+      "reason": "原文“附带6%目标已损生命的物理伤害”，按目标已损生命增伤。"
+    }
+  ]
+}

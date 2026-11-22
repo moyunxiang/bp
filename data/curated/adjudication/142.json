@@ -1,0 +1,11 @@
+{
+  "id": 142,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "verdict": "reject",
+      "reason": "原文只写“每次对触碰的敌人造成……法术伤害”，没有范围或多目标表述。"
+    }
+  ]
+}

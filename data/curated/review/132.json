@@ -1,0 +1,84 @@
+{
+  "id": 132,
+  "name": "马可波罗",
+  "tags": [
+    {
+      "tag": "true_damage",
+      "slot": "被动",
+      "quote": "物理攻击)真实伤害(该伤害不可暴击)"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "马可波罗向指定方向闪烁，立即出现在目标位置"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "马可波罗闪烁出现在指定位置"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "并向周围持续发射弹幕"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "unsupported",
+      "reason": "原文“对小兵为5层”指每次命中给小兵附加5层，而非对小兵需叠5层；该句曲解了叠层规则"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": 194,
+  "name": "苏烈",
+  "tags": [
+    {
+      "tag": "revive",
+      "slot": "被动",
+      "quote": "不可操作状态结束时苏烈重生"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "苏烈濒死时回复3000/6000(+60%生命值)生命值回复"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "被动",
+      "quote": "队友碰触可点亮烽火台使对方获得600/1200(+12%生命值)生命值回复"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "对范围敌人造成400/800(+125%物理攻击)法术伤害"
+    },
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "法术伤害和30%/60%减速(2秒)"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "（+1.8%生命值）生命回复"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "第三次额外造成击飞0.75秒"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "苏烈短暂蓄力后向前冲锋"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "物理伤害（对建筑有效）和击退"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "击退至墙体将造成50%额外伤害和0.75秒眩晕效果"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "物理伤害和1秒击飞"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "蓄力时间会影响技能的伤害和范围"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对附近其他敌人额外造成80%伤害"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "取消蓄力或被打断时将会返还70%技能冷却"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "unsupported",
+      "reason": "“前排”定位是对英雄站位的评价，原文没有写明"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

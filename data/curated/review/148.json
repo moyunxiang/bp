@@ -1,0 +1,99 @@
+{
+  "id": 148,
+  "name": "姜子牙",
+  "tags": [
+    {
+      "tag": "scaling",
+      "slot": "被动",
+      "quote": "突破等级上限至25级，每次升级可获得20法术攻击"
+    },
+    {
+      "tag": "ally_buff",
+      "slot": "被动",
+      "quote": "射手：每级2%攻速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对范围内的敌人进行神力封印"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "最多将会减少30/36/42/48/54/60%移速"
+    },
+    {
+      "tag": "shred",
+      "slot": "1技能",
+      "quote": "10/12/14/16/18/20%物理和法术防御"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "释放法阵对范围内敌人造成3次伤害"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "法术伤害和0.75秒击飞"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "法术伤害和0.75秒击飞"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "unsupported",
+      "reason": "原文只写“蓄力时间会影响冲击波的攻击距离”，未写明蓄力越久距离越远"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": 120,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "verdict": "accept",
+      "reason": "原文“回旋大镰血洗四方，对敌人造成……物理伤害”，回旋攻击四方即周围范围伤害。"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“造成……法术伤害、嘲讽(持续1秒)附近敌人”，伤害作用于附近敌人。"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": 138,
+  "name": "王维",
+  "tags": [
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "法术伤害和20%减速(持续0.75秒)"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "法术伤害和击退(持续0.75秒)"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "命中敌人后分叉出至多两道支流追逐敌人"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "造成50%伤害和15%减速(持续0.5秒)"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "王维瞬移至当前位置"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "技能二段，王维瞬移至当前位置"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

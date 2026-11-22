@@ -1,0 +1,113 @@
+{
+  "id": 127,
+  "name": "甄姬",
+  "tags": [
+    {
+      "tag": "cc_hard",
+      "slot": "被动",
+      "quote": "法术伤害并冰冻0.75秒"
+    },
+    {
+      "tag": "terrain",
+      "slot": "1技能",
+      "quote": "召唤冰柱冲出地面阻拦英雄单位通过"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "冰柱崩裂对周围敌人造"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "法术伤害并击飞1秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "阻拦英雄单位通过，并对范围内敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "冰柱存在8秒并持续对周围造成10/12/14/16/18/20%减速"
+    },
+    {
+      "tag": "untargetable",
+      "slot": "1技能",
+      "quote": "则会被冰封处于无敌状态"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "水流会锁定敌人并在敌人间弹射"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "每秒对触碰的敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "每次伤害均会减少25/37.5/50%移速"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

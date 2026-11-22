@@ -1,0 +1,11 @@
+{
+  "id": 190,
+  "decisions": [
+    {
+      "tag": "summon",
+      "slot": "被动",
+      "verdict": "accept",
+      "reason": "原文“召唤5颗法球，自动攻击周围目标”，召唤物可独立自动攻击。"
+    }
+  ]
+}

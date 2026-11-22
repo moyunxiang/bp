@@ -1,0 +1,103 @@
+{
+  "id": 174,
+  "name": "虞姬",
+  "tags": [
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "同时将减少目标10~20%移速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "弩矢每命中一个敌人衰减15%伤害"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "2技能",
+      "quote": "持续2秒，期间免疫物理攻击"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "2技能",
+      "quote": "虞姬在技能开启瞬间免疫控制"
+    },
+    {
+      "tag": "cleanse",
+      "slot": "2技能",
+      "quote": "随后解除减速效果"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "虞姬冲向目标将其晕眩"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "将其晕眩0.5秒并减少90%移速"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "并减少90%移速，持续2秒"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "虞姬在跳跃过程中免疫控制"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": 116,
+  "decisions": [
+    {
+      "tag": "damage_reduction",
+      "slot": "2技能",
+      "verdict": "reject",
+      "reason": "原文“标记目标对阿轲减少30%伤害输出”是降低敌方输出的减益，不是自身获得百分比减伤。"
+    }
+  ]
+}

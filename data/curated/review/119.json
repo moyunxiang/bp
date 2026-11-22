@@ -1,0 +1,113 @@
+{
+  "id": 119,
+  "name": "扁鹊",
+  "tags": [
+    {
+      "tag": "heal_ally",
+      "slot": "被动",
+      "quote": "为周围友方英雄(最多3名)叠加恢复印记"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "自身额外获得0.15%额外生命回复"
+    },
+    {
+      "tag": "revive",
+      "slot": "被动",
+      "quote": "扁鹊可复活阵亡的队友"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "法术伤害和30%/36%/42%/48%/54%/60%减速"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "每8.5秒储存一次【致命灵药】，最多3次"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "法术伤害和击飞(持续2/3秒)"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "扁鹊引爆附近所有印记，对敌人造成"
+    },
+    {
+      "tag": "execute",
+      "slot": "3技能",
+      "quote": "斩杀生命值低于引爆伤害和毒药印记总伤害的敌人"
+    },
+    {
+      "tag": "heal_ally",
+      "slot": "3技能",
+      "quote": "同时为友方英雄回复70/105/140"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "3技能",
+      "quote": "扁鹊自身额外回复400/600/800"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    }
+  ]
+}

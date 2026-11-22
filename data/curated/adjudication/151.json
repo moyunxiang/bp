@@ -1,0 +1,23 @@
+{
+  "id": 151,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "verdict": "accept",
+      "reason": "原文“锁定攻击范围内的两个敌人造成……物理伤害”，一次可伤害两个敌人。"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "被动",
+      "verdict": "reject",
+      "reason": "原文“使目标对孙权的伤害降低3%”是降低敌方输出的印记减益，不是自身获得百分比减伤。"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“最后一次挥舞……并向后撤退进入【破阵】状态”，写明自身后撤位移。"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "id": 540,
+  "name": "金蝉",
+  "tags": [
+    {
+      "tag": "cc_immune",
+      "slot": "被动",
+      "quote": "使金蝉每隔60~48秒抵挡一次硬控"
+    },
+    {
+      "tag": "reveal",
+      "slot": "1技能",
+      "quote": "紧箍会以固定速度跟随目标并获取视野"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对附近的敌人造成"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "紧箍内目标总是会被击退最大距离"
+    },
+    {
+      "tag": "ally_cc_immune",
+      "slot": "3技能",
+      "quote": "并使除自身以外友方(至多4人)获得锦襕宝衣效果抵挡一次硬控"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

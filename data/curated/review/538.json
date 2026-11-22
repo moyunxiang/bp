@@ -1,0 +1,108 @@
+{
+  "id": 538,
+  "name": "云缨",
+  "tags": [
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "上挑可造成0.5秒击飞"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "结束时向前突进横扫"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "物理伤害和15/18/21/24/27/30%减速"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "向前方区域来回突击"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "每段都对敌人造成180/270/360(+60%额外物理攻击)物理伤害和击飞"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "向前方区域来回突击，每段都对敌人造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "向前方区域来回突击，每段都对敌人造成"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "技能释放期间处于霸体状态"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "3技能",
+      "quote": "并减少30/45/60%受到的伤害"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "激活技能二段【啸日】"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

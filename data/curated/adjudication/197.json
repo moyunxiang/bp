@@ -1,0 +1,11 @@
+{
+  "id": 197,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "verdict": "accept",
+      "reason": "原文“棋子均会被棋阵中心吸引，对连线上敌人造成……法术伤害”，为路径型伤害。"
+    }
+  ]
+}

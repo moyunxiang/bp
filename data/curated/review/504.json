@@ -1,0 +1,108 @@
+{
+  "id": 504,
+  "name": "米莱狄",
+  "tags": [
+    {
+      "tag": "summon",
+      "slot": "被动",
+      "quote": "召唤一个持续6秒自动攻击敌人的机械仆从"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "自爆对附近敌人造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "指挥飞行器对沿路敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "将会被减速25/30/35/40/45/50%持续1.5秒"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "再次释放技能可让飞行器一分为二进行攻击"
+    },
+    {
+      "tag": "summon",
+      "slot": "2技能",
+      "quote": "在指定区域召唤机械仆从"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "在指定区域召唤机械仆从同时造成"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "至多储备3组(技能受冷却影响)"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "标记3秒并眩晕敌人0.75秒"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "法术伤害并减少15/22.5/30%移速"
+    },
+    {
+      "tag": "summon",
+      "slot": "3技能",
+      "quote": "目标被标记期间死亡会立即召唤三个仆从"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    }
+  ]
+}

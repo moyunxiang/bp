@@ -1,0 +1,11 @@
+{
+  "id": 180,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "4技能",
+      "verdict": "accept",
+      "reason": "原文“对全图范围内的敌方英雄造成……物理伤害”。"
+    }
+  ]
+}

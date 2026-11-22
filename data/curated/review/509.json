@@ -1,0 +1,184 @@
+{
+  "id": 509,
+  "name": "盾山",
+  "tags": [
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "并额外造成10%/20%减速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "普攻切换为远程范围效果"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "盾山向目标冲刺后庇护目标"
+    },
+    {
+      "tag": "shield_ally",
+      "slot": "1技能",
+      "quote": "(+18%额外生命)护盾(持续6秒，按双方血量反比分配)"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "1技能",
+      "quote": "(+18%额外生命)护盾(持续6秒，按双方血量反比分配)"
+    },
+    {
+      "tag": "ally_reposition",
+      "slot": "1技能",
+      "quote": "期间双方的移动由队友操作"
+    },
+    {
+      "tag": "untargetable",
+      "slot": "1技能",
+      "quote": "盾山化身炮台(持续6秒)，期间获得不可选中"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "每秒125/150/175/200/225/250(+2.5%额外生命)回复"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "根据庇护持续时间返还最多50%冷却时间"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "盾山向前冲锋(撞到地方英雄停止)"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "抱起扔回身前范围内(随技能等级成长)的敌方英雄及周围目标"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "的敌方英雄及周围目标"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "落地对周围造成眩晕(持续0.5秒)"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "落地对周围造成眩晕(持续0.5秒)"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "2技能",
+      "quote": "对英雄造成目标5%生命值撞击伤害"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "获得短暂的霸体"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对范围内的敌人造成170/225/340"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "物理伤害和击退以及25%/37.5%/50%减速"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "以及25%/37.5%/50%减速(持续1秒)"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "随后巨盾向前移动击飞(持续0.5秒)触碰的敌人"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "随后巨盾向前移动击飞(持续0.5秒)触碰的敌人"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "3技能",
+      "quote": "对英雄造成目标5%生命值撞击伤害"
+    },
+    {
+      "tag": "projectile_block",
+      "slot": "3技能",
+      "quote": "并击落飞行物"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "unsupported",
+      "reason": "表述重复且有误：原文1技能是“冲刺”到友方、2技能是“冲锋”，句中把1技能写进“冲锋”又单列一次；“位移手段多”是无基准的强度评价"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

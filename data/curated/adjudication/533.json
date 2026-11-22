@@ -1,0 +1,17 @@
+{
+  "id": 533,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "verdict": "reject",
+      "reason": "原文“跳起砸击指定地点造成……物理伤害”，只写地点，没有范围或多目标表述。"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "verdict": "reject",
+      "reason": "原文“跳起砸击指定地点造成……物理伤害和晕眩”，未写明范围或晕眩作用于多名敌人。"
+    }
+  ]
+}

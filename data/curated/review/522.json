@@ -1,0 +1,98 @@
+{
+  "id": 522,
+  "name": "曜",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "曜技能命中敌方单位时将回复70~140"
+    },
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "quote": "使用强化普攻会向敌人发起冲锋"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对周围的敌人造成340/408/476/544/612/680"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "向左侧快速移动"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对路径上的敌人造成180/216/252/288/324/360"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "物理伤害与25/30/35/40/45/50%减速"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "回到2秒前的位置"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "并对路径与终点的敌人造成"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

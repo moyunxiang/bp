@@ -1,0 +1,11 @@
+{
+  "id": 119,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "verdict": "accept",
+      "reason": "原文“引爆附近所有印记，对敌人造成……法术伤害”，作用于附近所有带印记的敌人。"
+    }
+  ]
+}

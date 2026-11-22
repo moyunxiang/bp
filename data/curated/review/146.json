@@ -1,0 +1,108 @@
+{
+  "id": 146,
+  "name": "露娜",
+  "tags": [
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "quote": "露娜会向敌人发起冲锋"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "露娜牵引附近的敌人造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "露娜牵引附近的敌人造成160/192/224/256/288/320"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "法术伤害并晕眩0.5秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "法术伤害并晕眩0.5秒"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "持续2秒的25/30/35/40/45/50%减速"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "2技能",
+      "quote": "680/750(+80%法术攻击)点护盾"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "露娜向指定方向发起突击"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对路径上敌人造成350/525/700"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "将会刷新新月突击的冷却时间"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

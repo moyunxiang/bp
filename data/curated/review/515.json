@@ -1,0 +1,93 @@
+{
+  "id": 515,
+  "name": "嫦娥",
+  "tags": [
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "法术伤害和25%~50%减速效果"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "嫦娥技能回复的法力值会转换为等额的生命回复"
+    },
+    {
+      "tag": "global",
+      "slot": "被动",
+      "quote": "可使用奔月飞回原来的位置"
+    },
+    {
+      "tag": "root",
+      "slot": "1技能",
+      "quote": "法术伤害和1.5秒定身"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "每次对范围内敌人造成16次"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "2技能",
+      "quote": "10.8%/12%伤害减免"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "3技能",
+      "quote": "造成等额伤害并回复80(+1.2%额外生命值)生命"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

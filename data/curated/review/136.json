@@ -1,0 +1,128 @@
+{
+  "id": 136,
+  "name": "武则天",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "命中敌人后爆开，对范围内的敌人造成"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "并使目标击飞0.75秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "对范围内的敌人造成360/420/480/540/600/660"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "女帝辉光会立即冷却并得到强化"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "击退附近敌人并造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "击退附近敌人并造成200/240/280/320/360/400"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "命中的敌人减少25/30/35/40/45/50%移速"
+    },
+    {
+      "tag": "global",
+      "slot": "3技能",
+      "quote": "在所有敌方英雄脚下召唤法阵并引爆"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对范围内敌人造成750/925/1100"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "点法术伤害并晕眩1秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "对范围内敌人造成750/925/1100"
+    },
+    {
+      "tag": "reveal",
+      "slot": "3技能",
+      "quote": "同时获取敌方视野，持续3秒"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

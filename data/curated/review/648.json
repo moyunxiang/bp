@@ -1,0 +1,148 @@
+{
+  "id": 648,
+  "name": "星葵",
+  "tags": [
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "quote": "额外造成物理伤害并向敌人突进"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "星葵向前突进并对自身周围的敌人造成物理伤害"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "星葵向前突进并对自身周围的敌人造成物理伤害"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "(对野怪增加50%)并获得回复"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "对范围内敌人造成等量伤害和击飞(持续0.5秒)"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "对范围内敌人造成等量伤害和击飞(持续0.5秒)"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "1技能",
+      "quote": "并获得护盾(持续2秒)"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "对敌方英雄造成物理伤害和减速(持续1秒)"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "冲向爪子的位置，到达后再次向移动方向翻滚"
+    },
+    {
+      "tag": "reveal",
+      "slot": "2技能",
+      "quote": "使敌方现形并造成物理伤害和击飞(持续0.5秒)"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "使敌方现形并造成物理伤害和击飞(持续0.5秒)"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "每秒储备一次【龙魄爪】"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "对敌人造成物理伤害和减速(持续1秒)"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对范围内敌人造成物理伤害"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "0.6秒后向后位移并收回爪子"
+    },
+    {
+      "tag": "untargetable",
+      "slot": "3技能",
+      "quote": "空中跃起期间星葵不可被选中"
+    },
+    {
+      "tag": "cleanse",
+      "slot": "3技能",
+      "quote": "并净化所有负面效果"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

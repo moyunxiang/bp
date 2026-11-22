@@ -1,0 +1,11 @@
+{
+  "id": 505,
+  "decisions": [
+    {
+      "tag": "untargetable",
+      "slot": "被动",
+      "verdict": "reject",
+      "reason": "原文只写“免疫所有效果但也失去攻击能力”，未写明不可被选中、免疫所有伤害或无敌。"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "id": 140,
+  "name": "关羽",
+  "tags": [
+    {
+      "tag": "displace_enemy",
+      "slot": "被动",
+      "quote": "关羽的普攻击退敌人"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "获得能量和40~80(+0.6%生命值)生命恢复"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "关羽向前发起冲锋"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "关羽向前发起冲锋，击退敌人"
+    },
+    {
+      "tag": "cleanse",
+      "slot": "2技能",
+      "quote": "关羽净化控制效果"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "纵马跃向指定位置"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "物理伤害和击退"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "物理伤害和击退"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "unsupported",
+      "reason": "原文没有“压制”效果（词表中压制是特定控制），用冲锋和击退“压制敌人”属于效果评价，原文无法验证"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

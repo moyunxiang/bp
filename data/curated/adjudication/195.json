@@ -1,0 +1,11 @@
+{
+  "id": 195,
+  "decisions": [
+    {
+      "tag": "damage_reduction",
+      "slot": "2技能",
+      "verdict": "reject",
+      "reason": "原文“减少……该目标对自己的伤害”是对单个狩猎目标的输出减益，不是自身获得百分比减伤。"
+    }
+  ]
+}

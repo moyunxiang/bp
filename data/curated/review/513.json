@@ -1,0 +1,118 @@
+{
+  "id": 513,
+  "name": "上官婉儿",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "对一条路径上的敌人额外造成"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "触碰笔力恢复100~240(+22%法术攻击)点生命"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "朝指定方向挥出一记笔墨对触碰的敌人造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "书写过程对触碰的敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "25/30/35/40/45/50%减速持续2秒"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "每12/11/10/9/8/7秒储存一次笔势，最多可储备2次"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "与笔墨共舞对一条路径上的敌人造成"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "则可在3秒内再次通过移动指令发出冲刺"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "中断时根据释放次数返还20%到80%冷却"
+    },
+    {
+      "tag": "untargetable",
+      "slot": "3技能",
+      "quote": "期间不可被选中并解除所有控制效果"
+    },
+    {
+      "tag": "cleanse",
+      "slot": "3技能",
+      "quote": "不可被选中并解除所有控制效果"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

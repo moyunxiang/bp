@@ -1,0 +1,129 @@
+{
+  "id": 519,
+  "name": "敖隐",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对范围内至多3个目标造成"
+    },
+    {
+      "tag": "true_damage",
+      "slot": "1技能",
+      "quote": "70/93.33/116.67/140(+16%额外物理攻击)真实伤害"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对范围内至多3个目标造成"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "命中后获得150/200/250/300"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对范围内至多3个目标造成"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "对目标身后造成50%溅射效果)和击退"
+    },
+    {
+      "tag": "untargetable",
+      "slot": "4技能",
+      "quote": "无视地形且不可选中"
+    },
+    {
+      "tag": "dash",
+      "slot": "4技能",
+      "quote": "随后向前俯冲"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "4技能",
+      "quote": "对路径上的敌人造成400/600/800"
+    },
+    {
+      "tag": "slow",
+      "slot": "4技能",
+      "quote": "物理伤害和15/22.5/30%减速"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "4技能",
+      "quote": "受到惧龙效果的目标会不由自主的远离敖隐"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "4技能",
+      "quote": "在落点处对敌人再次造成同等伤害和惧龙效果"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "unsupported",
+      "reason": "4技能原文写明落点处敌人受到惧龙效果“会不由自主的远离敖隐”，属于恐惧类硬控，“没有硬控”与原文不符"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

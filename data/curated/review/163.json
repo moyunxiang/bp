@@ -1,0 +1,113 @@
+{
+  "id": 163,
+  "name": "橘右京",
+  "tags": [
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "物理伤害和15%~30%减速，持续2秒"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "同时回复自身100~200(+2%额外生命)生命值"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "橘右京后跳并斩击沿途敌人"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "橘右京后跳并斩击沿途敌人"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "2秒后可激活二段使用"
+    },
+    {
+      "tag": "execute",
+      "slot": "1技能",
+      "quote": "目标每损失2%最大生命就会增加强化燕返1%伤害"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对路径上的敌人造成580/696/812/928/1044/1160"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "路径末端的敌人晕眩0.75秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "路径末端的敌人晕眩0.75秒"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "3技能",
+      "quote": "每次命中敌方英雄时，回复300/450/600"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

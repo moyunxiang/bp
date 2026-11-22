@@ -1,0 +1,108 @@
+{
+  "id": 584,
+  "name": "元流之子(射手)",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "发射贯穿弩箭对路径上敌人额外造成物理伤害"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对附近敌人造成物理伤害和击退无控制效果"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "对附近敌人造成物理伤害和击退无控制效果"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "并获得回复和5层"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "释放后可位移一段距离"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "2秒内再次释放获得强化"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对指定范围(锁定范围内目标)造成"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "使用额外的【万箭齐发】"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

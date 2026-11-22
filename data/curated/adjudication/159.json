@@ -1,0 +1,17 @@
+{
+  "id": 159,
+  "decisions": [
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "verdict": "accept",
+      "reason": "原文“人鱼形态的普攻会射出水箭，造成范围伤害”。"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "verdict": "accept",
+      "reason": "原文“激起水浪击退近处敌人(对自身周围的敌人的击退附带晕眩效果)”，晕眩作用于自身周围敌人。"
+    }
+  ]
+}

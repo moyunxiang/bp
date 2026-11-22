@@ -1,0 +1,128 @@
+{
+  "id": 528,
+  "name": "澜",
+  "tags": [
+    {
+      "tag": "true_damage",
+      "slot": "被动",
+      "quote": "额外造成7.5%~15%真实伤害"
+    },
+    {
+      "tag": "execute",
+      "slot": "被动",
+      "quote": "当敌人的生命值低于30%"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "并对目标附带25/30/35/40/45/50%减速效果"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "到时间后会跳出水面并返还50%的冷却"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "命中敌人回复95/114/133/152/171/190"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "攻击附近的敌人割开他们的伤口"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "会附带一个指定方向的位移"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "并对路径上敌人造成90%减速效果"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "将向匕首位置突袭"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "将路径上的敌人拖到终点进行处决"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "将路径上的敌人拖到终点进行处决，造成"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

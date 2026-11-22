@@ -1,0 +1,139 @@
+{
+  "id": 131,
+  "name": "李白",
+  "tags": [
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "李白可用醉剑式向指定方向连续突进2次"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "第三次释放会回到原地"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对路径上敌人造成350/395/440/485/530/575"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "物理伤害并将其晕眩0.5秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "对路径上敌人造成350/395/440/485/530/575"
+    },
+    {
+      "tag": "cleanse",
+      "slot": "2技能",
+      "quote": "化剑为青莲剑阵，期间获得净化控制"
+    },
+    {
+      "tag": "untargetable",
+      "slot": "2技能",
+      "quote": "期间获得净化控制和无法选中"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "同时对范围内敌人造成200/240/280/320/360/400"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "物理伤害和极限减速(持续1秒)"
+    },
+    {
+      "tag": "shred",
+      "slot": "2技能",
+      "quote": "并减少150/180/210/240/270/300点物理防御"
+    },
+    {
+      "tag": "untargetable",
+      "slot": "3技能",
+      "quote": "李白释放技能期间不可被选中"
+    },
+    {
+      "tag": "cleanse",
+      "slot": "3技能",
+      "quote": "不可被选中并解除所有控制效果"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "当同时攻击多个敌方英雄时"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "unsupported",
+      "reason": "原文只写“化身为剑气飞速穿梭斩击5次”，未明确写出自身位移；“持续输出”为原文无法验证的评价"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

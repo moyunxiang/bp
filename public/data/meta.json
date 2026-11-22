@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-11-22T05:20:37.895Z",
+  "officialFetchedAt": "2026-11-22T04:45:34.870Z",
+  "newsFetchedAt": "2026-11-22T04:51:46.826Z",
+  "season": "S45「月照长安」",
+  "latestPatchDate": "2026-11-18",
+  "counts": {
+    "heroes": 140,
+    "limitedHeroes": 6,
+    "skills": 570,
+    "officialEdges": 829,
+    "officialStale": 0,
+    "relationsScored": 3405,
+    "counterRelations": 1768,
+    "synergyRelations": 1637,
+    "withOfficial": 829,
+    "withRule": 2675,
+    "withKpl": 87,
+    "withCommentary": 0,
+    "rules": 13,
+    "pairCoveragePct": 30.9,
+    "patches": 40,
+    "commentary": 0,
+    "kplBattles": 1307
+  },
+  "profileReport": {
+    "generatedAt": "2026-11-22T05:11:54.393Z",
+    "heroes": 140,
+    "reviewed": 140,
+    "needsReview": 0,
+    "tagsVerified": 1429,
+    "tagsDisputed": 0,
+    "tagsAdjudicated": 103,
+    "quoteInvalidA": 0,
+    "quoteInvalidB": 0,
+    "agreeNum": 1326,
+    "agreeDen": 1474,
+    "proseOk": 1363,
+    "proseDropped": 15,
+    "proseUnreviewed": 0,
+    "tagAgreement": 0.8996,
+    "missing": [],
+    "lowAgreement": [
+      "孙权 3/6"
+    ]
+  },
+  "backtest": null,
+  "pending": {
+    "needsReview": [],
+    "missingProfile": []
+  }
+}

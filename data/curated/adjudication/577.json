@@ -1,0 +1,11 @@
+{
+  "id": 577,
+  "decisions": [
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "verdict": "accept",
+      "reason": "原文“重复释放时少司缘位移跟随目标且自身额外回复8%额外生命”。"
+    }
+  ]
+}

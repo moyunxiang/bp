@@ -1,0 +1,98 @@
+{
+  "id": 170,
+  "name": "刘备",
+  "tags": [
+    {
+      "tag": "shred",
+      "slot": "被动",
+      "quote": "每层增加5~10点物理穿透"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "发射一颗爆裂弹(期间自身退后)"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对其身后扇形区域内目标造成50%伤害"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "刘备向前冲撞造成"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "物理伤害和击退(3/4秒)"
+    },
+    {
+      "tag": "cleanse",
+      "slot": "3技能",
+      "quote": "刘备解除自身控制"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "并获得免控(持续3秒)"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "3技能",
+      "quote": "对敌方单位的伤害40%转化为护盾值"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

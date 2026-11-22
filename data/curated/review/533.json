@@ -1,0 +1,108 @@
+{
+  "id": 533,
+  "name": "阿古朵",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "和40/48/56/64/72/80(+0.6%额外生命值)生命回复"
+    },
+    {
+      "tag": "summon",
+      "slot": "1技能",
+      "quote": "动物伙伴们会来到乐园和阿古朵一起战斗"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "阿古朵和球球翻滚前进撞击"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "2技能",
+      "quote": "阿古朵和球球翻滚前进撞击(免疫1次硬控)"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "物理伤害和眩晕(1/2秒)"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "并对命中的敌人造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "并对命中的敌人造成"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "物理伤害和晕眩(2/3秒)"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "跳起砸击指定地点造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "跳起砸击指定地点造成"
+    },
+    {
+      "tag": "summon",
+      "slot": "3技能",
+      "quote": "然后球球独自作战"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

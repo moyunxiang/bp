@@ -1,0 +1,17 @@
+{
+  "id": 179,
+  "decisions": [
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "verdict": "accept",
+      "reason": "原文“创造一个持续3.5秒的矩阵空间，自身可迁跃”，写明自身迁跃位移。"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "verdict": "accept",
+      "reason": "原文“矩阵最多存储3个”，可存储多次使用机会。"
+    }
+  ]
+}

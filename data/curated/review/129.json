@@ -1,0 +1,113 @@
+{
+  "id": 129,
+  "name": "典韦",
+  "tags": [
+    {
+      "tag": "cleanse",
+      "slot": "被动",
+      "quote": "典韦的所有技能均可解控"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对附近的敌人造成200/240/280/320/360/400"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "释放时会朝超出常规普攻距离的目标突进"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对范围内敌人造成320/384/448/512/576/640"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "并减少其25/30/35/40/45/50%移速"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "增加200%攻速和20/24/28/32/36/40%吸血效果"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "典韦对锁定目标发起跳斩"
+    },
+    {
+      "tag": "true_damage",
+      "slot": "3技能",
+      "quote": "(+90%额外物理攻击)真实伤害"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "减少其30/45/60%移速，持续3秒"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "3技能",
+      "quote": "附带目标2.5%最大生命的真实伤害"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

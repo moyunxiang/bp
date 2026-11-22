@@ -1,0 +1,83 @@
+{
+  "id": 151,
+  "name": "孙权",
+  "tags": [
+    {
+      "tag": "damage_reduction",
+      "slot": "被动",
+      "quote": "使目标对孙权的伤害降低3%"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "孙权掷出军旗对指定范围敌人造成物理伤害"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "造成物理伤害和减速(持续2秒)"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "锁定攻击范围内的两个敌人造成"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "猛烈挥舞军旗对前方区域造成4次"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "向后撤退进入【破阵】状态"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

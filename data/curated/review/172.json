@@ -1,0 +1,93 @@
+{
+  "id": 172,
+  "name": "蚩奼",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "进行轮替作战（附带吸血效果）"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "蚩奼挥舞兵器朝指定方向跃起"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对路径上的敌人造成伤害"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "并将沿途敌人带到终点处"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "对前方戳刺，造成物理伤害和击飞"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "造成物理伤害和击退(无控制效果)"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "并获得回复(非英雄单位减半)"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

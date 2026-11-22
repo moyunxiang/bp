@@ -1,0 +1,149 @@
+{
+  "id": 564,
+  "name": "姬小满",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "随机回复110~220(+2%额外生命值)生命"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "小满跑步向前，若正前方有敌人"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "则将其拉拽至身前"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "对前方扇形区域内的目标造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "物理伤害和30%减速，持续1秒"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "对范围内敌人造成伤害和击飞"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "1技能",
+      "quote": "对范围内敌人造成伤害和击飞"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "造成多段伤害并获得生命回复"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "最多存储2格(技能受减冷却影响)"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "小满翻身向前，灵巧闪过敌人攻击"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "2技能",
+      "quote": "期间小满处于霸体状态"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "2技能",
+      "quote": "处于霸体状态，获得30%减伤"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "2技能",
+      "quote": "成功击败目标可获得300+4.5%额外生命值生命回复"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "小满瞬移至敌人身后施展回旋踢，击退目标"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "最多存储2格(技能受减冷却影响)"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对附近的敌人造成320/480/640"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "小满立即回复一格拳劲和腿劲"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "unsupported",
+      "reason": "原文“瞬移至敌人身后施展回旋踢”写在2技能的组合说明里（2技能后接【随变一式】），1技能后接【随变二式】是多段伤害并回复生命，顺序与原文相反"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

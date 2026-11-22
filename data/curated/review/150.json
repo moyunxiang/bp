@@ -1,0 +1,108 @@
+{
+  "id": 150,
+  "name": "韩信",
+  "tags": [
+    {
+      "tag": "cc_hard",
+      "slot": "被动",
+      "quote": "韩信的第四次普通攻击会将敌人击飞0.5秒"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "并附带20%物理吸血"
+    },
+    {
+      "tag": "dash",
+      "slot": "1技能",
+      "quote": "韩信发起冲锋造成"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "1技能",
+      "quote": "并将敌人击飞0.5秒"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "冲锋后5秒内可发动第二次冲锋"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "韩信向后跳跃"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "横扫会对范围内敌人造成"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "最后一次攻击会将范围内的敌人击飞0.5秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "最后一次攻击会将范围内的敌人击飞0.5秒"
+    },
+    {
+      "tag": "cc_immune",
+      "slot": "3技能",
+      "quote": "乱舞期间韩信处于霸体状态"
+    },
+    {
+      "tag": "damage_reduction",
+      "slot": "3技能",
+      "quote": "并获得30%伤害减免"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

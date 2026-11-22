@@ -1,0 +1,93 @@
+{
+  "id": 548,
+  "name": "戈娅",
+  "tags": [
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "物理伤害和30/36/42/48/54/60%减速"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "使沙舟反冲一段距离"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "沙暴区域对其中的敌人造成15/22.5/30%减速"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "将敌人牵引至沙暴中心"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对沙暴范围内敌人造成8%已损生命值伤害"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "3技能",
+      "quote": "对沙暴范围内敌人造成8%已损生命值伤害"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

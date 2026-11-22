@@ -1,0 +1,103 @@
+{
+  "id": 167,
+  "name": "孙悟空",
+  "tags": [
+    {
+      "tag": "dash",
+      "slot": "被动",
+      "quote": "可向目标冲锋并进行强力敲击"
+    },
+    {
+      "tag": "untargetable",
+      "slot": "1技能",
+      "quote": "孙悟空将获得0.2秒的无敌效果"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "1技能",
+      "quote": "(+15%额外生命值)点护盾，持续4秒"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "孙悟空向指定方向冲锋"
+    },
+    {
+      "tag": "summon",
+      "slot": "2技能",
+      "quote": "召唤分身造成320/384/448/512/576/640"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "3技能",
+      "quote": "物理伤害并将其击飞1秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "3技能",
+      "quote": "对范围内敌人造成250/375/500(+80%物理攻击)"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "对范围内敌人造成250/375/500(+80%物理攻击)"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "note": "战术体系定义。触发条件由官方职业和已核实的机制标签判定。description / winCondition 是对体系的通用说明，不是数据结论，也不代表强度。",
+  "archetypes": [
+    {
+      "id": "engage",
+      "name": "强开团",
+      "needs": [{ "label": "位移或超远支援 + 范围硬控的先手英雄", "count": 2, "cond": { "all": [{ "tags": ["cc_hard_aoe"] }, { "tags": ["dash", "global"] }] } }],
+      "description": "有两个以上能主动进场并控住多人的英雄，倾向于自己决定团战何时开始。",
+      "winCondition": "先手控住对方多人后，后排伤害在控制时间内跟上，把团战打成一波结束。需要找到对方站位重叠的时机。",
+      "weakTo": [
+        { "label": "能为队友解控或提供免控的英雄", "cond": { "tags": ["ally_cc_immune"] } },
+        { "label": "可以限制位移的英雄", "cond": { "tags": ["anti_dash"] } },
+        { "label": "有多段位移、难以被先手控到的后排", "cond": { "all": [{ "heroType": [2, 5] }, { "tags": ["dash"], "min": 2 }] } }
+      ]
+    },
+    {
+      "id": "protect",
+      "name": "保护射手",
+      "needs": [
+        { "label": "射手", "count": 1, "cond": { "heroType": [5] } },
+        { "label": "能治疗、套盾、解控或增益队友的英雄", "count": 2, "cond": { "tags": ["heal_ally", "shield_ally", "ally_cc_immune", "ally_buff"] } }
+      ],
+      "description": "围绕一名射手配置两个以上的保护与增益英雄，把资源和技能都留给射手。",
+      "winCondition": "拖到射手装备成型，团战中保证射手存活并持续输出。前中期以防守和稳住发育为主。",
+      "weakTo": [
+        { "label": "可以隐身接近后排的英雄", "cond": { "tags": ["stealth"] } },
+        { "label": "能阻挡飞行物的英雄", "cond": { "tags": ["projectile_block"] } },
+        { "label": "突进后带范围硬控、能同时控住射手和保护者的英雄", "cond": { "all": [{ "tags": ["cc_hard_aoe"] }, { "tags": ["dash", "global"] }] } }
+      ]
+    },
+    {
+      "id": "global",
+      "name": "多点支援",
+      "needs": [{ "label": "有超远距离支援手段的英雄", "count": 2, "cond": { "tags": ["global"] } }],
+      "description": "两个以上英雄能跨越很远的距离参战，可以在地图任意一处快速形成人数优势。",
+      "winCondition": "利用支援速度在边路和野区打出以多打少，把小优势滚成推塔和资源优势。正面五对五抱团不是首选。",
+      "weakTo": [{ "label": "有范围硬控、能在对方落地时打断集结的英雄", "cond": { "tags": ["cc_hard_aoe"] } }]
+    },
+    {
+      "id": "dive",
+      "name": "多核突进",
+      "needs": [{ "label": "有位移的战士或刺客", "count": 3, "cond": { "all": [{ "heroType": [1, 4] }, { "tags": ["dash"] }] } }],
+      "description": "三个以上带位移的战士或刺客，团战目标是越过前排直接处理对方后排。",
+      "winCondition": "多个方向同时进场，让对方的保护技能和控制不够分配。需要在对方控制交出后或从侧翼进场。",
+      "weakTo": [
+        { "label": "有多个硬控技能的英雄", "cond": { "tags": ["cc_hard"], "min": 2 } },
+        { "label": "可以限制位移的英雄", "cond": { "tags": ["anti_dash"] } },
+        { "label": "能为队友解控、套盾或治疗的英雄", "cond": { "tags": ["heal_ally", "shield_ally", "ally_cc_immune"] } }
+      ]
+    },
+    {
+      "id": "frontline",
+      "name": "双前排推进",
+      "needs": [{ "label": "坦克", "count": 2, "cond": { "heroType": [3] } }],
+      "description": "两个坦克在前，正面承伤空间大，适合抱团推进和打资源团。",
+      "winCondition": "抱团逼对方接正面团，靠前排吸收技能后由后排输出。避免被对方分带牵扯拆散。",
+      "weakTo": [{ "label": "有多个百分比生命伤害或真实伤害技能的英雄", "cond": { "tags": ["percent_hp_damage", "true_damage"], "min": 2 } }]
+    },
+    {
+      "id": "cc_chain",
+      "name": "控制链",
+      "needs": [{ "label": "有硬控的英雄", "count": 4, "cond": { "tags": ["cc_hard"] } }],
+      "description": "四个以上英雄带硬控，可以把单个目标连续控到死，或轮流打断对方进场。",
+      "winCondition": "控制接力集火同一个目标，先减员再打团。控制要错开释放，避免重叠浪费。",
+      "weakTo": [
+        { "label": "自带免控或解控的英雄", "cond": { "tags": ["cc_immune", "cleanse"] } },
+        { "label": "能为队友解控或提供免控的英雄", "cond": { "tags": ["ally_cc_immune"] } }
+      ]
+    },
+    {
+      "id": "sustain",
+      "name": "续航消耗",
+      "needs": [{ "label": "有两个以上回复技能或能治疗队友的英雄", "count": 3, "cond": { "tags": ["heal_self", "heal_ally"], "min": 2 } }],
+      "description": "三个以上英雄有较多回复手段，适合打拉扯和持久战。",
+      "winCondition": "避免被一波秒掉，靠回复在反复拉扯中把对方状态磨掉后再接团。",
+      "weakTo": [{ "label": "自带重伤效果的英雄", "cond": { "tags": ["anti_heal"] } }]
+    }
+  ]
+}

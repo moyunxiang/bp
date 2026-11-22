@@ -1,0 +1,130 @@
+{
+  "id": 189,
+  "name": "鬼谷子",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "对范围目标造成300~600(+55%法术攻击)法术伤害"
+    },
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "法术伤害和25~50%减速，持续1.5秒"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "并对触碰到的每个敌人造成"
+    },
+    {
+      "tag": "shred",
+      "slot": "1技能",
+      "quote": "降低该敌人25/28/31/34/37/40%的物理和法术防御"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "对范围内敌人每0.5秒造成"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "2秒后将范围内敌人拉扯到鬼谷子身旁"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "拉扯到鬼谷子身旁并将其晕眩1秒"
+    },
+    {
+      "tag": "cc_hard_aoe",
+      "slot": "2技能",
+      "quote": "将范围内敌人拉扯到鬼谷子身旁并将其晕眩1秒"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "2技能",
+      "quote": "鬼谷子和范围内的队友将获得500/600/700/800/900/1000"
+    },
+    {
+      "tag": "shield_ally",
+      "slot": "2技能",
+      "quote": "鬼谷子和范围内的队友将获得500/600/700/800/900/1000"
+    },
+    {
+      "tag": "ally_buff",
+      "slot": "3技能",
+      "quote": "期间鬼谷子和队友将增加30%移速"
+    },
+    {
+      "tag": "reveal",
+      "slot": "3技能",
+      "quote": "同时获取距离自身最近的敌方英雄视野"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "unsupported",
+      "reason": "原文只写“伪装状态”，未写潜行或隐身，“潜行接近”无法从原文验证"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "unsupported",
+      "reason": "1技能原文只写“伪装效果会在鬼谷子用其他方式伤害敌人时消失”，未写使用普攻、技能或造成负面效果即解除；该条件只出自3技能"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

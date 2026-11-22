@@ -1,0 +1,88 @@
+{
+  "id": 118,
+  "name": "孙膑",
+  "tags": [
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "3秒后爆炸对范围内敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "1技能",
+      "quote": "法术伤害和15/18/21/24/27/30%减速"
+    },
+    {
+      "tag": "ally_buff",
+      "slot": "2技能",
+      "quote": "使得范围内友军增加130/156/182/208/234/260移动速度"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "展开力场，对范围内敌人造成500/625/750"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "法术伤害和90%减速"
+    },
+    {
+      "tag": "silence",
+      "slot": "3技能",
+      "quote": "强制打断敌人技能并造成1秒沉默"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

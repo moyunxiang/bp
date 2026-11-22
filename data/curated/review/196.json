@@ -1,0 +1,103 @@
+{
+  "id": 196,
+  "name": "百里守约",
+  "tags": [
+    {
+      "tag": "shred",
+      "slot": "被动",
+      "quote": "提升百里守约20%物理穿透"
+    },
+    {
+      "tag": "reveal",
+      "slot": "1技能",
+      "quote": "布置(最多3个)视野探测装置"
+    },
+    {
+      "tag": "reset",
+      "slot": "1技能",
+      "quote": "视野装置每35/34/33/32/31/30秒可准备1个(最多3个)"
+    },
+    {
+      "tag": "percent_hp_damage",
+      "slot": "2技能",
+      "quote": "并附带目标8%最大生命的物理伤害"
+    },
+    {
+      "tag": "slow",
+      "slot": "2技能",
+      "quote": "同时减少其90%移速"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "技能子弹最多储存3颗"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "向后跳跃并向指定方向射击"
+    },
+    {
+      "tag": "slow",
+      "slot": "3技能",
+      "quote": "并减少其15/22.5/30%移速"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "与狂风之息共用子弹数量"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": 141,
+  "name": "貂蝉",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "回复130~260(+1.5%额外生命值)生命"
+    },
+    {
+      "tag": "true_damage",
+      "slot": "被动",
+      "quote": "同时会对周围敌人造成130~260(+40%法术攻击)真实伤害"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "被动",
+      "quote": "会对周围敌人造成"
+    },
+    {
+      "tag": "slow",
+      "slot": "被动",
+      "quote": "并减少其25~50%移速"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "1技能",
+      "quote": "挥出和返回会对路径上的敌人造成"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "貂蝉瞬移到指定位置"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "2技能",
+      "quote": "散发3枚花球攻击附近的敌人"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": 581,
+  "name": "元流之子(坦克)",
+  "tags": [
+    {
+      "tag": "heal_self",
+      "slot": "被动",
+      "quote": "回复125~250(+2.5%额外生命值)生命"
+    },
+    {
+      "tag": "heal_self",
+      "slot": "1技能",
+      "quote": "附近每多1名友方英雄/2个小兵额外增加1层并额外回复生命"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "1技能",
+      "quote": "物理伤害和击退(无控制效果)"
+    },
+    {
+      "tag": "dash",
+      "slot": "2技能",
+      "quote": "元流之子朝指定目标冲锋"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "2技能",
+      "quote": "击退路径上的敌人"
+    },
+    {
+      "tag": "shield_self",
+      "slot": "2技能",
+      "quote": "(+7%额外生命值)护盾，持续3秒"
+    },
+    {
+      "tag": "cc_hard",
+      "slot": "2技能",
+      "quote": "对敌人造成等额的斩击伤害和0.33秒击飞"
+    },
+    {
+      "tag": "reset",
+      "slot": "2技能",
+      "quote": "2秒内对同一目标连续释放会依次改变技能效果"
+    },
+    {
+      "tag": "dash",
+      "slot": "3技能",
+      "quote": "元流之子向指定位置跃击"
+    },
+    {
+      "tag": "displace_enemy",
+      "slot": "3技能",
+      "quote": "物理伤害和0.75秒击退"
+    },
+    {
+      "tag": "aoe_damage",
+      "slot": "3技能",
+      "quote": "跃击的中心会额外造成50%伤害"
+    },
+    {
+      "tag": "reset",
+      "slot": "3技能",
+      "quote": "使本次技能不进入冷却"
+    }
+  ],
+  "prose": [
+    {
+      "field": "summary",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 2,
+      "verdict": "ok"
+    },
+    {
+      "field": "strengths",
+      "index": 3,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "weaknesses",
+      "index": 2,
+      "verdict": "unsupported",
+      "reason": "原文被动没有写明获得“流”层数的来源，只有1技能写明获得层数"
+    },
+    {
+      "field": "combos",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 0,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 1,
+      "verdict": "ok"
+    },
+    {
+      "field": "interactions",
+      "index": 2,
+      "verdict": "ok"
+    }
+  ]
+}
