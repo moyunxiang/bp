@@ -6,6 +6,7 @@ import {
   LANES,
   type Archetype,
   type BacktestReport,
+  type CompFloorStats,
   type Bundle,
   type CommentaryItem,
   type HeroData,
@@ -35,6 +36,7 @@ export interface Inputs {
   patches: { fetchedAt: string | null; season: { name: string } | null; latestPatchDate: string | null; patches: PatchNote[] };
   kpl: KplStats | null;
   comps: KplComps | null;
+  floors: CompFloorStats | null;
   backtest: BacktestReport | null;
   model: PickModel | null;
   outcomeTest: OutcomeTest | null;
@@ -59,6 +61,7 @@ export async function loadInputs(): Promise<Inputs> {
     patches: await optional(D('derived/patches.json'), { fetchedAt: null, season: null, latestPatchDate: null, patches: [] as PatchNote[] }),
     kpl: await optional<KplStats | null>(D('derived/kpl/stats.json'), null),
     comps: await optional<KplComps | null>(D('derived/kpl/comps.json'), null),
+    floors: await optional<CompFloorStats | null>(D('derived/kpl/floors.json'), null),
     backtest: await optional<BacktestReport | null>(D('derived/backtest.json'), null),
     model: await optional<PickModel | null>(D('derived/model.json'), null),
     outcomeTest: await optional<OutcomeTest | null>(D('derived/outcome-test.json'), null),
@@ -187,6 +190,7 @@ export function assemble(inp: Inputs): { bundle: Bundle; staleEdges: number } {
     tags: inp.tags,
     patches: inp.patches.patches.filter((p) => p.heroes.length).slice(0, 60),
     kpl: inp.kpl ? { coverage: inp.kpl.coverage, heat: inp.kpl.heat, pairs: inp.kpl.pairs, source: inp.kpl.source, resp: inp.kpl.resp, short: inp.kpl.short } : null,
+    floors: inp.floors,
     model: inp.model,
     comps: inp.comps,
     archetypes: inp.archetypes,

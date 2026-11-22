@@ -102,6 +102,22 @@ test('BP助手：研究模式能展开依据；候选对比', async ({ page }) =
   expect(errors).toEqual([]);
 });
 
+test('BP助手：选人时提示我方阵容还缺什么，推荐理由里说明能补上', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('./');
+  await page.getByLabel('每方禁用').selectOption('0');
+  // 蓝1 孙尚香，红1 后羿，红2 张飞，蓝2 貂蝉 → 轮到蓝3：我方两个人里没有坦克或战士
+  for (const h of ['sunshangxiang', 'houyi', 'zhangfei', 'diaochan']) await typeHero(page, h);
+  await expect(page.getByText('蓝方（我方）3楼选人')).toBeVisible();
+  const gaps = page.getByTestId('team-gaps');
+  await expect(gaps).toContainText('我方还缺');
+  await expect(gaps).toContainText('坦克或战士');
+  await expect(gaps).toContainText('还剩3个位置');
+  await page.getByRole('button', { name: '研究' }).click();
+  await expect(page.getByText(/本方没有坦克或战士，它能补上/).first()).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
 test('英雄池：加入后BP助手可以只在池内推荐', async ({ page }) => {
   const errors = watchErrors(page);
   await page.goto('./#/me');

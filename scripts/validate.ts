@@ -5,6 +5,7 @@ import { ROOT, readJson } from './lib/http.ts';
 import type { Bundle, Cond } from '../src/types.ts';
 import { buildRelations } from '../src/engine/relations.ts';
 import { PLAY_FEATURES } from '../src/engine/playbook.ts';
+import { COMP_FLOORS } from '../src/engine/comp.ts';
 
 const norm = (s: string) => s.replace(/\s+/g, '');
 const BANNED = /版本强势|T0|T1|T度|职业选手|高端局|胜率|上分/;
@@ -129,6 +130,15 @@ async function main() {
     const k = `${r.type}:${r.a}:${r.b}`;
     if (stale.has(k) && r.evidence.some((e) => e.kind === 'official')) err(`过期的官方关系进入了计分 ${k}`);
   }
+
+  // 阵容底线的职业赛依据：每条底线都有比例，比例在0–1之间
+  if (b.floors) {
+    for (const f of COMP_FLOORS) {
+      const s = b.floors.floors[f.key];
+      if (!s) err(`阵容底线 ${f.key}: 缺少职业赛比例`);
+      else for (const v of [s.must, s.should]) if (v && !(v.pro >= 0 && v.pro <= 1 && v.shuffled >= 0 && v.shuffled <= 1)) err(`阵容底线 ${f.key}: 比例超出范围`);
+    }
+  } else warns.push('没有阵容底线的职业赛比例（data/derived/kpl/floors.json）');
 
   // 营地英雄榜：英雄有效，档位格式正确，比例在0–1之间，每个榜单不超过公开接口的上限
   if (b.camp) {

@@ -10,7 +10,7 @@ import { recommendBans, recommendPicks } from '../engine/recommend.ts';
 import { Segmented } from '../components/ui.tsx';
 import { BanRow, TeamColumn } from '../components/bp/Board.tsx';
 import { Picker, usePickerResults, type PickerFilter } from '../components/bp/Picker.tsx';
-import { BanList, CompareTable, Matchup, PickList, type RecTab } from '../components/bp/RecPanel.tsx';
+import { BanList, CompareTable, Matchup, PickList, TeamGapBar, type RecTab } from '../components/bp/RecPanel.tsx';
 import { PlaybookView } from '../components/play/PlaybookView.tsx';
 
 const SIDE_NAME: Record<Side, string> = { blue: '蓝方', red: '红方' };
@@ -396,6 +396,7 @@ export function BpPage() {
           </div>
           <div className="min-h-0 flex-1 overflow-y-auto p-3">
             {(tab === 'pick' || tab === 'ban') && <div className="mb-2 text-[12.5px] text-sub">{recTitle}</div>}
+            {tab === 'pick' && !pickSideFull && <TeamGapBar team={side === 'blue' ? blueTeam : redTeam} who={isMine ? '我方' : '对方'} />}
             {tab === 'pick' && (
               <PickList
                 recs={pickRecs}

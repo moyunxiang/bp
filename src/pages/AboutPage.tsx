@@ -2,6 +2,7 @@ import { useMemo, type ReactNode } from 'react';
 import { useEngine, fmtDate, freshness } from '../lib/data.ts';
 import { Empty } from '../components/ui.tsx';
 import { W } from '../engine/relations.ts';
+import { COMP_FLOORS, FLOOR_POINTS } from '../engine/comp.ts';
 import { DEFAULT_WEIGHTS as DW, PART_NAME, type PartKey } from '../engine/recommend.ts';
 import type { BacktestMethod } from '../types.ts';
 
@@ -48,7 +49,7 @@ export function AboutPage() {
   const parts: { key: PartKey; desc: string }[] = [
     { key: 'counter', desc: `候选克制对方已选英雄时加分，被对方克制时扣分：每条关系按它的证据权重 × ${DW.counterPerUnit} 分，同路对线再 × ${DW.counterSameLane}；合计不超过 ±${DW.counterCap}` },
     { key: 'synergy', desc: `与己方已选英雄有配合关系时加分：每条关系按证据权重 × ${DW.synergyPerUnit} 分；合计不超过 ${DW.synergyCap}` },
-    { key: 'needs', desc: `从第三手起，看候选能否补上阵容缺口（伤害类型、前排、硬控、开团、清线），越接近选完权重越大；合计不超过 ±${DW.needsCap}` },
+    { key: 'needs', desc: `阵容底线：从第三手起，看候选能否补上本方的缺口（硬控、坦克或战士、法术伤害、物理伤害为硬性底线；第二个硬控、第二个坦克或战士、范围硬控、先手开团、清线为“最好有”）。能补的加分，越接近选完加得越多；选了之后已经不可能达到的扣分；合计不超过 ±${DW.needsCap}` },
     { key: 'lane', desc: `按候选在己方空缺分路上的适配度（0–1）计分，范围约 ±${DW.laneFit / 2}；己方剩下的分路都不是它的常规位置时为 ${DW.laneMiss}` },
     { key: 'meta', desc: `职业赛第一局的出场率（被选次数+被禁次数）÷ 局数 × ${DW.metaRange}，只加分不扣分；最近45天内官方公告标题写明“增强/削弱”的英雄另计 ±${DW.patch}` },
     { key: 'exposure', desc: `对方还有选人机会时，按“还没被禁、又克制它”的英雄的证据权重扣分，对方剩余手数越多扣得越多；最多扣 ${DW.exposureCap}` },
@@ -222,13 +223,35 @@ export function AboutPage() {
                 </tbody>
               </table>
               <div className="rounded-md border border-line bg-panel2 p-3 text-[12.5px] leading-relaxed">
-                <b className="text-ink">两处人为设定：</b>
-                ①“克制与被克”的系数不低于 {bundle.model.floors.counter}。模型学到的这个系数接近0，意思是机制克制对预测职业队选谁帮助很小；但网站的用途是按对方阵容给建议，所以保留手工权重的力度，回测代价见下表（“按阶段各一组系数”与“线上使用”两行之差）。
+                <b className="text-ink">三处人为设定：</b>
+                ①“克制与被克”的系数不低于 {bundle.model.floors.counter}。模型学到的这个系数接近0，意思是机制克制对预测职业队选谁帮助很小；但网站的用途是按对方阵容给建议，所以保留手工权重的力度。
                 ②“分路匹配”的系数不低于 {bundle.model.floors.lane}，保证你指定位置时一定生效。
+                {bundle.model.floors.needs != null && <>③“阵容底线”的系数不低于 {bundle.model.floors.needs}，原因见下面的“阵容底线”。</>}
+                {' '}①和③合起来的回测代价见下表“不设系数下限”与“线上使用”两行之差。
                 {bundle.model.lanePhases ? ' 另外，当你设定了“我打某路”时，候选只剩能打这个位置的英雄，这时使用另一组专门拟合的系数（回测里的“指定位置专用系数”）。' : ''}
                 <br />
                 <b className="text-ink">局限：</b>模型学的是职业队的选择。职业赛是系列赛全局BP、五人配合固定，与单排环境不同；“职业赛针对选择”“职业赛同队选择”反映的是选人习惯，其中一部分只是同一时期都热门。路人局的效果没有数据可以验证。
               </div>
+              {bundle.floors && (
+                <div id="about-floors">
+                  <p>
+                    <b className="text-ink">阵容底线。</b>
+                    {fmtDate(bundle.floors.from)} 至 {fmtDate(bundle.floors.to)} 的 {n(bundle.floors.teams)} 个职业队阵容几乎都满足下表的条件。但把各位置的常用英雄按出场频率随机拼成阵容，满足的比例几乎一样（“随机对照”一列）：职业队按位置选常用英雄，就自然带齐了前排、控制和两种伤害，职业赛里基本不出现缺口，所以模型从职业赛里学不出“缺什么补什么”的力度。路人局里队友可能选出这样的缺口，因此这一项不靠模型学，按固定分值执行：缺硬性底线时，最后一手能补上的英雄加 {FLOOR_POINTS.must} 分、补不上的扣 {FLOOR_POINTS.must} 分；“最好有”的项目是 {FLOOR_POINTS.should} 分。
+                  </p>
+                  <table className="w-full text-[13px]">
+                    <thead><tr><Th>条件</Th><Th>级别</Th><Th>职业队阵容满足的比例</Th><Th>随机对照</Th></tr></thead>
+                    <tbody>
+                      {COMP_FLOORS.flatMap((f) =>
+                        (['must', 'should'] as const).flatMap((tier) => {
+                          const s = bundle.floors!.floors[f.key]?.[tier];
+                          return s ? [<tr key={f.key + tier}><Td>至少{s.min}个{f.label}</Td><Td>{tier === 'must' ? '硬性底线' : '最好有'}</Td><Td>{(s.pro * 100).toFixed(1)}%</Td><Td>{(s.shuffled * 100).toFixed(1)}%</Td></tr>] : [];
+                        }),
+                      )}
+                    </tbody>
+                  </table>
+                  <p className="text-[12px] text-mute">随机对照：每个位置按该位置近一年的出场频率独立抽一个英雄，共4万组。“坦克或战士”按官方主职业（副职业为坦克也算）；硬控、范围硬控、先手开团、清线按已核实的技能标签。</p>
+                </div>
+              )}
             </>
           )}
         </Sec>

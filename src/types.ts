@@ -152,6 +152,15 @@ export interface KplComps {
   lineups: { heroes: number[]; n: number; first: string; last: string }[];
 }
 
+/** 阵容底线的依据：近一年职业赛阵容里各条底线的满足比例，以及“各位置常用英雄随机拼”的对照比例 */
+export interface CompFloorStats {
+  generatedAt: string;
+  from: string;
+  to: string;
+  teams: number;
+  floors: Record<string, { must: { min: number; pro: number; shuffled: number } | null; should: { min: number; pro: number; shuffled: number } | null }>;
+}
+
 // ---------- 规则与关系 ----------
 
 export type Scene = '对线' | '团战' | '前期' | '后期' | '全局';
@@ -321,6 +330,8 @@ export interface Bundle {
   tags: TagDef[];
   patches: PatchNote[];
   kpl: Pick<KplStats, 'coverage' | 'heat' | 'pairs' | 'source' | 'resp' | 'short'> | null;
+  /** 阵容底线在职业赛阵容里的满足比例（展示依据用，不参与计分） */
+  floors: CompFloorStats | null;
   /** 由职业赛BP训练出的选人模型（各分项的系数）；没有时使用手工权重 */
   model: PickModel | null;
   comps: KplComps | null;

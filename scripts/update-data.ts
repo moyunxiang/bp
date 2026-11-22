@@ -42,6 +42,8 @@ async function main() {
   }
   // 4. 机制档案：重新校验原文引用；官方技能原文变化的英雄会被标为待复核
   run('校验并合并机制档案', 'scripts/build-profiles.ts', [], true);
+  // 4b. 阵容底线的职业赛依据（要用到机制档案里的标签和本地的职业赛原始数据）
+  if (!has('--skip-kpl')) run('阵容底线的职业赛依据', 'scripts/build-floors.ts');
   // 5. 解说（可选，需要 .env.local 里的 BILI_COOKIE）
   if (has('--commentary')) {
     run('按英雄读取教学视频字幕', 'scripts/commentary/hero-guides.ts');

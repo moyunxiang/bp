@@ -7,6 +7,8 @@ import type { Relation } from '../../engine/relations.ts';
 import { ConfidenceBadge, Delta, Empty, HeroAvatar, LaneBadge } from '../ui.tsx';
 import { EvidenceList, KindBadges, RelationCard } from '../Evidence.tsx';
 import { TeamGraph } from '../TeamGraph.tsx';
+import { teamGaps } from '../../engine/comp.ts';
+import { useEngine } from '../../lib/data.ts';
 
 export type RecTab = 'pick' | 'ban' | 'compare' | 'matchup' | 'play';
 
@@ -252,6 +254,40 @@ export function CompareTable({ recs, ids, onRemove, onPick, canPick }: { recs: R
         </tbody>
       </table>
       <p className="mt-2 text-[11.5px] text-dim">推荐分是各分项之和，不是胜率。差距在2分以内时可以认为两者相当，按自己的熟练度选。</p>
+    </div>
+  );
+}
+
+/** 选人时提示这一方的阵容还缺什么（按职业阵容的底线判断；从第三手起显示） */
+export function TeamGapBar({ team, who }: { team: HeroData[]; who: string }) {
+  const { bundle } = useEngine();
+  if (team.length < 2 || team.length >= 5) return null;
+  const gaps = teamGaps(team);
+  if (!gaps.length) return null;
+  const left = 5 - team.length;
+  const stats = bundle.floors;
+  const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
+  const why = (key: string, tier: 'must' | 'should', label: string) => {
+    const s = stats?.floors[key]?.[tier];
+    return s ? `近一年${stats!.teams}个职业队阵容中，${pct(s.pro)}至少有${s.min}个${label}` : '';
+  };
+  const must = gaps.filter((g) => g.needMust > 0);
+  const should = gaps.filter((g) => g.needMust === 0);
+  return (
+    <div className="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-md border border-line bg-panel2/50 px-2.5 py-1.5 text-[12px]" data-testid="team-gaps">
+      <span className="text-mute">{who}还缺</span>
+      {must.map((g) => (
+        <span key={g.floor.key} className="inline-flex h-[20px] items-center rounded bg-bad/15 px-1.5 text-bad" title={why(g.floor.key, 'must', g.floor.label)}>
+          {g.floor.label}
+        </span>
+      ))}
+      {should.map((g) => (
+        <span key={g.floor.key} className="inline-flex h-[20px] items-center rounded bg-warn/15 px-1.5 text-warn" title={why(g.floor.key, 'should', g.floor.label)}>
+          {g.have > 0 ? `第${g.have + 1}个` : ''}
+          {g.floor.label}
+        </span>
+      ))}
+      <span className="ml-auto text-[11.5px] text-dim">还剩{left}个位置 · 红色是硬伤，黄色最好有</span>
     </div>
   );
 }

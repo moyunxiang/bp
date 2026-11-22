@@ -9,7 +9,7 @@ import { MODE_INFO, PICK_ORDER, activeSlot, isComplete, newDraft, place, sequenc
 import { DEFAULT_WEIGHTS, HAND_MULT, multFor, recommendBans, recommendPicks, type Engine } from '../src/engine/recommend.ts';
 import { W, relationWeight, type Evidence } from '../src/engine/relations.ts';
 import { evalCond, verifiedTags } from '../src/engine/rules.ts';
-import { matchArchetypes, needsScore, substitutes, teamFeatures } from '../src/engine/comp.ts';
+import { COMP_FLOORS, FLOOR_POINTS, isBruiser, matchArchetypes, needsScore, substitutes, teamFeatures, teamGaps } from '../src/engine/comp.ts';
 import { matchHero, searchHeroes } from '../src/lib/search.ts';
 import { TIER_MIN, laneTiers } from '../src/engine/tiers.ts';
 import { buildPlaybook, type PlayContext } from '../src/engine/playbook.ts';
@@ -384,6 +384,54 @@ describe('阵容分析', () => {
     expect(notes.some((n) => n.text.includes('坦克') && n.delta > 0)).toBe(true);
     // 前两手不提阵容缺口
     expect(needsScore(hero('廉颇'), [hero('马可波罗')])).toEqual([]);
+  });
+
+  it('阵容底线：最后一手缺硬性底线时，能补的加满分、补不上的扣满分；越早越轻', () => {
+    // 四个人里没有坦克或战士（孙尚香、貂蝉、李白、瑶）
+    const four = ['孙尚香', '貂蝉', '李白', '瑶'].map(hero);
+    expect(four.some(isBruiser)).toBe(false);
+    expect(teamGaps(four).find((g) => g.floor.key === 'bruiser')!.needMust).toBe(1);
+    const fill = needsScore(hero('吕布'), four).find((n) => n.text.includes('坦克或战士'))!;
+    expect(fill.delta).toBe(FLOOR_POINTS.must);
+    const miss = needsScore(hero('小乔'), four).find((n) => n.text.includes('坦克或战士'))!;
+    expect(miss.delta).toBe(-FLOOR_POINTS.must);
+    // 只选了两个人时：能补的只加一部分，补不上的不扣分（后面还有位置）
+    const two = four.slice(0, 2);
+    const early = needsScore(hero('吕布'), two).find((n) => n.text.includes('坦克或战士'))!;
+    expect(early.delta).toBeGreaterThan(0);
+    expect(early.delta).toBeLessThan(FLOOR_POINTS.must);
+    expect(needsScore(hero('小乔'), two).some((n) => n.delta < 0)).toBe(false);
+    // 全是物理伤害时，最后一手补法术是硬性底线
+    const phys = ['吕布', '镜', '孙尚香', '张飞'].map(hero);
+    expect(teamGaps(phys).some((g) => g.floor.key === 'magic' && g.needMust === 1)).toBe(true);
+    expect(needsScore(hero('小乔'), phys).some((n) => n.text.includes('法术伤害') && n.delta === FLOOR_POINTS.must)).toBe(true);
+    expect(needsScore(hero('后羿'), phys).some((n) => n.text.includes('法术伤害') && n.delta === -FLOOR_POINTS.must)).toBe(true);
+    // 什么都不缺的阵容没有缺口
+    expect(teamGaps(['廉颇', '兰陵王', '貂蝉', '马可波罗', '张飞'].map(hero)).filter((g) => g.needMust > 0)).toEqual([]);
+  });
+
+  it('阵容底线会真正影响最后一手的排序：缺法术伤害时，前几名都能补法术', () => {
+    let d = setBanCount(newDraft('ranked'), 0);
+    ['吕布', '镜', '孙尚香', '张飞'].forEach((n, i) => (d = fill(d, pick('blue', i), n)));
+    ['后羿', '牛魔', '妲己', '赵云', '亚瑟'].forEach((n, i) => (d = fill(d, pick('red', i), n)));
+    const recs = recommendPicks(engine, d, { side: 'blue' });
+    for (const r of recs.slice(0, 5)) {
+      const p = r.parts.find((x) => x.key === 'needs')!;
+      expect(p.items.some((i) => i.text.includes('法术伤害') && i.delta > 0), r.hero.name).toBe(true);
+    }
+    // 系数不低于下限，分值按原样生效
+    expect(engine.model!.floors.needs).toBe(1);
+    for (const ph of [...engine.model!.phases.slice(1), ...(engine.model!.lanePhases ?? []).slice(1)]) expect(ph.mult.needs).toBeGreaterThanOrEqual(1);
+  });
+
+  it('阵容底线有职业赛依据：硬性底线在职业阵容里的满足比例不低于97%，“最好有”不低于88%', () => {
+    const s = bundle.floors!;
+    expect(s.teams).toBeGreaterThan(1000);
+    for (const f of COMP_FLOORS) {
+      const st = s.floors[f.key];
+      if (f.must) expect(st.must!.pro, f.key).toBeGreaterThanOrEqual(0.97);
+      if (f.should > f.must) expect(st.should!.pro, f.key).toBeGreaterThanOrEqual(0.88);
+    }
   });
 
   it('战术体系按条件命中，不硬凑', () => {

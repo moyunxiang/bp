@@ -16,7 +16,8 @@
 //   - 指定位置：只在能打“选手实际所打位置”的英雄里排（Top1/Top3/Top5），对应用户设定“我打某路”的用法。
 // 两种切分：2025训练→2026测试；以及最近一届赛事留出（用它之前的全部对局训练）。
 //
-// 用法：tsx scripts/backtest.ts [--no-write] [--no-rules] [--step-days=7]
+// 用法：tsx scripts/backtest.ts [--no-write] [--no-rules] [--step-days=7] [--floor-points=硬伤分,最好有分]
+//   --floor-points 只用于诊断（自动不写入文件）：换一组阵容底线分值，看它对命中率的影响。
 import { resolve } from 'node:path';
 import { ROOT, readJson, writeJson } from './lib/http.ts';
 import { POS_TO_LANE, isBlindDecider, loadBattles, type Battle } from './lib/kpl.ts';
@@ -25,11 +26,19 @@ import { assemble, loadInputs } from './lib/assemble.ts';
 import { makeEngine } from '../src/lib/data.ts';
 import { newDraft, place, type DraftState, type Side } from '../src/engine/draft.ts';
 import { DEFAULT_WEIGHTS, recommendPicks, type Engine, type PartKey } from '../src/engine/recommend.ts';
+import { FLOOR_POINTS } from '../src/engine/comp.ts';
 import type { BacktestMethod, BacktestReport, PickModel } from '../src/types.ts';
 
 const arg = (name: string) => process.argv.find((a) => a.startsWith(`--${name}=`))?.split('=')[1];
 const NO_RULES = process.argv.includes('--no-rules');
-const NO_WRITE = process.argv.includes('--no-write') || NO_RULES;
+const FLOOR_POINTS_ARG = arg('floor-points');
+const NO_WRITE = process.argv.includes('--no-write') || NO_RULES || !!FLOOR_POINTS_ARG;
+if (FLOOR_POINTS_ARG) {
+  const [must, should] = FLOOR_POINTS_ARG.split(',').map(Number);
+  if (!Number.isFinite(must) || !Number.isFinite(should)) throw new Error('--floor-points 的写法：--floor-points=6,2.5');
+  Object.assign(FLOOR_POINTS, { must, should });
+  console.log(`诊断：阵容底线分值改为 硬伤${must} / 最好有${should}`);
+}
 const STEP_DAYS = Number(arg('step-days') ?? 7);
 const MIN_TRAIN = 2000;
 
@@ -47,8 +56,10 @@ const PHASES: { name: string; fromOrder: number; toOrder: number }[] = [
 const phaseOf = (order: number) => PHASES.findIndex((p) => order >= p.fromOrder && order <= p.toOrder);
 /** 系数下限（系数已按“单组模型里分路匹配的系数=1”缩放，所以 1 表示保持手工权重的力度）。
  *  克制：训练目标是模仿职业队选人，学到的克制系数很小；网站的用途是按对方阵容给建议，所以不低于手工权重。
- *  分路：开局前两手队友还没选人，分路分项对所有英雄都一样，学到的系数是0；但用户指定“我打某路”时必须生效。 */
-const FLOORS: Record<string, number> = { counter: 1, lane: 1 };
+ *  分路：开局前两手队友还没选人，分路分项对所有英雄都一样，学到的系数是0；但用户指定“我打某路”时必须生效。
+ *  阵容底线：职业队按位置选常用英雄就自然带齐了前排、控制和两种伤害（随机拼各位置常用英雄，满足比例几乎一样），
+ *  职业赛里基本不出现缺口，所以学不出这一项的力度；路人局会出现缺口，按手工分值（系数1）执行。 */
+const FLOORS: Record<string, number> = { counter: 1, lane: 1, needs: 1 };
 
 /** 一组候选：分项矩阵 + 实际所选的下标 */
 interface View {
@@ -246,8 +257,8 @@ function report(test: Decision[], f: Fitted) {
     ['engine', '手工权重（原有6个分项）', sumOf(OLD)],
     ['fitted', '拟合：只重新拟合原有6个分项的系数', dot(f.old)],
     ['model_prev', '上一版模型（9个分项）', byPhase(f.prev)],
-    ['model_phase', '当前模型（11个分项），不设克制下限', byPhase(f.phase)],
-    ['model_final', '当前模型（11个分项），克制系数不低于1（线上使用）', byPhase(f.final)],
+    ['model_phase', '当前模型（11个分项），不设系数下限', byPhase(f.phase)],
+    ['model_final', '当前模型（11个分项），克制与阵容底线系数不低于1（线上使用）', byPhase(f.final)],
   ];
   const overall = methods.map(([id, name, sc]) => evaluate(test, id, name, sc));
   const phases: [string, (d: Decision) => boolean][] = [
@@ -363,7 +374,7 @@ async function main() {
     `2025训练、2026测试：当前模型Top10命中率${pct(get(rA, 'model_final').top10)}，上一版模型${pct(get(rA, 'model_prev').top10)}，手工权重${pct(get(rA, 'engine').top10)}，“出场次数+分路”基线${pct(get(rA, 'pop_lane').top10)}。` +
     `最近一届（${names.get(last) ?? last}）留出：当前模型${pct(get(rB, 'model_final').top10)}，上一版模型${pct(get(rB, 'model_prev').top10)}，手工权重${pct(get(rB, 'engine').top10)}。` +
     (adoptModel ? '模型更好，线上采用。' : '模型没有在两种切分上都更好，线上继续用手工权重。') +
-    `不设克制下限时分别为${pct(get(rA, 'model_phase').top10)}和${pct(get(rB, 'model_phase').top10)}：模型学到的克制系数很小，说明机制克制对预测职业队选人帮助不大；网站需要按对方阵容给建议，所以把克制分项保持在手工权重的力度。` +
+    `不设系数下限时分别为${pct(get(rA, 'model_phase').top10)}和${pct(get(rB, 'model_phase').top10)}：模型学到的克制系数和阵容底线系数都很小，说明这两项对预测职业队选人帮助不大（职业队的阵容几乎不出现缺前排、缺控制的情况）；网站需要按对方阵容给建议，路人局也会出现阵容缺口，所以这两项保持在手工分值的力度，命中率上的差距就是这样做的代价。` +
     `指定位置后（只在能打该位置的英雄里排），最近一届的前3命中率：专用系数${pct(getL(rB, 'model_lane').top3!)}，通用模型${pct(getL(rB, 'model_final').top3!)}，按该位置出场次数排${pct(getL(rB, 'lane_pop').top3!)}；` +
     (adoptLane ? '专用系数不差于通用模型，用户指定位置时采用专用系数。' : '专用系数没有更好，用户指定位置时仍用通用模型。');
 

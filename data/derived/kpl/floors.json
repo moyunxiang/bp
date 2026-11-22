@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-11-22T13:12:11.417Z",
+  "from": "2025-11-14",
+  "to": "2026-11-14",
+  "teams": 3430,
+  "floors": {
+    "hardCC": {
+      "must": {
+        "min": 1,
+        "pro": 0.993,
+        "shuffled": 0.9937
+      },
+      "should": {
+        "min": 2,
+        "pro": 0.9405,
+        "shuffled": 0.9291
+      }
+    },
+    "bruiser": {
+      "must": {
+        "min": 1,
+        "pro": 1,
+        "shuffled": 0.9982
+      },
+      "should": {
+        "min": 2,
+        "pro": 0.9137,
+        "shuffled": 0.8984
+      }
+    },
+    "magic": {
+      "must": {
+        "min": 1,
+        "pro": 1,
+        "shuffled": 1
+      },
+      "should": null
+    },
+    "physical": {
+      "must": {
+        "min": 1,
+        "pro": 0.9997,
+        "shuffled": 0.9999
+      },
+      "should": null
+    },
+    "aoeCC": {
+      "must": null,
+      "should": {
+        "min": 1,
+        "pro": 0.9554,
+        "shuffled": 0.9545
+      }
+    },
+    "engage": {
+      "must": null,
+      "should": {
+        "min": 1,
+        "pro": 0.9026,
+        "shuffled": 0.9119
+      }
+    },
+    "waveClear": {
+      "must": null,
+      "should": {
+        "min": 2,
+        "pro": 0.9391,
+        "shuffled": 0.9459
+      }
+    }
+  }
+}

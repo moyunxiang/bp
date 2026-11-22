@@ -12,8 +12,7 @@ export interface Weights {
   counterCap: number;
   synergyPerUnit: number;
   synergyCap: number;
-  /** 阵容需求各条提示的缩放 */
-  needsScale: number;
+  /** 阵容底线（缺前排、缺控制、伤害单一等）合计的上限；各条分值见 comp.ts 的 FLOOR_POINTS */
   needsCap: number;
   laneFit: number;
   laneMiss: number;
@@ -40,8 +39,7 @@ export const DEFAULT_WEIGHTS: Weights = {
   counterCap: 6,
   synergyPerUnit: 1.8,
   synergyCap: 5,
-  needsScale: 0.3,
-  needsCap: 4,
+  needsCap: 12,
   laneFit: 10,
   laneMiss: -25,
   metaRange: 12,
@@ -282,7 +280,7 @@ export function recommendPicks(engine: Engine, d: DraftState, opts: RecommendOpt
     parts.push({ key: 'synergy', value: round1(synValue), items: synItems.sort((a, b) => b.delta - a.delta) });
 
     // ---- 阵容需求 ----
-    const needItems = needsScore(h, allies).map((n) => ({ ...n, delta: round1(n.delta * W.needsScale) }));
+    const needItems = needsScore(h, allies);
     parts.push({ key: 'needs', value: round1(clamp(needItems.reduce((s, x) => s + x.delta, 0), -W.needsCap, W.needsCap)), items: needItems });
 
     // ---- 版本因素 ----
