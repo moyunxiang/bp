@@ -13,7 +13,7 @@
 
 ## 用户已确认的决定（2026-11-22）
 
-- 部署：GitHub Pages，公开仓库`moyunxiang/hok-bp`，已授权创建仓库和push（含后续数据更新）。
+- 部署：GitHub Pages，公开仓库`moyunxiang/bp`（2026-11-22应用户要求由`hok-bp`改名，网址随之变为`/bp/`），已授权创建仓库和push（含后续数据更新）。
 - 官方内容：站内展示官方技能原文；图片热链腾讯CDN，不入库；注明来源。
 - 解说：用用户自己的B站Cookie（写在`.env.local`）低频抓AI字幕，仓库只留提炼结论和视频链接。
 - 子任务模型只用Opus或Sonnet，不用Fable。
@@ -29,7 +29,7 @@
 - 测试：`npm test` 40项通过；`npx playwright test` 10项通过（含纯键盘录完10禁10选）；`npm run validate` 错误0。
 - 选人模型：条件logit，9个分项按阶段拟合，测试集Top10命中率69.2%（手工权重58.2%），已上线使用。
 - 教学内容（连招、细节、克制关系）：从B站教学视频字幕提炼，逐条核对出处；规则表15条。
-- 部署：`https://moyunxiang.com/hok-bp/`（GitHub Pages，推送到main后由Actions自动校验、测试、构建、发布）。
+- 部署：`https://moyunxiang.com/bp/`（GitHub Pages，推送到main后由Actions自动校验、测试、构建、发布）。
 - 正式回测（训练2025、测试2026共15470次选人决策）已完成并写入数据说明页。
 
 **未完成**：教学内容还没覆盖全部英雄（抓取和提炼进行中）。见文末“交接”。
