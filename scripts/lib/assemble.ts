@@ -19,6 +19,7 @@ import {
   type PatchNote,
   type Rule,
   type PickModel,
+  type PlayEntry,
   type TagDef,
   CampData,
 } from '../../src/types.ts';
@@ -43,6 +44,7 @@ export interface Inputs {
   rules: Rule[];
   tags: TagDef[];
   archetypes: Archetype[];
+  playbook: PlayEntry[];
   aliases: Record<string, string[]>;
   laneOverrides: Record<string, number[]>;
 }
@@ -66,6 +68,7 @@ export async function loadInputs(): Promise<Inputs> {
     rules: (await readJson<{ rules: Rule[] }>(D('curated/rules.json'))).rules,
     tags: (await readJson<{ tags: TagDef[] }>(D('curated/tags.json'))).tags,
     archetypes: (await readJson<{ archetypes: Archetype[] }>(D('curated/archetypes.json'))).archetypes,
+    playbook: (await optional<{ entries: PlayEntry[] }>(D('curated/playbook.json'), { entries: [] })).entries,
     aliases: (await readJson<{ aliases: Record<string, string[]> }>(D('curated/aliases.json'))).aliases,
     laneOverrides: (await optional<{ lanes: Record<string, number[]> }>(D('curated/lane-overrides.json'), { lanes: {} })).lanes,
   };
@@ -187,6 +190,7 @@ export function assemble(inp: Inputs): { bundle: Bundle; staleEdges: number } {
     model: inp.model,
     comps: inp.comps,
     archetypes: inp.archetypes,
+    playbook: inp.playbook,
     equipment: inp.equipment,
     commentary: inp.commentary,
     guides: Object.fromEntries(inp.guides.filter((g) => byId.has(g.id)).map((g) => [g.id, g])),

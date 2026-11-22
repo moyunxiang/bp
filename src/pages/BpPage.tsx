@@ -11,6 +11,7 @@ import { Segmented } from '../components/ui.tsx';
 import { BanRow, TeamColumn } from '../components/bp/Board.tsx';
 import { Picker, usePickerResults, type PickerFilter } from '../components/bp/Picker.tsx';
 import { BanList, CompareTable, Matchup, PickList, type RecTab } from '../components/bp/RecPanel.tsx';
+import { PlaybookView } from '../components/play/PlaybookView.tsx';
 
 const SIDE_NAME: Record<Side, string> = { blue: '蓝方', red: '红方' };
 
@@ -76,6 +77,11 @@ export function BpPage() {
   const blueTeam = useMemo(() => pickedIds(draft, 'blue').map((id) => byId.get(id)!).filter(Boolean), [draft, byId]);
   const redTeam = useMemo(() => pickedIds(draft, 'red').map((id) => byId.get(id)!).filter(Boolean), [draft, byId]);
 
+  // 手动指定的分路（与上面的队伍同序），供“打法”里的分路对位使用
+  const blueLocks = useMemo(() => draft.laneLocks.blue.filter((_, i) => draft.picks.blue[i] != null && byId.has(draft.picks.blue[i]!)), [draft, byId]);
+  const redLocks = useMemo(() => draft.laneLocks.red.filter((_, i) => draft.picks.red[i] != null && byId.has(draft.picks.red[i]!)), [draft, byId]);
+  const mine = prefs.mySide === 'blue';
+
   const pickSideFull = draft.picks[side].every((x) => x != null);
   const pickRecs = useMemo(() => (pickSideFull ? [] : recommendPicks(engine, draft, { side, pool: usePool ? pool : null, wantLane })), [engine, draft, side, usePool, pool, wantLane, pickSideFull]);
   const banRecs = useMemo(
@@ -91,6 +97,11 @@ export function BpPage() {
     if (activeKind === 'ban') setTab('ban');
     else if (activeKind === 'pick') setTab((t) => (t === 'ban' ? 'pick' : t));
   }, [activeKind]);
+
+  // 双方选满后自动切到“打法”
+  useEffect(() => {
+    if (done) setTab('play');
+  }, [done]);
 
   useEffect(() => {
     if (!notice) return;
@@ -377,10 +388,11 @@ export function BpPage() {
                 { value: 'pick', label: '选人' },
                 { value: 'ban', label: '禁用' },
                 { value: 'compare', label: `对比${compare.length ? `(${compare.length})` : ''}` },
-                { value: 'matchup', label: '双方关系' },
+                { value: 'matchup', label: '关系' },
+                { value: 'play', label: '打法' },
               ]}
             />
-            <span className="text-[11px] text-dim">推荐分不是胜率</span>
+            <span className="text-[11px] text-dim">{tab === 'play' ? '通用战术说明' : '推荐分不是胜率'}</span>
           </div>
           <div className="min-h-0 flex-1 overflow-y-auto p-3">
             {(tab === 'pick' || tab === 'ban') && <div className="mb-2 text-[12.5px] text-sub">{recTitle}</div>}
@@ -393,7 +405,7 @@ export function BpPage() {
                 onToggleCompare={toggleCompare}
                 onPick={(h) => placeHero(h, active?.kind === 'pick' ? active : null)}
                 canPick={active?.kind === 'pick'}
-                emptyText={done ? 'BP已完成。可以在“双方关系”里查看两套阵容的克制与配合。' : pickSideFull ? `${SIDE_NAME[side]}已经选满。` : usePool ? '英雄池里没有当前可选的英雄。可以切到“理论最优”。' : '没有可推荐的英雄。'}
+                emptyText={done ? 'BP已完成。“打法”里有这一局怎么打，“关系”里有两套阵容的克制与配合。' : pickSideFull ? `${SIDE_NAME[side]}已经选满。` : usePool ? '英雄池里没有当前可选的英雄。可以切到“理论最优”。' : '没有可推荐的英雄。'}
               />
             )}
             {tab === 'ban' && (
@@ -408,6 +420,7 @@ export function BpPage() {
             )}
             {tab === 'compare' && <CompareTable recs={pickRecs} ids={compare} onRemove={(id) => setCompare((c) => c.filter((x) => x !== id))} onPick={(h) => placeHero(h, active?.kind === 'pick' ? active : null)} canPick={active?.kind === 'pick'} />}
             {tab === 'matchup' && <Matchup blue={blueTeam} red={redTeam} />}
+            {tab === 'play' && <PlaybookView ally={mine ? blueTeam : redTeam} enemy={mine ? redTeam : blueTeam} allyLocks={mine ? blueLocks : redLocks} enemyLocks={mine ? redLocks : blueLocks} compact={!prefs.research} />}
             {tab === 'pick' && pickRecs.length > 0 && (
               <p className="mt-3 text-[11.5px] leading-relaxed text-dim">
                 推荐分由克制、配合、阵容需求、分路、职业赛热度等分项相加得到，点开每一行可以看到各项来源。没有已核实关系的英雄对不会被假设为克制或配合。

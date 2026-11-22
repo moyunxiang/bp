@@ -75,6 +75,37 @@ function ArchetypeDetail({ a, instances, hasPro }: { a: Archetype; instances: Pr
         </div>
       </section>
 
+      {(a.play || a.against) && (
+        <div className="grid grid-cols-2 gap-4" data-testid="arch-play">
+          {a.play && (
+            <section className="panel p-4">
+              <h3 className="panel-title">局内怎么打</h3>
+              <dl className="mt-3 grid grid-cols-[3.4em_minmax(0,1fr)] gap-x-3 gap-y-2 text-[13px] leading-relaxed">
+                {(
+                  [
+                    ['early', '前期'],
+                    ['mid', '中期'],
+                    ['fight', '团战'],
+                    ['avoid', '不要做'],
+                  ] as const
+                ).map(([k, label]) => (
+                  <div key={k} className="contents">
+                    <dt className={k === 'avoid' ? 'text-bad' : 'text-mute'}>{label}</dt>
+                    <dd className="text-sub">{a.play![k]}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          )}
+          {a.against && (
+            <section className="panel p-4">
+              <h3 className="panel-title">对面是这个体系时怎么打</h3>
+              <p className="prose-cn mt-3 text-[13px] leading-relaxed text-sub">{a.against}</p>
+            </section>
+          )}
+        </div>
+      )}
+
       <div className="grid grid-cols-2 gap-4">
         <section className="panel p-4">
           <h3 className="panel-title">判定条件</h3>

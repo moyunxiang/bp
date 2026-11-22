@@ -8,7 +8,7 @@ import { ConfidenceBadge, Delta, Empty, HeroAvatar, LaneBadge } from '../ui.tsx'
 import { EvidenceList, KindBadges, RelationCard } from '../Evidence.tsx';
 import { TeamGraph } from '../TeamGraph.tsx';
 
-export type RecTab = 'pick' | 'ban' | 'compare' | 'matchup';
+export type RecTab = 'pick' | 'ban' | 'compare' | 'matchup' | 'play';
 
 function ScoreBadge({ score }: { score: number }) {
   return (

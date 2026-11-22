@@ -244,6 +244,46 @@ export interface Archetype {
   winCondition: string;
   /** 这一体系通常怕什么：用标签描述，界面上据此列出具体英雄 */
   weakTo: { label: string; cond: Cond }[];
+  /** 局内打法（通用战术说明）：前期、中期、团战、不要做什么 */
+  play?: { early: string; mid: string; fight: string; avoid: string };
+  /** 对面是这个体系时怎么打 */
+  against?: string;
+}
+
+// ---------- 局内打法 ----------
+
+/** 阵容特征（与阵容分析里的判定一致）；physical/magic/mixed 是主要伤害类型 */
+export type PlayFeature = 'frontline' | 'hardCC' | 'aoeCC' | 'engage' | 'protect' | 'waveClear' | 'physical' | 'magic' | 'mixed';
+
+/**
+ * 触发条件的一句：某一方满足 cond（或 feature）的英雄数在 [min, max] 之间。
+ * 只写 min（默认1）是“有”；写了 max 是“没有/不超过”，只在该方选满5人、且档案都可用时才判断。
+ */
+export interface PlayClause {
+  side: 'ally' | 'enemy';
+  /** 给命中的英雄起名，供 text 里用 {名字} 引用 */
+  as?: string;
+  cond?: Cond;
+  feature?: PlayFeature;
+  min?: number;
+  max?: number;
+}
+
+export type PlaySection = 'plan' | 'opening' | 'danger' | 'build';
+
+/** 打法条目：按双方阵容特征触发的通用战术说明，不是数据结论 */
+export interface PlayEntry {
+  id: string;
+  /** plan=我方怎么打；opening=对面的突破口；danger=要防的点；build=出装与召唤师技能 */
+  section: PlaySection;
+  title: string;
+  /** 可用 {名字} 引用 when 里命中的英雄，用 {items} 引用 items 关键词匹配到的装备 */
+  text: string;
+  when: PlayClause[];
+  /** 这条说法依据的通用机制 */
+  basis: string;
+  /** 装备原文关键词：列出官方装备说明里含有该关键词的装备 */
+  items?: string;
 }
 
 // ---------- 前端数据包 ----------
@@ -285,6 +325,8 @@ export interface Bundle {
   model: PickModel | null;
   comps: KplComps | null;
   archetypes: Archetype[];
+  /** 局内打法条目 */
+  playbook: PlayEntry[];
   equipment: {
     items: { id: number; name: string; desc: string }[];
     runes: { id: number; name: string; color: string; desc: string }[];

@@ -38,6 +38,8 @@ async function main() {
     withKpl: kinds.kpl,
     withCommentary: kinds.commentary,
     rules: bundle.rules.length,
+    playbook: bundle.playbook.length,
+    archetypes: bundle.archetypes.length,
     pairCoveragePct: +((pairsWithAny / totalPairs) * 100).toFixed(1),
     patches: bundle.patches.length,
     commentary: bundle.commentary.length,

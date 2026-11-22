@@ -29,7 +29,7 @@ export function KindBadges({ relation }: { relation: Relation }) {
   );
 }
 
-function TagQuotes({ hero, tags, notes }: { hero: HeroData; tags: ProfileTag[]; notes: string[] }) {
+export function TagQuotes({ hero, tags, notes }: { hero: HeroData; tags: ProfileTag[]; notes: string[] }) {
   const tagMap = useTagMap();
   return (
     <div className="mt-1.5">

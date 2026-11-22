@@ -9,6 +9,7 @@ import { EvidenceList, KindBadges, RelationCard } from '../Evidence.tsx';
 import { HeroAvatar, LaneBadge } from '../ui.tsx';
 import { DAMAGE_HOW, DAMAGE_NAME, FEATURES, LOW_FIT, PROFILE_STATE, laneFitText, summarize } from './analysis.ts';
 import { HeroChips, LimitedChip, Note, Toggle, resolveHeroes, sameGroup, useTagName } from './shared.tsx';
+import { PlaybookView } from '../play/PlaybookView.tsx';
 
 function Block({ title, how, children }: { title: string; how?: ReactNode; children: ReactNode }) {
   return (
@@ -53,6 +54,9 @@ export function CompAnalysis({ heroIds }: { heroIds: number[] }) {
       {heroes.length < 3 && <Note>目前只有{heroes.length}个英雄。阵容构成、战术体系等项在3–5人时才有参考意义，下面的结果只按已选英雄计算。</Note>}
 
       <LanesBlock s={s} />
+      <Block title="局内打法" how="命中的体系给出前期、中期、团战的打法；其余条目按这套阵容的官方职业和已核实技能标签触发。都是通用战术说明，不是数据结论。">
+        <PlaybookView ally={heroes} ownOnly />
+      </Block>
       <FeaturesBlock s={s} tagName={tagName} />
       <ArchetypeBlock s={s} />
       <SynergyBlock heroes={heroes} getSynergy={(a, b) => rel.getSynergy(a, b)} />

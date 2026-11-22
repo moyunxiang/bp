@@ -137,6 +137,7 @@ export function AboutPage() {
             <Stat label="技能数" value={n(c.skills)} />
             <Stat label="官方关系边" value={n(c.officialEdges)} />
             <Stat label="规则条数" value={n(c.rules)} />
+            <Stat label="打法条目" value={n(c.playbook)} />
             <Stat label="计分关系总数" value={n(c.relationsScored)} />
             <Stat label="其中克制" value={n(c.counterRelations)} />
             <Stat label="其中配合" value={n(c.synergyRelations)} />
@@ -337,6 +338,7 @@ export function AboutPage() {
         <Sec id="about-limits" title="已知限制">
           <ul className="list-disc pl-5">
             <li>路人局数据只有王者营地公开页面给出的部分：每个位置热度最高的10个英雄的档位、胜率、登场率、禁用率。完整榜单和英雄之间的对位胜率需要在营地App里登录才能看到，没有使用，所以路人局数据只用于“分路梯度”页和英雄页的展示，不参与推荐计分。</li>
+            <li>“打法”（BP助手、阵容库、阵容对比里）的文字是通用战术说明：由打法表（{n(c.playbook)}条）和战术体系定义（{n(c.archetypes)}个）给出，按双方阵容的官方职业和已核实技能标签触发，每条都能展开看到触发它的英雄和技能原文。它们是人工撰写、经另一个模型复核的内容，没有用对局数据验证过，不代表胜率；其中的集火目标和分路对位来自关系库的证据计分。</li>
             <li>职业赛是系列赛全局BP，与单局排位不同，所以只使用了每个系列第一局的禁选次数、选手分路和同队共现，不计算胜率。</li>
             <li>官方关系每个英雄只有6条，且部分说明撰写时间较早。</li>
             <li>抖音等需要登录的平台未使用。</li>

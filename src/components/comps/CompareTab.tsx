@@ -8,6 +8,8 @@ import type { Relation } from '../../engine/relations.ts';
 import { KindBadges, RelationCard } from '../Evidence.tsx';
 import { Empty, HeroAvatar, LaneBadge } from '../ui.tsx';
 import { CompAnalysis } from './CompAnalysis.tsx';
+import { PlaybookView } from '../play/PlaybookView.tsx';
+import { Segmented } from '../ui.tsx';
 import { DAMAGE_NAME, FEATURES, LOW_FIT, summarize, type CompSummary } from './analysis.ts';
 import { Note, Toggle, graphLink, parseIds, resolveHeroes, sameGroup, useProComps, useTagName } from './shared.tsx';
 import type { ParamPatch } from './shared.tsx';
@@ -119,6 +121,7 @@ function Comparison({ A, B }: { A: Resolved; B: Resolved }) {
   const sa = useMemo(() => summarize(A.heroes, bundle.archetypes, tagName), [A, bundle]);
   const sb = useMemo(() => summarize(B.heroes, bundle.archetypes, tagName), [B, bundle]);
   const [full, setFull] = useState(false);
+  const [view, setView] = useState<'A' | 'B'>('A');
 
   const overlap = A.heroes.filter((h) => B.heroes.some((x) => x.id === h.id || sameGroup(x, h)));
   const { aOver, bOver, total } = useMemo(() => {
@@ -193,6 +196,24 @@ function Comparison({ A, B }: { A: Resolved; B: Resolved }) {
           <CounterList title="A克制B" tone="text-blue" pairs={aOver} sum={sum(aOver)} />
           <CounterList title="B克制A" tone="text-red" pairs={bOver} sum={sum(bOver)} />
         </div>
+      </section>
+
+      <section className="panel p-4" id="compare-play">
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <h2 className="panel-title">对阵打法</h2>
+            <p className="mt-0.5 text-[12px] text-mute">站在其中一方的角度：这一局怎么打、对面的突破口、要防的点、出装针对和分路对位。</p>
+          </div>
+          <Segmented<'A' | 'B'>
+            value={view}
+            onChange={setView}
+            options={[
+              { value: 'A', label: <span className="text-blue">我是A</span> },
+              { value: 'B', label: <span className="text-red">我是B</span> },
+            ]}
+          />
+        </div>
+        {overlap.length > 0 ? <Note tone="warn">两边有相同英雄，实际对局中不会出现，不给出对阵打法。</Note> : <PlaybookView key={view} ally={view === 'A' ? A.heroes : B.heroes} enemy={view === 'A' ? B.heroes : A.heroes} />}
       </section>
 
       <section className="panel p-4">

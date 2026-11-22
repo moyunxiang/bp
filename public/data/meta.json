@@ -18,6 +18,8 @@
     "withKpl": 107,
     "withCommentary": 105,
     "rules": 15,
+    "playbook": 61,
+    "archetypes": 7,
     "pairCoveragePct": 33.6,
     "patches": 40,
     "commentary": 107,

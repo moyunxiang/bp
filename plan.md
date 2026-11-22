@@ -19,16 +19,17 @@
 - 子任务模型只用Opus或Sonnet，不用Fable。
 - 提交不加任何Claude署名。
 
-## 当前状态（2026-11-22 20:05 HKT）
+## 当前状态（2026-11-22 21:10 HKT）
 
 **已完成并验证**：
 - 数据链路：官方英雄资料（140英雄、570技能、829条官方关系边）、正式服公告（近200天79条）、KPL逐局BP（2025–2026全部赛事，可用3082局）、王者营地英雄榜（公开分享页接口）抓取与聚合、数据包生成与校验。
 - 机制档案：140/140已盲审，标签一致率90.0%，已核实标签1429条；规则表15条；计分关系约3700条，英雄对覆盖率约34%。
 - 推荐引擎：分路推断、BP规则（排位/巅峰/自由，禁用位可调，多形态互斥，限时英雄排除）、Pick/Ban评分、可信程度、阵容分析、替代英雄。
+- 局内打法（`src/engine/playbook.ts`）：我方怎么打、对面的突破口、要防的点、出装针对、分路对位。文字来自打法表`data/curated/playbook.json`（61条，初稿经独立复核后改写38条）和7个体系的`play`/`against`，按双方阵容的官方职业与已核实标签触发；集火目标和分路对位由关系库净克制权重算出。入口：BP助手“打法”标签（选满后自动切换）、阵容分析的“局内打法”、阵容对比的“对阵打法”、体系页。
 - 选人模型：条件logit，11个分项按阶段拟合（另有“指定位置”专用系数），由`scripts/backtest.ts`训练并写入`data/derived/model.json`。
-- 页面：BP助手、英雄百科（列表+详情）、分路梯度（营地各段位/职业赛）、关系图谱、阵容库、我的、数据说明。
+- 页面：BP助手（含打法）、英雄百科（列表+详情）、分路梯度（营地各段位/职业赛）、关系图谱、阵容库（含局内打法与对阵打法）、我的、数据说明。
 - 教学内容（连招、细节、克制关系）：134个英雄有内容（连招397、细节1167、克制/配合说法105）；逐条核对字幕出处；克制说法另经独立复核（210条里剔除105条）。没有内容的6个：莉莉安、绯泪、卡芬妮、皮皮、索文（B站没有合适的带字幕教学视频）、猪八戒（视频里没有可提炼的教学内容）。
-- 测试：`npm test` 44项、`npx playwright test` 11项、`npm run validate` 错误0。
+- 测试：`npm test` 51项、`npx playwright test` 12项、`npm run validate` 错误0。
 - 部署：`https://moyunxiang.com/bp/`（GitHub Pages）。推送到main后自动校验、测试、构建、发布；另有每天北京时间06:30的定时任务刷新营地英雄榜后重新发布。
 
 ## 关键结论
@@ -53,13 +54,13 @@
 
 | 位置 | 内容 |
 |---|---|
-| `src/engine/` | `recommend.ts`（评分与权重）、`tiers.ts`（职业赛分路梯度）、`relations.ts`（证据权重与关系索引）、`rules.ts`、`lanes.ts`、`draft.ts`、`comp.ts` |
-| `src/pages/`、`src/components/` | 各页面；`components/bp/`是BP助手 |
+| `src/engine/` | `playbook.ts`（局内打法）、`recommend.ts`（评分与权重）、`tiers.ts`（职业赛分路梯度）、`relations.ts`（证据权重与关系索引）、`rules.ts`、`lanes.ts`、`draft.ts`、`comp.ts` |
+| `src/pages/`、`src/components/` | 各页面；`components/bp/`是BP助手；`components/play/PlaybookView.tsx`是打法视图（BP、阵容库共用） |
 | `scripts/` | `fetch-*`（含`fetch-camp`）、`outcome-test`、`parse-official`、`build-profiles`、`build-kpl`、`build-data`、`validate`、`backtest`、`update-data`、`commentary/*` |
-| `data/curated/` | `tags.json`、`rules.json`、`archetypes.json`、`aliases.json`、`heroes/`、`review/`、`adjudication/`、`stamps.json` |
+| `data/curated/` | `tags.json`、`rules.json`、`archetypes.json`（含每个体系的分阶段打法）、`playbook.json`（打法表）、`aliases.json`、`heroes/`、`review/`、`adjudication/`、`stamps.json` |
 | `data/derived/` | 官方资料、公告、KPL聚合、营地英雄榜`camp.json`、档案合并结果、回测报告、选人模型`model.json`、胜负检验`outcome-test.json` |
 | `data/raw/` | 原始抓取结果，不进仓库（可重新抓取） |
-| `docs/curation/` | 档案撰写、盲审、裁定、解说提炼规范 |
+| `docs/curation/` | 档案撰写、盲审、裁定、解说提炼规范；`playbook.md`是打法表的写法规范 |
 | `user/profile.json` | 英雄池、偏好、收藏的公开默认值 |
 
 ## 运行与验收命令
@@ -82,6 +83,7 @@ npx tsx scripts/shot.ts <png> <hash路径>   # 用本机Chrome以1440宽度截�
 - 排位选人顺序（蓝1→红2→蓝2→红2→蓝2→红1）无官方文本，为**假设** → 禁用位数量可配置，自由模式不限顺序。
 - 多形态英雄（元流之子）禁用时按形态计、选人时互斥：职业赛规则如此，排位是否相同**未验证**。
 - 规则表里的“通用机制”（如压制不受霸体影响）是人工写的，没有逐条找到官方出处。
+- 打法表和体系打法是模型撰写、另一个模型复核的通用战术说明，**没有用对局数据验证**；同一条目对所有满足触发条件的英雄说同样的话。界面上已标注“不是数据结论”。
 - 用Cookie自动读B站字幕可能触发风控，协议条款未核实 → 低频、有上限、遇风控即停。
 - 本机设有`HTTPS_PROXY`；脚本访问国内域名直连；Playwright访问本地预览服务需排除代理（已在配置里处理）。
 
@@ -100,11 +102,16 @@ KPL复盘页面、BO5/BO7模拟、全局大关系网、社区、截图识别、�
 - 抓第三方站点（如苏苏的荣耀助手）的接口拿完整路人局数据（个人站点、无许可，不做）。
 - 把营地热度前10放进推荐评分（覆盖不全，会系统性低估榜外英雄；留给用户决定）。
 
+## 待办（用户2026-11-22指定留作待办）
+
+- **王者营地完整数据**：完整英雄榜、英雄详情里的克制/被克制（`getheroextrainfo`的`kzInfo`/`bkzInfo`）、最佳出装等接口都要App登录信息（`msdkEncodeParam`、`sig`、`msdkToken`，来自App内的JS桥，不在浏览器Cookie里）。做法：用户在手机上抓一次营地App的请求，把登录信息放进本地`.env.local`（不进仓库），先拿一个英雄验证克制字段的内容，再决定是否接入关系库。登录信息会过期，过期后要重抓。未开始。
+
 ## 交接
 
 - 新会话先读本文件，再运行 `npm test && npm run validate` 确认现状；历史原因查 `log.md`。
 - 教学内容流程：`python3 scripts/commentary/refresh-cookie.py` → `npx tsx scripts/commentary/hero-guides.ts [--heroes=名字 --redo]` → `prepare-guides.ts` → 子任务（只用Opus/Sonnet）按 `docs/curation/guides.md` 每3个英雄一组提炼 → `review-matchups.ts --prepare` → Opus子任务按“克制说法复核”一节写结论 → `review-matchups.ts --apply` → `build-guides.ts && build.ts && npm run build:data && npm run validate`。被替换的旧提炼结果在 `data/raw/commentary/distilled/_replaced/`。
 - 选人模型：`npm run backtest` 重新评估并重写 `data/derived/model.json`；职业赛数据更新后建议重跑。新增分项时注意：`model.json` 里没有的分项系数默认按1处理，必须先重训再发布。
 - 定时任务：`.github/workflows/deploy.yml` 的 `schedule`。GitHub会在仓库60天没有活动后停掉定时任务，届时推送一次即可恢复。
-- 待用户决定：①要不要用自己的营地App登录信息（手机抓包取得，会过期）拿完整榜单和对位胜率；②营地热度是否进入排位模式的推荐评分；③克制分项系数下限1；④三条规则权重的调整；⑤镜与王昭君的官方关系与用户看法相反（可加“我不认同这条”的开关）；⑥连招数字按官方技能顺序显示（用户自己的键位把镜的3、4对调）；⑦排位选人顺序与元流之子禁用规则两个假设。
+- 待用户决定：①（已转为上面的待办）营地完整数据；②营地热度是否进入排位模式的推荐评分；③克制分项系数下限1；④三条规则权重的调整；⑤镜与王昭君的官方关系与用户看法相反（可加“我不认同这条”的开关）；⑥连招数字按官方技能顺序显示（用户自己的键位把镜的3、4对调）；⑦排位选人顺序与元流之子禁用规则两个假设。
+- 打法表改动流程：按`docs/curation/playbook.md`改`playbook.json`/`archetypes.json` → `npm run build:data && npm run validate && npm test`；内容改动较大时再让一个Opus子任务按规范复核。已知未处理的标签问题：亚连的队友免控只对刀锋宝贝有效、大乔的解控绑定回城传送、嫦娥的“超远支援”值得复核、没有英雄有已核实的`anti_dash`。
 - 回滚：线上内容由main分支决定，`git revert` 后推送即可恢复上一版；去掉每日刷新只需删掉工作流里的`schedule`和那一步。

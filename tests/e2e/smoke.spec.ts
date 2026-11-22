@@ -53,10 +53,22 @@ test('BP助手：纯键盘录完一局（10禁10选），推荐随之更新，�
   await expect(page.getByText(/马可波罗在这个位置不可用/)).toBeVisible();
   await expect(page.getByLabel('红方5楼：亚瑟')).toBeVisible();
 
+  // 选满后自动切到“打法”：我方怎么打、对面的突破口、要防的点、分路对位
+  await page.keyboard.press('Escape');
+  await page.keyboard.press('Escape');
+  const play = page.getByTestId('playbook');
+  await expect(play).toBeVisible();
+  for (const title of ['我方怎么打', '对面的突破口', '要防的点', '分路对位']) await expect(play.getByRole('heading', { name: title })).toBeVisible();
+  await expect(play.locator('[data-play-lane]')).toHaveCount(5);
+  // 对面后羿能照出隐身，我方兰陵王会被提醒；点开能看到技能原文依据
+  const danger = play.locator('[data-play="danger_reveal"]');
+  await expect(danger).toContainText('兰陵王');
+  await danger.getByRole('button').click();
+  await expect(danger).toContainText('依据的通用机制');
+  await expect(danger.locator('.quote').first()).toBeVisible();
+
   // 双方关系图
-  await page.keyboard.press('Escape');
-  await page.keyboard.press('Escape');
-  await page.getByRole('button', { name: '双方关系' }).click();
+  await page.getByRole('button', { name: '关系', exact: true }).click();
   await expect(page.locator('svg').filter({ hasText: '马可波罗' }).first()).toBeVisible();
 
   // 刷新后保留当前BP
@@ -169,6 +181,29 @@ test('阵容库：体系、职业赛阵容、自定义阵容', async ({ page }) 
   await expect(page.getByText(/不是胜率/).first()).toBeVisible();
   await page.getByRole('button', { name: /我的阵容/ }).click();
   await expect(page.getByText(/浏览器/).first()).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test('阵容库：体系和阵容都有局内打法，阵容对比给出对阵打法', async ({ page }) => {
+  const errors = watchErrors(page);
+  // 体系页：分阶段打法和应对办法
+  await page.goto('./#/comps?tab=archetypes&arch=engage');
+  const arch = page.getByTestId('arch-play');
+  for (const t of ['局内怎么打', '前期', '中期', '团战', '不要做', '对面是这个体系时怎么打']) await expect(arch.getByText(t, { exact: true })).toBeVisible();
+
+  // 阵容对比：马可波罗 蔡文姬 廉颇 兰陵王 貂蝉 对 后羿 张飞 妲己 李白 亚瑟
+  await page.goto('./#/comps?tab=compare&a=132-184-105-153-141&b=169-171-109-131-166');
+  const play = page.locator('#compare-play');
+  await expect(play.getByRole('heading', { name: '对阵打法' })).toBeVisible();
+  await expect(play.locator('[data-play="plan_stealth"]')).toContainText('兰陵王');
+  await expect(play.locator('[data-play-against="engage"]')).toBeVisible();
+  await expect(play.locator('[data-play="open_protector"]')).toContainText('张飞');
+  await expect(play.locator('[data-play-lane]')).toHaveCount(5);
+  // 换成B的视角：隐身从“我方打法”变成“要防的点”
+  await play.getByRole('button', { name: '我是B' }).click();
+  await expect(play.locator('[data-play="danger_stealth"]')).toContainText('兰陵王');
+  await expect(play.locator('[data-play="plan_stealth"]')).toHaveCount(0);
+  await expect(play.locator('[data-play-archetype="engage"]')).toBeVisible();
   expect(errors).toEqual([]);
 });
 

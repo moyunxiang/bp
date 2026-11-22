@@ -12,6 +12,7 @@ import { evalCond, verifiedTags } from '../src/engine/rules.ts';
 import { matchArchetypes, needsScore, substitutes, teamFeatures } from '../src/engine/comp.ts';
 import { matchHero, searchHeroes } from '../src/lib/search.ts';
 import { TIER_MIN, laneTiers } from '../src/engine/tiers.ts';
+import { buildPlaybook, type PlayContext } from '../src/engine/playbook.ts';
 import { LANES } from '../src/types.ts';
 
 let bundle: Bundle;
@@ -442,6 +443,125 @@ describe('分路梯度', () => {
     const a = recommendPicks(engine, d, { side: 'blue' }).slice(0, 10).map((r) => [r.hero.id, r.score]);
     const b = recommendPicks(makeEngine({ ...bundle, camp: null }), d, { side: 'blue' }).slice(0, 10).map((r) => [r.hero.id, r.score]);
     expect(b).toEqual(a);
+  });
+});
+
+describe('局内打法', () => {
+  let ctx: PlayContext;
+  const team = (...names: string[]) => names.map((n) => hero(n));
+  const ids = (list: { id: string }[]) => list.map((x) => x.id);
+  beforeAll(() => {
+    const tagMap = new Map(bundle.tags.map((t) => [t.id, t.name]));
+    ctx = { bundle, rel: engine.rel, tagName: (id) => tagMap.get(id) ?? id };
+  });
+
+  it('只有我方阵容时只给我方打法，不出现针对对面的内容', () => {
+    const p = buildPlaybook(ctx, team('廉颇', '兰陵王', '貂蝉', '马可波罗', '蔡文姬'));
+    expect(p.plan.length + p.allyArchetypes.length).toBeGreaterThan(0);
+    expect(p.openings).toEqual([]);
+    expect(p.dangers).toEqual([]);
+    expect(p.builds).toEqual([]);
+    expect(p.lanes).toEqual([]);
+    for (const i of p.plan) expect(i.enemy).toEqual([]);
+  });
+
+  it('条目由对应的技能标签触发，并带上原文依据', () => {
+    // 兰陵王有隐身：在对面时提示防隐身，在我方时提示隐身绕后
+    const a = team('廉颇', '李白', '貂蝉', '马可波罗', '蔡文姬');
+    const b = team('亚瑟', '兰陵王', '妲己', '后羿', '张飞');
+    const p = buildPlaybook(ctx, a, b);
+    const stealth = p.dangers.find((i) => i.id === 'danger_stealth')!;
+    expect(stealth.enemy.map((x) => x.hero.name)).toEqual(['兰陵王']);
+    expect(stealth.text).toContain('兰陵王');
+    expect(stealth.enemy[0].tags.some((t) => t.tag === 'stealth' && t.quote.length > 0)).toBe(true);
+    const q = buildPlaybook(ctx, b, a);
+    expect(ids(q.plan)).toContain('plan_stealth');
+    expect(ids(q.dangers)).not.toContain('danger_stealth');
+  });
+
+  it('“没有某类英雄”的判断只在选满5人后出现', () => {
+    // 五个都不是坦克：选满后提示没有坦克；只选了四个时不下结论
+    const noTank = team('李白', '貂蝉', '马可波罗', '后羿', '妲己');
+    expect(noTank.every((h) => h.heroType !== 3 && h.heroType2 !== 3)).toBe(true);
+    expect(ids(buildPlaybook(ctx, noTank).plan)).toContain('plan_no_frontline');
+    const four = buildPlaybook(ctx, noTank.slice(0, 4));
+    expect(ids(four.plan)).not.toContain('plan_no_frontline');
+    expect(four.complete.ally).toBe(false);
+    // 对面没选满时也不判断对面“缺什么”
+    const p = buildPlaybook(ctx, team('廉颇', '兰陵王', '貂蝉', '马可波罗', '蔡文姬'), noTank.slice(1, 4));
+    expect(ids(p.openings)).not.toContain('open_no_frontline');
+  });
+
+  it('换一个视角，我方的突破口就是对面要防的点', () => {
+    const a = team('廉颇', '兰陵王', '貂蝉', '马可波罗', '蔡文姬');
+    const b = team('亚瑟', '李白', '妲己', '后羿', '张飞');
+    const ab = buildPlaybook(ctx, a, b);
+    const ba = buildPlaybook(ctx, b, a);
+    const mirror: [string, string][] = [
+      ['open_anti_heal', 'danger_anti_heal'],
+      ['open_reveal', 'danger_reveal'],
+      ['open_suppress', 'danger_suppress'],
+      ['open_block', 'danger_block'],
+      ['open_pct_tank', 'danger_pct_tank'],
+      ['open_anti_dash', 'danger_anti_dash'],
+    ];
+    for (const [open, danger] of mirror) {
+      expect(ids(ab.openings).includes(open), `${open} / ${danger}`).toBe(ids(ba.dangers).includes(danger));
+      expect(ids(ba.openings).includes(open), `${open} / ${danger}`).toBe(ids(ab.dangers).includes(danger));
+    }
+    // 集火目标与威胁互为镜像
+    expect(ab.focus.map((f) => [f.hero.id, f.total])).toEqual(ba.threats.map((f) => [f.hero.id, f.total]));
+  });
+
+  it('分路对位：每条路一行，净权重与关系库一致；手动锁定分路会生效', () => {
+    const a = team('廉颇', '兰陵王', '貂蝉', '马可波罗', '蔡文姬');
+    const b = team('亚瑟', '李白', '妲己', '后羿', '张飞');
+    const p = buildPlaybook(ctx, a, b);
+    expect(p.lanes.map((l) => l.lane)).toEqual([...LANES]);
+    for (const l of p.lanes) {
+      expect(l.ally && l.enemy).toBeTruthy();
+      expect(l.net).toBeCloseTo(engine.rel.net(l.ally!.id, l.enemy!.id), 2);
+      if (l.net > 0) expect(l.mine).toBeDefined();
+      if (l.net < 0) expect(l.theirs).toBeDefined();
+    }
+    expect(p.lanes.find((l) => l.lane === 4)!.ally!.name).toBe('马可波罗');
+    // 把廉颇锁到游走：蔡文姬被挤到别的路
+    const locked = buildPlaybook(ctx, a, b, { allyLocks: [5, null, null, null, null] });
+    expect(locked.lanes.find((l) => l.lane === 5)!.ally!.name).toBe('廉颇');
+  });
+
+  it('职业赛阵容两两对阵：文字里的占位符全部被替换，点名的装备都有原文', () => {
+    const lineups = bundle.comps!.lineups.map((l) => l.heroes.map((id) => engine.byId.get(id)!)).filter((l) => l.length === 5 && l.every(Boolean));
+    expect(lineups.length).toBeGreaterThan(5);
+    const seen = new Set<string>();
+    let pairs = 0;
+    for (let i = 0; i < lineups.length; i++)
+      for (let j = 0; j < lineups.length; j++) {
+        if (i === j || lineups[i].some((h) => lineups[j].includes(h))) continue;
+        pairs++;
+        const p = buildPlaybook(ctx, lineups[i], lineups[j]);
+        expect(p.plan.length + p.allyArchetypes.length).toBeGreaterThan(0);
+        expect(p.openings.length + p.dangers.length).toBeGreaterThan(0);
+        for (const it of [...p.plan, ...p.openings, ...p.dangers, ...p.builds]) {
+          seen.add(it.id);
+          expect(it.text, it.id).not.toMatch(/[{}]/);
+          expect(it.text.length).toBeGreaterThan(10);
+          expect(it.ally.length + it.enemy.length + (it.text.includes('没有') ? 1 : 0), it.id).toBeGreaterThan(0);
+          for (const item of it.items) expect(item.desc).toContain(it.itemsKeyword!);
+          if (it.itemsKeyword) expect(it.items.length).toBeGreaterThan(0);
+        }
+      }
+    expect(pairs).toBeGreaterThan(20);
+    // 打法表不是摆设：真实阵容里触发过的条目应当占相当一部分
+    expect(seen.size).toBeGreaterThanOrEqual(15);
+  });
+
+  it('每个体系都写了分阶段打法和应对办法', () => {
+    for (const a of bundle.archetypes) {
+      expect(a.play, a.id).toBeDefined();
+      for (const k of ['early', 'mid', 'fight', 'avoid'] as const) expect(a.play![k].length, `${a.id}.${k}`).toBeGreaterThan(10);
+      expect(a.against!.length, a.id).toBeGreaterThan(10);
+    }
   });
 });
 

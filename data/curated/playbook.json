@@ -1,0 +1,1603 @@
+{
+  "version": 2,
+  "note": "局内打法表。每条由双方阵容的特征（官方职业、已核实机制标签）触发，文字是通用战术说明，不是数据结论，也不代表胜率。写法规范见 docs/curation/playbook.md。section：plan=我方怎么打；opening=对面的突破口；danger=要防的点；build=出装与召唤师技能。",
+  "entries": [
+    {
+      "id": "plan_engage_lead",
+      "section": "plan",
+      "title": "由谁开团",
+      "text": "团战由{x}先手。其他人等控制命中之后再交技能，不要抢在先手英雄前面进场；先手英雄的关键技能没好时不接团。",
+      "when": [
+        {
+          "side": "ally",
+          "feature": "engage",
+          "as": "x"
+        }
+      ],
+      "basis": "有位移（或超远支援）加范围硬控的英雄可以主动进场并控住多人；控制命中之后，队友的伤害才打得满。"
+    },
+    {
+      "id": "plan_no_engage",
+      "section": "plan",
+      "title": "没有先手开团",
+      "text": "我方没有位移加范围硬控的先手英雄：不主动去撞正面团。等对面先交关键技能、或者有人落单走位失误再还手；也可以先抓到一个人，打出人数差之后再开团。",
+      "when": [
+        {
+          "side": "ally",
+          "feature": "engage",
+          "max": 0
+        }
+      ],
+      "basis": "没有能一次控住多人的先手手段时，主动开团容易变成一个人先进去被集火。"
+    },
+    {
+      "id": "plan_no_frontline",
+      "section": "plan",
+      "title": "没有坦克",
+      "text": "我方没有官方职业为坦克的英雄，能站在最前面承受第一轮技能的人少：不要在狭窄地形和对面正面对冲；把阵型拉开，先消耗或先抓人，再接团。",
+      "when": [
+        {
+          "side": "ally",
+          "feature": "frontline",
+          "max": 0
+        }
+      ],
+      "basis": "正面团战需要有人在前面承受对方的第一轮技能。"
+    },
+    {
+      "id": "plan_no_hardcc",
+      "section": "plan",
+      "title": "没有硬控",
+      "text": "我方技能里没有硬控（定身、减速、沉默不算在内）：留人和打断对面进场的手段少。团战多靠先手伤害和走位，后排自己留好位移和保命技能，不要指望队友能控住切进来的人。",
+      "when": [
+        {
+          "side": "ally",
+          "feature": "hardCC",
+          "max": 0
+        }
+      ],
+      "basis": "硬控是留人和打断对方进场的主要手段。"
+    },
+    {
+      "id": "plan_protect_carry",
+      "section": "plan",
+      "title": "保护技能留给射手",
+      "text": "{p}的治疗、护盾、免控或解控优先留给{c}。团战时注意射手在不在这些技能的作用范围里，不要为了跟前排进场，把保护技能交在别人身上。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "heroType": [
+              5
+            ]
+          },
+          "as": "c"
+        },
+        {
+          "side": "ally",
+          "feature": "protect",
+          "as": "p"
+        }
+      ],
+      "basis": "射手的持续输出依赖生存时间。"
+    },
+    {
+      "id": "plan_stealth",
+      "section": "plan",
+      "title": "借隐身选位置",
+      "text": "{x}的技能能让自己隐身：团战前借隐身选择站位和进场方向，不要过早暴露位置；平时可以趁对面清线、打野时找落单的人。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "tags": [
+              "stealth"
+            ]
+          },
+          "as": "x"
+        }
+      ],
+      "basis": "隐身让对方看不到进场路线，先手权在隐身的一方。"
+    },
+    {
+      "id": "plan_global",
+      "section": "plan",
+      "title": "超远支援",
+      "text": "{x}的技能能作用到很远的位置，或者能把自己、队友送到远处：边路或野区开打之前，先看这个技能好了没有，把它算进局部的人数和伤害里。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "tags": [
+              "global"
+            ]
+          },
+          "as": "x"
+        }
+      ],
+      "basis": "能跨越很远距离参战的英雄，可以在局部快速形成人数优势。"
+    },
+    {
+      "id": "plan_scaling",
+      "section": "plan",
+      "title": "能永久成长的英雄",
+      "text": "{x}有永久成长机制，属性会随升级、击杀或叠层累积：前中期保证它安稳叠层和发育，不要为了没把握的小团战打断节奏。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "tags": [
+              "scaling"
+            ]
+          },
+          "as": "x"
+        }
+      ],
+      "basis": "永久成长的属性会随对局时间累积。"
+    },
+    {
+      "id": "plan_waveclear_strong",
+      "section": "plan",
+      "title": "清线快",
+      "text": "五个英雄都有多个范围伤害技能，清线快：兵线先清掉再做别的。被压制时靠清线守塔拖时间；优势时先把兵线推过去，再打龙或抱团推塔。",
+      "when": [
+        {
+          "side": "ally",
+          "feature": "waveClear",
+          "min": 5
+        }
+      ],
+      "basis": "范围伤害技能多的阵容处理兵线快，守塔和推线都占便宜。"
+    },
+    {
+      "id": "plan_waveclear_weak",
+      "section": "plan",
+      "title": "清线慢",
+      "text": "我方没有英雄带两个以上的范围伤害技能，清线慢：兵线要提前处理，不要等兵线进塔才回防；尽量避免被拖进守塔消耗的局面。",
+      "when": [
+        {
+          "side": "ally",
+          "feature": "waveClear",
+          "max": 0
+        }
+      ],
+      "basis": "范围伤害技能少的阵容处理兵线慢，被多路带线时守不过来。"
+    },
+    {
+      "id": "plan_all_physical",
+      "section": "plan",
+      "title": "伤害类型都是物理",
+      "text": "我方主要伤害类型都是物理：对面可以集中出物理防御装。输出位尽早补带物理穿透的装备（{items}），并尽量在对面防御装成型之前打出优势。",
+      "when": [
+        {
+          "side": "ally",
+          "feature": "magic",
+          "max": 0
+        },
+        {
+          "side": "ally",
+          "feature": "mixed",
+          "max": 0
+        }
+      ],
+      "basis": "伤害类型单一时，对方可以集中出一种防御。",
+      "items": "物理穿透"
+    },
+    {
+      "id": "plan_all_magic",
+      "section": "plan",
+      "title": "伤害类型都是法术",
+      "text": "我方主要伤害类型都是法术：对面可以集中出法术防御装。输出位尽早补带法术穿透的装备（{items}），并尽量在对面防御装成型之前打出优势。",
+      "when": [
+        {
+          "side": "ally",
+          "feature": "physical",
+          "max": 0
+        },
+        {
+          "side": "ally",
+          "feature": "mixed",
+          "max": 0
+        }
+      ],
+      "basis": "伤害类型单一时，对方可以集中出一种防御。",
+      "items": "法术穿透"
+    },
+    {
+      "id": "plan_reposition",
+      "section": "plan",
+      "title": "能移动队友",
+      "text": "{x}能带着队友移动、把队友拉到身边或和队友换位：用来救被开到的人，或者把输出位送到合适的位置。这个技能不要随手交。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "tags": [
+              "ally_reposition"
+            ]
+          },
+          "as": "x"
+        }
+      ],
+      "basis": "移动队友的技能既能救人，也能改变队友的输出位置。"
+    },
+    {
+      "id": "plan_terrain",
+      "section": "plan",
+      "title": "能制造地形",
+      "text": "{x}能制造地形：团战时用来隔开对面的前排和后排，或者封住对面的撤退路线；防守时用来挡住对面进场的路。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "tags": [
+              "terrain"
+            ]
+          },
+          "as": "x"
+        }
+      ],
+      "basis": "墙体和不可通行区域会把战场分割开。"
+    },
+    {
+      "id": "open_no_escape",
+      "section": "opening",
+      "title": "优先集火没有位移的后排",
+      "text": "优先集火{e}：技能里没有位移、隐身、免控、解控、不可选中和免死手段，被近身或被控住之后很难靠技能脱身。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  2,
+                  5
+                ]
+              },
+              {
+                "none": [
+                  "dash",
+                  "untargetable",
+                  "cc_immune",
+                  "revive",
+                  "cleanse",
+                  "stealth"
+                ]
+              }
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "没有位移和脱身技能的后排被近身后难以脱身。"
+    },
+    {
+      "id": "open_reach_backline",
+      "section": "opening",
+      "title": "谁去找对面后排",
+      "text": "{a}有位移或超远支援，加上硬控，可以绕过前排去找{e}。等对面把控制和保护技能交给别人之后再进。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  1,
+                  3,
+                  4
+                ]
+              },
+              {
+                "tags": [
+                  "dash",
+                  "global"
+                ]
+              },
+              {
+                "tags": [
+                  "cc_hard"
+                ]
+              }
+            ]
+          },
+          "as": "a"
+        },
+        {
+          "side": "enemy",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  2,
+                  5
+                ]
+              },
+              {
+                "none": [
+                  "dash",
+                  "untargetable",
+                  "cc_immune",
+                  "revive",
+                  "cleanse",
+                  "stealth"
+                ]
+              }
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "没有位移和保命技能的后排被突进并控住后难以脱身。"
+    },
+    {
+      "id": "open_assassin_backline",
+      "section": "opening",
+      "title": "刺客切后排",
+      "text": "{a}是多段位移的刺客，团战从侧翼或后方进场找{e}；进场前先确认对面的硬控交给了别人。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  4
+                ]
+              },
+              {
+                "tags": [
+                  "dash"
+                ],
+                "min": 2
+              }
+            ]
+          },
+          "as": "a"
+        },
+        {
+          "side": "enemy",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  2,
+                  5
+                ]
+              },
+              {
+                "none": [
+                  "dash",
+                  "untargetable",
+                  "cc_immune",
+                  "revive",
+                  "cleanse",
+                  "stealth"
+                ]
+              }
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "刺客的定位是切入并击杀后排输出；没有位移和保命技能的后排被近身后难以脱身。"
+    },
+    {
+      "id": "open_no_frontline",
+      "section": "opening",
+      "title": "对面没有坦克",
+      "text": "对面没有坦克（按官方主、副职业），正面能承受第一轮技能的人少：可以多找正面团，先手打到谁就集火谁。",
+      "when": [
+        {
+          "side": "enemy",
+          "feature": "frontline",
+          "max": 0
+        }
+      ],
+      "basis": "正面团战需要有人在前面承受对方的第一轮技能。"
+    },
+    {
+      "id": "open_no_hardcc",
+      "section": "opening",
+      "title": "对面没有硬控",
+      "text": "对面技能里没有硬控：{a}进场后被硬控留下的风险较小，可以更主动地进场；但仍要防定身、减速、沉默和召唤师技能晕眩，留好位移出来。",
+      "when": [
+        {
+          "side": "enemy",
+          "feature": "hardCC",
+          "max": 0
+        },
+        {
+          "side": "ally",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  1,
+                  4
+                ]
+              },
+              {
+                "tags": [
+                  "dash"
+                ]
+              }
+            ]
+          },
+          "as": "a"
+        }
+      ],
+      "basis": "硬控是留住突进英雄的主要手段。"
+    },
+    {
+      "id": "open_no_engage",
+      "section": "opening",
+      "title": "对面没有先手开团",
+      "text": "对面没有同时具备位移（或超远支援）和范围硬控的英雄，主动冲进来控住多人的手段少：抱团推进和打龙时站位可以不必拉得太散，但仍要留意远处放来的范围控制，主要防单个人被抓。",
+      "when": [
+        {
+          "side": "enemy",
+          "feature": "engage",
+          "max": 0
+        }
+      ],
+      "basis": "没有能主动进场并控住多人的英雄时，很难强行开出一波团战。"
+    },
+    {
+      "id": "open_no_protect",
+      "section": "opening",
+      "title": "对面没有保护技能",
+      "text": "对面没有能治疗、套盾或为队友免控、解控的英雄：切到后排之后，对面很难用这类技能把人保下来，进场前不用先等保护技能交掉。",
+      "when": [
+        {
+          "side": "enemy",
+          "feature": "protect",
+          "max": 0
+        }
+      ],
+      "basis": "治疗、护盾和解控是保住被切后排的主要手段。"
+    },
+    {
+      "id": "open_no_waveclear",
+      "section": "opening",
+      "title": "对面清线慢",
+      "text": "对面没有英雄带两个以上的范围伤害技能，清线慢：多带线。两路兵线同时压过去时对面守不过来，趁他们回防去拿龙，或者抱团拆另一路。",
+      "when": [
+        {
+          "side": "enemy",
+          "feature": "waveClear",
+          "max": 0
+        }
+      ],
+      "basis": "范围伤害技能少的阵容处理兵线慢，被多路带线时守不过来。"
+    },
+    {
+      "id": "open_anti_heal",
+      "section": "opening",
+      "title": "用重伤打回复",
+      "text": "{a}自带重伤，对上{e}：对方有多个带生命回复的技能，重伤要在回血的时候覆盖上去；如果它回复的是队友，就把重伤打在被治疗的人身上。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "tags": [
+              "anti_heal"
+            ]
+          },
+          "as": "a"
+        },
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "heal_self",
+              "heal_ally"
+            ],
+            "min": 2
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "重伤效果会降低目标的生命回复。"
+    },
+    {
+      "id": "open_reveal",
+      "section": "opening",
+      "title": "用视野技能找隐身英雄",
+      "text": "{a}能获取视野：对面{e}会隐身，团战前先用视野技能探侧翼和草丛；如果这个技能能让隐身单位显形，就留到对方准备进场的时候。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "tags": [
+              "reveal"
+            ]
+          },
+          "as": "a"
+        },
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "stealth"
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "视野技能可以提前发现隐身英雄的位置；能显形的技能会让隐身失效。"
+    },
+    {
+      "id": "open_suppress",
+      "section": "opening",
+      "title": "压制留给有免控的进场英雄",
+      "text": "{a}的压制留给{e}：对方有免控或解控技能，其他控制可能被它抵消或解掉，而压制通常不受霸体影响，也很难被解除。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "tags": [
+              "suppress"
+            ]
+          },
+          "as": "a"
+        },
+        {
+          "side": "enemy",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  1,
+                  4
+                ]
+              },
+              {
+                "tags": [
+                  "cc_immune",
+                  "cleanse"
+                ]
+              }
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "压制通常不受霸体免疫，也很难被解控效果解除。"
+    },
+    {
+      "id": "open_block",
+      "section": "opening",
+      "title": "挡住对面射手的输出",
+      "text": "{a}能击落或阻挡飞行物：对面{e}的普攻和技能多是飞行物，这个技能尽量留到对方集中输出的时候交；如果是能持续存在的屏障，就放在对方和我方后排之间。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "tags": [
+              "projectile_block"
+            ]
+          },
+          "as": "a"
+        },
+        {
+          "side": "enemy",
+          "cond": {
+            "heroType": [
+              5
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "多数射手的普攻和技能属于飞行物。"
+    },
+    {
+      "id": "open_anti_dash",
+      "section": "opening",
+      "title": "限制位移留给多位移英雄",
+      "text": "{a}限制位移的技能留给{e}：对方有多个位移技能，位移用不出来时，进攻和撤退都会受影响。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "tags": [
+              "anti_dash"
+            ]
+          },
+          "as": "a"
+        },
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "dash"
+            ],
+            "min": 2
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "依赖位移的英雄在无法位移时进攻和逃生能力都会下降。"
+    },
+    {
+      "id": "open_pct_tank",
+      "section": "opening",
+      "title": "打坦克靠谁",
+      "text": "打{e}可以多交给{a}：有多个百分比生命伤害或真实伤害技能，对方堆生命时百分比伤害跟着变高，真实伤害不受防御减免。团战给这个英雄留出持续输出的空间。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  1,
+                  2,
+                  4,
+                  5
+                ]
+              },
+              {
+                "tags": [
+                  "percent_hp_damage",
+                  "true_damage"
+                ],
+                "min": 2
+              }
+            ]
+          },
+          "as": "a"
+        },
+        {
+          "side": "enemy",
+          "cond": {
+            "heroType": [
+              3
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "百分比生命伤害随目标生命值提高；真实伤害不受防御减免。"
+    },
+    {
+      "id": "open_cc_assassin",
+      "section": "opening",
+      "title": "控制留给对面刺客",
+      "text": "{a}的硬控留给{e}进场的那一下：对方有多个位移技能，技能里没有免控、解控和不可选中，被硬控住期间用不了位移脱身。不要先把控制全交给对面前排。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "tags": [
+              "cc_hard"
+            ],
+            "min": 2
+          },
+          "as": "a"
+        },
+        {
+          "side": "enemy",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  4
+                ]
+              },
+              {
+                "tags": [
+                  "dash"
+                ],
+                "min": 2
+              },
+              {
+                "none": [
+                  "cc_immune",
+                  "untargetable",
+                  "cleanse"
+                ]
+              }
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "被硬控期间无法使用位移技能脱身。"
+    },
+    {
+      "id": "open_kite",
+      "section": "opening",
+      "title": "放风筝",
+      "text": "{a}和{e}保持距离打：对方是近战，技能里没有位移、免控和不可选中，被持续减速或定身之后很难近身。注意对方的闪现。",
+      "when": [
+        {
+          "side": "ally",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  2,
+                  5
+                ]
+              },
+              {
+                "tags": [
+                  "slow",
+                  "root"
+                ],
+                "min": 2
+              }
+            ]
+          },
+          "as": "a"
+        },
+        {
+          "side": "enemy",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "none": [
+                  "dash",
+                  "cc_immune",
+                  "untargetable",
+                  "global"
+                ]
+              }
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "没有位移的近战被持续减速后难以接近远程目标。"
+    },
+    {
+      "id": "open_scaling_window",
+      "section": "opening",
+      "title": "压制能永久成长的英雄",
+      "text": "对面{e}有永久成长机制，属性会随升级、击杀或叠层累积：前中期可以多针对它（入侵野区、抓线、压制发育），减少它叠层和发育的机会。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "scaling"
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "永久成长的属性会随对局时间累积。"
+    },
+    {
+      "id": "open_protector",
+      "section": "opening",
+      "title": "先处理保护技能",
+      "text": "对面{e}能给队友治疗、护盾或免控、解控：切后排之前，先骗出这些技能，或者先处理这个保护英雄。",
+      "when": [
+        {
+          "side": "enemy",
+          "feature": "protect",
+          "as": "e"
+        }
+      ],
+      "basis": "治疗、护盾和解控是保住被切后排的主要手段。"
+    },
+    {
+      "id": "open_summon",
+      "section": "opening",
+      "title": "认准本体",
+      "text": "对面{e}有召唤物或分身：控制和集火之前先确认本体，不要把关键技能交给召唤物。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "summon"
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "召唤物和分身会吸收本该打在英雄身上的技能。"
+    },
+    {
+      "id": "danger_engage",
+      "section": "danger",
+      "title": "防先手开团",
+      "text": "防{e}先手：有位移（或超远支援）加范围硬控。站位不要挤在一起，尤其是在狭窄地形和龙坑附近；后排和对面先手英雄保持距离，看不到它的时候更要小心。",
+      "when": [
+        {
+          "side": "enemy",
+          "feature": "engage",
+          "as": "e"
+        }
+      ],
+      "basis": "有位移（或超远支援）加范围硬控的英雄可以主动进场并控住多人。"
+    },
+    {
+      "id": "danger_engage_cleanse",
+      "section": "danger",
+      "title": "解控留着反开团",
+      "text": "{a}给队友的免控或解控留着反{e}的开团，不要提前交。",
+      "when": [
+        {
+          "side": "enemy",
+          "feature": "engage",
+          "as": "e"
+        },
+        {
+          "side": "ally",
+          "cond": {
+            "tags": [
+              "ally_cc_immune"
+            ]
+          },
+          "as": "a"
+        }
+      ],
+      "basis": "先手开团依赖控制命中；被控的人被解控后，对方的后续伤害会落空。"
+    },
+    {
+      "id": "danger_dive_carry",
+      "section": "danger",
+      "title": "对面会来切后排",
+      "text": "{e}有位移（或超远支援）加硬控，容易来找{a}：我方这个后排的技能里没有位移、免控、不可选中和免死手段。贴着队友站，不单独清线、不单独进野区；队友的控制留给对面进场的时候。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  1,
+                  3,
+                  4
+                ]
+              },
+              {
+                "tags": [
+                  "dash",
+                  "global"
+                ]
+              },
+              {
+                "tags": [
+                  "cc_hard"
+                ]
+              }
+            ]
+          },
+          "as": "e"
+        },
+        {
+          "side": "ally",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  2,
+                  5
+                ]
+              },
+              {
+                "none": [
+                  "dash",
+                  "untargetable",
+                  "cc_immune",
+                  "revive",
+                  "cleanse",
+                  "stealth"
+                ]
+              }
+            ]
+          },
+          "as": "a"
+        }
+      ],
+      "basis": "没有位移和脱身技能的后排被突进并控住后难以脱身。"
+    },
+    {
+      "id": "danger_assassin_carry",
+      "section": "danger",
+      "title": "对面刺客容易找的目标",
+      "text": "{e}是多段位移的刺客，容易把{a}当成目标。看不到对面刺客的时候，后排不要往前走；团战时等刺客先露面再放心输出。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  4
+                ]
+              },
+              {
+                "tags": [
+                  "dash"
+                ],
+                "min": 2
+              }
+            ]
+          },
+          "as": "e"
+        },
+        {
+          "side": "ally",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  2,
+                  5
+                ]
+              },
+              {
+                "none": [
+                  "dash",
+                  "untargetable",
+                  "cc_immune",
+                  "revive",
+                  "cleanse",
+                  "stealth"
+                ]
+              }
+            ]
+          },
+          "as": "a"
+        }
+      ],
+      "basis": "刺客的定位是切入并击杀后排输出；没有位移和保命技能的后排被近身后难以脱身。"
+    },
+    {
+      "id": "danger_stealth",
+      "section": "danger",
+      "title": "防隐身",
+      "text": "{e}会隐身：看不到它的时候，后排默认它就在附近，不单独带线、不单独进野区。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "stealth"
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "隐身让对方看不到进场路线，先手权在隐身的一方。"
+    },
+    {
+      "id": "danger_global",
+      "section": "danger",
+      "title": "防超远支援",
+      "text": "{e}的技能能作用到很远的位置，或者能把自己、队友送到远处：地图上任何一处小规模团战都可能多出人或多出伤害。边路压线或越塔之前，先确认它的位置和这个技能的状态。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "global"
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "能跨越很远距离参战的英雄，可以在局部快速形成人数优势。"
+    },
+    {
+      "id": "danger_suppress",
+      "section": "danger",
+      "title": "进场前先看压制",
+      "text": "{a}进场前先看{e}的压制：压制通常不受霸体影响，也很难被解除。等压制交给别人之后再进。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "suppress"
+            ]
+          },
+          "as": "e"
+        },
+        {
+          "side": "ally",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  1,
+                  4
+                ]
+              },
+              {
+                "tags": [
+                  "cc_immune",
+                  "cleanse"
+                ]
+              }
+            ]
+          },
+          "as": "a"
+        }
+      ],
+      "basis": "压制通常不受霸体免疫，也很难被解控效果解除。"
+    },
+    {
+      "id": "danger_block",
+      "section": "danger",
+      "title": "对面能挡飞行物",
+      "text": "{e}能击落或阻挡飞行物：{a}看到这个技能放出来时不要对着它硬点，换个角度或目标输出，或者等技能结束。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "projectile_block"
+            ]
+          },
+          "as": "e"
+        },
+        {
+          "side": "ally",
+          "cond": {
+            "heroType": [
+              5
+            ]
+          },
+          "as": "a"
+        }
+      ],
+      "basis": "多数射手的普攻和技能属于飞行物。"
+    },
+    {
+      "id": "danger_anti_heal",
+      "section": "danger",
+      "title": "对面自带重伤",
+      "text": "{e}自带重伤：被它命中的人回血会变少，{a}的回复效果会被压低，不要指望靠回血换血；身上有重伤效果时先拉开。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "anti_heal"
+            ]
+          },
+          "as": "e"
+        },
+        {
+          "side": "ally",
+          "cond": {
+            "tags": [
+              "heal_self",
+              "heal_ally"
+            ],
+            "min": 2
+          },
+          "as": "a"
+        }
+      ],
+      "basis": "重伤效果会降低目标的生命回复。"
+    },
+    {
+      "id": "danger_pct_tank",
+      "section": "danger",
+      "title": "对面有针对坦克的伤害",
+      "text": "{e}有多个百分比生命伤害或真实伤害技能：{a}靠堆生命来扛它的收益会变低，防御也挡不住真实伤害，不要站着硬吃这个输出。团战优先限制对面这个输出点。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  1,
+                  2,
+                  4,
+                  5
+                ]
+              },
+              {
+                "tags": [
+                  "percent_hp_damage",
+                  "true_damage"
+                ],
+                "min": 2
+              }
+            ]
+          },
+          "as": "e"
+        },
+        {
+          "side": "ally",
+          "cond": {
+            "heroType": [
+              3
+            ]
+          },
+          "as": "a"
+        }
+      ],
+      "basis": "百分比生命伤害随目标生命值提高；真实伤害不受防御减免。"
+    },
+    {
+      "id": "danger_anti_dash",
+      "section": "danger",
+      "title": "对面能限制位移",
+      "text": "{e}能限制或打断位移：{a}的位移可能用不出来。进场前先骗出这个技能，再找机会进。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "anti_dash"
+            ]
+          },
+          "as": "e"
+        },
+        {
+          "side": "ally",
+          "cond": {
+            "tags": [
+              "dash"
+            ],
+            "min": 2
+          },
+          "as": "a"
+        }
+      ],
+      "basis": "依赖位移的英雄在无法位移时进攻和逃生能力都会下降。"
+    },
+    {
+      "id": "danger_cc_chain",
+      "section": "danger",
+      "title": "对面硬控多",
+      "text": "对面{e}都有两个以上的硬控技能：被一个人控到，就可能被接力控到死。不要一个人走在最前面；有免控或解控技能的英雄先去骗控制。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "cc_hard"
+            ],
+            "min": 2
+          },
+          "min": 2,
+          "as": "e"
+        }
+      ],
+      "basis": "多个硬控可以接力控制同一个目标。"
+    },
+    {
+      "id": "danger_reveal",
+      "section": "danger",
+      "title": "对面能照出隐身",
+      "text": "{e}能获取视野或让隐身单位显形：{a}进场前留意这个技能，被照到就不要硬进。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "reveal"
+            ]
+          },
+          "as": "e"
+        },
+        {
+          "side": "ally",
+          "cond": {
+            "tags": [
+              "stealth"
+            ]
+          },
+          "as": "a"
+        }
+      ],
+      "basis": "隐身单位被显形后失去先手优势。"
+    },
+    {
+      "id": "danger_execute",
+      "section": "danger",
+      "title": "残血不要逗留",
+      "text": "{e}有斩杀或按已损生命增伤的技能：残血时不要留在它的技能范围里，状态不好先回家。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "execute"
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "斩杀类技能对低生命值目标的伤害更高。"
+    },
+    {
+      "id": "danger_untargetable",
+      "section": "danger",
+      "title": "关键技能别交给无敌",
+      "text": "{e}有不可选中或无敌技能：关键控制和大招不要在它还能躲的时候交，先逼出这个技能。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "untargetable"
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "不可选中或无敌期间，指向它的技能会落空。"
+    },
+    {
+      "id": "danger_revive",
+      "section": "danger",
+      "title": "留技能打第二段",
+      "text": "{e}有免死、复活或死后仍能行动的效果（有的作用在队友身上）：集火时不要把控制和伤害一次全交完，留一部分等这个效果结束再补。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "revive"
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "免死或复活效果会让第一轮集火打不死目标。"
+    },
+    {
+      "id": "danger_waveclear",
+      "section": "danger",
+      "title": "对面清线快",
+      "text": "对面五个英雄都有多个范围伤害技能，清线快：高地很难单靠兵线磨下来。推进前先拿龙，或者先打掉人再上高地。",
+      "when": [
+        {
+          "side": "enemy",
+          "feature": "waveClear",
+          "min": 5
+        }
+      ],
+      "basis": "范围伤害技能多的阵容处理兵线快，守塔占便宜。"
+    },
+    {
+      "id": "danger_aoe_cc",
+      "section": "danger",
+      "title": "别挤在范围控制里",
+      "text": "{e}有范围硬控，但不靠位移进场：团战不要在它的技能前面挤成一团，站位拉开，等这个技能交掉再压上去。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "all": [
+              {
+                "tags": [
+                  "cc_hard_aoe"
+                ]
+              },
+              {
+                "none": [
+                  "dash",
+                  "global"
+                ]
+              }
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "范围硬控对区域内的敌人都生效，站得越集中被控到的人越多。"
+    },
+    {
+      "id": "danger_cc_immune",
+      "section": "danger",
+      "title": "控制别交给霸体",
+      "text": "{e}有霸体或免控技能：硬控不要在它免控期间交，等这个技能结束再控。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  1,
+                  4
+                ]
+              },
+              {
+                "tags": [
+                  "cc_immune"
+                ]
+              }
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "霸体或免控期间，控制效果对它无效。"
+    },
+    {
+      "id": "danger_terrain",
+      "section": "danger",
+      "title": "防被地形隔开",
+      "text": "{e}能制造地形：团战不要站在狭窄通道和墙边；被墙隔开时不要硬冲，等它消失或者绕路。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "terrain"
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "墙体和不可通行区域会把战场分割开。"
+    },
+    {
+      "id": "danger_reposition",
+      "section": "danger",
+      "title": "防对面把人救走",
+      "text": "{e}能移动队友（带走、拉回或换位）：集火残血目标时留一手控制，防止人被救走。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "ally_reposition"
+            ]
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "移动队友的技能可以把被集火的人带离战场。"
+    },
+    {
+      "id": "danger_kite",
+      "section": "danger",
+      "title": "别被放风筝",
+      "text": "{e}是远程，有多个减速或定身技能；{a}是近战，技能里没有位移和免控。等对面的减速和定身交掉再进，闪现留着近身用，不要被一路风筝着追。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  2,
+                  5
+                ]
+              },
+              {
+                "tags": [
+                  "slow",
+                  "root"
+                ],
+                "min": 2
+              }
+            ]
+          },
+          "as": "e"
+        },
+        {
+          "side": "ally",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  1,
+                  3
+                ]
+              },
+              {
+                "none": [
+                  "dash",
+                  "cc_immune",
+                  "untargetable",
+                  "global"
+                ]
+              }
+            ]
+          },
+          "as": "a"
+        }
+      ],
+      "basis": "没有位移的近战被持续减速后难以接近远程目标。"
+    },
+    {
+      "id": "build_anti_heal",
+      "section": "build",
+      "title": "出重伤装备",
+      "text": "对面{e}有多个带生命回复的技能：我方至少有人出带重伤的装备（{items}）。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "heal_self",
+              "heal_ally"
+            ],
+            "min": 2
+          },
+          "as": "e"
+        }
+      ],
+      "basis": "重伤效果会降低目标的生命回复。",
+      "items": "重伤"
+    },
+    {
+      "id": "build_phys_def",
+      "section": "build",
+      "title": "防御装优先物理防御",
+      "text": "对面主要伤害类型都是物理：防御装优先出物理防御。前排和半肉英雄优先出，后排的保命装也尽量选带物理防御的。",
+      "when": [
+        {
+          "side": "enemy",
+          "feature": "magic",
+          "max": 0
+        },
+        {
+          "side": "enemy",
+          "feature": "mixed",
+          "max": 0
+        }
+      ],
+      "basis": "伤害类型单一时，可以集中出一种防御。"
+    },
+    {
+      "id": "build_magic_def",
+      "section": "build",
+      "title": "防御装优先法术防御",
+      "text": "对面主要伤害类型都是法术：防御装优先出法术防御。前排和半肉英雄优先出，后排的保命装也尽量选带法术防御的。",
+      "when": [
+        {
+          "side": "enemy",
+          "feature": "physical",
+          "max": 0
+        },
+        {
+          "side": "enemy",
+          "feature": "mixed",
+          "max": 0
+        }
+      ],
+      "basis": "伤害类型单一时，可以集中出一种防御。"
+    },
+    {
+      "id": "build_tenacity",
+      "section": "build",
+      "title": "换韧性鞋、带净化",
+      "text": "对面{e}都有两个以上的硬控技能：容易被先手的英雄考虑把鞋换成带韧性的（{items}），关键输出位的召唤师技能考虑带净化。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "tags": [
+              "cc_hard"
+            ],
+            "min": 2
+          },
+          "min": 2,
+          "as": "e"
+        }
+      ],
+      "basis": "韧性会缩短受到的控制时间；净化可以解除控制并短暂免控。",
+      "items": "坚韧"
+    },
+    {
+      "id": "build_save_marksman",
+      "section": "build",
+      "title": "射手出保命装",
+      "text": "{a}没有位移和脱身技能，而对面{e}容易来切：考虑出受到致命伤害时不会立刻阵亡的装备（{items}），或者其他保命装。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  4
+                ]
+              },
+              {
+                "tags": [
+                  "dash"
+                ],
+                "min": 2
+              }
+            ]
+          },
+          "as": "e"
+        },
+        {
+          "side": "ally",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  5
+                ]
+              },
+              {
+                "none": [
+                  "dash",
+                  "untargetable",
+                  "cc_immune",
+                  "revive",
+                  "cleanse",
+                  "stealth"
+                ]
+              }
+            ]
+          },
+          "as": "a"
+        }
+      ],
+      "basis": "没有位移和脱身技能的后排被近身后难以脱身，需要靠装备补保命手段。",
+      "items": "受到致命伤害时不会立刻阵亡"
+    },
+    {
+      "id": "build_save_mage",
+      "section": "build",
+      "title": "法师出保命装",
+      "text": "{a}没有位移和脱身技能，而对面{e}容易来切：考虑出能短暂免疫所有效果的装备（{items}），或者其他保命装。",
+      "when": [
+        {
+          "side": "enemy",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  4
+                ]
+              },
+              {
+                "tags": [
+                  "dash"
+                ],
+                "min": 2
+              }
+            ]
+          },
+          "as": "e"
+        },
+        {
+          "side": "ally",
+          "cond": {
+            "all": [
+              {
+                "heroType": [
+                  2
+                ]
+              },
+              {
+                "none": [
+                  "dash",
+                  "untargetable",
+                  "cc_immune",
+                  "revive",
+                  "cleanse",
+                  "stealth"
+                ]
+              }
+            ]
+          },
+          "as": "a"
+        }
+      ],
+      "basis": "没有位移和脱身技能的后排被近身后难以脱身，需要靠装备补保命手段。",
+      "items": "免疫所有效果"
+    }
+  ]
+}

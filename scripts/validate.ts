@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import { ROOT, readJson } from './lib/http.ts';
 import type { Bundle, Cond } from '../src/types.ts';
 import { buildRelations } from '../src/engine/relations.ts';
+import { PLAY_FEATURES } from '../src/engine/playbook.ts';
 
 const norm = (s: string) => s.replace(/\s+/g, '');
 const BANNED = /版本强势|T0|T1|T度|职业选手|高端局|胜率|上分/;
@@ -67,6 +68,38 @@ async function main() {
   for (const a of b.archetypes) {
     a.needs.forEach((n) => checkCond(n.cond, `体系 ${a.id}`));
     a.weakTo.forEach((w) => checkCond(w.cond, `体系 ${a.id}`));
+    for (const t of [a.description, a.winCondition, a.against ?? '', ...Object.values(a.play ?? {})]) if (BANNED.test(t)) err(`体系 ${a.id}: 说明文字含禁用表述：${t.slice(0, 30)}`);
+    if (!a.play || !a.against || Object.values(a.play).some((x) => !x)) err(`体系 ${a.id}: 缺少局内打法或应对说明`);
+  }
+
+  // 打法表：条件引用的标签和特征必须存在；文字里引用的名字必须在条件里定义过；点名装备的关键词必须能在官方装备说明里找到
+  const playIds = new Set<string>();
+  for (const e of b.playbook ?? []) {
+    const where = `打法 ${e.id}`;
+    if (playIds.has(e.id)) err(`${where}: ID重复`);
+    playIds.add(e.id);
+    if (!['plan', 'opening', 'danger', 'build'].includes(e.section)) err(`${where}: 未知分类 ${e.section}`);
+    if (!e.title || !e.text || !e.basis || !e.when.length) err(`${where}: 缺少标题、文字、依据或触发条件`);
+    if (BANNED.test(e.title + e.text + e.basis)) err(`${where}: 含禁用表述`);
+    const names = new Set<string>();
+    for (const c of e.when) {
+      if (c.side !== 'ally' && c.side !== 'enemy') err(`${where}: 条件的 side 无效`);
+      if (!c.cond === !c.feature) err(`${where}: 每句条件必须有且只有 cond 或 feature 之一`);
+      if (c.cond) checkCond(c.cond, where);
+      if (c.feature && !PLAY_FEATURES.includes(c.feature)) err(`${where}: 未知特征 ${c.feature}`);
+      if (c.max != null && c.as) err(`${where}: “没有/不超过”类的条件不应命名英雄`);
+      if (c.min != null && c.max != null && c.min > c.max) err(`${where}: min 大于 max`);
+      if (c.as) names.add(c.as);
+    }
+    if (e.section === 'plan' && e.when.some((c) => c.side === 'enemy')) err(`${where}: “我方怎么打”不应依赖对面阵容`);
+    if (e.section !== 'plan' && !e.when.some((c) => c.side === 'enemy')) err(`${where}: 该分类必须有针对对面的条件`);
+    for (const m of e.text.matchAll(/\{([a-z0-9_]+)\}/gi)) {
+      if (m[1] === 'items') {
+        if (!e.items) err(`${where}: 文字引用了 {items} 但没有设置装备关键词`);
+      } else if (!names.has(m[1])) err(`${where}: 文字引用了未定义的名字 {${m[1]}}`);
+    }
+    if (e.items && !b.equipment.items.some((i) => i.desc.includes(e.items!))) err(`${where}: 官方装备说明里找不到关键词“${e.items}”`);
+    if (e.items && !e.text.includes('{items}')) err(`${where}: 设置了装备关键词但文字里没有 {items}`);
   }
 
   for (const p of b.patches) for (const h of p.heroes) if (!ids.has(h.id)) err(`公告 ${p.id} 指向未知英雄 ${h.id}`);
@@ -144,7 +177,7 @@ async function main() {
   const profile = await readJson<{ pool: { id: number }[]; favoriteHeroes: number[]; customComps: { heroes: number[] }[] }>(resolve(ROOT, 'user/profile.json'));
   for (const id of [...profile.pool.map((p) => p.id), ...profile.favoriteHeroes, ...profile.customComps.flatMap((c) => c.heroes)]) if (!ids.has(id)) err(`user/profile.json 引用了不存在的英雄 ${id}`);
 
-  console.log(`校验：英雄 ${b.heroes.length}，关系 ${rel.all.length}，规则 ${b.rules.length}，教学条目 ${guideItems}；错误 ${errors.length}，提醒 ${warns.length}`);
+  console.log(`校验：英雄 ${b.heroes.length}，关系 ${rel.all.length}，规则 ${b.rules.length}，打法条目 ${b.playbook?.length ?? 0}，教学条目 ${guideItems}；错误 ${errors.length}，提醒 ${warns.length}`);
   if (warns.length) console.log(warns.slice(0, 20).map((w) => `  提醒 ${w}`).join('\n'));
   if (errors.length) {
     console.log(errors.slice(0, 50).map((e) => `  错误 ${e}`).join('\n'));
