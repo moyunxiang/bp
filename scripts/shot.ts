@@ -13,7 +13,7 @@ page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
 page.on('pageerror', (e) => errors.push(`pageerror: ${e.message}`));
 
 await page.goto(`${base}#${route}`, { waitUntil: 'networkidle' });
-// 依次执行动作：--steps 用 | 分隔，支持 type:文本 / key:按键 / click:文字 / wait:毫秒
+// 依次执行动作：--steps 用 | 分隔，支持 type:文本 / key:按键 / click:文字 / wait:毫秒 / scroll:像素
 for (const step of (arg('steps') ?? '').split('|').filter(Boolean)) {
   const [kind, ...rest] = step.split(':');
   const value = rest.join(':');
@@ -21,6 +21,7 @@ for (const step of (arg('steps') ?? '').split('|').filter(Boolean)) {
   else if (kind === 'key') await page.keyboard.press(value);
   else if (kind === 'click') await page.getByText(value, { exact: true }).first().click();
   else if (kind === 'wait') await page.waitForTimeout(Number(value));
+  else if (kind === 'scroll') await page.mouse.wheel(0, Number(value));
 }
 await page.waitForTimeout(Number(arg('wait') ?? 500));
 await page.screenshot({ path: out, fullPage: process.argv.includes('--full') });

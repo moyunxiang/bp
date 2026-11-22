@@ -244,7 +244,7 @@ async function main() {
   const adoptedReason = fitted
     ? `默认权重的Top10命中率为${pp(engineM.top10)}；由训练集拟合的权重为${pp(fitted.top10)}；只用热度和分路为${pp(laneMeta.top10)}。` +
       `拟合结果中克制分项的系数为${theta![FEATS.indexOf('counter')]}（职业赛热度为${theta![FEATS.indexOf('meta')]}），接近于不使用克制关系。` +
-      '网站需要根据对方阵容给出有依据的建议，所以没有采用拟合权重，而是保留克制与配合分项并把它们的权重调低到基本不影响这项指标的程度。'
+      `网站需要根据对方阵容给出有依据的建议，所以没有采用拟合权重，而是保留克制与配合分项并调低了它们的权重；代价是这项指标比只用热度和分路低${((laneMeta.top10 - engineM.top10) * 100).toFixed(1)}个百分点，比“出场次数+分路”基线高${((engineM.top10 - base.top10) * 100).toFixed(1)}个百分点。`
     : `默认权重的Top10命中率为${pp(engineM.top10)}，只用热度和分路为${pp(laneMeta.top10)}。训练数据不足，没有进行权重拟合。`;
   const report: BacktestReport = {
     generatedAt: new Date().toISOString(),

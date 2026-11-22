@@ -366,3 +366,16 @@ describe('搜索', () => {
     expect(searchHeroes(bundle.heroes, '')).toHaveLength(bundle.heroes.length);
   });
 });
+
+describe('数据新鲜度提示', () => {
+  it('14天内不提示，超过14天提示，超过30天强提示', async () => {
+    const { freshness } = await import('../src/lib/data.ts');
+    const now = Date.parse('2026-12-31T00:00:00Z');
+    const daysAgo = (n: number) => new Date(now - n * 86400_000).toISOString();
+    expect(freshness(daysAgo(0), now).level).toBe('fresh');
+    expect(freshness(daysAgo(14), now).level).toBe('fresh');
+    expect(freshness(daysAgo(15), now)).toEqual({ days: 15, level: 'stale' });
+    expect(freshness(daysAgo(30), now).level).toBe('stale');
+    expect(freshness(daysAgo(31), now).level).toBe('old');
+  });
+});

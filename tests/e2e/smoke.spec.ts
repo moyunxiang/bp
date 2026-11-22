@@ -153,3 +153,27 @@ test('数据说明：显示更新时间、来源与数量', async ({ page }) => 
   await expect(page.getByText(/npm run update-data/).first()).toBeVisible();
   expect(errors).toEqual([]);
 });
+
+test('BP助手：指定楼层和位置后，轮到自己时只推荐该位置的英雄，并自动锁定分路', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('./');
+  await page.getByLabel('每方禁用').selectOption('0');
+  await page.getByLabel('我在').selectOption('1');
+  await page.getByLabel('我打').selectOption('5'); // 游走
+  await expect(page.getByText(/1楼选人 · 轮到你/)).toBeVisible();
+  await expect(page.getByText(/推荐选人 · 游走/)).toBeVisible();
+  // 推荐列表里每一项的分路标记都是游走
+  const rows = page.locator('ol > li');
+  await expect(rows.first()).toBeVisible();
+  const count = await rows.count();
+  for (let i = 0; i < count; i++) await expect(rows.nth(i).getByText('游走', { exact: true }).first()).toBeVisible();
+  await page.keyboard.press('1');
+  // 我的那一手自动锁定为游走
+  await expect(page.getByTitle('已手动指定分路，点击修改')).toBeVisible();
+  // 轮到对方时不再限制位置
+  await expect(page.getByText('红方（对方）可能的选择')).toBeVisible();
+  // Alt+数字修改刚选英雄的分路
+  await page.keyboard.press('Alt+Digit1');
+  await expect(page.getByTitle('已手动指定分路，点击修改').getByText('对抗')).toBeVisible();
+  expect(errors).toEqual([]);
+});

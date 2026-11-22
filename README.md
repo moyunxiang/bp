@@ -2,7 +2,7 @@
 
 《王者荣耀》英雄克制关系与BP辅助网站。手机打游戏，电脑开着网站：录入双方的禁用和选人，立刻得到带理由的Ban/Pick推荐；同时提供英雄机制百科、克制与配合图谱、战术阵容库。
 
-在线地址：<https://moyunxiang.github.io/hok-bp/>
+在线地址：<https://moyunxiang.com/hok-bp/>（`https://moyunxiang.github.io/hok-bp/` 会跳转到这里）
 
 网站是纯静态的，所有推荐都在浏览器里计算，不需要登录，也不依赖任何后台服务。
 
