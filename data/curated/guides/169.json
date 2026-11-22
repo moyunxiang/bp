@@ -166,18 +166,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "counter",
-      "hero": 507,
-      "claim": "李信四级前清线慢、跟小兵没区别，后羿可抢线并趁空隙抢红隼",
-      "refs": [
-        {
-          "bvid": "BV1aB1KBDE5S",
-          "t": 155
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

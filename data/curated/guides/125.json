@@ -218,30 +218,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "countered",
-      "hero": 119,
-      "claim": "四技能无法像净化一样清除扁鹊的毒",
-      "refs": [
-        {
-          "bvid": "BV1G8etzKEKV",
-          "t": 267
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "countered",
-      "hero": 173,
-      "claim": "四技能无法清除李元芳的标记等负面效果",
-      "refs": [
-        {
-          "bvid": "BV1G8etzKEKV",
-          "t": 271
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

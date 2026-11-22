@@ -188,18 +188,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "synergy",
-      "hero": 176,
-      "claim": "杨玉环辅助能连体拿中立资源，让苍发育好、对线容易打出优势",
-      "refs": [
-        {
-          "bvid": "BV16oCVYsEjr",
-          "t": 755
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

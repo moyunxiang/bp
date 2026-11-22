@@ -226,30 +226,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "counter",
-      "hero": 153,
-      "claim": "二技能花球会自动追踪隐身敌人，遇到兰陵王不用等他先手，直接二技能接大招反打",
-      "refs": [
-        {
-          "bvid": "BV11KZxB4EAj",
-          "t": 309
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 116,
-      "claim": "二技能花球会自动追踪隐身敌人，阿轲进草或隐身时直接二技能跟上",
-      "refs": [
-        {
-          "bvid": "BV18BjCzPEzN",
-          "t": 194
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

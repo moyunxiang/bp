@@ -11,6 +11,8 @@ import { W, relationWeight, type Evidence } from '../src/engine/relations.ts';
 import { evalCond, verifiedTags } from '../src/engine/rules.ts';
 import { matchArchetypes, needsScore, substitutes, teamFeatures } from '../src/engine/comp.ts';
 import { matchHero, searchHeroes } from '../src/lib/search.ts';
+import { TIER_MIN, laneTiers } from '../src/engine/tiers.ts';
+import { LANES } from '../src/types.ts';
 
 let bundle: Bundle;
 let engine: Engine;
@@ -270,6 +272,18 @@ describe('推荐评分', () => {
     expect(multFor(null, 1)).toBe(HAND_MULT);
   });
 
+  it('选人模型：包含近60天选取和禁用优先级两个分项；指定位置时用专用系数且分路系数不低于下限', () => {
+    const m = bundle.model!;
+    expect(m.features).toEqual(expect.arrayContaining(['lanePickRecent', 'banPri']));
+    expect(m.lanePhases?.length).toBe(3);
+    for (const order of [1, 4, 8]) {
+      const given = multFor(m, order, true);
+      expect(given.lane).toBeGreaterThanOrEqual(m.floors.lane);
+      expect(given.counter).toBeGreaterThanOrEqual(m.floors.counter);
+      for (const v of Object.values(given)) expect(v).toBeGreaterThanOrEqual(0);
+    }
+  });
+
   it('选人模型：分数仍在0–100之间并按降序；职业赛分项带样本数说明', () => {
     const recs = recommendPicks(engine, midDraft(), { side: 'blue' });
     for (const r of recs) {
@@ -277,7 +291,7 @@ describe('推荐评分', () => {
       expect(r.score).toBeLessThanOrEqual(100);
     }
     for (let i = 1; i < recs.length; i++) expect(recs[i - 1].score).toBeGreaterThanOrEqual(recs[i].score);
-    const lanePick = recs.flatMap((r) => r.parts.find((p) => p.key === 'lanePick')?.items ?? []);
+    const lanePick = recs.flatMap((r) => [...(r.parts.find((p) => p.key === 'lanePick')?.items ?? []), ...(r.parts.find((p) => p.key === 'lanePickRecent')?.items ?? [])]);
     expect(lanePick.length).toBeGreaterThan(10);
     for (const i of lanePick) expect(i.text).toMatch(/队伍场次中有\d+次/);
     const pro = recs.flatMap((r) => [...(r.parts.find((p) => p.key === 'proVs')?.items ?? []), ...(r.parts.find((p) => p.key === 'proAlly')?.items ?? [])]);
@@ -385,6 +399,49 @@ describe('阵容分析', () => {
       expect(s.hero.lanes[3]).toBeGreaterThanOrEqual(0.5);
       expect(s.similarity).toBeGreaterThan(0);
     }
+  });
+});
+
+describe('分路梯度', () => {
+  it('职业赛梯度：按出场率降序，档位与下限一致，不含限时英雄', () => {
+    const t = laneTiers(bundle)!;
+    expect(t.games).toBeGreaterThanOrEqual(20);
+    for (const lane of LANES) {
+      const rows = t.rows[lane];
+      expect(rows.length).toBeGreaterThan(3);
+      for (let i = 0; i < rows.length; i++) {
+        const r = rows[i];
+        if (i > 0) expect(rows[i - 1].presence).toBeGreaterThanOrEqual(r.presence);
+        expect(r.presence).toBeGreaterThanOrEqual(TIER_MIN[r.tier]);
+        if (r.tier > 0) expect(r.presence).toBeLessThan(TIER_MIN[r.tier - 1]);
+        expect(r.hero.isLimited).toBeFalsy();
+      }
+    }
+  });
+
+  it('营地英雄榜：每个段位每个位置都有数据，不超过公开接口的上限，数字原样在0–1之间', () => {
+    const camp = bundle.camp!;
+    expect(camp.segments.length).toBeGreaterThanOrEqual(2);
+    const ids = new Set(bundle.heroes.map((h) => h.id));
+    for (const s of camp.segments) {
+      for (const lane of LANES) {
+        const list = s.lanes[lane];
+        expect(list.length).toBeGreaterThanOrEqual(5);
+        expect(list.length).toBeLessThanOrEqual(camp.limit);
+        for (const e of list) {
+          expect(ids.has(e.id)).toBe(true);
+          expect(e.tier).toMatch(/^T\d$/);
+          for (const x of [e.win, e.show, e.ban]) expect(x >= 0 && x <= 1).toBe(true);
+        }
+      }
+    }
+  });
+
+  it('营地数据不参与推荐计分：去掉后推荐结果不变', () => {
+    const d = fill(fill(setBanCount(newDraft('ranked'), 0), pick('red', 0), '后羿'), pick('blue', 0), '廉颇');
+    const a = recommendPicks(engine, d, { side: 'blue' }).slice(0, 10).map((r) => [r.hero.id, r.score]);
+    const b = recommendPicks(makeEngine({ ...bundle, camp: null }), d, { side: 'blue' }).slice(0, 10).map((r) => [r.hero.id, r.score]);
+    expect(b).toEqual(a);
   });
 });
 

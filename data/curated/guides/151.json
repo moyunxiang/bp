@@ -213,42 +213,6 @@
   ],
   "matchups": [
     {
-      "type": "countered",
-      "hero": 153,
-      "claim": "兰陵王、镜、司马懿等高爆发阵容会频繁针对孙权",
-      "refs": [
-        {
-          "bvid": "BV1Wd3WzpEFs",
-          "t": 259
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "countered",
-      "hero": 531,
-      "claim": "镜、兰陵王、司马懿等高爆发阵容会频繁针对孙权",
-      "refs": [
-        {
-          "bvid": "BV1Wd3WzpEFs",
-          "t": 259
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "countered",
-      "hero": 137,
-      "claim": "司马懿、兰陵王、镜等高爆发阵容会频繁针对孙权",
-      "refs": [
-        {
-          "bvid": "BV1Wd3WzpEFs",
-          "t": 259
-        }
-      ],
-      "sources": 1
-    },
-    {
       "type": "counter",
       "hero": 527,
       "claim": "蒙恬开大招时孙权的电弧叠加得非常快，像充电宝",

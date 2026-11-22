@@ -276,18 +276,6 @@
       "sources": 1
     },
     {
-      "type": "counter",
-      "hero": 126,
-      "claim": "夏侯惇放技能时站在原地，钟馗可以在其施法前摇勾中",
-      "refs": [
-        {
-          "bvid": "BV174ZTBcEUM",
-          "t": 847
-        }
-      ],
-      "sources": 1
-    },
-    {
       "type": "countered",
       "hero": 505,
       "claim": "瑶能用技能或霸体解控，钩子容易被解掉",

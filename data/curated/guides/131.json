@@ -202,18 +202,6 @@
   "matchups": [
     {
       "type": "countered",
-      "hero": 146,
-      "claim": "露娜飘来飘去难以锁定，李白单挑打不过露娜",
-      "refs": [
-        {
-          "bvid": "BV1mA4j6bE34",
-          "t": 544
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "countered",
       "hero": 505,
       "claim": "对面瑶连体会把本来能杀掉的人保下来，所以低分局优先禁瑶",
       "refs": [

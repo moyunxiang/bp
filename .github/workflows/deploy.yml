@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # 每天北京时间06:30刷新一次王者营地英雄榜并重新发布
+  schedule:
+    - cron: '30 22 * * *'
 
 permissions:
   contents: read
@@ -24,7 +27,10 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      # 数据包已随仓库提交；这里只校验、测试并构建，不联网抓取
+      # 数据包已随仓库提交。定时或手动运行时只刷新王者营地英雄榜（18次请求）；失败就沿用仓库里的数据
+      - if: github.event_name != 'push'
+        continue-on-error: true
+        run: npx tsx scripts/fetch-camp.ts && npx tsx scripts/build-data.ts --keep-date
       - run: npm run validate
       - run: npm test
       - run: npm run build

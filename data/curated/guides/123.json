@@ -196,30 +196,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "counter",
-      "hero": 153,
-      "claim": "吕布释放大招获得两秒真实视野，能让隐身的兰陵王显形",
-      "refs": [
-        {
-          "bvid": "BV1kaUwYzE7D",
-          "t": 235
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 116,
-      "claim": "吕布释放大招获得两秒真实视野，能让隐身的阿轲显形",
-      "refs": [
-        {
-          "bvid": "BV1kaUwYzE7D",
-          "t": 235
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

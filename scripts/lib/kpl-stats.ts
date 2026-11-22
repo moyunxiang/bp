@@ -11,6 +11,7 @@ import { RESP_SMOOTH } from '../../src/engine/recommend.ts';
 export const HEAT_DAYS = 150; // 第一局禁选的近期窗口
 export const LANE_DAYS = 500; // 分路分布窗口
 export const PAIR_DAYS = 365; // 共现窗口
+export const SHORT_DAYS = 60; // 近期分路出场窗口（版本变化快，近期数据更能代表当前版本）
 export const PAIR_MIN_N = 30;
 export const TRIO_MIN_N = 12;
 export const LINEUP_MIN_N = 3;
@@ -103,7 +104,17 @@ export function computeKpl(all: Battle[], heroes: Pick<OfficialHero, 'id'>[], to
         else e.ban++;
         m.set(x.hero, e);
       }
-    return { games: games.length, m };
+    // 第一局里按分路的出场次数（梯度排行用）
+    const lanes = new Map<number, number[]>();
+    for (const b of games)
+      for (const p of b.players) {
+        const lane = POS_TO_LANE[p.pos_desc];
+        if (!lane || !known.has(p.hero)) continue;
+        const arr = lanes.get(p.hero) ?? [0, 0, 0, 0, 0];
+        arr[lane - 1]++;
+        lanes.set(p.hero, arr);
+      }
+    return { games: games.length, m, lanes };
   };
   const g1Recent = g1Stat(HEAT_DAYS);
   const g1Year = g1Stat(PAIR_DAYS);
@@ -139,6 +150,8 @@ export function computeKpl(all: Battle[], heroes: Pick<OfficialHero, 'id'>[], to
   const N = teamPicks.length;
   const resp = computeResp(pairBattles, known);
   const lanesYear = laneCount(pairBattles);
+  const shortBattles = pairBattles.filter((b) => inWindow(b, SHORT_DAYS));
+  const lanesShort = laneCount(shortBattles);
   const single = new Map<number, number>();
   const pair = new Map<string, number>();
   type Span = { n: number; first: string; last: string };
@@ -182,6 +195,7 @@ export function computeKpl(all: Battle[], heroes: Pick<OfficialHero, 'id'>[], to
       year: { windowDays: PAIR_DAYS, from: dayOffset(latest, PAIR_DAYS), to: latest, games: g1Year.games },
     },
     lanes: { windowDays: LANE_DAYS },
+    short: { windowDays: SHORT_DAYS, from: dayOffset(latest, SHORT_DAYS), to: latest, teamGames: shortBattles.length * 2 },
     pairs: { windowDays: PAIR_DAYS, from: dayOffset(latest, PAIR_DAYS), to: latest, teamGames: N, minN: PAIR_MIN_N, list: pairs },
     resp: { windowDays: PAIR_DAYS, from: dayOffset(latest, PAIR_DAYS), to: latest, ...resp },
     heroes: Object.fromEntries(
@@ -196,9 +210,11 @@ export function computeKpl(all: Battle[], heroes: Pick<OfficialHero, 'id'>[], to
               lanes: (useRecent ? recent : lanesAll.get(h.id)) ?? [0, 0, 0, 0, 0],
               lanesScope: useRecent ? ('recent' as const) : ('all' as const),
               g1Recent: g1Recent.m.get(h.id) ?? { pick: 0, ban: 0 },
+              g1LaneRecent: g1Recent.lanes.get(h.id) ?? [0, 0, 0, 0, 0],
               g1Year: g1Year.m.get(h.id) ?? { pick: 0, ban: 0 },
               teamGames: single.get(h.id) ?? 0,
               lanesYear: lanesYear.get(h.id) ?? [0, 0, 0, 0, 0],
+              lanesShort: lanesShort.get(h.id) ?? [0, 0, 0, 0, 0],
             },
           ];
         }),

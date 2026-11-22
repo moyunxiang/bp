@@ -85,30 +85,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "counter",
-      "hero": 533,
-      "claim": "阿古朵打团猛但不好带线，打他可以去边路带线给压力",
-      "refs": [
-        {
-          "bvid": "BV1MWDLBSEAz",
-          "t": 526
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "countered",
-      "hero": 533,
-      "claim": "对面反应过来后砸上去会被阿古朵大招控住，二技能拉开就被反打",
-      "refs": [
-        {
-          "bvid": "BV1MWDLBSEAz",
-          "t": 977
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

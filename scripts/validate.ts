@@ -97,6 +97,21 @@ async function main() {
     if (stale.has(k) && r.evidence.some((e) => e.kind === 'official')) err(`过期的官方关系进入了计分 ${k}`);
   }
 
+  // 营地英雄榜：英雄有效，档位格式正确，比例在0–1之间，每个榜单不超过公开接口的上限
+  if (b.camp) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(b.camp.updateTime)) err(`营地数据日期格式错误 ${b.camp.updateTime}`);
+    for (const s of b.camp.segments) {
+      for (const [where, list] of [['全部', s.all], ...Object.entries(s.lanes)] as [string, typeof s.all][]) {
+        if (list.length > b.camp.limit) err(`营地 ${s.name}/${where}: 超过 ${b.camp.limit} 个`);
+        for (const e of list) {
+          if (!ids.has(e.id)) err(`营地 ${s.name}/${where}: 未知英雄 ${e.id}`);
+          if (!/^T\d$/.test(e.tier)) err(`营地 ${s.name}/${where}: 档位格式错误 ${e.tier}`);
+          if (![e.win, e.show, e.ban].every((x) => x >= 0 && x <= 1)) err(`营地 ${s.name}/${where}: 英雄 ${e.id} 的比例超出范围`);
+        }
+      }
+    }
+  }
+
   // 教学内容：出处必须指向已收录的视频，连招里的数字必须对应存在的技能，不含强度断言，不携带字幕原文
   let guideItems = 0;
   for (const [id, g] of Object.entries(b.guides ?? {})) {

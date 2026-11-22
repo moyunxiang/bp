@@ -1,0 +1,1055 @@
+{
+  "note": "教学视频克制/配合说法的独立复核结论。drop 的条目不进入网站。",
+  "items": [
+    {
+      "key": "106|countered|东皇太一",
+      "verdict": "drop",
+      "reason": "解说在复盘这一局自己站位失误被东皇和吕布配合击杀，属单局情况，未泛化为小乔怕东皇"
+    },
+    {
+      "key": "108|counter|公孙离",
+      "verdict": "drop",
+      "reason": "解说只是说打高机动目标时用大闪提高命中，是连招用法，没有表达克制公孙离"
+    },
+    {
+      "key": "108|counter|宫本武藏",
+      "verdict": "drop",
+      "reason": "解说讲的是面对宫本时开大的时机，属于应对方法，没有说墨子克制宫本"
+    },
+    {
+      "key": "109|counter|阿轲",
+      "verdict": "drop",
+      "reason": "解说讲的是预按2技能防突袭的通用技巧，阿轲只是举例场景，未说妲己克制她"
+    },
+    {
+      "key": "109|counter|兰陵王",
+      "verdict": "drop",
+      "reason": "解说讲的是不安全时预按2技能的通用技巧，兰陵王只是举例场景，未说妲己克制他"
+    },
+    {
+      "key": "110|counter|刘禅",
+      "verdict": "keep",
+      "reason": "解说明确说刘禅手短、前期不出魔抗，压塔时扛在前面会被嬴政大招打到没法玩"
+    },
+    {
+      "key": "110|counter|亚瑟",
+      "verdict": "drop",
+      "reason": "亚瑟只是解释2技能清除额外攻击力机制时举的例子，解说没有说嬴政克制亚瑟"
+    },
+    {
+      "key": "110|countered|王昭君",
+      "verdict": "drop",
+      "reason": "解说只说遇到打不过的昭君就改打消耗，没有讲为什么打不过，理由是应对方式"
+    },
+    {
+      "key": "111|countered|宫本武藏",
+      "verdict": "drop",
+      "reason": "解说在讲这局要拉开距离不让宫本大到自己，属单局应对，没有说孙尚香怕宫本"
+    },
+    {
+      "key": "111|countered|李信",
+      "verdict": "keep",
+      "reason": "解说说李信是很多射手难打的对手，四级后孙尚香数值远不如他，打不过"
+    },
+    {
+      "key": "111|countered|上官婉儿",
+      "verdict": "drop",
+      "reason": "解说自称本局是特殊情况（婉儿双大），等她大招交掉再露头是针对这局的处理"
+    },
+    {
+      "key": "113|countered|貂蝉",
+      "verdict": "keep",
+      "reason": "解说在英雄克制一节点名貂蝉克制庄周，原因是会被拉扯、控制和保人都发挥不出来"
+    },
+    {
+      "key": "113|countered|东皇太一",
+      "verdict": "drop",
+      "reason": "解说只说明庄周大招解不掉东皇大招压制，属于技能机制说明，没说东皇克制庄周"
+    },
+    {
+      "key": "113|countered|公孙离",
+      "verdict": "keep",
+      "reason": "解说在英雄克制一节点名公孙离克制庄周，原因是会被拉扯、控制和保人都发挥不出来"
+    },
+    {
+      "key": "113|countered|明世隐",
+      "verdict": "keep",
+      "reason": "解说在英雄克制一节点名明世隐克制庄周，原因是会被拉扯、控制和保人都发挥不出来"
+    },
+    {
+      "key": "113|countered|张良",
+      "verdict": "drop",
+      "reason": "解说只说明庄周大招解不掉张良大招压制，属于技能机制说明，没说张良克制庄周"
+    },
+    {
+      "key": "114|countered|杨玉环",
+      "verdict": "keep",
+      "reason": "解说说对面辅助是杨玉环这类远程时，近战刘禅摸不到人，对线不好打"
+    },
+    {
+      "key": "114|countered|张良",
+      "verdict": "drop",
+      "reason": "解说讲越塔别被控在塔下的通用要点，张良只是举例的控制英雄，未说他克制刘禅"
+    },
+    {
+      "key": "118|counter|廉颇",
+      "verdict": "keep",
+      "reason": "解说说廉颇笨重打孙膑没优势，孙膑打廉颇很好打，靠拉扯即可"
+    },
+    {
+      "key": "118|countered|公孙离",
+      "verdict": "keep",
+      "reason": "解说明确说公孙离对线直接克制孙膑，因其2技能能挡住孙膑大招和1技能"
+    },
+    {
+      "key": "120|counter|公孙离",
+      "verdict": "keep",
+      "reason": "解说明确点名阿离，说大招提前控制使其位移后仍被拉回，非常克制"
+    },
+    {
+      "key": "120|counter|李白",
+      "verdict": "keep",
+      "reason": "解说明确说白起大招提前生效的控制很克制李白这类有远距离位移的英雄"
+    },
+    {
+      "key": "120|counter|牛魔",
+      "verdict": "drop",
+      "reason": "解说只说提前控制能打断牛魔大招，是技能用法举例，没有表达白起克制牛魔"
+    },
+    {
+      "key": "120|counter|苏烈",
+      "verdict": "drop",
+      "reason": "解说只说提前控制能打断苏烈大招，是技能用法举例，没有表达白起克制苏烈"
+    },
+    {
+      "key": "120|counter|项羽",
+      "verdict": "drop",
+      "reason": "解说只说提前控制能打断项羽蓄力大招，是技能用法举例，没有表达白起克制项羽"
+    },
+    {
+      "key": "121|counter|后羿",
+      "verdict": "keep",
+      "reason": "解说说同等经济下芈月只要补点物抗，后羿就拿她没办法"
+    },
+    {
+      "key": "121|counter|马可波罗",
+      "verdict": "drop",
+      "reason": "解说只说打马可时可用大招清除印记，属应对技巧，没有说芈月克制马可"
+    },
+    {
+      "key": "121|countered|蒙恬",
+      "verdict": "keep",
+      "reason": "解说明确说蒙恬克芈月，蓄力攻击自动打正面并减速，芈月躲不开"
+    },
+    {
+      "key": "123|counter|阿轲",
+      "verdict": "drop",
+      "reason": "解说只介绍大招附带真实视野能让隐身英雄显形，是机制说明，未说吕布克制阿轲"
+    },
+    {
+      "key": "123|counter|兰陵王",
+      "verdict": "drop",
+      "reason": "解说只介绍大招附带真实视野能让隐身英雄显形，是机制说明，未说吕布克制兰陵王"
+    },
+    {
+      "key": "125|countered|扁鹊",
+      "verdict": "drop",
+      "reason": "解说只是说明4技能不能清除扁鹊的毒这一机制缺点，没有说元歌怕扁鹊"
+    },
+    {
+      "key": "125|countered|李元芳",
+      "verdict": "drop",
+      "reason": "解说只是说明4技能不能清除李元芳标记这一机制缺点，没有说元歌怕李元芳"
+    },
+    {
+      "key": "126|countered|东皇太一",
+      "verdict": "drop",
+      "reason": "解说在说明大招霸体挡不住压制的版本改动并提醒别上头，没有说夏侯惇怕东皇"
+    },
+    {
+      "key": "126|countered|张良",
+      "verdict": "drop",
+      "reason": "解说在说明大招霸体挡不住压制的版本改动并提醒别上头，没有说夏侯惇怕张良"
+    },
+    {
+      "key": "127|countered|澜",
+      "verdict": "drop",
+      "reason": "解说针对本局阵容提醒留技能防澜进场，属应对方式，未说明澜为何克制甄姬"
+    },
+    {
+      "key": "127|countered|马可波罗",
+      "verdict": "drop",
+      "reason": "解说针对本局阵容提醒留技能防马可眩晕接大，属应对方式，未说明为何克制甄姬"
+    },
+    {
+      "key": "127|countered|张飞",
+      "verdict": "keep",
+      "reason": "解说说张飞会接住甄姬2技能的冰球再带回己方，让甄姬的技能变成他的助攻"
+    },
+    {
+      "key": "128|countered|狂铁",
+      "verdict": "keep",
+      "reason": "解说说四级前狂铁伤害比曹操高，换血换不过，抢线会被打掉状态"
+    },
+    {
+      "key": "128|countered|盘古",
+      "verdict": "drop",
+      "reason": "解说只说盘古单挑和2V2强势所以本局别打三线，是这局运营考虑，未说盘古克制曹操"
+    },
+    {
+      "key": "129|counter|牛魔",
+      "verdict": "drop",
+      "reason": "解说说的是本局牛魔没带闪现所以好杀，属单局情况，理由与克制无关"
+    },
+    {
+      "key": "129|countered|老夫子",
+      "verdict": "keep",
+      "reason": "解说明确说典韦怕老夫子这类控制英雄，被捆住就必死，并单独点名"
+    },
+    {
+      "key": "129|countered|女娲",
+      "verdict": "keep",
+      "reason": "解说说典韦怕手长的英雄，这局唯一让他难受的就是手长的女娲"
+    },
+    {
+      "key": "129|countered|张良",
+      "verdict": "keep",
+      "reason": "解说明确说典韦怕张良这类控制英雄，被控住就必死"
+    },
+    {
+      "key": "130|counter|阿轲",
+      "verdict": "drop",
+      "reason": "解说只是说这局对面打野阿轲守不住野区，便于入侵，没有说宫本克制阿轲"
+    },
+    {
+      "key": "130|countered|东皇太一",
+      "verdict": "drop",
+      "reason": "解说只是说明1技能霸体挡不住东皇控制的机制，没有说宫本怕东皇"
+    },
+    {
+      "key": "130|countered|张良",
+      "verdict": "drop",
+      "reason": "解说只是说明1技能霸体挡不住张良控制的机制，没有说宫本怕张良"
+    },
+    {
+      "key": "130|synergy|瑶",
+      "verdict": "drop",
+      "reason": "解说描述的是本局顺风带瑶入侵野区，没有讲宫本和瑶配合好的原因"
+    },
+    {
+      "key": "131|countered|露娜",
+      "verdict": "drop",
+      "reason": "解说说的是本局露娜双Buff且身后可能有人，别回头硬拼，属单局判断"
+    },
+    {
+      "key": "131|countered|瑶",
+      "verdict": "keep",
+      "reason": "解说说低分局优先禁瑶，因为她附身会把本来能击杀或打得过的人保下来"
+    },
+    {
+      "key": "133|counter|百里玄策",
+      "verdict": "keep",
+      "reason": "解说说玄策只有远距离定点控制，能被狄仁杰2技能解除，所以可以针对出狄仁杰"
+    },
+    {
+      "key": "133|counter|后羿",
+      "verdict": "keep",
+      "reason": "解说说后羿只有远距离定点控制，能被狄仁杰2技能解除，所以可以针对出狄仁杰"
+    },
+    {
+      "key": "133|counter|兰陵王",
+      "verdict": "drop",
+      "reason": "解说只讲遇到兰陵王时用1技能探草、大招破隐的应对方法，没说狄仁杰克制兰陵王"
+    },
+    {
+      "key": "133|counter|马可波罗",
+      "verdict": "keep",
+      "reason": "解说专门讲狄仁杰克制马可，用2技能在被动叠满时解除印记可废掉其真伤"
+    },
+    {
+      "key": "133|counter|娜可露露",
+      "verdict": "drop",
+      "reason": "只是列举2技能能免疫的多种技能，未表达狄仁杰克制娜可露露"
+    },
+    {
+      "key": "137|countered|不知火舞",
+      "verdict": "drop",
+      "reason": "是对局中提醒小心火舞控制，属于某一局的具体情况，没说司马懿被火舞克制"
+    },
+    {
+      "key": "137|countered|大乔",
+      "verdict": "drop",
+      "reason": "只提到对面大乔能传送五人、需等线进塔，属于本局分析；理由里的单带集火字幕无此意"
+    },
+    {
+      "key": "137|countered|吕布",
+      "verdict": "drop",
+      "reason": "讲的是这局三级吕布可打、四级不能硬打的局内判断，不是克制说法"
+    },
+    {
+      "key": "137|countered|虞姬",
+      "verdict": "drop",
+      "reason": "只是对局中觉得虞姬难抓，随后说靠队友能抓，没有明确说司马懿被虞姬克制"
+    },
+    {
+      "key": "137|synergy|后羿",
+      "verdict": "drop",
+      "reason": "是本局喊队友后羿大招晕人再接大的局内交流，未表达一般性的配合关系"
+    },
+    {
+      "key": "137|synergy|钟馗",
+      "verdict": "drop",
+      "reason": "是本局队友钟馗勾到人后去跟的局内指挥，不是一般性的配合说法"
+    },
+    {
+      "key": "138|countered|公孙离",
+      "verdict": "keep",
+      "reason": "解说明确说遇到公孙离这类高突进英雄王维难受，因大招落地慢、无位移追不上"
+    },
+    {
+      "key": "138|countered|韩信",
+      "verdict": "keep",
+      "reason": "解说明确说遇到韩信这类高突进灵活英雄王维难受，因大招落地慢、无位移追不上"
+    },
+    {
+      "key": "138|countered|马超",
+      "verdict": "keep",
+      "reason": "解说明确说遇到马超这类高突进灵活英雄王维难受，因大招落地慢、无位移追不上"
+    },
+    {
+      "key": "138|synergy|鬼谷子",
+      "verdict": "keep",
+      "reason": "解说推荐鬼谷子这类有控制的辅助，能帮打前期控制、提高王维技能命中率"
+    },
+    {
+      "key": "138|synergy|太乙真人",
+      "verdict": "keep",
+      "reason": "解说推荐太乙这类有控制的辅助，能帮打前期控制、提高王维技能命中率"
+    },
+    {
+      "key": "138|synergy|瑶",
+      "verdict": "keep",
+      "reason": "解说说瑶附身王维后大招落地能被一起带过去，相当于群体传送，是明确的配合"
+    },
+    {
+      "key": "139|counter|花木兰",
+      "verdict": "drop",
+      "reason": "只是说木兰一级若抢线可直接打她，属于对线应对细节，后文还说四级后要特定打法"
+    },
+    {
+      "key": "139|countered|芈月",
+      "verdict": "keep",
+      "reason": "解说明确说老夫子对线芈月没办法、单挑打不过，因芈月2技能连兵或野怪就能打他"
+    },
+    {
+      "key": "141|counter|阿轲",
+      "verdict": "drop",
+      "reason": "讲的是花球能自动追踪草里或隐身的阿轲，属于技能用法，未表达克制"
+    },
+    {
+      "key": "141|counter|兰陵王",
+      "verdict": "drop",
+      "reason": "讲的是花球能追踪隐身单位、遇兰陵王可主动反打的用法，没说貂蝉克制兰陵王"
+    },
+    {
+      "key": "150|counter|后羿",
+      "verdict": "drop",
+      "reason": "只是举例1技能第二段能穿过后羿大招等直线技能，属于技能机制，未说克制后羿"
+    },
+    {
+      "key": "150|counter|墨子",
+      "verdict": "drop",
+      "reason": "只是举例1技能第二段能穿过墨子炮等直线技能，属于技能机制，未说克制墨子"
+    },
+    {
+      "key": "151|counter|蒙恬",
+      "verdict": "keep",
+      "reason": "解说说普通射手难打蒙恬，但蒙恬开大时孙权电弧叠得很快，像充电宝"
+    },
+    {
+      "key": "151|countered|镜",
+      "verdict": "drop",
+      "reason": "主要讲对面高爆发阵容时的出装选择，只说会被针对，未明确说镜克制孙权及原因"
+    },
+    {
+      "key": "151|countered|兰陵王",
+      "verdict": "drop",
+      "reason": "主要讲对面高爆发阵容时的出装选择，只说会被针对，未明确说兰陵王克制孙权及原因"
+    },
+    {
+      "key": "151|countered|司马懿",
+      "verdict": "drop",
+      "reason": "主要讲对面高爆发阵容时的出装选择，只说会被针对，未明确说司马懿克制孙权及原因"
+    },
+    {
+      "key": "152|counter|阿轲",
+      "verdict": "drop",
+      "reason": "只讲1技能有大范围真实视野可让隐身阿轲显形，属于技能用法，未说克制"
+    },
+    {
+      "key": "152|counter|宫本武藏",
+      "verdict": "drop",
+      "reason": "只是说宫本这类英雄清兵时贴兵线可把2技能丢兵线上，属于预判技巧"
+    },
+    {
+      "key": "152|counter|海诺",
+      "verdict": "drop",
+      "reason": "讲的是打海诺要找他放技能的规律再预判冻住，属于应对技巧，未说克制"
+    },
+    {
+      "key": "152|counter|铠",
+      "verdict": "drop",
+      "reason": "是对局中预判铠用强化普攻打兵而冻住他的操作演示，不是克制说法"
+    },
+    {
+      "key": "152|counter|兰陵王",
+      "verdict": "drop",
+      "reason": "只讲1技能有大范围真实视野可让隐身兰陵王显形，属于技能用法，未说克制"
+    },
+    {
+      "key": "152|counter|诸葛亮",
+      "verdict": "drop",
+      "reason": "讲的是对线诸葛亮时趁他放1技能停顿去冻他的预判技巧，未说昭君克制诸葛亮"
+    },
+    {
+      "key": "153|countered|百里守约",
+      "verdict": "keep",
+      "reason": "解说明确把百里守约列为克制隐身的英雄，说兰陵王很难应对"
+    },
+    {
+      "key": "153|countered|曹操",
+      "verdict": "keep",
+      "reason": "解说明确说兰陵王易被克制，曹操这类反打能力强的英雄兰陵王很难应对"
+    },
+    {
+      "key": "153|countered|狄仁杰",
+      "verdict": "keep",
+      "reason": "解说明确说兰陵王易被克制，狄仁杰这类反打能力强的英雄兰陵王很难应对"
+    },
+    {
+      "key": "153|countered|刘邦",
+      "verdict": "keep",
+      "reason": "解说明确说刘邦这类强保护型辅助是兰陵王很难应对的克制英雄"
+    },
+    {
+      "key": "153|countered|刘备",
+      "verdict": "keep",
+      "reason": "解说明确说兰陵王易被克制，刘备这类反打能力强的英雄兰陵王很难应对"
+    },
+    {
+      "key": "153|countered|哪吒",
+      "verdict": "keep",
+      "reason": "解说明确把哪吒列为克制隐身的英雄，说兰陵王很难应对"
+    },
+    {
+      "key": "153|countered|瑶",
+      "verdict": "keep",
+      "reason": "解说明确把瑶列为克制隐身的英雄，说兰陵王很难应对"
+    },
+    {
+      "key": "154|counter|曹操",
+      "verdict": "keep",
+      "reason": "解说说木兰贴脸沉默并推开曹操，让他大招吸不到血，表达木兰能压制曹操"
+    },
+    {
+      "key": "154|counter|东皇太一",
+      "verdict": "keep",
+      "reason": "解说说遇到东皇木兰二闪秒沉默，东皇大招放不出来会被推到塔下"
+    },
+    {
+      "key": "154|counter|狂铁",
+      "verdict": "keep",
+      "reason": "解说说木兰打狂铁更容易，沉默后续航护盾放不出，一个满蓄力拍就能击杀"
+    },
+    {
+      "key": "154|counter|夏洛特",
+      "verdict": "keep",
+      "reason": "解说说夏洛特爱贴身叠被动打控制，木兰靠沉默加霸体可以拿捏她"
+    },
+    {
+      "key": "156|counter|镜",
+      "verdict": "keep",
+      "reason": "解说把张良列为克制镜的第一档英雄，提到镜换位上来时张良会秒按大招压制"
+    },
+    {
+      "key": "162|counter|阿古朵",
+      "verdict": "drop",
+      "reason": "只是说阿古朵不擅带线、打他可去边路施压的运营思路，未说露露克制阿古朵"
+    },
+    {
+      "key": "162|countered|阿古朵",
+      "verdict": "drop",
+      "reason": "是本局团战中提醒别贸然进场以免被阿古朵大招控住，属于局内具体情况"
+    },
+    {
+      "key": "163|counter|裴擒虎",
+      "verdict": "keep",
+      "reason": "解说明确说橘右京天生克制裴擒虎，因前期爆发、灵活性、技能机制和刷野速度占优"
+    },
+    {
+      "key": "163|countered|老夫子",
+      "verdict": "drop",
+      "reason": "这一局被老夫子反捆的具体经过，没有泛化说橘右京被老夫子克制"
+    },
+    {
+      "key": "163|countered|李白",
+      "verdict": "drop",
+      "reason": "某一局里对这个李白的临场应对，讲的是等他交技能再反打，没有说橘右京被李白克制"
+    },
+    {
+      "key": "166|counter|百里守约",
+      "verdict": "drop",
+      "reason": "是改数值、禁普攻的娱乐对局，结论依附于该局特殊规则，不是一般的克制说法"
+    },
+    {
+      "key": "166|counter|哪吒",
+      "verdict": "keep",
+      "reason": "解说明确说哪吒打不过亚瑟、可以随便打，原因是一技能加速他摸不到、被动回血不怕消耗"
+    },
+    {
+      "key": "166|countered|甄姬",
+      "verdict": "keep",
+      "reason": "解说说甄姬是坦克抱团的克星，弹射伤害很高，要换抵抗鞋"
+    },
+    {
+      "key": "166|synergy|海月",
+      "verdict": "keep",
+      "reason": "解说直接说亚瑟和海月配合很舒服，因为海月能把团开起来"
+    },
+    {
+      "key": "167|countered|不知火舞",
+      "verdict": "drop",
+      "reason": "只是说明一技能挡不住火舞被动这类强普控制并教怎么卡时机，没有说克制关系"
+    },
+    {
+      "key": "167|countered|狂铁",
+      "verdict": "drop",
+      "reason": "只是说明一技能挡不住附加在强化普攻上的控制并教怎么卡时机，没有说被狂铁克制"
+    },
+    {
+      "key": "167|countered|刘禅",
+      "verdict": "drop",
+      "reason": "只是说明一技能挡不住附加在强化普攻上的控制并教怎么卡时机，没有说被刘禅克制"
+    },
+    {
+      "key": "169|counter|李信",
+      "verdict": "drop",
+      "reason": "讲的是这局对线李信的抢线思路，只说李信四级前弱，没有说后羿克制李信"
+    },
+    {
+      "key": "172|countered|镜",
+      "verdict": "keep",
+      "reason": "解说说怕镜这类爆发英雄，蚩奼没有保命技能会被一套秒掉，建议换出装应对"
+    },
+    {
+      "key": "172|countered|铠",
+      "verdict": "keep",
+      "reason": "解说称铠是蚩奼最严厉的父亲，开大后多段平A打在铠身上几乎没有伤害"
+    },
+    {
+      "key": "172|countered|澜",
+      "verdict": "keep",
+      "reason": "解说说怕澜这类爆发英雄，蚩奼没有保命技能会被一套秒掉，建议换出装应对"
+    },
+    {
+      "key": "173|counter|阿轲",
+      "verdict": "keep",
+      "reason": "解说说元芳被动能暴露隐身英雄并靠脚底箭头追踪，对付阿轲有奇效"
+    },
+    {
+      "key": "173|counter|兰陵王",
+      "verdict": "keep",
+      "reason": "解说说元芳被动能暴露隐身英雄并靠脚底箭头追踪，对付兰陵王有奇效"
+    },
+    {
+      "key": "173|countered|狄仁杰",
+      "verdict": "drop",
+      "reason": "只是机制说明：叠标时被狄仁杰二技能或净化会提前引爆，没有说被狄仁杰克制"
+    },
+    {
+      "key": "174|counter|妲己",
+      "verdict": "drop",
+      "reason": "只是教受到妲己控制前开二技能免控，属于技能用法，没有说虞姬克制妲己"
+    },
+    {
+      "key": "174|counter|鲁班七号",
+      "verdict": "drop",
+      "reason": "只是说二技能免物伤可规避鲁班被动扫射，属于技能用法，没有说克制关系"
+    },
+    {
+      "key": "174|counter|王昭君",
+      "verdict": "drop",
+      "reason": "只是说二技能可以净化王昭君的减速，属于技能用法，没有说虞姬克制王昭君"
+    },
+    {
+      "key": "174|counter|小乔",
+      "verdict": "drop",
+      "reason": "只是教受到小乔控制前开二技能免控，属于技能用法，没有说虞姬克制小乔"
+    },
+    {
+      "key": "174|counter|钟馗",
+      "verdict": "drop",
+      "reason": "只是说二技能开启瞬间霸体能抵消钟馗钩子，属于技能用法，没有说虞姬克制钟馗"
+    },
+    {
+      "key": "175|counter|夏侯惇",
+      "verdict": "drop",
+      "reason": "只是用夏侯惇举例讲施法前摇时出钩容易命中，属于勾人技巧，没有说钟馗克制他"
+    },
+    {
+      "key": "175|countered|阿古朵",
+      "verdict": "keep",
+      "reason": "解说说阿古朵能召唤单位主动吃掉钟馗的钩子，让钟馗很难受，建议别选钟馗"
+    },
+    {
+      "key": "175|countered|狄仁杰",
+      "verdict": "keep",
+      "reason": "在英雄克制一节明确说对面有狄仁杰这类能解控的英雄就别选钟馗，钩子会被解掉"
+    },
+    {
+      "key": "175|countered|廉颇",
+      "verdict": "keep",
+      "reason": "在英雄克制一节明确说对面有廉颇这类能用霸体解控的英雄就别选钟馗"
+    },
+    {
+      "key": "175|countered|蒙恬",
+      "verdict": "keep",
+      "reason": "解说说蒙恬能召唤单位主动吃掉钟馗的钩子，让钟馗很难受，建议别选钟馗"
+    },
+    {
+      "key": "175|countered|米莱狄",
+      "verdict": "keep",
+      "reason": "解说说米莱狄能召唤单位主动吃掉钟馗的钩子，让钟馗很难受，建议别选钟馗"
+    },
+    {
+      "key": "175|countered|瑶",
+      "verdict": "keep",
+      "reason": "在英雄克制一节明确说对面有瑶这类能解控的英雄就别选钟馗，钩子会被解掉"
+    },
+    {
+      "key": "175|countered|庄周",
+      "verdict": "keep",
+      "reason": "在英雄克制一节明确说对面有庄周这类能解控的英雄就别选钟馗，钩子会被解掉"
+    },
+    {
+      "key": "177|synergy|杨玉环",
+      "verdict": "drop",
+      "reason": "只是列举几个版本强势、有对线强度的辅助，没有说杨玉环和苍有什么特定配合"
+    },
+    {
+      "key": "182|counter|张良",
+      "verdict": "drop",
+      "reason": "只是机制说明：一技能是脱手技能，被压制时也能打断张良大招，没有说克制关系"
+    },
+    {
+      "key": "182|counter|赵云",
+      "verdict": "drop",
+      "reason": "只是机制说明：一技能能抵消赵云大招这类突进控制，属于技能用法，没有说克制"
+    },
+    {
+      "key": "187|countered|海诺",
+      "verdict": "keep",
+      "reason": "视频主题就是用海诺克制东皇，原因是被控能开大回溯，骗掉东皇大招后满血反打"
+    },
+    {
+      "key": "187|countered|镜",
+      "verdict": "drop",
+      "reason": "方向相反：视频把东皇列为克制镜的第一档，讲的是镜玩家怎么应对东皇"
+    },
+    {
+      "key": "188|counter|孙策",
+      "verdict": "drop",
+      "reason": "只是机制说明：鼎是机关物能挡孙策的船，属于技能细节，没有说大禹克制孙策"
+    },
+    {
+      "key": "191|counter|苏烈",
+      "verdict": "drop",
+      "reason": "是这一局开局抢线的具体判断，说的是一级清线快慢，没有说大乔克制苏烈"
+    },
+    {
+      "key": "191|countered|海诺",
+      "verdict": "drop",
+      "reason": "是这一局里海诺守中塔推不进的局势描述，没有说大乔被海诺克制"
+    },
+    {
+      "key": "193|counter|典韦",
+      "verdict": "keep",
+      "reason": "解说说典韦稍微被铠克制，因为铠数值略高且主动权在铠，典韦跑不掉"
+    },
+    {
+      "key": "193|counter|后羿",
+      "verdict": "keep",
+      "reason": "解说明确说铠非常克制后羿、嬴政这类多段伤害英雄；字幕没提格挡，但原因一致"
+    },
+    {
+      "key": "193|counter|澜",
+      "verdict": "keep",
+      "reason": "解说明确说澜要贴脸、无控制、多段伤害，想跑也难，绝对被铠克制"
+    },
+    {
+      "key": "193|counter|盘古",
+      "verdict": "keep",
+      "reason": "解说明确说盘古是多段伤害，完美被铠大招格挡克制，缴械过后铠两刀单杀"
+    },
+    {
+      "key": "193|countered|韩信",
+      "verdict": "keep",
+      "reason": "解说说韩信机制同李白但素质更高、刷钱更快，是铠的大威胁，铠劣势就被压制"
+    },
+    {
+      "key": "193|countered|李白",
+      "verdict": "keep",
+      "reason": "解说说铠甚至被李白克制，最怕他打一套就走不跟你肉搏，很难杀到"
+    },
+    {
+      "key": "193|countered|露娜",
+      "verdict": "keep",
+      "reason": "解说说露娜想打就打想跑就跑且数值高，贴一次身铠不交大就死，极其克制铠"
+    },
+    {
+      "key": "193|countered|猪八戒",
+      "verdict": "keep",
+      "reason": "解说称猪八戒是铠的噩梦和严父，免控挡住二技能击飞，斩杀线和伤害都更高"
+    },
+    {
+      "key": "195|countered|孙膑",
+      "verdict": "keep",
+      "reason": "解说说孙膑能随意拉扯玄策，加速拉开后不好勾，还会被反开打断钩子"
+    },
+    {
+      "key": "195|countered|小乔",
+      "verdict": "drop",
+      "reason": "解说讲的是等小乔交控制后再进场的时机，没有说小乔克制玄策"
+    },
+    {
+      "key": "196|counter|阿轲",
+      "verdict": "drop",
+      "reason": "只是讲1技能放眼能看到隐身单位的探草机制，没有说守约克制阿轲"
+    },
+    {
+      "key": "196|counter|兰陵王",
+      "verdict": "drop",
+      "reason": "只是讲1技能放眼能看到隐身单位的探草机制，没有说守约克制兰陵王"
+    },
+    {
+      "key": "196|counter|澜",
+      "verdict": "drop",
+      "reason": "只说贴脸2技能技巧在遇到澜时好用，属于应对打法，未表达克制"
+    },
+    {
+      "key": "196|counter|司马懿",
+      "verdict": "drop",
+      "reason": "只说贴脸2技能技巧在遇到司马懿时好用，属于应对打法，未表达克制"
+    },
+    {
+      "key": "197|counter|阿轲",
+      "verdict": "drop",
+      "reason": "只介绍大招提供真实视野能让隐身英雄显形的机制，未表达克制关系"
+    },
+    {
+      "key": "197|counter|兰陵王",
+      "verdict": "drop",
+      "reason": "只介绍大招提供真实视野能让隐身英雄显形的机制，未表达克制关系"
+    },
+    {
+      "key": "197|counter|牛魔",
+      "verdict": "drop",
+      "reason": "只举例说明2技能控制优先级高，属于技能机制介绍，未说弈星克制牛魔"
+    },
+    {
+      "key": "197|counter|项羽",
+      "verdict": "drop",
+      "reason": "只举例说明2技能控制优先级高，属于技能机制介绍，未说弈星克制项羽"
+    },
+    {
+      "key": "198|counter|宫本武藏",
+      "verdict": "keep",
+      "reason": "解说明确说宫本最被梦奇克制，护盾挡住其伤害且无法吸血"
+    },
+    {
+      "key": "198|counter|澜",
+      "verdict": "keep",
+      "reason": "解说把澜列为梦奇克制的站撸英雄，护盾使澜打不穿，大招可反追或撤离"
+    },
+    {
+      "key": "198|counter|芈月",
+      "verdict": "drop",
+      "reason": "主要讲出魔女的出装思路，且以经济小优为前提，不是明确的克制说法"
+    },
+    {
+      "key": "198|countered|吕布",
+      "verdict": "keep",
+      "reason": "解说说梦奇核心是护盾、被真伤英雄克制，对面有吕布会很难打"
+    },
+    {
+      "key": "198|countered|哪吒",
+      "verdict": "drop",
+      "reason": "只是在某局出装思路里把哪吒归为真伤英雄，没有说梦奇被哪吒克制"
+    },
+    {
+      "key": "502|counter|朵莉亚",
+      "verdict": "keep",
+      "reason": "解说说老虎靠前期节奏压制，克制朵莉亚这类前期弱势辅助"
+    },
+    {
+      "key": "502|counter|宫本武藏",
+      "verdict": "keep",
+      "reason": "解说说老虎靠前期节奏压制，克制宫本这类前期弱势打野"
+    },
+    {
+      "key": "502|countered|高渐离",
+      "verdict": "keep",
+      "reason": "解说说克制老虎的是前期对抗强的英雄，举例高渐离这类能打架的中路"
+    },
+    {
+      "key": "502|countered|苏烈",
+      "verdict": "keep",
+      "reason": "解说说克制老虎的是前期对抗强的英雄，举例苏烈这类前期强势辅助"
+    },
+    {
+      "key": "502|countered|武则天",
+      "verdict": "keep",
+      "reason": "解说说克制老虎的是前期对抗强的英雄，举例武则天这类能打架的中路"
+    },
+    {
+      "key": "505|countered|蔡文姬",
+      "verdict": "keep",
+      "reason": "解说说瑶是反手缺开团，遇到蔡文姬这类需开团的软辅很难受，不建议选"
+    },
+    {
+      "key": "505|countered|明世隐",
+      "verdict": "keep",
+      "reason": "解说说瑶是反手缺开团，遇到明世隐这类需开团的软辅很难受，不建议选"
+    },
+    {
+      "key": "505|synergy|公孙离",
+      "verdict": "keep",
+      "reason": "解说说公孙离这类灵活射手不易被打下来，瑶附体后只需放技能跳盾"
+    },
+    {
+      "key": "505|synergy|孙尚香",
+      "verdict": "keep",
+      "reason": "解说说瑶非常搭配孙尚香这类灵活射手，与提炼的理由一致"
+    },
+    {
+      "key": "508|counter|安琪拉",
+      "verdict": "keep",
+      "reason": "解说明确说伽罗因被动天生克制护盾类英雄，并点名安琪拉"
+    },
+    {
+      "key": "508|counter|狂铁",
+      "verdict": "keep",
+      "reason": "解说明确说伽罗因被动天生克制护盾类英雄，并点名狂铁"
+    },
+    {
+      "key": "508|counter|张飞",
+      "verdict": "keep",
+      "reason": "解说明确说伽罗因被动天生克制护盾类英雄，并点名张飞"
+    },
+    {
+      "key": "509|counter|苏烈",
+      "verdict": "drop",
+      "reason": "只举例说明大招可拆苏烈的贴脸开团，属于技能用法，未表达克制关系"
+    },
+    {
+      "key": "509|counter|孙策",
+      "verdict": "drop",
+      "reason": "只举例说明大招可拆孙策的开团，属于技能用法，未表达克制关系"
+    },
+    {
+      "key": "510|countered|典韦",
+      "verdict": "drop",
+      "reason": "只讲船尾被碰也会爆炸的大招机制，未明确说孙策整体被典韦克制"
+    },
+    {
+      "key": "510|countered|杨戬",
+      "verdict": "drop",
+      "reason": "只讲船尾被碰也会爆炸的大招机制，未明确说孙策整体被杨戬克制"
+    },
+    {
+      "key": "513|countered|女娲",
+      "verdict": "drop",
+      "reason": "讲的是只会直线飞的玩家容易被推开、要学拐弯飞，属于操作建议"
+    },
+    {
+      "key": "523|counter|花木兰",
+      "verdict": "keep",
+      "reason": "解说明确说西施好打木兰，等木兰重剑霸体交完后再拉就能轻松拉回"
+    },
+    {
+      "key": "524|counter|盘古",
+      "verdict": "keep",
+      "reason": "解说说盘古缴械限制不了蒙犽1技能和大招输出，是蒙犽的优势，不怕被抓"
+    },
+    {
+      "key": "524|countered|阿轲",
+      "verdict": "drop",
+      "reason": "讲的是遇到突进阵容要出装应对，未说明阿轲克制蒙犽的原因"
+    },
+    {
+      "key": "524|countered|盾山",
+      "verdict": "keep",
+      "reason": "解说把盾山列为劣势，说其大招能挡飞行物，会大大限制蒙犽输出"
+    },
+    {
+      "key": "524|countered|司马懿",
+      "verdict": "drop",
+      "reason": "讲的是遇到突进阵容要出半肉的出装建议，未说明司马懿克制蒙犽的原因"
+    },
+    {
+      "key": "524|countered|孙悟空",
+      "verdict": "drop",
+      "reason": "讲的是遇到突进阵容要出半肉的出装建议，未说明孙悟空克制蒙犽的原因"
+    },
+    {
+      "key": "527|countered|马超",
+      "verdict": "keep",
+      "reason": "解说说防御形态移动很慢，面对马超仍会被随意拉扯打不到"
+    },
+    {
+      "key": "527|countered|夏洛特",
+      "verdict": "keep",
+      "reason": "解说说防御形态移动很慢，面对夏洛特仍会被随意拉扯打不到"
+    },
+    {
+      "key": "531|countered|东皇太一",
+      "verdict": "drop",
+      "reason": "只是提醒对方有东皇这类瞬发控制时别用某套飞入消耗连招，属应对打法"
+    },
+    {
+      "key": "531|countered|张良",
+      "verdict": "drop",
+      "reason": "只是提醒对方有张良这类瞬发控制时别用某套飞入消耗连招，属应对打法"
+    },
+    {
+      "key": "533|countered|东皇太一",
+      "verdict": "drop",
+      "reason": "只是说明2技能免控对东皇无效的机制，未表达克制关系"
+    },
+    {
+      "key": "533|countered|张良",
+      "verdict": "drop",
+      "reason": "只是说明2技能免控抵消不了张良压制的机制，未表达克制关系"
+    },
+    {
+      "key": "536|counter|关羽",
+      "verdict": "keep",
+      "reason": "解说明确说夏洛特被动减攻速移速，尤其克制关羽这类依赖攻速移速的英雄"
+    },
+    {
+      "key": "536|counter|马超",
+      "verdict": "keep",
+      "reason": "解说明确说夏洛特被动减攻速移速，尤其克制马超这类依赖攻速移速的英雄"
+    },
+    {
+      "key": "536|countered|露娜",
+      "verdict": "keep",
+      "reason": "解说说强化普攻可被位移躲掉，夏洛特很难打露娜这类多段位移英雄"
+    },
+    {
+      "key": "540|counter|韩信",
+      "verdict": "keep",
+      "reason": "解说说1技能不怕霸体、特别克制霸体英雄，以韩信为例霸体结束后走不出去"
+    },
+    {
+      "key": "540|counter|花木兰",
+      "verdict": "keep",
+      "reason": "解说说花木兰同理，提前套圈后切轻剑也无法位移逃走"
+    },
+    {
+      "key": "540|counter|哪吒",
+      "verdict": "keep",
+      "reason": "解说明确说金蝉1技能克制哪吒飞天，被圈住后逃不出去"
+    },
+    {
+      "key": "540|counter|上官婉儿",
+      "verdict": "keep",
+      "reason": "解说明确说金蝉1技能克制大多数英雄，点名婉儿飞天逃不出紧箍"
+    },
+    {
+      "key": "540|counter|司马懿",
+      "verdict": "keep",
+      "reason": "解说点名司马懿灵魂出窍也逃不出金蝉1技能的圈"
+    },
+    {
+      "key": "540|counter|赵云",
+      "verdict": "keep",
+      "reason": "解说在1技能克制名单中点名赵云的位移，称其逃不出紧箍范围"
+    },
+    {
+      "key": "547|counter|后羿",
+      "verdict": "keep",
+      "reason": "解说明确说大招致盲能规避控制和伤害，因此很克制后羿这类带控长手英雄"
+    },
+    {
+      "key": "547|counter|嬴政",
+      "verdict": "keep",
+      "reason": "解说说致盲让远程普攻和技能弹道打偏，对嬴政克制度较强"
+    },
+    {
+      "key": "547|counter|钟馗",
+      "verdict": "drop",
+      "reason": "解说虽称钩子会被致盲影响，但随即说拐弯钩是好是坏不好说，态度不明确"
+    },
+    {
+      "key": "550|synergy|狄仁杰",
+      "verdict": "drop",
+      "reason": "只是列举强势射手可打出对线优势，属强度判断，无具体配合原因"
+    },
+    {
+      "key": "550|synergy|公孙离",
+      "verdict": "drop",
+      "reason": "只是把公孙离列为强势射手，未说明与空空儿技能上的配合原因"
+    },
+    {
+      "key": "550|synergy|孙尚香",
+      "verdict": "drop",
+      "reason": "只是列举强势射手可打出对线优势，属强度判断，无具体配合原因"
+    },
+    {
+      "key": "563|synergy|盾山",
+      "verdict": "keep",
+      "reason": "解说专门讲联动，盾山抬盾能让海诺技能和普攻无后摇，一级即强势"
+    },
+    {
+      "key": "563|synergy|朵莉亚",
+      "verdict": "keep",
+      "reason": "解说明确讲两人15级后朵莉亚刷新海诺大招触发组合技冻结范围"
+    },
+    {
+      "key": "577|synergy|韩信",
+      "verdict": "keep",
+      "reason": "解说点名可借1技能跟随韩信等突脸英雄远距离强开后排"
+    },
+    {
+      "key": "577|synergy|刘邦",
+      "verdict": "keep",
+      "reason": "解说说1技能第二段会跟随队友移动，可以跟着刘邦大招一起走"
+    },
+    {
+      "key": "581|counter|露娜",
+      "verdict": "keep",
+      "reason": "解说明确说非常克制露娜，因为她进场后能被控到底，打法类似东皇"
+    },
+    {
+      "key": "581|counter|孙权",
+      "verdict": "drop",
+      "reason": "解说说克孙权只因他是近战，字幕里没有提炼理由中的无位移、被顶住等原因"
+    },
+    {
+      "key": "581|countered|蔡文姬",
+      "verdict": "keep",
+      "reason": "解说说蔡文姬最难打，自身伤害总量有限，她回血导致常差一口杀不掉"
+    },
+    {
+      "key": "585|countered|张良",
+      "verdict": "drop",
+      "reason": "解说只是说明大招抵消控制的例外是张良压制，并未表达张良克制元流辅助"
+    },
+    {
+      "key": "646|synergy|亚连",
+      "verdict": "keep",
+      "reason": "解说明确讲两人15级联动，亚连大招锁定刀锋宝贝可为其提供霸体"
+    }
+  ]
+}

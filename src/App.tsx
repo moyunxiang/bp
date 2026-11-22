@@ -9,6 +9,7 @@ const HeroesPage = lazy(() => import('./pages/HeroesPage.tsx').then((m) => ({ de
 const HeroDetailPage = lazy(() => import('./pages/HeroDetailPage.tsx').then((m) => ({ default: m.HeroDetailPage })));
 const GraphPage = lazy(() => import('./pages/GraphPage.tsx').then((m) => ({ default: m.GraphPage })));
 const CompsPage = lazy(() => import('./pages/CompsPage.tsx').then((m) => ({ default: m.CompsPage })));
+const TiersPage = lazy(() => import('./pages/TiersPage.tsx').then((m) => ({ default: m.TiersPage })));
 const MePage = lazy(() => import('./pages/MePage.tsx').then((m) => ({ default: m.MePage })));
 const AboutPage = lazy(() => import('./pages/AboutPage.tsx').then((m) => ({ default: m.AboutPage })));
 
@@ -37,6 +38,7 @@ export function App() {
             <Route index element={<BpPage />} />
             <Route path="heroes" element={<HeroesPage />} />
             <Route path="heroes/:id" element={<HeroDetailPage />} />
+            <Route path="tiers" element={<TiersPage />} />
             <Route path="graph" element={<GraphPage />} />
             <Route path="comps" element={<CompsPage />} />
             <Route path="me" element={<MePage />} />

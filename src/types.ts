@@ -107,9 +107,13 @@ export interface KplHeroStat {
   /** 系列赛第一局（不受全局BP影响）被选/被禁的次数：近期窗口与一年窗口 */
   g1Recent: { pick: number; ban: number };
   g1Year: { pick: number; ban: number };
+  /** 近期窗口内，系列赛第一局里按分路的出场次数 */
+  g1LaneRecent?: number[];
   teamGames: number;
   /** 共现窗口（一年）内按分路的出场次数，分母是 pairs.teamGames */
   lanesYear?: number[];
+  /** 近期窗口（60天）内按分路的出场次数，分母是 short.teamGames */
+  lanesShort?: number[];
 }
 
 export interface KplStats {
@@ -121,6 +125,7 @@ export interface KplStats {
     year: { windowDays: number; from: string; to: string; games: number };
   };
   lanes: { windowDays: number };
+  short?: { windowDays: number; from: string; to: string; teamGames: number };
   pairs: {
     windowDays: number;
     from: string;
@@ -161,6 +166,10 @@ export interface Cond {
 }
 
 export interface Rule {
+  /** 职业赛胜负检验：这条规则净次数占优一方的胜率、样本数、95%区间 */
+  proCheck?: { n: number; winRate: number; lo: number; hi: number };
+  /** 按胜负检验调整之前的权重 */
+  weightBefore?: number;
   id: string;
   type: 'counter' | 'synergy';
   name: string;
@@ -259,6 +268,8 @@ export interface BundleMeta {
   counts: Record<string, number>;
   profileReport: { tagAgreement: number | null; tagsVerified: number; tagsDisputed: number; proseOk: number; proseDropped: number; reviewed: number; heroes: number; needsReview: number } | null;
   backtest: BacktestReport | null;
+  /** 胜负检验：阵容差值与职业赛胜负的关系（内部检验，不含任何英雄胜率） */
+  outcomeTest: OutcomeTest | null;
   pending: { needsReview: string[]; missingProfile: string[] };
 }
 
@@ -269,7 +280,7 @@ export interface Bundle {
   rules: Rule[];
   tags: TagDef[];
   patches: PatchNote[];
-  kpl: Pick<KplStats, 'coverage' | 'heat' | 'pairs' | 'source' | 'resp'> | null;
+  kpl: Pick<KplStats, 'coverage' | 'heat' | 'pairs' | 'source' | 'resp' | 'short'> | null;
   /** 由职业赛BP训练出的选人模型（各分项的系数）；没有时使用手工权重 */
   model: PickModel | null;
   comps: KplComps | null;
@@ -282,6 +293,39 @@ export interface Bundle {
   commentary: CommentaryItem[];
   /** 英雄教学内容，键为英雄ID */
   guides: Record<string, HeroGuide>;
+  /** 王者营地英雄榜（路人局，各位置热度前10）；没有抓到时为 null */
+  camp: CampData | null;
+}
+
+// ---------- 王者营地英雄榜 ----------
+export interface CampEntry {
+  id: number;
+  /** 营地标注的热度档位，原样保留（T0、T1…） */
+  tier: string;
+  /** 胜率、登场率、禁用率，0–1，均为营地原始数字 */
+  win: number;
+  show: number;
+  ban: number;
+  /** 上一份数据里的档位；null=上次不在前10；undefined=没有可比较的上一份 */
+  prev?: string | null;
+}
+export interface CampSegment {
+  id: number;
+  name: string;
+  /** 不分位置的热度前10 */
+  all: CampEntry[];
+  lanes: Record<Lane, CampEntry[]>;
+}
+export interface CampData {
+  source: string;
+  url: string;
+  fetchedAt: string;
+  /** 营地标注的数据日期 YYYY-MM-DD */
+  updateTime: string;
+  prevUpdateTime: string | null;
+  /** 公开接口每个榜单返回的英雄数上限 */
+  limit: number;
+  segments: CampSegment[];
 }
 
 // ---------- 选人模型 ----------
@@ -297,9 +341,23 @@ export interface PickModel {
   features: string[];
   /** 每个阶段的系数：phases[k].mult[分项] */
   phases: { name: string; fromOrder: number; toOrder: number; mult: Record<string, number> }[];
+  /** 用户指定“我打某路”时使用的系数（候选只剩能打该位置的英雄）；没有则用 phases */
+  lanePhases?: PickModel['phases'] | null;
   /** 为了保证“会看对方阵容”而设定的下限（见数据说明页） */
   floors: Record<string, number>;
   note: string;
+}
+
+// ---------- 胜负检验 ----------
+
+export interface OutcomeTest {
+  generatedAt: string;
+  note: string;
+  games: number;
+  train: { n: number; from: string; to: string };
+  test: { n: number; from: string; to: string; blueWinRate: number };
+  models: { name: string; acc: number; logloss: number; auc: number }[];
+  direct: { key: string; name: string; n: number; winRate: number; lo: number; hi: number }[];
 }
 
 // ---------- 回测 ----------
@@ -307,6 +365,8 @@ export interface PickModel {
 export interface BacktestMethod {
   id: string;
   name: string;
+  top1?: number;
+  top3?: number;
   top5: number;
   top10: number;
   mrr: number;
@@ -320,6 +380,10 @@ export interface BacktestReport {
   test: { from: string; to: string; picks: number; battles: number };
   methods: BacktestMethod[];
   byPhase: { phase: string; n: number; methods: BacktestMethod[] }[];
+  /** 指定位置后的评估：候选只留能打“职业选手实际所打位置”的英雄，对应用户设定“我打某路”的用法 */
+  laneGiven?: { n: number; methods: BacktestMethod[] };
+  /** 最近一届赛事留出测试：用它之前的全部对局训练 */
+  recent?: { league: string; train: { from: string; to: string; picks: number }; test: { from: string; to: string; picks: number; battles: number }; methods: BacktestMethod[]; laneGiven: { n: number; methods: BacktestMethod[] } };
   /** 最终采用的方法 id 及原因 */
   adopted: string;
   adoptedReason: string;

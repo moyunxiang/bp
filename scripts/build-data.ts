@@ -1,12 +1,15 @@
 // 生成前端数据包 public/data/bundle.json。
-// 用法：tsx scripts/build-data.ts
+// 用法：tsx scripts/build-data.ts [--keep-date]
+//   --keep-date：沿用现有数据包的生成时间。定时任务只刷新营地英雄榜时使用，避免把其他没有更新的数据也显示成“刚更新”。
 import { resolve } from 'node:path';
-import { ROOT, writeJson } from './lib/http.ts';
+import { ROOT, exists, readJson, writeJson } from './lib/http.ts';
 import { assemble, loadInputs } from './lib/assemble.ts';
 import { buildRelations } from '../src/engine/relations.ts';
 
 async function main() {
   const { bundle, staleEdges } = assemble(await loadInputs());
+  const metaFile = resolve(ROOT, 'public/data/meta.json');
+  if (process.argv.includes('--keep-date') && (await exists(metaFile))) bundle.meta.generatedAt = (await readJson<{ generatedAt: string }>(metaFile)).generatedAt;
   const heroes = bundle.heroes;
 
   // 用与前端相同的代码计算一次关系，得到各类数量

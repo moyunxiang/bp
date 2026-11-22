@@ -156,18 +156,6 @@
         }
       ],
       "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 168,
-      "claim": "牛魔没有闪现，二技能顶上去之后容易被杀死",
-      "refs": [
-        {
-          "bvid": "BV1eVFTzoE9v",
-          "t": 530
-        }
-      ],
-      "sources": 1
     }
   ]
 }

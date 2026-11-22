@@ -33,6 +33,8 @@ async function main() {
   if (run('抓取官方英雄资料', 'scripts/fetch-official.ts', ['--refresh'])) run('解析官方英雄资料', 'scripts/parse-official.ts', [], true);
   // 2. 版本公告
   run('抓取正式服公告', 'scripts/fetch-news.ts', ['--refresh']);
+  // 2b. 王者营地英雄榜（路人局，各位置热度前10；公开接口，不需要登录）
+  run('读取王者营地英雄榜', 'scripts/fetch-camp.ts');
   // 3. 职业赛：只增量抓取去年以来的赛事（已抓的对局会跳过）
   if (!has('--skip-kpl')) {
     run('抓取职业赛对局（增量）', 'scripts/fetch-kpl.ts', [`--since=${new Date().getFullYear() - 1}`, '--refresh-matches', '--concurrency=8']);
@@ -48,7 +50,7 @@ async function main() {
   }
   run('核对并汇总英雄教学内容', 'scripts/commentary/build-guides.ts');
   run('汇总解说条目', 'scripts/commentary/build.ts');
-  // 6. 回测并重新训练选人模型（可选，约3分钟）
+  // 6. 回测并重新训练选人模型（可选，约12分钟）
   if (has('--backtest')) run('回测', 'scripts/backtest.ts');
   // 7. 生成数据包并校验
   run('生成数据包', 'scripts/build-data.ts', [], true);

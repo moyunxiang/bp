@@ -1,0 +1,45 @@
+{
+  "id": 503,
+  "videos": [
+    {
+      "bvid": "BV1HEa66NESd",
+      "title": "【神罚】回归经典！S45狂铁出装铭文打法思路分享~",
+      "uploader": "神罚Warth",
+      "date": "2026-10-01",
+      "seconds": 147
+    },
+    {
+      "bvid": "BV1XJvCBwECd",
+      "title": "狂铁全局思路教学",
+      "uploader": "Box-对抗路顶级私教",
+      "date": "2025-12-28",
+      "seconds": 809
+    }
+  ],
+  "combos": [],
+  "tips": [
+    {
+      "title": "步行千山衔接击飞",
+      "text": "新召唤师技能步行千山的位移过程中可以衔接狂铁的击飞，比闪现过去再敲击飞更丝滑",
+      "refs": [
+        {
+          "bvid": "BV1HEa66NESd",
+          "t": 40
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "提前叠能量备击飞",
+      "text": "二技能击飞需要能量，可以先打河蟹、小兵叠能量，能量没算好会打不出击飞，也就无法打断传送",
+      "refs": [
+        {
+          "bvid": "BV1XJvCBwECd",
+          "t": 509
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "matchups": []
+}

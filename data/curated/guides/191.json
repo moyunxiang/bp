@@ -165,30 +165,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "countered",
-      "hero": 563,
-      "claim": "海诺守塔能力太强，只要他不死，大乔一方很难压进中塔",
-      "refs": [
-        {
-          "bvid": "BV16ha2z8EpC",
-          "t": 299
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 194,
-      "claim": "一级时大乔抢线比苏烈快，且远程普攻消耗能占便宜",
-      "refs": [
-        {
-          "bvid": "BV1qBHv6SEaS",
-          "t": 30
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

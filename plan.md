@@ -19,33 +19,32 @@
 - 子任务模型只用Opus或Sonnet，不用Fable。
 - 提交不加任何Claude署名。
 
-## 当前状态（2026-11-22 15:20 HKT）
+## 当前状态（2026-11-22 20:05 HKT）
 
 **已完成并验证**：
-- 数据链路：官方英雄资料（140英雄、570技能、829条官方关系边）、正式服公告（近200天79条）、KPL逐局BP（2025–2026全部赛事，可用3082局）抓取与聚合、数据包生成与校验。
-- 机制档案：140/140已盲审，标签一致率90.0%，分歧148条已裁定，已核实标签1429条；规则表13条；可计分关系约3400条，英雄对覆盖率约31%。
+- 数据链路：官方英雄资料（140英雄、570技能、829条官方关系边）、正式服公告（近200天79条）、KPL逐局BP（2025–2026全部赛事，可用3082局）、王者营地英雄榜（公开分享页接口）抓取与聚合、数据包生成与校验。
+- 机制档案：140/140已盲审，标签一致率90.0%，已核实标签1429条；规则表15条；计分关系约3700条，英雄对覆盖率约34%。
 - 推荐引擎：分路推断、BP规则（排位/巅峰/自由，禁用位可调，多形态互斥，限时英雄排除）、Pick/Ban评分、可信程度、阵容分析、替代英雄。
-- 页面：BP助手、英雄百科（列表+详情）、关系图谱（单英雄+阵容对阵）、阵容库、我的、数据说明。
-- 测试：`npm test` 40项通过；`npx playwright test` 10项通过（含纯键盘录完10禁10选）；`npm run validate` 错误0。
-- 选人模型：条件logit，9个分项按阶段拟合，测试集Top10命中率69.2%（手工权重58.2%），已上线使用。
-- 教学内容（连招、细节、克制关系）：从B站教学视频字幕提炼，逐条核对出处；规则表15条。
-- 部署：`https://moyunxiang.com/bp/`（GitHub Pages，推送到main后由Actions自动校验、测试、构建、发布）。
-- 正式回测（训练2025、测试2026共15470次选人决策）已完成并写入数据说明页。
-
-**未完成**：教学内容还没覆盖全部英雄（抓取和提炼进行中）。见文末“交接”。
+- 选人模型：条件logit，11个分项按阶段拟合（另有“指定位置”专用系数），由`scripts/backtest.ts`训练并写入`data/derived/model.json`。
+- 页面：BP助手、英雄百科（列表+详情）、分路梯度（营地各段位/职业赛）、关系图谱、阵容库、我的、数据说明。
+- 教学内容（连招、细节、克制关系）：134个英雄有内容（连招397、细节1167、克制/配合说法105）；逐条核对字幕出处；克制说法另经独立复核（210条里剔除105条）。没有内容的6个：莉莉安、绯泪、卡芬妮、皮皮、索文（B站没有合适的带字幕教学视频）、猪八戒（视频里没有可提炼的教学内容）。
+- 测试：`npm test` 44项、`npx playwright test` 11项、`npm run validate` 错误0。
+- 部署：`https://moyunxiang.com/bp/`（GitHub Pages）。推送到main后自动校验、测试、构建、发布；另有每天北京时间06:30的定时任务刷新营地英雄榜后重新发布。
 
 ## 关键结论
 
-- **回测**（Top10命中率，训练2025、测试2026）：“出场次数+分路”基线56.5%，手工权重58.2%，训练模型69.2%（不设克制下限70.0%）。提升主要来自“职业赛该位置选取”这个分项；模型学到的克制系数很小，线上把它保持在手工权重的力度。路人局效果无法验证。
+- **回测（模仿职业队选人，Top10命中率）**：统计按周滚动重建（每一局只用它之前的数据）。2025训练→2026测试（15470次选人）：“出场次数+分路”基线62.0%，手工权重62.0%，上一版9分项模型75.0%，当前11分项模型79.3%。最近一届（2026年度总决赛，2380次选人）留出：手工62.1%，上一版78.1%，当前81.0%。指定位置后（只在能打该位置的英雄里排），最近一届前3命中率：专用系数76.5%，按该位置出场次数排57.6%。提升主要来自“近60天该位置选取”和“禁用优先级”两个新分项。模型学到的克制系数很小，线上保持在手工力度（系数下限1）。
+- **胜负检验（职业赛2983局）**：Elo占优一方胜率59.2%；按本站评估的克制净值占优一方胜率50.7%（只算官方说明52.4%），配合48.5%，其余51–52%，区间多数跨过50%。即在职业赛里，阵容评估几乎不能预测胜负；路人局无法验证。按单条规则看：刺客打无位移法师60.5%（n=167），控制打高机动刺客47.3%（n=782），全球流组合32.4%（n=37）；据此小幅调整了三条规则的权重（见`rules.json`的`weightBefore`/`proCheck`）。
+- **王者营地**：公开分享页接口不需要登录，但每个榜单只给热度前10（3个段位×5个位置）；完整榜单与对位胜率（克制数据）必须用App登录信息，未使用。营地数据只展示，不参与计分。
 - KPL“系列赛出现率”被全局BP拉满，没有区分度；改用每个系列第一局的禁选次数。
-- 本机直连时B站未登录搜索返回412；Cookie用`scripts/commentary/refresh-cookie.py`从本机Chrome读取。B站字幕接口偶尔返回别的视频的字幕，必须核对地址里的aid+cid。
+- B站：Cookie用`scripts/commentary/refresh-cookie.py`从本机Chrome读取；字幕接口偶尔返回别的视频的字幕，必须核对地址里的aid+cid；搜索结果会混入万象棋、王者荣耀世界、AOV的视频，标题和UP主名字都要过滤。
 - 玩家口头的技能数字可能和官方顺序不同（如镜的3、4技能），教学内容一律按官方顺序记，并显示技能名。
-- KPL接口单次响应4–10秒，全量抓取要几个小时。
+- 提炼克制说法时约一半是“技能机制说明”或“遇到对方怎么打”被误写成克制，必须独立复核。
 
 ## 技术方案（当前有效）
 
 - 纯静态：Vite + React + TypeScript + Tailwind；hash路由；zustand；自绘SVG图谱。
-- 数据脚本：Node + tsx + zod，在本地运行；GitHub Actions只用已提交的数据包校验、测试、构建、发布。
+- 数据脚本：Node + tsx + zod，在本地运行；GitHub Actions用已提交的数据包校验、测试、构建、发布，定时运行时额外刷新营地英雄榜（`fetch-camp.ts` + `build-data.ts --keep-date`，失败沿用仓库数据）。
 - 知识原则：LLM只从官方技能原文**提取带引用的机制标签**，克制/配合关系由规则表计算；另一模型盲审；分歧由第三方裁定。
 - 证据级别：`official` > `rule` > `kpl` > `commentary`；只有已核实且未过期的证据计分。
 - KPL只用：系列第一局禁选次数、选手分路、同队共现提升度（样本≥30）。不算胜率。
@@ -54,11 +53,11 @@
 
 | 位置 | 内容 |
 |---|---|
-| `src/engine/` | `recommend.ts`（评分与权重）、`relations.ts`（证据权重与关系索引）、`rules.ts`、`lanes.ts`、`draft.ts`、`comp.ts` |
+| `src/engine/` | `recommend.ts`（评分与权重）、`tiers.ts`（职业赛分路梯度）、`relations.ts`（证据权重与关系索引）、`rules.ts`、`lanes.ts`、`draft.ts`、`comp.ts` |
 | `src/pages/`、`src/components/` | 各页面；`components/bp/`是BP助手 |
-| `scripts/` | `fetch-*`、`parse-official`、`build-profiles`、`build-kpl`、`build-data`、`validate`、`backtest`、`update-data`、`commentary/*` |
+| `scripts/` | `fetch-*`（含`fetch-camp`）、`outcome-test`、`parse-official`、`build-profiles`、`build-kpl`、`build-data`、`validate`、`backtest`、`update-data`、`commentary/*` |
 | `data/curated/` | `tags.json`、`rules.json`、`archetypes.json`、`aliases.json`、`heroes/`、`review/`、`adjudication/`、`stamps.json` |
-| `data/derived/` | 官方资料、公告、KPL聚合、档案合并结果、回测报告 |
+| `data/derived/` | 官方资料、公告、KPL聚合、营地英雄榜`camp.json`、档案合并结果、回测报告、选人模型`model.json`、胜负检验`outcome-test.json` |
 | `data/raw/` | 原始抓取结果，不进仓库（可重新抓取） |
 | `docs/curation/` | 档案撰写、盲审、裁定、解说提炼规范 |
 | `user/profile.json` | 英雄池、偏好、收藏的公开默认值 |
@@ -70,7 +69,9 @@ npm run dev                 # 开发
 npm run build               # 类型检查 + 构建
 npm test                    # 单元测试
 npx playwright test         # 端到端（需先 build；使用本机Chrome）
-npm run update-data         # 更新数据（加 -- --backtest 重跑回测）
+npm run update-data         # 更新数据（加 -- --backtest 重跑回测，约12分钟）
+npx tsx scripts/fetch-camp.ts            # 只刷新营地英雄榜
+npx tsx scripts/outcome-test.ts          # 胜负检验
 npm run validate            # 校验数据包
 npx tsx scripts/shot.ts <png> <hash路径>   # 用本机Chrome以1440宽度截图检查页面
 ```
@@ -86,7 +87,7 @@ npx tsx scripts/shot.ts <png> <hash路径>   # 用本机Chrome以1440宽度截�
 
 ## 非目标
 
-KPL复盘页面、BO5/BO7模拟、全局大关系网、社区、截图识别、多轮BP搜索树、任何路人局胜率统计。
+KPL复盘页面、BO5/BO7模拟、全局大关系网、社区、截图识别、多轮BP搜索树、自行统计路人局胜率（只原样展示营地公开页面给出的数字）。
 
 ## 废弃路线
 
@@ -96,12 +97,14 @@ KPL复盘页面、BO5/BO7模拟、全局大关系网、社区、截图识别、�
 - 克制分项的高权重（回测显示有害）。
 - 手工权重（被训练模型取代，代码里保留为没有模型时的回退）。
 - “与任何已有证据相反就把教学视频的说法记为存疑”（改为只看官方说明）。
+- 抓第三方站点（如苏苏的荣耀助手）的接口拿完整路人局数据（个人站点、无许可，不做）。
+- 把营地热度前10放进推荐评分（覆盖不全，会系统性低估榜外英雄；留给用户决定）。
 
 ## 交接
 
 - 新会话先读本文件，再运行 `npm test && npm run validate` 确认现状；历史原因查 `log.md`。
-- **进行中（2026-11-22 15:20）**：按英雄抓B站教学字幕并提炼连招、细节、克制关系。进度看 `data/raw/commentary/hero-videos.json`（已抓）和 `data/raw/commentary/distilled/`（已提炼）。续跑：`npx tsx scripts/commentary/hero-guides.ts`（Cookie过期先跑 `python3 scripts/commentary/refresh-cookie.py`）→ `npx tsx scripts/commentary/prepare-guides.ts` 列出待提炼英雄 → 子任务（只用Opus/Sonnet）按 `docs/curation/guides.md` 每3个英雄一组提炼 → `npx tsx scripts/commentary/build-guides.ts && npx tsx scripts/commentary/build.ts && npm run build:data && npm run validate`。
-- 待办：①对误收视频的英雄用 `--heroes=名字 --redo` 重抓；②全部提炼完后对克制说法做一轮独立复核；③全量验证后提交推送（本机 `git push` 要去掉代理环境变量）。
-- 选人模型：`npm run backtest` 会重新评估并重写 `data/derived/model.json`；职业赛数据更新后建议重跑。
-- 待用户审核：克制分项系数下限取1（回测代价约0.7个百分点）；教学视频克制说法的采信规则；排位选人顺序与元流之子禁用规则两个假设；镜与王昭君的关系来自官方页面原文，与用户看法相反。
-- 回滚：线上内容由main分支决定，`git revert` 后推送即可恢复上一版。
+- 教学内容流程：`python3 scripts/commentary/refresh-cookie.py` → `npx tsx scripts/commentary/hero-guides.ts [--heroes=名字 --redo]` → `prepare-guides.ts` → 子任务（只用Opus/Sonnet）按 `docs/curation/guides.md` 每3个英雄一组提炼 → `review-matchups.ts --prepare` → Opus子任务按“克制说法复核”一节写结论 → `review-matchups.ts --apply` → `build-guides.ts && build.ts && npm run build:data && npm run validate`。被替换的旧提炼结果在 `data/raw/commentary/distilled/_replaced/`。
+- 选人模型：`npm run backtest` 重新评估并重写 `data/derived/model.json`；职业赛数据更新后建议重跑。新增分项时注意：`model.json` 里没有的分项系数默认按1处理，必须先重训再发布。
+- 定时任务：`.github/workflows/deploy.yml` 的 `schedule`。GitHub会在仓库60天没有活动后停掉定时任务，届时推送一次即可恢复。
+- 待用户决定：①要不要用自己的营地App登录信息（手机抓包取得，会过期）拿完整榜单和对位胜率；②营地热度是否进入排位模式的推荐评分；③克制分项系数下限1；④三条规则权重的调整；⑤镜与王昭君的官方关系与用户看法相反（可加“我不认同这条”的开关）；⑥连招数字按官方技能顺序显示（用户自己的键位把镜的3、4对调）；⑦排位选人顺序与元流之子禁用规则两个假设。
+- 回滚：线上内容由main分支决定，`git revert` 后推送即可恢复上一版；去掉每日刷新只需删掉工作流里的`schedule`和那一步。

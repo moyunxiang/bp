@@ -196,42 +196,6 @@
         }
       ],
       "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 135,
-      "claim": "大招提前产生控制，可打断项羽蓄力读条的大招",
-      "refs": [
-        {
-          "bvid": "BV1zNwweNEaq",
-          "t": 203
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 168,
-      "claim": "大招提前产生控制，可打断牛魔蓄力读条的大招",
-      "refs": [
-        {
-          "bvid": "BV1zNwweNEaq",
-          "t": 203
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 194,
-      "claim": "大招提前产生控制，可打断苏烈蓄力读条的大招",
-      "refs": [
-        {
-          "bvid": "BV1zNwweNEaq",
-          "t": 206
-        }
-      ],
-      "sources": 1
     }
   ]
 }

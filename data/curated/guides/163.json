@@ -241,30 +241,6 @@
         }
       ],
       "sources": 1
-    },
-    {
-      "type": "countered",
-      "hero": 131,
-      "claim": "李白二三技能可以躲掉橘右京的技能，要等他放完技能后再反打",
-      "refs": [
-        {
-          "bvid": "BV1gdEuzrEMa",
-          "t": 616
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "countered",
-      "hero": 139,
-      "claim": "橘右京先手进场时容易被老夫子反捆",
-      "refs": [
-        {
-          "bvid": "BV1Y58m6PEEz",
-          "t": 644
-        }
-      ],
-      "sources": 1
     }
   ]
 }

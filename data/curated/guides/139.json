@@ -170,18 +170,6 @@
         }
       ],
       "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 154,
-      "claim": "木兰一级抢线时直接打人，她会被打死",
-      "refs": [
-        {
-          "bvid": "BV1Fhtb6XEuK",
-          "t": 261
-        }
-      ],
-      "sources": 1
     }
   ]
 }

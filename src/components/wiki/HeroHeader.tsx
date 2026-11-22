@@ -1,7 +1,7 @@
 // 详情页头部：基本信息、分路来源、官方四维评分、同组形态、职业赛第一局数据。
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { LANE_NAME, type HeroData } from '../../types.ts';
+import { LANES, LANE_NAME, type HeroData } from '../../types.ts';
 import { fmtDate, useEngine } from '../../lib/data.ts';
 import { useUser } from '../../lib/userStore.ts';
 import { HeroAvatar, LaneBadge, Star, TypeBadge } from '../ui.tsx';
@@ -26,6 +26,15 @@ export function HeroHeader({ hero }: { hero: HeroData }) {
   const siblings = groupSiblings(bundle.heroes, hero);
   const heat = kplHeat(bundle, hero);
   const fetched = fmtDate(bundle.meta.officialFetchedAt);
+  const camp = bundle.camp;
+  // 该英雄在营地各段位里进了哪些位置的热度前10
+  const campRows = (camp?.segments ?? []).flatMap((s) => {
+    const lanes = LANES.flatMap((lane) => {
+      const e = s.lanes[lane].find((x) => x.id === hero.id);
+      return e ? [{ lane, tier: e.tier, e }] : [];
+    });
+    return lanes.length ? [{ name: s.name, lanes, win: lanes[0].e.win, show: lanes[0].e.show, ban: lanes[0].e.ban }] : [];
+  });
 
   return (
     <header className="panel overflow-hidden">
@@ -93,6 +102,28 @@ export function HeroHeader({ hero }: { hero: HeroData }) {
                   <span className="text-dim">暂无职业赛数据</span>
                 )}
               </Meta>
+              {camp && (
+                <Meta label="路人局">
+                  {campRows.length ? (
+                    <span className="inline-flex flex-col gap-0.5 align-top">
+                      {campRows.map((r) => (
+                        <span key={r.name}>
+                          {r.name}：{r.lanes.map((l) => `${LANE_NAME[l.lane]} ${l.tier}`).join('、')}
+                          <span className="ml-2 text-[12px] text-mute">
+                            胜率{(r.win * 100).toFixed(1)}% · 登场{(r.show * 100).toFixed(1)}% · 禁用{(r.ban * 100).toFixed(1)}%
+                          </span>
+                        </span>
+                      ))}
+                      <span className="text-[12px] text-mute">
+                        王者营地英雄榜 {fmtDate(camp.updateTime)}；档位是营地标的热度，胜率等为该段位整体数字 ·{' '}
+                        <Link to="/tiers" className="hover:text-blue">看各分路梯度</Link>
+                      </span>
+                    </span>
+                  ) : (
+                    <span className="text-dim">不在王者营地各位置热度前{camp.limit}内（营地公开页面只列出前{camp.limit}）</span>
+                  )}
+                </Meta>
+              )}
               <Meta label="官方页面">
                 <a href={hero.sourceUrl} target="_blank" rel="noreferrer" className="underline decoration-line2 underline-offset-2 hover:text-blue">
                   {hero.name}的官方英雄页面

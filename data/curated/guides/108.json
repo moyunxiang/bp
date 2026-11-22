@@ -225,30 +225,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "counter",
-      "hero": 130,
-      "claim": "宫本这类要贴脸输出的英雄，预判进场时机，等他突进到身边再开大，持续控制限制输出",
-      "refs": [
-        {
-          "bvid": "BV1aVKh64Ehx",
-          "t": 170
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 199,
-      "claim": "公孙离机动性高，推荐直接用大闪提高大招命中率，不给对手逃脱的机会",
-      "refs": [
-        {
-          "bvid": "BV1aVKh64Ehx",
-          "t": 226
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

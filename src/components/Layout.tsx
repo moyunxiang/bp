@@ -4,6 +4,7 @@ import { fmtDate, freshness, useEngine } from '../lib/data.ts';
 const NAV = [
   { to: '/', label: 'BP助手', end: true },
   { to: '/heroes', label: '英雄百科' },
+  { to: '/tiers', label: '分路梯度' },
   { to: '/graph', label: '关系图谱' },
   { to: '/comps', label: '阵容库' },
   { to: '/me', label: '我的' },

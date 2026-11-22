@@ -175,42 +175,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "countered",
-      "hero": 114,
-      "claim": "刘禅1技能的控制附加在强化普攻上，孙悟空1技能无法抵挡",
-      "refs": [
-        {
-          "bvid": "BV1WnqfBeE2U",
-          "t": 137
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "countered",
-      "hero": 503,
-      "claim": "狂铁2技能的控制附加在强化普攻上，孙悟空1技能无法抵挡",
-      "refs": [
-        {
-          "bvid": "BV1WnqfBeE2U",
-          "t": 137
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "countered",
-      "hero": 157,
-      "claim": "不知火舞被动的控制附加在强化普攻上，孙悟空1技能无法抵挡",
-      "refs": [
-        {
-          "bvid": "BV1WnqfBeE2U",
-          "t": 137
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

@@ -1,9 +1,9 @@
 {
-  "trainedAt": "2026-11-22T06:32:33.198Z",
+  "trainedAt": "2026-11-22T08:07:58.383Z",
   "train": {
-    "from": "2025-06-05",
+    "from": "2025-02-26",
     "to": "2026-11-14",
-    "picks": 25070
+    "picks": 29570
   },
   "features": [
     "counter",
@@ -14,7 +14,9 @@
     "exposure",
     "proVs",
     "proAlly",
-    "lanePick"
+    "lanePick",
+    "lanePickRecent",
+    "banPri"
   ],
   "phases": [
     {
@@ -26,11 +28,13 @@
         "synergy": 0,
         "needs": 0,
         "lane": 1,
-        "meta": 0.962,
-        "exposure": 1.391,
-        "proVs": 1.2,
+        "meta": 0.2,
+        "exposure": 2.111,
+        "proVs": 1.369,
         "proAlly": 0,
-        "lanePick": 1.772
+        "lanePick": 0,
+        "lanePickRecent": 4.139,
+        "banPri": 0.963
       }
     },
     {
@@ -39,14 +43,16 @@
       "toOrder": 6,
       "mult": {
         "counter": 1,
-        "synergy": 1.962,
-        "needs": 0.392,
-        "lane": 1.729,
-        "meta": 0.5,
-        "exposure": 0.944,
-        "proVs": 0.657,
-        "proAlly": 0.651,
-        "lanePick": 2.525
+        "synergy": 2.411,
+        "needs": 0.219,
+        "lane": 1.508,
+        "meta": 0,
+        "exposure": 0.995,
+        "proVs": 0.786,
+        "proAlly": 0.715,
+        "lanePick": 0,
+        "lanePickRecent": 3.846,
+        "banPri": 0.671
       }
     },
     {
@@ -55,14 +61,72 @@
       "toOrder": 10,
       "mult": {
         "counter": 1,
-        "synergy": 0.064,
-        "needs": 0.333,
+        "synergy": 0.205,
+        "needs": 0.407,
         "lane": 1,
-        "meta": 0.274,
+        "meta": 0,
         "exposure": 0,
-        "proVs": 0.559,
-        "proAlly": 0.38,
-        "lanePick": 2.514
+        "proVs": 0.638,
+        "proAlly": 0.428,
+        "lanePick": 0.529,
+        "lanePickRecent": 2.741,
+        "banPri": 0.347
+      }
+    }
+  ],
+  "lanePhases": [
+    {
+      "name": "第1–2手",
+      "fromOrder": 1,
+      "toOrder": 2,
+      "mult": {
+        "counter": 1,
+        "synergy": 0,
+        "needs": 0,
+        "lane": 1,
+        "meta": 0.582,
+        "exposure": 1.014,
+        "proVs": 1.805,
+        "proAlly": 0,
+        "lanePick": 0,
+        "lanePickRecent": 3.887,
+        "banPri": 1.053
+      }
+    },
+    {
+      "name": "第3–6手",
+      "fromOrder": 3,
+      "toOrder": 6,
+      "mult": {
+        "counter": 1,
+        "synergy": 0.833,
+        "needs": 0.051,
+        "lane": 1,
+        "meta": 0,
+        "exposure": 0.67,
+        "proVs": 1.091,
+        "proAlly": 1.148,
+        "lanePick": 0.444,
+        "lanePickRecent": 3.756,
+        "banPri": 1.254
+      }
+    },
+    {
+      "name": "第7–10手",
+      "fromOrder": 7,
+      "toOrder": 10,
+      "mult": {
+        "counter": 1,
+        "synergy": 0.002,
+        "needs": 0.433,
+        "lane": 1.08,
+        "meta": 0,
+        "exposure": 0.185,
+        "proVs": 0.733,
+        "proAlly": 0.426,
+        "lanePick": 0.54,
+        "lanePickRecent": 2.866,
+        "banPri": 0.478
       }
     }
   ],

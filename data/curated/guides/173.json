@@ -207,18 +207,6 @@
         }
       ],
       "sources": 2
-    },
-    {
-      "type": "countered",
-      "hero": 133,
-      "claim": "狄仁杰的2技能会直接引爆李元芳叠标中的1技能",
-      "refs": [
-        {
-          "bvid": "BV1Su4y1k7Lu",
-          "t": 269
-        }
-      ],
-      "sources": 1
     }
   ]
 }

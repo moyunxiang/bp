@@ -192,30 +192,6 @@
         }
       ],
       "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 153,
-      "claim": "兰陵王隐身时，可先用1技能探草，再用大招获得视野使其显形",
-      "refs": [
-        {
-          "bvid": "BV1LzcEzYEEE",
-          "t": 249
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 162,
-      "claim": "2技能释放瞬间无敌，可以免疫娜可露露大招这类直伤技能",
-      "refs": [
-        {
-          "bvid": "BV1LzcEzYEEE",
-          "t": 303
-        }
-      ],
-      "sources": 1
     }
   ]
 }

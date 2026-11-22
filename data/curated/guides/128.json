@@ -126,18 +126,6 @@
         }
       ],
       "sources": 1
-    },
-    {
-      "type": "countered",
-      "hero": 529,
-      "claim": "盘古单挑或2V2很强势，所以只打双线，避免打三线被抓",
-      "refs": [
-        {
-          "bvid": "BV15gLp6fEpu",
-          "t": 455
-        }
-      ],
-      "sources": 1
     }
   ]
 }

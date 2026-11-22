@@ -236,18 +236,6 @@
         }
       ],
       "sources": 1
-    },
-    {
-      "type": "countered",
-      "hero": 156,
-      "claim": "越塔时被张良控在塔下很容易暴毙",
-      "refs": [
-        {
-          "bvid": "BV1L3L16tET8",
-          "t": 1171
-        }
-      ],
-      "sources": 1
     }
   ]
 }

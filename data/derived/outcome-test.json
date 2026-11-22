@@ -1,0 +1,361 @@
+{
+  "generatedAt": "2026-11-22T08:09:38.698Z",
+  "note": "检验阵容差值与职业赛胜负的关系。队伍强弱用滚动Elo控制。统计数据按周滚动重建，每一局只使用它之前的数据。",
+  "games": 2983,
+  "train": {
+    "n": 1436,
+    "from": "2025-02-22",
+    "to": "2026-01-02"
+  },
+  "test": {
+    "n": 1547,
+    "from": "2026-01-14",
+    "to": "2026-11-14",
+    "blueWinRate": 0.5268
+  },
+  "models": [
+    {
+      "name": "只有截距（蓝方优势）",
+      "keys": [],
+      "acc": 0.4732,
+      "logloss": 0.6988,
+      "auc": 0.5,
+      "coef": {}
+    },
+    {
+      "name": "队伍Elo差",
+      "keys": [
+        "elo"
+      ],
+      "acc": 0.5643,
+      "logloss": 0.6782,
+      "auc": 0.6169,
+      "coef": {
+        "elo": 0.478
+      }
+    },
+    {
+      "name": "队伍Elo差 + 克制净值（全部证据）",
+      "keys": [
+        "elo",
+        "counter"
+      ],
+      "acc": 0.5727,
+      "logloss": 0.6772,
+      "auc": 0.6203,
+      "coef": {
+        "elo": 0.479,
+        "counter": 0.072
+      }
+    },
+    {
+      "name": "队伍Elo差 + 克制净值（只算官方说明）",
+      "keys": [
+        "elo",
+        "counterOfficial"
+      ],
+      "acc": 0.5785,
+      "logloss": 0.6776,
+      "auc": 0.6191,
+      "coef": {
+        "elo": 0.479,
+        "counterOfficial": 0.079
+      }
+    },
+    {
+      "name": "队伍Elo差 + 队内配合差",
+      "keys": [
+        "elo",
+        "synergy"
+      ],
+      "acc": 0.5676,
+      "logloss": 0.679,
+      "auc": 0.6172,
+      "coef": {
+        "elo": 0.48,
+        "synergy": -0.064
+      }
+    },
+    {
+      "name": "队伍Elo差 + 职业赛第一局出场率差",
+      "keys": [
+        "elo",
+        "meta"
+      ],
+      "acc": 0.5811,
+      "logloss": 0.6757,
+      "auc": 0.6216,
+      "coef": {
+        "elo": 0.478,
+        "meta": 0.061
+      }
+    },
+    {
+      "name": "队伍Elo差 + 职业赛该位置选取率差",
+      "keys": [
+        "elo",
+        "lanePick"
+      ],
+      "acc": 0.5663,
+      "logloss": 0.6777,
+      "auc": 0.618,
+      "coef": {
+        "elo": 0.478,
+        "lanePick": 0.016
+      }
+    },
+    {
+      "name": "队伍Elo差 + 职业赛针对选择差",
+      "keys": [
+        "elo",
+        "proVs"
+      ],
+      "acc": 0.565,
+      "logloss": 0.6798,
+      "auc": 0.6166,
+      "coef": {
+        "elo": 0.479,
+        "proVs": 0.055
+      }
+    },
+    {
+      "name": "Elo + 全部阵容差值",
+      "keys": [
+        "elo",
+        "counter",
+        "counterOfficial",
+        "synergy",
+        "meta",
+        "lanePick",
+        "proVs"
+      ],
+      "acc": 0.5779,
+      "logloss": 0.6765,
+      "auc": 0.6228,
+      "coef": {
+        "elo": 0.482,
+        "counter": 0.02,
+        "counterOfficial": 0.073,
+        "synergy": -0.043,
+        "meta": 0.115,
+        "lanePick": -0.041,
+        "proVs": 0.064
+      }
+    },
+    {
+      "name": "全部阵容差值（不含Elo）",
+      "keys": [
+        "counter",
+        "counterOfficial",
+        "synergy",
+        "meta",
+        "lanePick",
+        "proVs"
+      ],
+      "acc": 0.4971,
+      "logloss": 0.6965,
+      "auc": 0.5379,
+      "coef": {
+        "counter": 0.007,
+        "counterOfficial": 0.078,
+        "synergy": -0.031,
+        "meta": 0.097,
+        "lanePick": -0.005,
+        "proVs": 0.068
+      }
+    }
+  ],
+  "direct": [
+    {
+      "key": "elo",
+      "name": "队伍Elo差",
+      "n": 2979,
+      "winRate": 0.5925,
+      "lo": 0.5748,
+      "hi": 0.6101
+    },
+    {
+      "key": "counter",
+      "name": "克制净值（全部证据）",
+      "n": 2831,
+      "winRate": 0.5069,
+      "lo": 0.4885,
+      "hi": 0.5253
+    },
+    {
+      "key": "counterOfficial",
+      "name": "克制净值（只算官方说明）",
+      "n": 1621,
+      "winRate": 0.5238,
+      "lo": 0.4994,
+      "hi": 0.5481
+    },
+    {
+      "key": "synergy",
+      "name": "队内配合差",
+      "n": 2927,
+      "winRate": 0.4851,
+      "lo": 0.467,
+      "hi": 0.5032
+    },
+    {
+      "key": "meta",
+      "name": "职业赛第一局出场率差",
+      "n": 2975,
+      "winRate": 0.5193,
+      "lo": 0.5014,
+      "hi": 0.5373
+    },
+    {
+      "key": "lanePick",
+      "name": "职业赛该位置选取率差",
+      "n": 2979,
+      "winRate": 0.521,
+      "lo": 0.503,
+      "hi": 0.5389
+    },
+    {
+      "key": "proVs",
+      "name": "职业赛针对选择差",
+      "n": 2980,
+      "winRate": 0.5158,
+      "lo": 0.4978,
+      "hi": 0.5337
+    }
+  ],
+  "byRule": [
+    {
+      "key": "规则:anti_heal_vs_heal",
+      "n": 179,
+      "winRate": 0.4916,
+      "lo": 0.4184,
+      "hi": 0.5649
+    },
+    {
+      "key": "规则:assassin_vs_immobile_mage",
+      "n": 167,
+      "winRate": 0.6048,
+      "lo": 0.5306,
+      "hi": 0.6789
+    },
+    {
+      "key": "规则:assassin_vs_marksman",
+      "n": 781,
+      "winRate": 0.5224,
+      "lo": 0.4874,
+      "hi": 0.5574
+    },
+    {
+      "key": "规则:block_vs_marksman",
+      "n": 1091,
+      "winRate": 0.494,
+      "lo": 0.4644,
+      "hi": 0.5237
+    },
+    {
+      "key": "规则:cc_vs_mobile_assassin",
+      "n": 782,
+      "winRate": 0.4731,
+      "lo": 0.4382,
+      "hi": 0.5081
+    },
+    {
+      "key": "规则:dive_vs_immobile_carry",
+      "n": 1725,
+      "winRate": 0.5078,
+      "lo": 0.4842,
+      "hi": 0.5314
+    },
+    {
+      "key": "规则:kite_vs_immobile_melee",
+      "n": 347,
+      "winRate": 0.5187,
+      "lo": 0.4662,
+      "hi": 0.5713
+    },
+    {
+      "key": "规则:pct_vs_tank",
+      "n": 708,
+      "winRate": 0.5268,
+      "lo": 0.4901,
+      "hi": 0.5636
+    },
+    {
+      "key": "规则:reveal_vs_stealth",
+      "n": 49,
+      "winRate": 0.5102,
+      "lo": 0.3702,
+      "hi": 0.6502
+    },
+    {
+      "key": "规则:stealth_vs_immobile_carry",
+      "n": 40,
+      "winRate": 0.6,
+      "lo": 0.4482,
+      "hi": 0.7518
+    },
+    {
+      "key": "规则:suppress_vs_cc_immune",
+      "n": 167,
+      "winRate": 0.5509,
+      "lo": 0.4755,
+      "hi": 0.6263
+    },
+    {
+      "key": "证据:commentary",
+      "n": 632,
+      "winRate": 0.5237,
+      "lo": 0.4848,
+      "hi": 0.5627
+    },
+    {
+      "key": "证据:official",
+      "n": 1622,
+      "winRate": 0.524,
+      "lo": 0.4997,
+      "hi": 0.5483
+    },
+    {
+      "key": "配合规则:aoe_cc_aoe_damage",
+      "n": 2084,
+      "winRate": 0.4957,
+      "lo": 0.4742,
+      "hi": 0.5171
+    },
+    {
+      "key": "配合规则:global_pair",
+      "n": 37,
+      "winRate": 0.3243,
+      "lo": 0.1735,
+      "hi": 0.4752
+    },
+    {
+      "key": "配合规则:protect_carry",
+      "n": 1778,
+      "winRate": 0.4933,
+      "lo": 0.47,
+      "hi": 0.5165
+    },
+    {
+      "key": "配合证据:commentary",
+      "n": 30,
+      "winRate": 0.4333,
+      "lo": 0.256,
+      "hi": 0.6107
+    },
+    {
+      "key": "配合证据:kpl",
+      "n": 1973,
+      "winRate": 0.5003,
+      "lo": 0.4782,
+      "hi": 0.5223
+    },
+    {
+      "key": "配合证据:official",
+      "n": 1033,
+      "winRate": 0.4927,
+      "lo": 0.4623,
+      "hi": 0.5232
+    }
+  ]
+}

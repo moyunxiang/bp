@@ -125,18 +125,6 @@
       "sources": 1
     },
     {
-      "type": "counter",
-      "hero": 196,
-      "claim": "守约本质是射手，被亚瑟抓到贴脸一套很要命，中后期更好打",
-      "refs": [
-        {
-          "bvid": "BV1Qcs66cE4i",
-          "t": 127
-        }
-      ],
-      "sources": 1
-    },
-    {
       "type": "synergy",
       "hero": 521,
       "claim": "海月能把团开起来，和亚瑟配合很舒服，但海月逆风不会玩就没用",

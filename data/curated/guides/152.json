@@ -7,13 +7,6 @@
       "uploader": "公瑾干货教学",
       "date": "2026-01-23",
       "seconds": 382
-    },
-    {
-      "bvid": "BV1oyKh6NEqq",
-      "title": "昭君的预判教学",
-      "uploader": "爱吃果冻-国服昭君",
-      "date": "2026-07-21",
-      "seconds": 332
     }
   ],
   "combos": [
@@ -148,78 +141,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "counter",
-      "hero": 153,
-      "claim": "一技能的真实视野范围大，能让隐身的兰陵王显形",
-      "refs": [
-        {
-          "bvid": "BV1wxzNBEEVf",
-          "t": 45
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 116,
-      "claim": "一技能的真实视野范围大，能让隐身的阿轲显形",
-      "refs": [
-        {
-          "bvid": "BV1wxzNBEEVf",
-          "t": 45
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 190,
-      "claim": "诸葛亮丢一技能会停顿，停顿时容易被二技能冻住",
-      "refs": [
-        {
-          "bvid": "BV1oyKh6NEqq",
-          "t": 235
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 563,
-      "claim": "海诺丢技能会停顿，停顿时容易被二技能冻住，要找他丢技能的规律",
-      "refs": [
-        {
-          "bvid": "BV1oyKh6NEqq",
-          "t": 182
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 130,
-      "claim": "宫本清兵时会贴着兵线，二技能丢在兵线上能命中",
-      "refs": [
-        {
-          "bvid": "BV1oyKh6NEqq",
-          "t": 68
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 193,
-      "claim": "铠位移上来后会用强化普攻打兵线，二技能直接丢兵线上就能冻住",
-      "refs": [
-        {
-          "bvid": "BV1oyKh6NEqq",
-          "t": 104
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

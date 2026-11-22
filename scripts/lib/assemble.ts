@@ -15,10 +15,12 @@ import {
   type KplStats,
   type OfficialEdge,
   type OfficialHero,
+  type OutcomeTest,
   type PatchNote,
   type Rule,
   type PickModel,
   type TagDef,
+  CampData,
 } from '../../src/types.ts';
 
 const D = (p: string) => resolve(ROOT, 'data', p);
@@ -34,7 +36,9 @@ export interface Inputs {
   comps: KplComps | null;
   backtest: BacktestReport | null;
   model: PickModel | null;
+  outcomeTest: OutcomeTest | null;
   guides: HeroGuide[];
+  camp: CampData | null;
   commentary: CommentaryItem[];
   rules: Rule[];
   tags: TagDef[];
@@ -55,7 +59,9 @@ export async function loadInputs(): Promise<Inputs> {
     comps: await optional<KplComps | null>(D('derived/kpl/comps.json'), null),
     backtest: await optional<BacktestReport | null>(D('derived/backtest.json'), null),
     model: await optional<PickModel | null>(D('derived/model.json'), null),
+    outcomeTest: await optional<OutcomeTest | null>(D('derived/outcome-test.json'), null),
     guides: (await optional<{ guides: HeroGuide[] }>(D('derived/guides.json'), { guides: [] })).guides,
+    camp: await optional<CampData | null>(D('derived/camp.json'), null),
     commentary: (await optional<{ items: CommentaryItem[] }>(D('derived/commentary.json'), { items: [] })).items,
     rules: (await readJson<{ rules: Rule[] }>(D('curated/rules.json'))).rules,
     tags: (await readJson<{ tags: TagDef[] }>(D('curated/tags.json'))).tags,
@@ -165,6 +171,7 @@ export function assemble(inp: Inputs): { bundle: Bundle; staleEdges: number } {
       counts: {},
       profileReport: inp.profileReport,
       backtest: inp.backtest,
+      outcomeTest: inp.outcomeTest ? { generatedAt: inp.outcomeTest.generatedAt, note: inp.outcomeTest.note, games: inp.outcomeTest.games, train: inp.outcomeTest.train, test: inp.outcomeTest.test, models: inp.outcomeTest.models.map(({ name, acc, logloss, auc }) => ({ name, acc, logloss, auc })), direct: inp.outcomeTest.direct } : null,
       pending: {
         needsReview: heroes.filter((h) => h.profile?.status === 'needs_review').map((h) => h.name),
         missingProfile: heroes.filter((h) => !h.profile).map((h) => h.name),
@@ -176,13 +183,14 @@ export function assemble(inp: Inputs): { bundle: Bundle; staleEdges: number } {
     rules: inp.rules,
     tags: inp.tags,
     patches: inp.patches.patches.filter((p) => p.heroes.length).slice(0, 60),
-    kpl: inp.kpl ? { coverage: inp.kpl.coverage, heat: inp.kpl.heat, pairs: inp.kpl.pairs, source: inp.kpl.source, resp: inp.kpl.resp } : null,
+    kpl: inp.kpl ? { coverage: inp.kpl.coverage, heat: inp.kpl.heat, pairs: inp.kpl.pairs, source: inp.kpl.source, resp: inp.kpl.resp, short: inp.kpl.short } : null,
     model: inp.model,
     comps: inp.comps,
     archetypes: inp.archetypes,
     equipment: inp.equipment,
     commentary: inp.commentary,
     guides: Object.fromEntries(inp.guides.filter((g) => byId.has(g.id)).map((g) => [g.id, g])),
+    camp: inp.camp,
   };
   return { bundle, staleEdges };
 }

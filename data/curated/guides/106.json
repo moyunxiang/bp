@@ -164,18 +164,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "countered",
-      "hero": 187,
-      "claim": "站位靠前开大时容易被东皇咬住，吕布大招跟上后小乔无处可逃",
-      "refs": [
-        {
-          "bvid": "BV1K2546oEb3",
-          "t": 446
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

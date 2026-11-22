@@ -159,30 +159,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "countered",
-      "hero": 187,
-      "claim": "大招飞到一半也会被压制效果强行摁住，无法免控",
-      "refs": [
-        {
-          "bvid": "BV1ErC1BNEFb",
-          "t": 229
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "countered",
-      "hero": 156,
-      "claim": "大招飞到一半也会被压制效果强行摁住，无法免控",
-      "refs": [
-        {
-          "bvid": "BV1ErC1BNEFb",
-          "t": 223
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

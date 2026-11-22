@@ -21,7 +21,7 @@ const MAX_AGE_DAYS = 730;
 const KEYWORD = /教学|教程|连招|技巧|攻略|细节|玩法|克制|针对|思路|进阶|入门|国服|上手|机制|打法|怎么玩|如何/;
 // 用户指定的优先来源：这些UP主的视频排在最前（mid → 名字）
 const PREFERRED = new Map<number, string>([[328090313, '公瑾干货教学']]);
-const NOISE = /万象棋|自走棋|模拟战|王者荣耀世界|直播回放|录播|鬼畜|翻唱|手书|同人|cos|CG|皮肤(?!.*教学)|海报|语音|台词/i;
+const NOISE = /万象棋|自走棋|模拟战|王者荣耀世界|王者世界|AOV|传说对决|直播回放|录播|鬼畜|翻唱|手书|同人|cos|CG|皮肤(?!.*教学)|海报|语音|台词/i;
 
 export interface HeroVideo {
   bvid: string;
@@ -71,9 +71,10 @@ async function discover(hero: OfficialHero, names: string[], otherNames: string[
       if (seconds < 90 || seconds > 45 * 60) continue;
       // 优先来源放宽发布时间和播放量限制
       if (!PREFERRED.has(v.mid) && (v.pubdate < cutoff || (v.play ?? 0) < 3000)) continue;
+      // 标题或UP主名字说明是别的游戏、别的玩法（万象棋、王者荣耀世界、AOV等）的不要
       // 先去掉标题里其他英雄的全名，避免“鲁班”匹配到“鲁班大师”的视频
       const own = otherNames.reduce((t, n) => t.split(n).join(' '), title);
-      if (!names.some((n) => own.includes(n)) || !KEYWORD.test(title) || NOISE.test(title)) continue;
+      if (!names.some((n) => own.includes(n)) || !KEYWORD.test(title) || NOISE.test(title) || NOISE.test(v.author ?? '')) continue;
       const ageYears = (Date.now() / 1000 - v.pubdate) / (365 * 86400);
       // 排序：播放量为主，越新越好，时长适中（3–25分钟）加分
       const score = Math.log10(Math.max(v.play, 1)) - 0.8 * ageYears + (seconds >= 180 && seconds <= 25 * 60 ? 0.4 : 0) + (PREFERRED.has(v.mid) ? 3 : 0);

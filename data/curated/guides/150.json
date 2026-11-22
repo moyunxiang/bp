@@ -185,30 +185,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "counter",
-      "hero": 169,
-      "claim": "一技能第二段瞬移期间无法被选中，能无伤穿过后羿的直线技能",
-      "refs": [
-        {
-          "bvid": "BV1aGNBz4EtT",
-          "t": 156
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 108,
-      "claim": "一技能第二段瞬移期间无法被选中，能无伤穿过墨子的炮等直线技能",
-      "refs": [
-        {
-          "bvid": "BV1aGNBz4EtT",
-          "t": 156
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

@@ -143,7 +143,9 @@ test('数据说明：展示选人模型的系数和回测', async ({ page }) => 
   await page.goto('./#/about');
   const model = page.locator('#about-model');
   await expect(model.getByText(/条件logit/)).toBeVisible();
-  await expect(model.getByText('职业赛该位置选取')).toBeVisible();
+  await expect(model.getByText('职业赛该位置选取（近60天）').first()).toBeVisible();
+  // 胜负检验：阵容差值与职业赛胜负的关系
+  await expect(page.locator('#about-outcome')).toContainText('队伍Elo差');
   await expect(page.locator('#about-backtest').getByText(/线上使用/).first()).toBeVisible();
   expect(errors).toEqual([]);
 });
@@ -201,5 +203,22 @@ test('BP助手：指定楼层和位置后，轮到自己时只推荐该位置的
   // Alt+数字修改刚选英雄的分路
   await page.keyboard.press('Alt+Digit1');
   await expect(page.getByTitle('已手动指定分路，点击修改').getByText('对抗')).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
+test('分路梯度：营地各段位与职业赛可以切换', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('./#/tiers');
+  await expect(page.getByRole('heading', { name: '各分路梯度' })).toBeVisible();
+  // 默认是营地的巅峰赛数据：5个位置，每个位置至少5个英雄，带胜率
+  await expect(page.getByTestId('tiers-note')).toContainText('王者营地');
+  await expect(page.locator('section[data-lane]')).toHaveCount(5);
+  expect(await page.locator('section[data-lane="2"] a[href*="/heroes/"]').count()).toBeGreaterThanOrEqual(5);
+  await expect(page.locator('section[data-lane="2"]').getByText(/胜率 \d+\.\d%/).first()).toBeVisible();
+  // 切到职业赛：说明换成“不是路人局强度”，地址带上来源
+  await page.locator('button[data-src="kpl"]').click();
+  await expect(page.getByTestId('tiers-note')).toContainText('不是路人局强度');
+  await expect(page).toHaveURL(/src=kpl/);
+  expect(await page.locator('section[data-lane="2"] a[href*="/heroes/"]').count()).toBeGreaterThanOrEqual(5);
   expect(errors).toEqual([]);
 });

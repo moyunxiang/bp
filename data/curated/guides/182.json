@@ -206,30 +206,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "counter",
-      "hero": 156,
-      "claim": "1技能是脱手技能，本体被压制也能释放，可以打断张良大招",
-      "refs": [
-        {
-          "bvid": "BV11khXzpE4P",
-          "t": 37
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 107,
-      "claim": "1技能击退可与赵云大招这类突进控制抵消，把对方强行推开保命",
-      "refs": [
-        {
-          "bvid": "BV11khXzpE4P",
-          "t": 42
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

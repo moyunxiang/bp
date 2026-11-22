@@ -214,18 +214,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "counter",
-      "hero": 510,
-      "claim": "鼎是机关物，可以挡住孙策的船",
-      "refs": [
-        {
-          "bvid": "BV1StiQBQEXC",
-          "t": 87
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

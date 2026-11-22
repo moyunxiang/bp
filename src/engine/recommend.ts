@@ -27,6 +27,8 @@ export interface Weights {
   proCap: number;
   /** 职业赛该位置选取率（0–1）乘以这个值 */
   lanePickRange: number;
+  /** 职业赛第一局禁用率（0–1）乘以这个值 */
+  banRange: number;
 }
 
 // 取值说明：最初克制/配合/暴露/需求的权重是现在的3–4倍。职业赛回测显示，那样会让排序明显偏离职业队的实际选择
@@ -50,9 +52,10 @@ export const DEFAULT_WEIGHTS: Weights = {
   proPerUnit: 3,
   proCap: 6,
   lanePickRange: 20,
+  banRange: 10,
 };
 
-export type PartKey = 'counter' | 'synergy' | 'needs' | 'lane' | 'meta' | 'exposure' | 'proVs' | 'proAlly' | 'lanePick' | 'pool';
+export type PartKey = 'counter' | 'synergy' | 'needs' | 'lane' | 'meta' | 'exposure' | 'proVs' | 'proAlly' | 'lanePick' | 'lanePickRecent' | 'banPri' | 'pool';
 export const PART_NAME: Record<PartKey, string> = {
   counter: '克制与被克',
   synergy: '配合己方',
@@ -62,12 +65,14 @@ export const PART_NAME: Record<PartKey, string> = {
   exposure: '先手暴露',
   proVs: '职业赛针对选择',
   proAlly: '职业赛同队选择',
-  lanePick: '职业赛该位置选取',
+  lanePick: '职业赛该位置选取（近一年）',
+  lanePickRecent: '职业赛该位置选取（近60天）',
+  banPri: '职业赛禁用率',
   pool: '英雄池',
 };
 
 /** 没有训练模型时的系数：新增的三个职业赛分项不参与，其余按手工权重 */
-export const HAND_MULT: Record<string, number> = { proVs: 0, proAlly: 0, lanePick: 0 };
+export const HAND_MULT: Record<string, number> = { proVs: 0, proAlly: 0, lanePick: 0, lanePickRecent: 0, banPri: 0 };
 /** 选人响应统计的平滑常数：对数提升度 = ln((实际+K)/(期望+K)) */
 export const RESP_SMOOTH = 4;
 /** 响应统计的键 */
@@ -152,10 +157,14 @@ export function buildResp(bundle: Bundle): Engine['resp'] {
 }
 
 /** 当前这一手使用的分项系数。order 是本局第几手选人（1–10）。 */
-export function multFor(model: PickModel | null, order: number): Record<string, number> {
+export function multFor(model: PickModel | null, order: number, laneGiven = false): Record<string, number> {
   if (!model) return HAND_MULT;
-  const ph = model.phases.find((p) => order >= p.fromOrder && order <= p.toOrder) ?? model.phases[model.phases.length - 1];
-  return ph.mult;
+  const phases = (laneGiven && model.lanePhases) || model.phases;
+  const ph = phases.find((p) => order >= p.fromOrder && order <= p.toOrder) ?? phases[phases.length - 1];
+  // 指定位置的系数是在“只看能打该位置的英雄”的条件下学出来的，分路系数可能很小；
+  // 线上候选是全部英雄，所以分路系数同样不低于下限，保证不打这个位置的英雄排在后面
+  const floor = model.floors?.lane ?? 0;
+  return laneGiven && (ph.mult.lane ?? 0) < floor ? { ...ph.mult, lane: floor } : ph.mult;
 }
 
 const clamp = (x: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, x));
@@ -215,7 +224,7 @@ export function recommendPicks(engine: Engine, d: DraftState, opts: RecommendOpt
   const enemyResponds = enemyCanStillRespond(d, side);
   const enemyRemaining = d.picks[other(side)].filter((x) => x == null).length;
   const order = allies.length + enemies.length + 1;
-  const mult = opts.mult ?? multFor(engine.model, order);
+  const mult = opts.mult ?? multFor(engine.model, order, opts.wantLane != null);
   const pairGames = bundle.kpl?.pairs.teamGames ?? 0;
 
   // 对方还能选到的英雄（用于暴露度）
@@ -334,6 +343,19 @@ export function recommendPicks(engine: Engine, d: DraftState, opts: RecommendOpt
       items: laneN && lf.lane ? [{ delta: lanePickValue, text: `职业赛近一年：${pairGames}个队伍场次中有${laneN}次用它打${LANE_NAME[lf.lane]}（不代表路人局强度）`, short: `职业赛${LANE_NAME[lf.lane]}出场${laneN}次` }] : [],
     });
 
+    const shortGames = bundle.kpl?.short?.teamGames ?? 0;
+    const laneShortN = lf.lane && shortGames ? (h.kpl?.lanesShort?.[lf.lane - 1] ?? 0) : 0;
+    const laneShortValue = shortGames >= 40 ? round1((laneShortN / shortGames) * W.lanePickRange) : 0;
+    parts.push({
+      key: 'lanePickRecent',
+      value: laneShortValue,
+      items: laneShortValue && lf.lane ? [{ delta: laneShortValue, text: `职业赛近${bundle.kpl!.short!.windowDays}天：${shortGames}个队伍场次中有${laneShortN}次用它打${LANE_NAME[lf.lane]}（不代表路人局强度）`, short: `近${bundle.kpl!.short!.windowDays}天职业赛${LANE_NAME[lf.lane]}出场${laneShortN}次` }] : [],
+    });
+
+    // ---- 职业赛禁用率：经常被禁的英雄放出来时值得优先考虑 ----
+    const banValue = ms ? round1(ms.banRate * W.banRange) : 0;
+    parts.push({ key: 'banPri', value: banValue, items: banValue >= 0.5 && ms ? [{ delta: banValue, text: `职业赛第一局：${ms.games}局中被禁${ms.ban}次（不代表路人局强度）`, short: `职业赛常被禁（${ms.ban}/${ms.games}局）` }] : [] });
+
     // ---- 应用模型系数 ----
     for (const p of parts) {
       const m = mult[p.key] ?? 1;
@@ -367,7 +389,7 @@ export function recommendPicks(engine: Engine, d: DraftState, opts: RecommendOpt
     const byKey = (k: PartKey) => parts.find((p) => p.key === k)?.items ?? [];
     const core = [...byKey('counter'), ...byKey('synergy'), ...byKey('needs'), ...byKey('proVs').filter((i) => i.short), ...byKey('proAlly').filter((i) => i.short)].filter((i) => i.delta >= 0.5).sort((a, b) => b.delta - a.delta);
     const positives = core.slice(0, 2).map(say);
-    if (positives.length < 2) positives.push(...[...byKey('meta'), ...byKey('lanePick')].filter((i) => i.delta >= 1).slice(0, 2 - positives.length).map(say));
+    if (positives.length < 2) positives.push(...[...byKey('lanePickRecent'), ...byKey('lanePick'), ...byKey('meta')].filter((i) => i.delta >= 1).slice(0, 2 - positives.length).map(say));
     const risk = [...byKey('counter'), ...byKey('needs'), ...byKey('lane'), ...byKey('exposure')].filter((i) => i.delta <= -0.7).sort((a, b) => a.delta - b.delta)[0];
     const headline = [...positives, ...(risk ? [risk.short ?? `注意${say(risk)}`] : [])].join('；') || '没有突出的加分或减分项';
 

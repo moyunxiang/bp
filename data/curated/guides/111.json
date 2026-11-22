@@ -208,30 +208,6 @@
   "matchups": [
     {
       "type": "countered",
-      "hero": 513,
-      "claim": "婉儿前期一个大招就能直接秒掉孙尚香，要等她大招交完再露视野",
-      "refs": [
-        {
-          "bvid": "BV1PYhvziEqg",
-          "t": 282
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "countered",
-      "hero": 130,
-      "claim": "宫本的大招会冲着孙尚香来，要拉开距离让他大不到",
-      "refs": [
-        {
-          "bvid": "BV1PYhvziEqg",
-          "t": 737
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "countered",
       "hero": 507,
       "claim": "四级后孙尚香打不过李信，所以四级前要狠狠压制他",
       "refs": [

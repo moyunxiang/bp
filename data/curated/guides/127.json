@@ -246,30 +246,6 @@
         }
       ],
       "sources": 1
-    },
-    {
-      "type": "countered",
-      "hero": 528,
-      "claim": "澜的进场需要防备，没暴露前一技能和大招不能随便交",
-      "refs": [
-        {
-          "bvid": "BV1bkuz6JE2W",
-          "t": 69
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "countered",
-      "hero": 132,
-      "claim": "马可的眩晕转大需要防备，没暴露前一技能和大招不能随便交",
-      "refs": [
-        {
-          "bvid": "BV1bkuz6JE2W",
-          "t": 69
-        }
-      ],
-      "sources": 1
     }
   ]
 }

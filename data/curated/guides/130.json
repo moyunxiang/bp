@@ -214,54 +214,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "countered",
-      "hero": 187,
-      "claim": "一技能的霸体免疫不了东皇的控制",
-      "refs": [
-        {
-          "bvid": "BV1bobN66EhV",
-          "t": 97
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "countered",
-      "hero": 156,
-      "claim": "一技能的霸体免疫不了张良的控制",
-      "refs": [
-        {
-          "bvid": "BV1bobN66EhV",
-          "t": 97
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "synergy",
-      "hero": 505,
-      "claim": "顺风的宫本带着瑶进野区，对面就算三个人也很难招架",
-      "refs": [
-        {
-          "bvid": "BV1ALnBzJEXq",
-          "t": 472
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 116,
-      "claim": "阿轲没有守野区的能力，宫本顺风时可以带队友进其野区",
-      "refs": [
-        {
-          "bvid": "BV1ALnBzJEXq",
-          "t": 477
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

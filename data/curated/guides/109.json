@@ -135,30 +135,5 @@
       "sources": 1
     }
   ],
-  "matchups": [
-    {
-      "type": "counter",
-      "hero": 153,
-      "claim": "兰陵王隐身时，持续点按2技能，对面露头的瞬间就会被控住反杀",
-      "refs": [
-        {
-          "bvid": "BV1RtkKB2EVT",
-          "t": 173
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 116,
-      "claim": "阿轲隐身时，持续点按2技能，对面露头的瞬间就会被控住反杀",
-      "refs": [
-        {
-          "bvid": "BV1RtkKB2EVT",
-          "t": 173
-        }
-      ],
-      "sources": 1
-    }
-  ]
+  "matchups": []
 }

@@ -2,55 +2,113 @@
   "id": 113,
   "videos": [
     {
-      "bvid": "BV1iACwB3EDn",
-      "title": "控制英雄最严厉的父亲，庄周保姆级教学 ，后手拿到就是一分！",
-      "uploader": "i坤王者万象棋",
-      "date": "2025-11-10",
-      "seconds": 740
+      "bvid": "BV1JYui6fEoZ",
+      "title": "庄周零基础教学 技能技巧和出装铭文",
+      "uploader": "叶长辅助教学",
+      "date": "2026-08-11",
+      "seconds": 213
+    },
+    {
+      "bvid": "BV1bj8LzQE9L",
+      "title": "《王者荣耀》庄周必学的6个技巧",
+      "uploader": "張大虾呀",
+      "date": "2025-07-28",
+      "seconds": 193
     }
   ],
-  "combos": [],
-  "tips": [
+  "combos": [
     {
-      "title": "空放2技能给队友加速",
-      "text": "蓝量充足时可以空放2技能给队友加速，顺便蹭助攻；团战时在队友旁边用2技能也能给加速",
+      "steps": [
+        "3",
+        "1",
+        "2"
+      ],
+      "name": "反手连招",
+      "level": "基础",
+      "note": "对面强开控制后用3技能解控，再用1技能减速，最后接2技能打伤害",
       "refs": [
         {
-          "bvid": "BV1iACwB3EDn",
-          "t": 48
+          "bvid": "BV1JYui6fEoZ",
+          "t": 167
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "steps": [
+        "1",
+        "2"
+      ],
+      "name": "消耗连招",
+      "level": "基础",
+      "note": "远程1技能减速并消耗，贴脸后2技能叠伤害再拉扯",
+      "refs": [
+        {
+          "bvid": "BV1JYui6fEoZ",
+          "t": 172
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "steps": [
+        "1",
+        "3",
+        "2"
+      ],
+      "name": "反打连招",
+      "level": "基础",
+      "note": "对面切后排时先1技能减速，再3技能免控，接2技能",
+      "refs": [
+        {
+          "bvid": "BV1JYui6fEoZ",
+          "t": 179
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "tips": [
+    {
+      "title": "被动结束后再放1技能",
+      "text": "先观察被动图标，等2秒自然梦境结束后再主动放1技能，可连续获得约四秒的免控、减伤和加速",
+      "refs": [
+        {
+          "bvid": "BV1bj8LzQE9L",
+          "t": 40
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "2技能利用被动自动释放叠层",
+      "text": "2技能叠层五秒内需再次命中，可先用被动结束时自动的蝴蝶效应打目标，间隔约两秒再手动2技能，轻松叠多层",
+      "refs": [
+        {
+          "bvid": "BV1bj8LzQE9L",
+          "t": 103
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "大招等控制或爆发再开",
+      "text": "3技能不仅解当前控制，还能免控预防控制链，尽量等对面进场控制或高爆发的瞬间开",
+      "refs": [
+        {
+          "bvid": "BV1JYui6fEoZ",
+          "t": 161
         }
       ],
       "sources": 1
     },
     {
       "title": "1技能探草",
-      "text": "女娲不在旁边时，用1技能飞蝴蝶去探草，因为这时容易被打状态",
+      "text": "不要贴脸放1技能，会空；可用它探河道和草丛视野，命中草里目标有明显特效，转线支援前也先探草",
       "refs": [
         {
-          "bvid": "BV1iACwB3EDn",
-          "t": 111
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "title": "大招留蓝解关键控制",
-      "text": "对面控制多时大招要留着，用来解掉对队友有威胁的控制；回家前也留一个开大的蓝量",
-      "refs": [
-        {
-          "bvid": "BV1iACwB3EDn",
-          "t": 237
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "title": "当软辅玩，别吃伤害",
-      "text": "庄周偏脆、续航不够、怕被抽状态，打法是开视野、丢完E就走、给减速，不要吃太多伤害",
-      "refs": [
-        {
-          "bvid": "BV1iACwB3EDn",
-          "t": 223
+          "bvid": "BV1bj8LzQE9L",
+          "t": 59
         }
       ],
       "sources": 1
@@ -58,61 +116,37 @@
   ],
   "matchups": [
     {
-      "type": "counter",
-      "hero": 194,
-      "claim": "苏烈有进攻压力，庄周盯住他的位置、不让他找人数差起节奏，他就很难打出作用",
+      "type": "countered",
+      "hero": 199,
+      "claim": "对面控制不多时被公孙离拉扯，庄周打不出控制效果也留不住人",
       "refs": [
         {
-          "bvid": "BV1iACwB3EDn",
-          "t": 178
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 120,
-      "claim": "庄周大招解控免控，能废掉白起这类团控开团",
-      "refs": [
-        {
-          "bvid": "BV1iACwB3EDn",
-          "t": 584
-        }
-      ],
-      "sources": 1
-    },
-    {
-      "type": "counter",
-      "hero": 127,
-      "claim": "对面有两个及以上团控英雄时庄周大招能化解开团，甄姬的控制点也被废掉",
-      "refs": [
-        {
-          "bvid": "BV1iACwB3EDn",
-          "t": 73
+          "bvid": "BV1bj8LzQE9L",
+          "t": 155
         }
       ],
       "sources": 1
     },
     {
       "type": "countered",
-      "hero": 187,
-      "claim": "庄周大招的解控不包括东皇的压制",
+      "hero": 141,
+      "claim": "对面控制不多时被貂蝉拉扯，庄周打不出控制效果也留不住人",
       "refs": [
         {
-          "bvid": "BV1iACwB3EDn",
-          "t": 56
+          "bvid": "BV1bj8LzQE9L",
+          "t": 155
         }
       ],
       "sources": 1
     },
     {
       "type": "countered",
-      "hero": 156,
-      "claim": "庄周大招的解控不包括张良的压制",
+      "hero": 501,
+      "claim": "对面控制不多时被明世隐拉扯，庄周打不出控制效果也留不住人",
       "refs": [
         {
-          "bvid": "BV1iACwB3EDn",
-          "t": 56
+          "bvid": "BV1bj8LzQE9L",
+          "t": 155
         }
       ],
       "sources": 1
