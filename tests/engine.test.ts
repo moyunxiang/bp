@@ -6,7 +6,7 @@ import type { Bundle, HeroData } from '../src/types.ts';
 import { makeEngine } from '../src/lib/data.ts';
 import { assignLanes, laneFitFor } from '../src/engine/lanes.ts';
 import { MODE_INFO, PICK_ORDER, activeSlot, isComplete, newDraft, place, sequence, setBanCount, setLaneLock, unavailableReason, type DraftState, type Slot } from '../src/engine/draft.ts';
-import { DEFAULT_WEIGHTS, recommendBans, recommendPicks, type Engine } from '../src/engine/recommend.ts';
+import { DEFAULT_WEIGHTS, HAND_MULT, multFor, recommendBans, recommendPicks, type Engine } from '../src/engine/recommend.ts';
 import { W, relationWeight, type Evidence } from '../src/engine/relations.ts';
 import { evalCond, verifiedTags } from '../src/engine/rules.ts';
 import { matchArchetypes, needsScore, substitutes, teamFeatures } from '../src/engine/comp.ts';
@@ -226,8 +226,8 @@ describe('推荐评分', () => {
     return d;
   };
 
-  it('分数在0–100之间，各分项不超过上限，列表按分数降序', () => {
-    const recs = recommendPicks(engine, midDraft(), { side: 'blue' });
+  it('分数在0–100之间，各分项不超过上限，列表按分数降序（手工权重）', () => {
+    const recs = recommendPicks(engine, midDraft(), { side: 'blue', mult: HAND_MULT });
     expect(recs.length).toBeGreaterThan(100);
     for (const r of recs) {
       expect(r.score).toBeGreaterThanOrEqual(0);
@@ -255,7 +255,39 @@ describe('推荐评分', () => {
     const recs = recommendPicks(engine, midDraft(), { side: 'blue' });
     const rank = (n: string) => recs.findIndex((r) => r.hero.name === n);
     expect(rank('后羿')).toBeGreaterThan(60);
-    expect(recs.find((r) => r.hero.name === '后羿')!.parts.find((p) => p.key === 'lane')!.value).toBe(DEFAULT_WEIGHTS.laneMiss);
+    expect(recs.find((r) => r.hero.name === '后羿')!.parts.find((p) => p.key === 'lane')!.value).toBeLessThanOrEqual(DEFAULT_WEIGHTS.laneMiss);
+  });
+
+  it('选人模型：按阶段给出系数，克制和分路系数不低于1，系数非负', () => {
+    expect(engine.model).not.toBeNull();
+    expect(engine.model!.phases.length).toBe(3);
+    for (const order of [1, 4, 9]) {
+      const m = multFor(engine.model, order);
+      expect(m.counter).toBeGreaterThanOrEqual(1);
+      expect(m.lane).toBeGreaterThanOrEqual(1);
+      for (const v of Object.values(m)) expect(v).toBeGreaterThanOrEqual(0);
+    }
+    expect(multFor(null, 1)).toBe(HAND_MULT);
+  });
+
+  it('选人模型：分数仍在0–100之间并按降序；职业赛分项带样本数说明', () => {
+    const recs = recommendPicks(engine, midDraft(), { side: 'blue' });
+    for (const r of recs) {
+      expect(r.score).toBeGreaterThanOrEqual(0);
+      expect(r.score).toBeLessThanOrEqual(100);
+    }
+    for (let i = 1; i < recs.length; i++) expect(recs[i - 1].score).toBeGreaterThanOrEqual(recs[i].score);
+    const lanePick = recs.flatMap((r) => r.parts.find((p) => p.key === 'lanePick')?.items ?? []);
+    expect(lanePick.length).toBeGreaterThan(10);
+    for (const i of lanePick) expect(i.text).toMatch(/队伍场次中有\d+次/);
+    const pro = recs.flatMap((r) => [...(r.parts.find((p) => p.key === 'proVs')?.items ?? []), ...(r.parts.find((p) => p.key === 'proAlly')?.items ?? [])]);
+    for (const i of pro) expect(i.text).toMatch(/被选了\d+次（按它的平均被选概率预计约[\d.]+次）/);
+  });
+
+  it('开局第一手指定位置时，不打这个位置的英雄排在后面', () => {
+    const d = setBanCount(newDraft('ranked'), 0);
+    const recs = recommendPicks(engine, d, { side: 'blue', wantLane: 4 });
+    for (const r of recs.slice(0, 10)) expect(r.hero.lanes[3]).toBeGreaterThan(0.15);
   });
 
   it('英雄池模式只在池内推荐，熟练度高的加分更多', () => {

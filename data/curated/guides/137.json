@@ -1,0 +1,251 @@
+{
+  "id": 137,
+  "videos": [
+    {
+      "bvid": "BV1fFzRBEEC6",
+      "title": "感受下司马懿零失误分均900经济节奏打法全局思路",
+      "uploader": "王者荣耀龙帝-司马懿",
+      "date": "2026-01-29",
+      "seconds": 732
+    },
+    {
+      "bvid": "BV1hjp16BEJC",
+      "title": "王者荣耀：司马懿传教了，打野教学",
+      "uploader": "十六说丶",
+      "date": "2026-10-14",
+      "seconds": 764
+    },
+    {
+      "bvid": "BV1ZeRiBTEDX",
+      "title": "司马懿三大焚诀教学！全部学会你就是下一个国服司马懿！",
+      "uploader": "yuc宇川",
+      "date": "2026-05-04",
+      "seconds": 271
+    }
+  ],
+  "combos": [
+    {
+      "steps": [
+        "1",
+        "A",
+        "2",
+        "A",
+        "3"
+      ],
+      "name": "1A2A后三技能撤退",
+      "level": "基础",
+      "note": "对面有大残时，一技能好了接普攻、二技能、普攻，再用三技能撤退",
+      "refs": [
+        {
+          "bvid": "BV1fFzRBEEC6",
+          "t": 410
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "steps": [
+        "1",
+        "A",
+        "2",
+        "A"
+      ],
+      "name": "1A2A",
+      "level": "基础",
+      "note": "",
+      "refs": [
+        {
+          "bvid": "BV1hjp16BEJC",
+          "t": 633
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "tips": [
+    {
+      "title": "空A的用途",
+      "text": "追击够不到时远程收割；清中线时本体停在原地也能打出伤害；反蓝时在安全距离吸引蓝Buff仇恨",
+      "refs": [
+        {
+          "bvid": "BV1ZeRiBTEDX",
+          "t": 42
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "空A方向看朝向",
+      "text": "空A和开一技能时本体的朝向有关：面朝人偶造成伤害，背朝人偶则向反方向释放",
+      "refs": [
+        {
+          "bvid": "BV1ZeRiBTEDX",
+          "t": 85
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "空A的资源与操作",
+      "text": "一技能空A不需要幽影之力，二三技能强化的平A至少30点才能做到一技能范围的空A；灵体状态下空A不用松开轮盘",
+      "refs": [
+        {
+          "bvid": "BV1ZeRiBTEDX",
+          "t": 102
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "鬼跳蓝Buff点位",
+      "text": "利用野怪当踏板快速接近敌人。蓝Buff要没移动过，平A指示器要贴合蓝Buff，可省下一个大招或一技能赶路",
+      "refs": [
+        {
+          "bvid": "BV1ZeRiBTEDX",
+          "t": 133
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "鬼跳蜥蜴与小狼点位",
+      "text": "蜥蜴以中间凸起部分为中心点，站在指示器范围外可穿墙；小狼站在大狼脸上放技能，等狼攻击后向后走一步可跳过墙",
+      "refs": [
+        {
+          "bvid": "BV1ZeRiBTEDX",
+          "t": 176
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "空中驯龙抢龙",
+      "text": "利用飞行路径加惩戒伤害抢龙；点位在龙坑下面的L草，可飞到中路草丛，再开一技能跑路",
+      "refs": [
+        {
+          "bvid": "BV1ZeRiBTEDX",
+          "t": 216
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "精准普攻逃生",
+      "text": "被追时二技能后精准普攻A到敌方英雄身后，或一技能后精准普攻A到兵线上，就能跑掉，需要花时间练",
+      "refs": [
+        {
+          "bvid": "BV1hjp16BEJC",
+          "t": 179
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "大招最容易命中的情况",
+      "text": "队友控住对方时、放在草里、封住退路时，大招最容易命中",
+      "refs": [
+        {
+          "bvid": "BV1hjp16BEJC",
+          "t": 750
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "大招后撤步躲近身技能",
+      "text": "大招释放前有后撤步的距离，可以躲掉诸葛亮二技能的近身攻击",
+      "refs": [
+        {
+          "bvid": "BV1fFzRBEEC6",
+          "t": 180
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "前期速刷野区",
+      "text": "0到4分钟是中辅的节奏，打野以速刷野区为主、顺路带节奏，不推荐走回头路",
+      "refs": [
+        {
+          "bvid": "BV1fFzRBEEC6",
+          "t": 55
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "matchups": [
+    {
+      "type": "countered",
+      "hero": 157,
+      "claim": "不知火舞控制技能非常多，被她先手控住再接诸葛亮大招会直接被秒",
+      "refs": [
+        {
+          "bvid": "BV1fFzRBEEC6",
+          "t": 216
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 123,
+      "claim": "吕布四级后回头跳大招就能把司马懿留下，三级时才可以打他",
+      "refs": [
+        {
+          "bvid": "BV1fFzRBEEC6",
+          "t": 132
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 191,
+      "claim": "大乔大招可瞬间传五个人，司马懿在边路单带开大会被五人集火",
+      "refs": [
+        {
+          "bvid": "BV1fFzRBEEC6",
+          "t": 158
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 174,
+      "claim": "虞姬二技能有免疫、解控、加速，大招有眩晕，单人难抓，要靠队友配合",
+      "refs": [
+        {
+          "bvid": "BV1hjp16BEJC",
+          "t": 117
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "synergy",
+      "hero": 175,
+      "claim": "钟馗在中路勾到人后，司马懿顺势跟上把人留下",
+      "refs": [
+        {
+          "bvid": "BV1fFzRBEEC6",
+          "t": 402
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "synergy",
+      "hero": 169,
+      "claim": "后羿大招能晕住目标，司马懿接大招更容易命中",
+      "refs": [
+        {
+          "bvid": "BV1hjp16BEJC",
+          "t": 211
+        }
+      ],
+      "sources": 1
+    }
+  ]
+}

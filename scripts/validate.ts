@@ -97,11 +97,39 @@ async function main() {
     if (stale.has(k) && r.evidence.some((e) => e.kind === 'official')) err(`过期的官方关系进入了计分 ${k}`);
   }
 
+  // 教学内容：出处必须指向已收录的视频，连招里的数字必须对应存在的技能，不含强度断言，不携带字幕原文
+  let guideItems = 0;
+  for (const [id, g] of Object.entries(b.guides ?? {})) {
+    const h = b.heroes.find((x) => x.id === Number(id));
+    if (!h) {
+      err(`教学内容指向未知英雄 ${id}`);
+      continue;
+    }
+    const vids = new Set(g.videos.map((v) => v.bvid));
+    const slots = new Set(h.skills.map((x) => x.slot));
+    const check = (where: string, refs: { bvid: string; t: number }[], text: string) => {
+      guideItems++;
+      if (!refs.length) err(`${h.name} ${where}: 没有出处`);
+      for (const r of refs) if (!vids.has(r.bvid) || !(r.t >= 0)) err(`${h.name} ${where}: 出处无效 ${r.bvid}@${r.t}`);
+      if (/胜率|T0|T1|版本答案|必选|必ban/i.test(text)) err(`${h.name} ${where}: 含禁用表述：${text.slice(0, 30)}`);
+      if ('quote' in (refs[0] ?? {})) err(`${h.name} ${where}: 出处里带了字幕原文`);
+    };
+    g.combos.forEach((c, i) => {
+      check(`连招#${i}`, c.refs, c.name + c.note);
+      for (const st of c.steps) if (/^\d$/.test(st) && !slots.has(`${st}技能`)) err(`${h.name} 连招#${i}: 没有“${st}技能”`);
+    });
+    g.tips.forEach((t, i) => check(`细节#${i}`, t.refs, t.title + t.text));
+    g.matchups.forEach((m, i) => {
+      check(`克制#${i}`, m.refs, m.claim);
+      if (!ids.has(m.hero) || m.hero === h.id) err(`${h.name} 克制#${i}: 指向无效英雄 ${m.hero}`);
+    });
+  }
+
   // 个人数据引用的英雄必须存在
   const profile = await readJson<{ pool: { id: number }[]; favoriteHeroes: number[]; customComps: { heroes: number[] }[] }>(resolve(ROOT, 'user/profile.json'));
   for (const id of [...profile.pool.map((p) => p.id), ...profile.favoriteHeroes, ...profile.customComps.flatMap((c) => c.heroes)]) if (!ids.has(id)) err(`user/profile.json 引用了不存在的英雄 ${id}`);
 
-  console.log(`校验：英雄 ${b.heroes.length}，关系 ${rel.all.length}，规则 ${b.rules.length}；错误 ${errors.length}，提醒 ${warns.length}`);
+  console.log(`校验：英雄 ${b.heroes.length}，关系 ${rel.all.length}，规则 ${b.rules.length}，教学条目 ${guideItems}；错误 ${errors.length}，提醒 ${warns.length}`);
   if (warns.length) console.log(warns.slice(0, 20).map((w) => `  提醒 ${w}`).join('\n'));
   if (errors.length) {
     console.log(errors.slice(0, 50).map((e) => `  错误 ${e}`).join('\n'));

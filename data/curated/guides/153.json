@@ -1,0 +1,205 @@
+{
+  "id": 153,
+  "videos": [
+    {
+      "bvid": "BV1LH4y117f4",
+      "title": "2分钟教会你 兰陵王必学的3大仙术技巧",
+      "uploader": "公瑾干货教学",
+      "date": "2023-12-01",
+      "seconds": 127
+    },
+    {
+      "bvid": "BV1qpF7zhEaP",
+      "title": "【国服教学】兰陵王后期不行？或许只是你的幻觉",
+      "uploader": "陈海遥Alvis",
+      "date": "2026-02-07",
+      "seconds": 289
+    }
+  ],
+  "combos": [
+    {
+      "steps": [
+        "2",
+        "A",
+        "1",
+        "A",
+        "3"
+      ],
+      "name": "贴身2A1A三",
+      "level": "基础",
+      "note": "贴住对面后利用二技能和大招的身后判定锁定目标，打满伤害并让自己处在更安全的位置",
+      "refs": [
+        {
+          "bvid": "BV1qpF7zhEaP",
+          "t": 242
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "tips": [
+    {
+      "title": "卡墙大突进更远",
+      "text": "大招会先后撤再前冲，周围有墙挡住后撤时就不用扣掉后撤距离，实际突进和伤害距离更远",
+      "refs": [
+        {
+          "bvid": "BV1LH4y117f4",
+          "t": 59
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "后撤大闪",
+      "text": "先朝反方向放大招，再对准敌人闪现，把后撤变成前冲，距离叠加，视野外的敌人也能命中",
+      "refs": [
+        {
+          "bvid": "BV1LH4y117f4",
+          "t": 74
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "三角杀",
+      "text": "大招伤害有延迟，打中一个位置的敌人后可马上闪现到另一个位置的敌人身上",
+      "refs": [
+        {
+          "bvid": "BV1LH4y117f4",
+          "t": 100
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "隐身进度条回填",
+      "text": "隐身进度条快消失的瞬间点四技能，利用隐身前摇回填进度条，延长隐身时间",
+      "refs": [
+        {
+          "bvid": "BV1LH4y117f4",
+          "t": 110
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "二技能有身后判定",
+      "text": "隐身贴住对手后不管往哪个方向放二技能都必中，可与对面C位重叠来命中被保护的目标",
+      "refs": [
+        {
+          "bvid": "BV1qpF7zhEaP",
+          "t": 224
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "一技能移动施法",
+      "text": "一技能可以空放、可以移动施法，放的时候保持移动",
+      "refs": [
+        {
+          "bvid": "BV1qpF7zhEaP",
+          "t": 208
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "解除隐身蹲草",
+      "text": "隐身接近会让对手头上出现感叹号，解除隐身直接蹲草，对面看不到感叹号就不会警惕",
+      "refs": [
+        {
+          "bvid": "BV1qpF7zhEaP",
+          "t": 188
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "matchups": [
+    {
+      "type": "countered",
+      "hero": 128,
+      "claim": "曹操这类反打能力很强的英雄，兰陵王切入后容易被反打",
+      "refs": [
+        {
+          "bvid": "BV1qpF7zhEaP",
+          "t": 150
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 170,
+      "claim": "刘备这类反打能力很强的英雄，兰陵王切入后容易被反打",
+      "refs": [
+        {
+          "bvid": "BV1qpF7zhEaP",
+          "t": 150
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 133,
+      "claim": "狄仁杰这类反打能力很强的英雄，兰陵王切入后容易被反打",
+      "refs": [
+        {
+          "bvid": "BV1qpF7zhEaP",
+          "t": 150
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 196,
+      "claim": "百里守约克制隐身，兰陵王的隐身先手难以生效",
+      "refs": [
+        {
+          "bvid": "BV1qpF7zhEaP",
+          "t": 152
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 180,
+      "claim": "哪吒克制隐身，兰陵王的隐身先手难以生效",
+      "refs": [
+        {
+          "bvid": "BV1qpF7zhEaP",
+          "t": 152
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 505,
+      "claim": "瑶克制隐身，兰陵王的隐身先手难以生效",
+      "refs": [
+        {
+          "bvid": "BV1qpF7zhEaP",
+          "t": 152
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 149,
+      "claim": "刘邦这类强保护型辅助会保护C位，兰陵王难以应对",
+      "refs": [
+        {
+          "bvid": "BV1qpF7zhEaP",
+          "t": 156
+        }
+      ],
+      "sources": 1
+    }
+  ]
+}

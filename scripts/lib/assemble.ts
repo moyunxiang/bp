@@ -9,6 +9,7 @@ import {
   type Bundle,
   type CommentaryItem,
   type HeroData,
+  type HeroGuide,
   type HeroProfile,
   type KplComps,
   type KplStats,
@@ -16,6 +17,7 @@ import {
   type OfficialHero,
   type PatchNote,
   type Rule,
+  type PickModel,
   type TagDef,
 } from '../../src/types.ts';
 
@@ -31,6 +33,8 @@ export interface Inputs {
   kpl: KplStats | null;
   comps: KplComps | null;
   backtest: BacktestReport | null;
+  model: PickModel | null;
+  guides: HeroGuide[];
   commentary: CommentaryItem[];
   rules: Rule[];
   tags: TagDef[];
@@ -50,6 +54,8 @@ export async function loadInputs(): Promise<Inputs> {
     kpl: await optional<KplStats | null>(D('derived/kpl/stats.json'), null),
     comps: await optional<KplComps | null>(D('derived/kpl/comps.json'), null),
     backtest: await optional<BacktestReport | null>(D('derived/backtest.json'), null),
+    model: await optional<PickModel | null>(D('derived/model.json'), null),
+    guides: (await optional<{ guides: HeroGuide[] }>(D('derived/guides.json'), { guides: [] })).guides,
     commentary: (await optional<{ items: CommentaryItem[] }>(D('derived/commentary.json'), { items: [] })).items,
     rules: (await readJson<{ rules: Rule[] }>(D('curated/rules.json'))).rules,
     tags: (await readJson<{ tags: TagDef[] }>(D('curated/tags.json'))).tags,
@@ -170,11 +176,13 @@ export function assemble(inp: Inputs): { bundle: Bundle; staleEdges: number } {
     rules: inp.rules,
     tags: inp.tags,
     patches: inp.patches.patches.filter((p) => p.heroes.length).slice(0, 60),
-    kpl: inp.kpl ? { coverage: inp.kpl.coverage, heat: inp.kpl.heat, pairs: inp.kpl.pairs, source: inp.kpl.source } : null,
+    kpl: inp.kpl ? { coverage: inp.kpl.coverage, heat: inp.kpl.heat, pairs: inp.kpl.pairs, source: inp.kpl.source, resp: inp.kpl.resp } : null,
+    model: inp.model,
     comps: inp.comps,
     archetypes: inp.archetypes,
     equipment: inp.equipment,
     commentary: inp.commentary,
+    guides: Object.fromEntries(inp.guides.filter((g) => byId.has(g.id)).map((g) => [g.id, g])),
   };
   return { bundle, staleEdges };
 }

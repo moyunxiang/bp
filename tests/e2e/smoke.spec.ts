@@ -122,6 +122,32 @@ test('英雄百科：搜索、详情、关系依据', async ({ page }) => {
   expect(errors).toEqual([]);
 });
 
+test('英雄百科：连招与细节带视频出处，出装带图标', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('./#/heroes/131');
+  const guide = page.locator('#guide');
+  await expect(guide.getByRole('heading', { name: '连招与细节' })).toBeVisible();
+  await expect(guide.getByText(/官方技能顺序/)).toBeVisible();
+  // 至少一条连招，且每条出处都是带时间点的B站链接
+  const links = guide.locator('a[href^="https://www.bilibili.com/video/BV"]');
+  expect(await links.count()).toBeGreaterThan(3);
+  expect(await links.first().getAttribute('href')).toMatch(/\?t=\d+$/);
+  await expect(guide.getByText('将进酒').first()).toBeVisible();
+  // 出装图标来自官方地址
+  expect(await page.locator('#builds img[src*="/itemimg/"]').count()).toBeGreaterThan(3);
+  expect(errors).toEqual([]);
+});
+
+test('数据说明：展示选人模型的系数和回测', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('./#/about');
+  const model = page.locator('#about-model');
+  await expect(model.getByText(/条件logit/)).toBeVisible();
+  await expect(model.getByText('职业赛该位置选取')).toBeVisible();
+  await expect(page.locator('#about-backtest').getByText(/线上使用/).first()).toBeVisible();
+  expect(errors).toEqual([]);
+});
+
 test('关系图谱：单英雄图与阵容对阵', async ({ page }) => {
   const errors = watchErrors(page);
   await page.goto('./#/graph?hero=509');

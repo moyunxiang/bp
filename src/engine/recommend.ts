@@ -1,5 +1,5 @@
 // BP推荐：对每个可选英雄计算“推荐分”。推荐分是多个可解释分项之和，不是胜率。
-import { LANE_NAME, type Bundle, type HeroData, type Lane } from '../types.ts';
+import { LANE_NAME, type Bundle, type HeroData, type Lane, type PickModel } from '../types.ts';
 import { assignLanes, laneFitFor, type LaneSlot } from './lanes.ts';
 import { bestEvidenceLevel, type Relation, type RelationIndex } from './relations.ts';
 import { needsScore } from './comp.ts';
@@ -22,6 +22,11 @@ export interface Weights {
   exposurePerUnit: number;
   exposureCap: number;
   poolPerLevel: number;
+  /** 职业赛选人响应（对面亮出某英雄后 / 队友选了某英雄后）每单位对数提升度的分值与上限 */
+  proPerUnit: number;
+  proCap: number;
+  /** 职业赛该位置选取率（0–1）乘以这个值 */
+  lanePickRange: number;
 }
 
 // 取值说明：最初克制/配合/暴露/需求的权重是现在的3–4倍。职业赛回测显示，那样会让排序明显偏离职业队的实际选择
@@ -42,9 +47,12 @@ export const DEFAULT_WEIGHTS: Weights = {
   exposurePerUnit: 0.9,
   exposureCap: 3.5,
   poolPerLevel: 3,
+  proPerUnit: 3,
+  proCap: 6,
+  lanePickRange: 20,
 };
 
-export type PartKey = 'counter' | 'synergy' | 'needs' | 'lane' | 'meta' | 'exposure' | 'pool';
+export type PartKey = 'counter' | 'synergy' | 'needs' | 'lane' | 'meta' | 'exposure' | 'proVs' | 'proAlly' | 'lanePick' | 'pool';
 export const PART_NAME: Record<PartKey, string> = {
   counter: '克制与被克',
   synergy: '配合己方',
@@ -52,8 +60,18 @@ export const PART_NAME: Record<PartKey, string> = {
   lane: '分路匹配',
   meta: '版本因素',
   exposure: '先手暴露',
+  proVs: '职业赛针对选择',
+  proAlly: '职业赛同队选择',
+  lanePick: '职业赛该位置选取',
   pool: '英雄池',
 };
+
+/** 没有训练模型时的系数：新增的三个职业赛分项不参与，其余按手工权重 */
+export const HAND_MULT: Record<string, number> = { proVs: 0, proAlly: 0, lanePick: 0 };
+/** 选人响应统计的平滑常数：对数提升度 = ln((实际+K)/(期望+K)) */
+export const RESP_SMOOTH = 4;
+/** 响应统计的键 */
+export const respKey = (c: number, o: number) => c * 1000 + o;
 
 export interface ReasonItem {
   delta: number;
@@ -101,6 +119,8 @@ export interface RecommendOptions {
   /** 指定候选要打的位置 */
   wantLane?: Lane | null;
   weights?: Weights;
+  /** 覆盖各分项的系数（回测取原始分项时用）；不传则用训练模型，没有模型用手工权重 */
+  mult?: Record<string, number>;
   /** 用于判断“近期改动”的当前日期（ISO），默认取数据生成时间 */
   today?: string;
   limit?: number;
@@ -121,6 +141,21 @@ export interface Engine {
   /** 职业赛第一局的禁选情况：presence=(被选+被禁)/局数，banRate=被禁/局数。没有数据的英雄不在表里 */
   meta: Map<number, MetaStat>;
   metaScope: 'recent' | 'year' | null;
+  /** 职业赛选人响应：键 respKey(候选, 已选英雄) → [实际次数, 期望次数] */
+  resp: { vs: Map<number, [number, number]>; ally: Map<number, [number, number]> };
+  model: PickModel | null;
+}
+
+export function buildResp(bundle: Bundle): Engine['resp'] {
+  const toMap = (list: [number, number, number, number][] | undefined) => new Map((list ?? []).map(([c, o, obs, exp]) => [respKey(c, o), [obs, exp] as [number, number]]));
+  return { vs: toMap(bundle.kpl?.resp?.vs), ally: toMap(bundle.kpl?.resp?.ally) };
+}
+
+/** 当前这一手使用的分项系数。order 是本局第几手选人（1–10）。 */
+export function multFor(model: PickModel | null, order: number): Record<string, number> {
+  if (!model) return HAND_MULT;
+  const ph = model.phases.find((p) => order >= p.fromOrder && order <= p.toOrder) ?? model.phases[model.phases.length - 1];
+  return ph.mult;
 }
 
 const clamp = (x: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, x));
@@ -179,6 +214,9 @@ export function recommendPicks(engine: Engine, d: DraftState, opts: RecommendOpt
   const poolMap = opts.pool ? new Map(opts.pool.map((p) => [p.id, p.level])) : null;
   const enemyResponds = enemyCanStillRespond(d, side);
   const enemyRemaining = d.picks[other(side)].filter((x) => x == null).length;
+  const order = allies.length + enemies.length + 1;
+  const mult = opts.mult ?? multFor(engine.model, order);
+  const pairGames = bundle.kpl?.pairs.teamGames ?? 0;
 
   // 对方还能选到的英雄（用于暴露度）
   const enemyPool = enemyResponds ? candidates(engine, d, { side: other(side), kind: 'pick', index: 0 }) : [];
@@ -272,6 +310,38 @@ export function recommendPicks(engine: Engine, d: DraftState, opts: RecommendOpt
     }
     parts.push({ key: 'exposure', value: expValue, items: expItems });
 
+    // ---- 职业赛选人响应（按BP顺序统计的选人行为，不是胜负，也不等于机制克制）----
+    const respPart = (key: 'proVs' | 'proAlly', others: HeroData[], table: Map<number, [number, number]>, say: (o: HeroData) => string) => {
+      const items: ReasonItem[] = [];
+      for (const o of others) {
+        const r = table.get(respKey(h.id, o.id));
+        if (!r) continue;
+        const v = round1(Math.log((r[0] + RESP_SMOOTH) / (r[1] + RESP_SMOOTH)) * W.proPerUnit);
+        if (Math.abs(v) < 0.3) continue;
+        items.push({ delta: v, text: `职业赛近一年：${say(o)}，它被选了${r[0]}次（按它的平均被选概率预计约${r[1].toFixed(1)}次）`, short: v > 0 ? `职业赛常在${key === 'proVs' ? '对面有' : '搭配'}${o.name}时选它` : undefined, hero: o });
+      }
+      parts.push({ key, value: round1(clamp(items.reduce((s, x) => s + x.delta, 0), -W.proCap, W.proCap)), items: items.sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta)) });
+    };
+    respPart('proVs', enemies, engine.resp.vs, (o) => `对面先亮出${o.name}之后`);
+    respPart('proAlly', allies, engine.resp.ally, (o) => `队友先选了${o.name}之后`);
+
+    // ---- 职业赛该位置选取 ----
+    const laneN = lf.lane && pairGames ? (h.kpl?.lanesYear?.[lf.lane - 1] ?? 0) : 0;
+    const lanePickValue = pairGames ? round1((laneN / pairGames) * W.lanePickRange) : 0;
+    parts.push({
+      key: 'lanePick',
+      value: lanePickValue,
+      items: laneN && lf.lane ? [{ delta: lanePickValue, text: `职业赛近一年：${pairGames}个队伍场次中有${laneN}次用它打${LANE_NAME[lf.lane]}（不代表路人局强度）`, short: `职业赛${LANE_NAME[lf.lane]}出场${laneN}次` }] : [],
+    });
+
+    // ---- 应用模型系数 ----
+    for (const p of parts) {
+      const m = mult[p.key] ?? 1;
+      if (m === 1) continue;
+      p.value = round1(p.value * m);
+      p.items = m === 0 ? [] : p.items.map((i) => ({ ...i, delta: round1(i.delta * m) }));
+    }
+
     // ---- 英雄池 ----
     if (poolMap) {
       const level = poolMap.get(h.id) ?? 1;
@@ -295,9 +365,9 @@ export function recommendPicks(engine: Engine, d: DraftState, opts: RecommendOpt
     // 一句话理由：优先说克制、配合、阵容需求；不够两条再补职业赛数据；最后带一条最主要的风险
     const say = (i: ReasonItem) => i.short ?? i.text.replace(/（.*?）/g, '');
     const byKey = (k: PartKey) => parts.find((p) => p.key === k)?.items ?? [];
-    const core = [...byKey('counter'), ...byKey('synergy'), ...byKey('needs')].filter((i) => i.delta >= 0.5).sort((a, b) => b.delta - a.delta);
+    const core = [...byKey('counter'), ...byKey('synergy'), ...byKey('needs'), ...byKey('proVs').filter((i) => i.short), ...byKey('proAlly').filter((i) => i.short)].filter((i) => i.delta >= 0.5).sort((a, b) => b.delta - a.delta);
     const positives = core.slice(0, 2).map(say);
-    if (positives.length < 2) positives.push(...byKey('meta').filter((i) => i.delta >= 1).slice(0, 2 - positives.length).map(say));
+    if (positives.length < 2) positives.push(...[...byKey('meta'), ...byKey('lanePick')].filter((i) => i.delta >= 1).slice(0, 2 - positives.length).map(say));
     const risk = [...byKey('counter'), ...byKey('needs'), ...byKey('lane'), ...byKey('exposure')].filter((i) => i.delta <= -0.7).sort((a, b) => a.delta - b.delta)[0];
     const headline = [...positives, ...(risk ? [risk.short ?? `注意${say(risk)}`] : [])].join('；') || '没有突出的加分或减分项';
 

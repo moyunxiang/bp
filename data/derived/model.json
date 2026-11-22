@@ -1,0 +1,74 @@
+{
+  "trainedAt": "2026-11-22T06:32:33.198Z",
+  "train": {
+    "from": "2025-06-05",
+    "to": "2026-11-14",
+    "picks": 25070
+  },
+  "features": [
+    "counter",
+    "synergy",
+    "needs",
+    "lane",
+    "meta",
+    "exposure",
+    "proVs",
+    "proAlly",
+    "lanePick"
+  ],
+  "phases": [
+    {
+      "name": "第1–2手",
+      "fromOrder": 1,
+      "toOrder": 2,
+      "mult": {
+        "counter": 1,
+        "synergy": 0,
+        "needs": 0,
+        "lane": 1,
+        "meta": 0.962,
+        "exposure": 1.391,
+        "proVs": 1.2,
+        "proAlly": 0,
+        "lanePick": 1.772
+      }
+    },
+    {
+      "name": "第3–6手",
+      "fromOrder": 3,
+      "toOrder": 6,
+      "mult": {
+        "counter": 1,
+        "synergy": 1.962,
+        "needs": 0.392,
+        "lane": 1.729,
+        "meta": 0.5,
+        "exposure": 0.944,
+        "proVs": 0.657,
+        "proAlly": 0.651,
+        "lanePick": 2.525
+      }
+    },
+    {
+      "name": "第7–10手",
+      "fromOrder": 7,
+      "toOrder": 10,
+      "mult": {
+        "counter": 1,
+        "synergy": 0.064,
+        "needs": 0.333,
+        "lane": 1,
+        "meta": 0.274,
+        "exposure": 0,
+        "proVs": 0.559,
+        "proAlly": 0.38,
+        "lanePick": 2.514
+      }
+    }
+  ],
+  "floors": {
+    "counter": 1,
+    "lane": 1
+  },
+  "note": "条件logit模型：预测职业队在每一手选了谁。系数非负，按阶段分别拟合，统一缩放到“单组模型里分路匹配的系数=1”。评估见回测；线上系数用全部对局重新拟合。"
+}

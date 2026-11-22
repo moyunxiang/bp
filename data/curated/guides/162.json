@@ -1,0 +1,114 @@
+{
+  "id": 162,
+  "videos": [
+    {
+      "bvid": "BV1MWDLBSEAz",
+      "title": "《低分段99%胜率通天代打法》娜可露露逆风运营干货教学！",
+      "uploader": "怜惜ee",
+      "date": "2026-04-08",
+      "seconds": 1025
+    },
+    {
+      "bvid": "BV1LBfSB2EcR",
+      "title": "暖阳现场教学娜可露露打野",
+      "uploader": "幸运降临掌心",
+      "date": "2026-02-03",
+      "seconds": 894
+    }
+  ],
+  "combos": [],
+  "tips": [
+    {
+      "title": "拿蓝时留着大招",
+      "text": "打野拿蓝buff时保留大招，拿完蓝后顺路去中路搜一下，可以捡人头",
+      "refs": [
+        {
+          "bvid": "BV1MWDLBSEAz",
+          "t": 200
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "补好尾刀多拿经济",
+      "text": "打野补兵线尾刀能额外增加20%经济，所以尽量补好每一个尾刀",
+      "refs": [
+        {
+          "bvid": "BV1MWDLBSEAz",
+          "t": 172
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "强化普攻位移无视野进草",
+      "text": "利用强化普攻的位移无视野进草埋伏，对面靠近时不知道草里有人，可配合队友先手秒人",
+      "refs": [
+        {
+          "bvid": "BV1MWDLBSEAz",
+          "t": 319
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "卡老夫子二技能结束再打",
+      "text": "对面老夫子开二技能时先不进场，等他二技能结束的瞬间再去打",
+      "refs": [
+        {
+          "bvid": "BV1MWDLBSEAz",
+          "t": 692
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "一技能假动作骗对面",
+      "text": "开大冲上去找人，先扔出一技能并假装要拍他，然后直接走人，用来骗对面的技能",
+      "refs": [
+        {
+          "bvid": "BV1LBfSB2EcR",
+          "t": 772
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "阿古朵一技能小野怪探视野",
+      "text": "阿古朵放一技能后，召出的小野怪会照到娜可露露的视野，所以这时不贸然过去",
+      "refs": [
+        {
+          "bvid": "BV1MWDLBSEAz",
+          "t": 588
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "matchups": [
+    {
+      "type": "counter",
+      "hero": 533,
+      "claim": "阿古朵打团猛但不好带线，打他可以去边路带线给压力",
+      "refs": [
+        {
+          "bvid": "BV1MWDLBSEAz",
+          "t": 526
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 533,
+      "claim": "对面反应过来后砸上去会被阿古朵大招控住，二技能拉开就被反打",
+      "refs": [
+        {
+          "bvid": "BV1MWDLBSEAz",
+          "t": 977
+        }
+      ],
+      "sources": 1
+    }
+  ]
+}

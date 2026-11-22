@@ -6,6 +6,7 @@
 // asOf 用于回测：只使用该日期之前的对局，重建“当时能看到的数据”。
 import type { KplComps, KplStats, OfficialHero } from '../../src/types.ts';
 import { POS_TO_LANE, isBlindDecider, type Battle } from './kpl.ts';
+import { RESP_SMOOTH } from '../../src/engine/recommend.ts';
 
 export const HEAT_DAYS = 150; // 第一局禁选的近期窗口
 export const LANE_DAYS = 500; // 分路分布窗口
@@ -13,6 +14,72 @@ export const PAIR_DAYS = 365; // 共现窗口
 export const PAIR_MIN_N = 30;
 export const TRIO_MIN_N = 12;
 export const LINEUP_MIN_N = 3;
+/** 选人响应统计：期望次数低于这个值的英雄对不输出（样本太少） */
+export const RESP_MIN_EXP = 1.5;
+
+/**
+ * 选人响应统计（供选人模型使用）：按BP顺序逐手统计“对面已亮出 e / 队友已选 a 之后，c 被选了多少次”，
+ * 并与“只看 c 在同一赛事里的平均被选概率”得到的期望次数比较。
+ * 期望值只在 c 当时可选（没被禁、没被选、本队本系列没用过）的那些选人回合上累计，所以不受全局BP和禁用的影响。
+ * 这是职业队的选人行为，不是胜负，也不等于机制上的克制。
+ */
+function computeResp(battles: Battle[], known: Set<number>) {
+  const ids = [...known];
+  const used = new Map<string, Set<number>>();
+  type Dec = { league: string; chosen: number; avail: number[]; enemies: number[]; allies: number[] };
+  const decs: Dec[] = [];
+  for (const b of battles) {
+    const banned = new Set<number>();
+    const picked: Record<1 | 2, number[]> = { 1: [], 2: [] };
+    for (const x of b.bp) {
+      if (!(x.hero > 0)) continue;
+      if (!x.pick) {
+        banned.add(x.hero);
+        continue;
+      }
+      const key = `${b.match_id}|${x.camp === 1 ? b.camp1_team : b.camp2_team}`;
+      const u = used.get(key) ?? new Set<number>();
+      used.set(key, u);
+      if (known.has(x.hero)) {
+        const taken = new Set([...banned, ...picked[1], ...picked[2], ...u]);
+        decs.push({ league: b.league_id, chosen: x.hero, avail: ids.filter((h) => !taken.has(h) || h === x.hero), enemies: [...picked[x.camp === 1 ? 2 : 1]], allies: [...picked[x.camp]] });
+      }
+      picked[x.camp].push(x.hero);
+      u.add(x.hero);
+    }
+  }
+  // 每个赛事里，英雄在“可选的回合”中被选中的平均概率
+  const P = new Map<string, number>();
+  const A = new Map<string, number>();
+  for (const d of decs) {
+    P.set(`${d.league}|${d.chosen}`, (P.get(`${d.league}|${d.chosen}`) ?? 0) + 1);
+    for (const h of d.avail) A.set(`${d.league}|${h}`, (A.get(`${d.league}|${h}`) ?? 0) + 1);
+  }
+  const rate = (league: string, h: number) => (P.get(`${league}|${h}`) ?? 0) / Math.max(1, A.get(`${league}|${h}`) ?? 0);
+  const acc = () => ({ obs: new Map<number, number>(), exp: new Map<number, number>() });
+  const vs = acc();
+  const ally = acc();
+  const K = 1000; // 英雄ID都小于1000
+  for (const d of decs) {
+    for (const [tbl, others] of [[vs, d.enemies], [ally, d.allies]] as const) {
+      for (const o of others) {
+        if (!known.has(o)) continue;
+        tbl.obs.set(d.chosen * K + o, (tbl.obs.get(d.chosen * K + o) ?? 0) + 1);
+        for (const h of d.avail) {
+          const r = rate(d.league, h);
+          if (r > 0) tbl.exp.set(h * K + o, (tbl.exp.get(h * K + o) ?? 0) + r);
+        }
+      }
+    }
+  }
+  const toList = (t: ReturnType<typeof acc>): [number, number, number, number][] =>
+    [...t.exp.entries()]
+      // 只保留样本够、且与期望有明显差别的英雄对（差别很小的对模型没有贡献，省掉可以减小数据包）
+      .filter(([k, e]) => e >= RESP_MIN_EXP && Math.abs(Math.log(((t.obs.get(k) ?? 0) + RESP_SMOOTH) / (e + RESP_SMOOTH))) >= 0.15)
+      .map(([k, e]): [number, number, number, number] => [Math.floor(k / K), k % K, t.obs.get(k) ?? 0, +e.toFixed(2)])
+      .sort((x, y) => x[0] - y[0] || x[1] - y[1]);
+  return { decisions: decs.length, vs: toList(vs), ally: toList(ally) };
+}
 
 export const dayOffset = (date: string, days: number) => new Date(new Date(date.slice(0, 10) + 'T00:00:00Z').getTime() - days * 86400_000).toISOString().slice(0, 10);
 
@@ -70,6 +137,8 @@ export function computeKpl(all: Battle[], heroes: Pick<OfficialHero, 'id'>[], to
       }
     }
   const N = teamPicks.length;
+  const resp = computeResp(pairBattles, known);
+  const lanesYear = laneCount(pairBattles);
   const single = new Map<number, number>();
   const pair = new Map<string, number>();
   type Span = { n: number; first: string; last: string };
@@ -114,6 +183,7 @@ export function computeKpl(all: Battle[], heroes: Pick<OfficialHero, 'id'>[], to
     },
     lanes: { windowDays: LANE_DAYS },
     pairs: { windowDays: PAIR_DAYS, from: dayOffset(latest, PAIR_DAYS), to: latest, teamGames: N, minN: PAIR_MIN_N, list: pairs },
+    resp: { windowDays: PAIR_DAYS, from: dayOffset(latest, PAIR_DAYS), to: latest, ...resp },
     heroes: Object.fromEntries(
       heroes
         .filter((h) => lanesAll.has(h.id) || g1Year.m.has(h.id))
@@ -128,6 +198,7 @@ export function computeKpl(all: Battle[], heroes: Pick<OfficialHero, 'id'>[], to
               g1Recent: g1Recent.m.get(h.id) ?? { pick: 0, ban: 0 },
               g1Year: g1Year.m.get(h.id) ?? { pick: 0, ban: 0 },
               teamGames: single.get(h.id) ?? 0,
+              lanesYear: lanesYear.get(h.id) ?? [0, 0, 0, 0, 0],
             },
           ];
         }),

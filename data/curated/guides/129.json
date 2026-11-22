@@ -1,0 +1,173 @@
+{
+  "id": 129,
+  "videos": [
+    {
+      "bvid": "BV1eVFTzoE9v",
+      "title": "你们要的典韦的全局打法思路来了！",
+      "uploader": "小灰玩典韦",
+      "date": "2026-02-02",
+      "seconds": 722
+    },
+    {
+      "bvid": "BV114Kh62ENT",
+      "title": "典韦零基础教学，最简单的打野你学不学？",
+      "uploader": "正经人trust",
+      "date": "2026-07-21",
+      "seconds": 293
+    }
+  ],
+  "combos": [
+    {
+      "steps": [
+        "1",
+        "3"
+      ],
+      "name": "一技能加大招",
+      "level": "基础",
+      "note": "看到人直接用一技能突进再接大招跳斩",
+      "refs": [
+        {
+          "bvid": "BV114Kh62ENT",
+          "t": 242
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "steps": [
+        "1",
+        "惩击",
+        "1",
+        "惩击"
+      ],
+      "name": "对东皇的拉扯",
+      "level": "进阶",
+      "note": "对东皇太一要稍微拉扯，用惩击让他减速",
+      "refs": [
+        {
+          "bvid": "BV114Kh62ENT",
+          "t": 247
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "tips": [
+    {
+      "title": "松开轮盘点普攻砍被动",
+      "text": "叠被动时松开移动轮盘再点普攻，之后直接接二技能踩下去",
+      "refs": [
+        {
+          "bvid": "BV114Kh62ENT",
+          "t": 203
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "大招留着解控",
+      "text": "大招留着用来解控；对方迟迟不交控制技能时，才直接把大招灌上去",
+      "refs": [
+        {
+          "bvid": "BV114Kh62ENT",
+          "t": 206
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "六层被动压距离输出",
+      "text": "叠满六层被动后攻击距离变长，压着对手的极限距离打，对手够不到典韦而典韦能持续输出",
+      "refs": [
+        {
+          "bvid": "BV114Kh62ENT",
+          "t": 180
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "野怪是前期被动来源",
+      "text": "小猪和小蜥蜴是前期唯一的被动层数来源，要记住1分58秒的刷新时间并用来叠被动",
+      "refs": [
+        {
+          "bvid": "BV114Kh62ENT",
+          "t": 109
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "留小蜥蜴砍满被动",
+      "text": "顺风时留一只小蜥蜴，打架前先砍满六层被动",
+      "refs": [
+        {
+          "bvid": "BV1eVFTzoE9v",
+          "t": 668
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "拦截对手打出闪现",
+      "text": "刷完野看小地图，去拦截对手把技能和闪现打出来，即使不杀也很赚",
+      "refs": [
+        {
+          "bvid": "BV114Kh62ENT",
+          "t": 71
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "matchups": [
+    {
+      "type": "countered",
+      "hero": 156,
+      "claim": "典韦怕控制型英雄，被张良这类英雄捆住就必死",
+      "refs": [
+        {
+          "bvid": "BV1eVFTzoE9v",
+          "t": 273
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 139,
+      "claim": "典韦怕控制型英雄，被老夫子这类英雄捆住就必死",
+      "refs": [
+        {
+          "bvid": "BV1eVFTzoE9v",
+          "t": 273
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 179,
+      "claim": "女娲手长，用远距离消耗让典韦很烦",
+      "refs": [
+        {
+          "bvid": "BV1eVFTzoE9v",
+          "t": 292
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "counter",
+      "hero": 168,
+      "claim": "牛魔没有闪现，二技能顶上去之后容易被杀死",
+      "refs": [
+        {
+          "bvid": "BV1eVFTzoE9v",
+          "t": 530
+        }
+      ],
+      "sources": 1
+    }
+  ]
+}

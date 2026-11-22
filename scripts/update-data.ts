@@ -42,11 +42,13 @@ async function main() {
   run('校验并合并机制档案', 'scripts/build-profiles.ts', [], true);
   // 5. 解说（可选，需要 .env.local 里的 BILI_COOKIE）
   if (has('--commentary')) {
+    run('按英雄读取教学视频字幕', 'scripts/commentary/hero-guides.ts');
     run('发现解说视频', 'scripts/commentary/discover.ts');
     run('读取字幕', 'scripts/commentary/fetch-subtitles.ts');
   }
+  run('核对并汇总英雄教学内容', 'scripts/commentary/build-guides.ts');
   run('汇总解说条目', 'scripts/commentary/build.ts');
-  // 6. 回测（可选，约1–2分钟）
+  // 6. 回测并重新训练选人模型（可选，约3分钟）
   if (has('--backtest')) run('回测', 'scripts/backtest.ts');
   // 7. 生成数据包并校验
   run('生成数据包', 'scripts/build-data.ts', [], true);

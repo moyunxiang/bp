@@ -37,6 +37,35 @@ export function HeroAvatar({ hero, size = 40, className = '', dim = false, ring 
   );
 }
 
+const GAME_IMG = 'https://game.gtimg.cn/images/yxzj/img201606';
+const GAME_ICON_PATH = { item: (id: number) => `itemimg/${id}.jpg`, rune: (id: number) => `mingwen/${id}.png`, summoner: (id: number) => `summoner/${id}.jpg` };
+
+/** 官方装备、铭文、召唤师技能图标（直接引用官方地址）；加载失败时退回文字。 */
+export function GameIcon({ kind, id, name, size = 40, className = '' }: { kind: keyof typeof GAME_ICON_PATH; id: number; name?: string; size?: number; className?: string }) {
+  const [failed, setFailed] = useState(false);
+  const style = { width: size, height: size, borderRadius: kind === 'rune' ? size : Math.max(4, Math.round(size * 0.18)) };
+  if (failed || !name) {
+    return (
+      <span className={`inline-flex shrink-0 select-none items-center justify-center bg-panel3 text-[11px] text-mute ${className}`} style={style}>
+        {(name ?? '?').slice(0, 1)}
+      </span>
+    );
+  }
+  return (
+    <img
+      src={`${GAME_IMG}/${GAME_ICON_PATH[kind](id)}`}
+      alt={name}
+      loading="lazy"
+      decoding="async"
+      referrerPolicy="no-referrer"
+      draggable={false}
+      onError={() => setFailed(true)}
+      className={`shrink-0 select-none bg-panel3 object-cover ${className}`}
+      style={style}
+    />
+  );
+}
+
 export function HeroLink({ hero, size = 22, className = '' }: { hero: HeroData; size?: number; className?: string }) {
   return (
     <Link to={`/heroes/${hero.id}`} className={`inline-flex items-center gap-1.5 align-middle hover:text-blue ${className}`}>

@@ -19,7 +19,7 @@ import { assemble, loadInputs } from './lib/assemble.ts';
 import { makeEngine } from '../src/lib/data.ts';
 import { newDraft, place, type DraftState, type Side } from '../src/engine/draft.ts';
 import { DEFAULT_WEIGHTS, recommendPicks, type Engine, type PartKey } from '../src/engine/recommend.ts';
-import type { BacktestMethod, BacktestReport } from '../src/types.ts';
+import type { BacktestMethod, BacktestReport, PickModel } from '../src/types.ts';
 
 const arg = (name: string) => process.argv.find((a) => a.startsWith(`--${name}=`))?.split('=')[1];
 const TEST_YEAR = arg('test-year') ?? '2026';
@@ -33,7 +33,21 @@ const NO_RULES = process.argv.includes('--no-rules');
 const NO_WRITE = process.argv.includes('--no-write') || NO_RULES || !!TEST_LEAGUES || !!TRAIN_LEAGUES;
 const MIN_TRAIN = Number(arg('min-train') ?? 2000);
 
-const FEATS: PartKey[] = ['counter', 'synergy', 'needs', 'lane', 'meta', 'exposure'];
+const FEATS: PartKey[] = ['counter', 'synergy', 'needs', 'lane', 'meta', 'exposure', 'proVs', 'proAlly', 'lanePick'];
+/** 手工权重使用的分项（新增的三个职业赛分项只在训练模型里使用） */
+const OLD: PartKey[] = ['counter', 'synergy', 'needs', 'lane', 'meta', 'exposure'];
+const PHASES: { name: string; fromOrder: number; toOrder: number }[] = [
+  { name: '第1–2手', fromOrder: 1, toOrder: 2 },
+  { name: '第3–6手', fromOrder: 3, toOrder: 6 },
+  { name: '第7–10手', fromOrder: 7, toOrder: 10 },
+];
+const phaseOf = (order: number) => PHASES.findIndex((p) => order >= p.fromOrder && order <= p.toOrder);
+/** 克制分项系数的下限。系数已按“单组模型里分路匹配的系数=1”缩放，所以 1 表示保持手工权重的力度。
+ *  训练目标是模仿职业队选人，学到的克制系数很小；网站的用途是按对方阵容给建议，所以克制分项不低于手工权重。
+ *  下限对回测指标的影响单独报告（model_phase 对比 model_final）。 */
+// 分路匹配也设下限：开局前两手队友还没选人，分路分项对所有英雄都一样，学到的系数是0；
+// 但用户指定“我打某路”时这个分项必须生效。
+const FLOORS: Record<string, number> = { counter: 1, lane: 1 };
 
 interface Decision {
   league: string;
@@ -75,7 +89,7 @@ function collect(battles: Battle[], engine: Engine, pop: Map<number, number>, le
       used.set(key, usedSet);
 
       if (engine.byId.has(step.hero) && pickIdx[side] < 5) {
-        const recs = recommendPicks(engine, d, { side, weights: noPatch }).filter((r) => !usedSet.has(r.hero.id) && !r.hero.isLimited);
+        const recs = recommendPicks(engine, d, { side, weights: noPatch, mult: {} }).filter((r) => !usedSet.has(r.hero.id) && !r.hero.isLimited);
         const n = recs.length;
         const x = new Float32Array(n * FEATS.length);
         const p = new Float32Array(n);
@@ -126,12 +140,13 @@ function evaluate(decs: Decision[], id: string, name: string, score: Scorer): Ba
 }
 
 const feat = (d: Decision, i: number, k: PartKey) => d.x[i * FEATS.length + FEATS.indexOf(k)];
-const total = (d: Decision, i: number, keys: PartKey[] = FEATS) => keys.reduce((s, k) => s + feat(d, i, k), 0);
+const total = (d: Decision, i: number, keys: PartKey[] = OLD) => keys.reduce((s, k) => s + feat(d, i, k), 0);
 
 /** 条件 logit：P(选 i) ∝ exp(θ·x_i)。用 Adam 做梯度上升，带很小的 L2 正则。 */
-function fit(decs: Decision[], iters = 300): number[] {
+function fit(decs: Decision[], keys: PartKey[] = FEATS, iters = 300): number[] {
   const K = FEATS.length;
-  const theta = new Array(K).fill(0.1);
+  const on = FEATS.map((k) => keys.includes(k));
+  const theta: number[] = FEATS.map((_, k) => (on[k] ? 0.1 : 0));
   const m = new Array(K).fill(0);
   const v = new Array(K).fill(0);
   const usable = decs.filter((d) => d.actual >= 0);
@@ -156,10 +171,12 @@ function fit(decs: Decision[], iters = 300): number[] {
       }
     }
     for (let k = 0; k < K; k++) {
+      if (!on[k]) continue;
       const grad = g[k] / usable.length - 1e-4 * theta[k];
       m[k] = 0.9 * m[k] + 0.1 * grad;
       v[k] = 0.999 * v[k] + 0.001 * grad * grad;
-      theta[k] += (0.02 * (m[k] / (1 - 0.9 ** it))) / (Math.sqrt(v[k] / (1 - 0.999 ** it)) + 1e-8);
+      // 系数限制为非负：每个分项的方向在引擎里已经定好（加分为正、减分为负），不允许模型把方向反过来
+      theta[k] = Math.max(0, theta[k] + (0.02 * (m[k] / (1 - 0.9 ** it))) / (Math.sqrt(v[k] / (1 - 0.999 ** it)) + 1e-8));
     }
   }
   return theta.map((t) => +t.toFixed(4));
@@ -206,14 +223,23 @@ async function main() {
   }
   if (!test.length) throw new Error('没有可用的测试数据（需要测试年份之前的对局来重建赛前统计）');
 
-  const theta = train.length >= MIN_TRAIN ? fit(train) : null;
-  if (theta) console.log('拟合得到的分项系数：', FEATS.map((k, i) => `${k}=${theta[i]}`).join('  '));
+  const theta = train.length >= MIN_TRAIN ? fit(train, OLD) : null;
+  if (theta) console.log('拟合得到的分项系数（原有6个分项）：', OLD.map((k) => `${k}=${theta[FEATS.indexOf(k)]}`).join('  '));
+  // 训练模型：全部9个分项；一组系数，或按阶段各一组
+  const dot = (th: number[]) => (d: Decision, i: number) => FEATS.reduce((s, _, j) => s + th[j] * d.x[i * FEATS.length + j], 0);
+  const fitPhases = (decs: Decision[]) => PHASES.map((_, pi) => fit(decs.filter((d) => phaseOf(d.order) === pi)));
+  /** 统一缩放（除以单组模型里“分路匹配”的系数），并应用下限 */
+  const normalize = (th: number[], scale: number, floors: Record<string, number>) => FEATS.map((k, j) => +Math.max(th[j] / scale, floors[k] ?? 0).toFixed(3));
+  const theta9 = theta ? fit(train) : null;
+  const thetaPh = theta ? fitPhases(train) : null;
+  if (theta9) console.log('训练模型系数（9个分项，单组）：', FEATS.map((k, i) => `${k}=${theta9[i]}`).join('  '));
+  if (thetaPh) thetaPh.forEach((th, pi) => console.log(`训练模型系数（${PHASES[pi].name}）：`, FEATS.map((k, i) => `${k}=${th[i]}`).join('  ')));
   else console.log(`训练决策数 ${train.length} 不足${MIN_TRAIN}，不做权重拟合`);
 
   const methods: [string, string, Scorer][] = [
     ['pop', '基线：按赛前出场次数', (d, i) => d.pop[i]],
     ['pop_lane', '基线：出场次数 + 只留有分路位置的英雄', (d, i) => d.pop[i] + (d.laneOk[i] ? 1e6 : 0)],
-    ['engine', '引擎：默认权重（全部分项）', (d, i) => total(d, i)],
+    ['engine', '手工权重（原有6个分项）', (d, i) => total(d, i)],
     ['engine_no_rel', '引擎：去掉克制、配合、先手暴露', (d, i) => total(d, i, ['needs', 'lane', 'meta'])],
     ['engine_no_meta', '引擎：去掉职业赛热度', (d, i) => total(d, i, ['counter', 'synergy', 'needs', 'lane', 'exposure'])],
     ['engine_rel_only', '引擎：只用克制、配合、先手暴露和分路', (d, i) => total(d, i, ['counter', 'synergy', 'exposure', 'lane'])],
@@ -223,7 +249,15 @@ async function main() {
     ['lane_meta', '诊断：只用热度+分路', (d, i) => total(d, i, ['lane', 'meta'])],
     ...[0.15, 0.25, 0.4, 0.6].map((k): [string, string, Scorer] => [`scaled_${k}`, `诊断：热度+分路 + ${k}×(克制+配合+暴露+需求)`, (d, i) => total(d, i, ['lane', 'meta']) + k * total(d, i, ['counter', 'synergy', 'exposure', 'needs'])]),
   ];
-  if (theta) methods.push(['fitted', '引擎：分项系数由训练集拟合', (d, i) => FEATS.reduce((s, k, j) => s + theta[j] * feat(d, i, k), 0)]);
+  if (theta && theta9 && thetaPh) {
+    const byPhase = (ths: number[][]) => (d: Decision, i: number) => dot(ths[phaseOf(d.order)])(d, i);
+    methods.push(
+      ['fitted', '拟合：只重新拟合原有6个分项的系数', dot(theta)],
+      ['model9', '模型：9个分项，单组系数', dot(theta9)],
+      ['model_phase', '模型：9个分项，按阶段各一组系数', byPhase(thetaPh)],
+      ...[0.5, 1, 1.5].map((f): [string, string, Scorer] => [f === FLOORS.counter ? 'model_final' : `model_floor_${f}`, `模型：按阶段系数，克制系数不低于${f}${f === FLOORS.counter ? '（线上使用）' : ''}`, byPhase(thetaPh.map((th) => normalize(th, theta9[FEATS.indexOf('lane')], { ...FLOORS, counter: f })))]),
+    );
+  }
 
   const evalAll = (decs: Decision[]) => methods.map(([id, name, sc]) => evaluate(decs, id, name, sc));
   const overall = evalAll(test);
@@ -235,17 +269,19 @@ async function main() {
 
   const get = (id: string) => overall.find((m) => m.id === id)!;
   const engineM = get('engine');
-  const fitted = theta ? get('fitted') : null;
   const laneMeta = get('lane_meta');
   const base = get('pop_lane');
   const pp = (x: number) => `${(x * 100).toFixed(1)}%`;
-  // 网站始终使用默认权重。拟合权重只作为对照：它在这个指标上更高，但克制分项的系数接近0，
-  // 等于不再考虑对方选了什么，与“根据克制和配合给出建议”的目的不符。
-  const adoptedReason = fitted
-    ? `默认权重的Top10命中率为${pp(engineM.top10)}；由训练集拟合的权重为${pp(fitted.top10)}；只用热度和分路为${pp(laneMeta.top10)}。` +
-      `拟合结果中克制分项的系数为${theta![FEATS.indexOf('counter')]}（职业赛热度为${theta![FEATS.indexOf('meta')]}），接近于不使用克制关系。` +
-      `网站需要根据对方阵容给出有依据的建议，所以没有采用拟合权重，而是保留克制与配合分项并调低了它们的权重；代价是这项指标比只用热度和分路低${((laneMeta.top10 - engineM.top10) * 100).toFixed(1)}个百分点，比“出场次数+分路”基线高${((engineM.top10 - base.top10) * 100).toFixed(1)}个百分点。`
-    : `默认权重的Top10命中率为${pp(engineM.top10)}，只用热度和分路为${pp(laneMeta.top10)}。训练数据不足，没有进行权重拟合。`;
+  const hasModel = !!(theta && theta9 && thetaPh);
+  const finalM = hasModel ? get('model_final') : null;
+  const freeM = hasModel ? get('model_phase') : null;
+  // 采用规则：训练模型在测试集上的Top10命中率高于手工权重才采用
+  const adoptModel = !!finalM && finalM.top10 > engineM.top10;
+  const adoptedReason = finalM && freeM
+    ? `训练模型（9个分项、按阶段拟合、克制系数不低于${FLOORS.counter}）在测试集上的Top10命中率为${pp(finalM.top10)}，手工权重为${pp(engineM.top10)}，“出场次数+分路”基线为${pp(base.top10)}。` +
+      (adoptModel ? '模型更好，线上采用模型。' : '模型没有更好，线上继续用手工权重。') +
+      `不设克制下限时为${pp(freeM.top10)}：模型学到的克制系数很小，说明机制克制对预测职业队选人帮助不大；网站需要按对方阵容给建议，所以把克制分项保持在手工权重的力度，代价是${((freeM.top10 - finalM.top10) * 100).toFixed(1)}个百分点。`
+    : `手工权重的Top10命中率为${pp(engineM.top10)}，只用热度和分路为${pp(laneMeta.top10)}。训练数据不足，没有训练模型。`;
   const report: BacktestReport = {
     generatedAt: new Date().toISOString(),
     note: '回测衡量的是“职业队实际选的英雄排在推荐列表的第几位”，目标是模仿职业选择，不代表选得最好，也不能说明在路人局的效果。职业赛是系列赛全局BP，候选集已剔除本队在该系列中用过的英雄；每个赛事只使用开赛之前的数据。并列名次按中间值计算。',
@@ -256,10 +292,27 @@ async function main() {
       const sub = test.filter(f);
       return { phase, n: sub.length, methods: evalAll(sub) };
     }),
-    adopted: 'engine',
+    adopted: adoptModel ? 'model_final' : 'engine',
     adoptedReason,
   };
-  if (theta) (report as BacktestReport & { fittedTheta?: Record<string, number> }).fittedTheta = Object.fromEntries(FEATS.map((k, i) => [k, theta[i]]));
+  if (theta) (report as BacktestReport & { fittedTheta?: Record<string, number> }).fittedTheta = Object.fromEntries(OLD.map((k) => [k, theta[FEATS.indexOf(k)]]));
+  // 线上模型：评估用的是“只在训练集上拟合”的系数；确认采用后，用全部对局（训练+测试）重新拟合一次作为线上系数
+  if (hasModel && !NO_WRITE) {
+    const all = [...train, ...test];
+    const scale = fit(all)[FEATS.indexOf('lane')] || 1;
+    const final = fitPhases(all).map((th) => normalize(th, scale, FLOORS));
+    const model: PickModel = {
+      trainedAt: new Date().toISOString(),
+      train: { from: all[0].date, to: all[all.length - 1].date, picks: all.length },
+      features: FEATS,
+      phases: PHASES.map((p, pi) => ({ ...p, mult: Object.fromEntries(FEATS.map((k, j) => [k, final[pi][j]])) })),
+      floors: FLOORS,
+      note: '条件logit模型：预测职业队在每一手选了谁。系数非负，按阶段分别拟合，统一缩放到“单组模型里分路匹配的系数=1”。评估见回测；线上系数用全部对局重新拟合。',
+    };
+    await writeJson(resolve(ROOT, 'data/derived/model.json'), adoptModel ? model : null);
+    console.log(adoptModel ? '已写入 data/derived/model.json' : '模型未被采用，model.json 置空');
+    final.forEach((th, pi) => console.log(`线上系数（${PHASES[pi].name}）：`, FEATS.map((k, j) => `${k}=${th[j]}`).join('  ')));
+  }
   if (!NO_WRITE) await writeJson(resolve(ROOT, 'data/derived/backtest.json'), report);
   else console.log('（诊断运行，不写入 backtest.json）');
 
@@ -267,7 +320,6 @@ async function main() {
   console.log(`\n测试集：${report.test.from} ~ ${report.test.to}，${report.test.battles}局，${report.test.picks}次选人决策`);
   for (const m of overall) console.log(`  ${m.name.padEnd(28, '　')} Top5 ${pct(m.top5)}  Top10 ${pct(m.top10)}  MRR ${m.mrr.toFixed(3)}`);
   for (const p of report.byPhase) console.log(`  [${p.phase}] n=${p.n}  ` + p.methods.map((m) => `${m.id} ${pct(m.top10)}`).join('  '));
-  console.log(`默认权重相对“出场次数+分路”基线：Top10 ${((engineM.top10 - base.top10) * 100).toFixed(1)}个百分点；相对“只用热度+分路”：${((engineM.top10 - laneMeta.top10) * 100).toFixed(1)}个百分点`);
   console.log(report.adoptedReason);
 }
 

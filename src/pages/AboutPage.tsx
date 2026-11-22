@@ -7,7 +7,7 @@ import type { BacktestMethod } from '../types.ts';
 
 const TOC = [
   ['update', '更新状态'], ['sources', '数据来源'], ['counts', '数量一览'], ['profile', '机制档案核实'], ['scoring', '证据等级与计分'],
-  ['rules', '规则表'], ['backtest', '回测'], ['pending', '待复核清单'], ['limits', '已知限制'], ['copyright', '版权声明'],
+  ['rules', '规则表'], ['model', '选人模型'], ['backtest', '回测'], ['pending', '待复核清单'], ['limits', '已知限制'], ['copyright', '版权声明'],
 ] as const;
 
 const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
@@ -52,6 +52,9 @@ export function AboutPage() {
     { key: 'lane', desc: `按候选在己方空缺分路上的适配度（0–1）计分，范围约 ±${DW.laneFit / 2}；己方剩下的分路都不是它的常规位置时为 ${DW.laneMiss}` },
     { key: 'meta', desc: `职业赛第一局的出场率（被选次数+被禁次数）÷ 局数 × ${DW.metaRange}，只加分不扣分；最近45天内官方公告标题写明“增强/削弱”的英雄另计 ±${DW.patch}` },
     { key: 'exposure', desc: `对方还有选人机会时，按“还没被禁、又克制它”的英雄的证据权重扣分，对方剩余手数越多扣得越多；最多扣 ${DW.exposureCap}` },
+    { key: 'proVs', desc: `职业赛近一年：对面先亮出某英雄之后，候选被选的实际次数与“按它平均被选概率预计的次数”之比，取对数 × ${DW.proPerUnit}；合计不超过 ±${DW.proCap}。这是职业队的选人行为，不是胜负，也不等于机制上的克制` },
+    { key: 'proAlly', desc: `同上，但看的是队友先选了某英雄之后候选被选的情况；合计不超过 ±${DW.proCap}` },
+    { key: 'lanePick', desc: `职业赛近一年候选在这个位置的出场次数 ÷ 队伍场次 × ${DW.lanePickRange}，只加分不扣分` },
     { key: 'pool', desc: `只在“我的英雄池”模式下计算：熟练度每高一级 +${DW.poolPerLevel}` },
   ];
 
@@ -145,7 +148,7 @@ export function AboutPage() {
 
         <Sec id="about-scoring" title="证据等级与计分">
           <div className="rounded-md border border-gold/50 bg-gold/10 px-3 py-2.5 text-ink">
-            <b className="text-gold">推荐分不是胜率。</b>它只是把已有证据按固定权重加总后的排序依据。<b className="text-gold">可信程度</b>表示该候选与多少个已选英雄之间存在已核实关系：关联越多，分数背后的依据越多；没有关联时分数主要来自位置、阵容需求等其他分项。
+            <b className="text-gold">推荐分不是胜率。</b>它是各分项按系数加总后的排序依据；系数由职业赛BP训练得到（见下方“选人模型”），不是任何对局的获胜概率。<b className="text-gold">可信程度</b>表示该候选与多少个已选英雄之间存在已核实关系：关联越多，分数背后的依据越多；没有关联时分数主要来自位置、阵容需求等其他分项。
           </div>
           <table className="w-full max-w-3xl text-[13px]">
             <thead><tr><Th>证据类型</Th><Th>说明</Th><Th>权重</Th></tr></thead>
@@ -179,6 +182,36 @@ export function AboutPage() {
           {bundle.rules.length === 0 && <Empty>没有规则。</Empty>}
         </Sec>
 
+        <Sec id="about-model" title="选人模型">
+          {!bundle.model ? <Empty>当前没有采用训练模型，使用手工权重。</Empty> : (
+            <>
+              <p>
+                推荐分 = 50 + Σ（系数 × 分项）。系数来自一个条件logit模型：用职业赛每一手“当时可选的英雄里实际选了谁”来训练，P(选英雄 i) ∝ exp(Σ 系数 × 分项)。
+                模型按阶段各拟合一组系数，系数限制为非负。训练数据 {bundle.model.train.from} 至 {bundle.model.train.to}，共 {n(bundle.model.train.picks)} 次选人。
+                评估时只用2025年训练、2026年测试（见下方回测）；确认有效后再用全部对局重新拟合，作为线上系数。
+              </p>
+              <table className="w-full max-w-4xl text-[13px]">
+                <thead><tr><Th>分项</Th>{bundle.model.phases.map((p) => <Th key={p.name}>{p.name}</Th>)}</tr></thead>
+                <tbody>
+                  {bundle.model.features.map((k) => (
+                    <tr key={k}>
+                      <Td>{PART_NAME[k as PartKey] ?? k}</Td>
+                      {bundle.model!.phases.map((p) => <Td key={p.name}>{p.mult[k]?.toFixed(2)}{bundle.model!.floors[k] != null && p.mult[k] === bundle.model!.floors[k] ? <span className="ml-1 text-[11px] text-dim">下限</span> : null}</Td>)}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <div className="rounded-md border border-line bg-panel2 p-3 text-[12.5px] leading-relaxed">
+                <b className="text-ink">两处人为设定：</b>
+                ①“克制与被克”的系数不低于 {bundle.model.floors.counter}。模型学到的这个系数接近0，意思是机制克制对预测职业队选谁帮助很小；但网站的用途是按对方阵容给建议，所以保留手工权重的力度，回测代价见下表（“按阶段各一组系数”与“线上使用”两行之差）。
+                ②“分路匹配”的系数不低于 {bundle.model.floors.lane}，保证你指定位置时一定生效。
+                <br />
+                <b className="text-ink">局限：</b>模型学的是职业队的选择。职业赛是系列赛全局BP、五人配合固定，与单排环境不同；“职业赛针对选择”“职业赛同队选择”反映的是选人习惯，其中一部分只是同一时期都热门。路人局的效果没有数据可以验证。
+              </div>
+            </>
+          )}
+        </Sec>
+
         <Sec id="about-backtest" title="回测">
           {!bt ? <Empty>尚未运行回测。</Empty> : (
             <>
@@ -205,10 +238,9 @@ export function AboutPage() {
               </p>
               <div className="rounded-md border border-line bg-panel2 p-3 text-[12.5px] leading-relaxed">
                 <b className="text-ink">怎么读这张表：</b>
-                “只用热度+分路”一行不含任何克制、配合信息；它和“引擎：默认权重”一行的差距，就是克制、配合、阵容需求、先手暴露这些分项对“模仿职业选择”的净影响。
-                回测的结论是：单英雄之间的克制关系对预测职业队的选择几乎没有帮助，职业队的选择主要由版本热度和分路决定。
-                这不等于克制关系在路人局没有用，但现有数据无法验证路人局的效果。因此网站让“职业赛热度 + 分路”决定大致排序，克制与配合只在其上做小幅调整，并把每一条依据都展示出来，由你自己判断。
-                另外，默认权重在调整时参考过同一年的回测结果，所以“引擎：默认权重”一行的成绩略偏乐观。
+                “手工权重”是模型上线前使用的固定权重；“拟合：只重新拟合原有6个分项”说明光调系数提升很小；
+                真正的提升来自三个新分项，其中“职业赛该位置选取”贡献最大。
+                各方法之间的差距只说明谁更接近职业队的选择，不能说明在路人局谁的建议更好。
               </div>
             </>
           )}

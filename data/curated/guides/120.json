@@ -1,0 +1,237 @@
+{
+  "id": 120,
+  "videos": [
+    {
+      "bvid": "BV1zNwweNEaq",
+      "title": "提高认知！白起的八大盲区技巧和隐藏机制，精华版教学！",
+      "uploader": "阿泽干货博主",
+      "date": "2025-01-18",
+      "seconds": 394
+    }
+  ],
+  "combos": [
+    {
+      "steps": [
+        "2",
+        "3"
+      ],
+      "name": "延迟侧拉接大招",
+      "level": "基础",
+      "note": "先用2技能把人拉回身边，再放大招嘲讽，可拉回塔下接嘲讽",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 54
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "steps": [
+        "2",
+        "3",
+        "闪"
+      ],
+      "name": "先手转角勾",
+      "level": "进阶",
+      "note": "转身放2技能，大招靠近，等2技能拉完再用闪现调整位置",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 315
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "steps": [
+        "2",
+        "3"
+      ],
+      "name": "仙术回魂钩",
+      "level": "进阶",
+      "note": "2技能回收到一半时用大招改变自身位置，通过延迟钩把目标一起带过来",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 337
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "tips": [
+    {
+      "title": "2技能延迟侧拉",
+      "text": "2技能钩子消失后短暂延迟仍可拉到两侧目标，范围大、一个身位即可命中",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 32
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "无影钩转向空拉",
+      "text": "2技能大爪小爪攻击范围一样，看似空白的位置也能拉到；够不到时移动调整角度可变相延长范围",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 82
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "嘲讽拉开距离强制位移",
+      "text": "嘲讽后拉开距离让对方普攻够不到，对方会追着跑，可拉进塔；大招落地前用闪现拉开身位可确保",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 119
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "不要在草里嘲讽",
+      "text": "被嘲讽期间敌方普攻可无视视野命中，射手也能打到草里的白起",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 160
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "大招落地前就有控制",
+      "text": "大招在落地之前就产生嘲讽控制，先控制再落地，因此能提前打断敌方技能",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 168
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "卡墙延长大招范围",
+      "text": "大招可以往墙里放，本体会被墙卡出来；跳不过去时往前走一步改变落点可延长范围，开启位移碰撞提示可看落点",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 232
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "蓄力跳",
+      "text": "大招跳跃过程中同时按1技能蓄力，落地时可减少蓄力时间；蓄力超过中间黄线收益最大",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 259
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "1技能取消普攻后摇",
+      "text": "普攻后接1技能可取消普攻后摇，瞬间打出两次伤害",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 294
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "2技能拉人距离固定",
+      "text": "2技能拉人的距离是固定的，拉人时向后移动不会增加距离，可配合延迟钩使用",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 324
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "探草",
+      "text": "1技能命中增加暗影之力，可通过能量条变化判断草里有没有人，也可用2技能直接把人从草里拉出来",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 377
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "matchups": [
+    {
+      "type": "counter",
+      "hero": 131,
+      "claim": "大招提前产生嘲讽控制，李白用1技能位移后仍会被强制拉回",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 192
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "counter",
+      "hero": 199,
+      "claim": "大招提前产生嘲讽控制，有远距离位移的阿离位移后也会被拉回",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 192
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "counter",
+      "hero": 135,
+      "claim": "大招提前产生控制，可打断项羽蓄力读条的大招",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 203
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "counter",
+      "hero": 168,
+      "claim": "大招提前产生控制，可打断牛魔蓄力读条的大招",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 203
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "counter",
+      "hero": 194,
+      "claim": "大招提前产生控制，可打断苏烈蓄力读条的大招",
+      "refs": [
+        {
+          "bvid": "BV1zNwweNEaq",
+          "t": 206
+        }
+      ],
+      "sources": 1
+    }
+  ]
+}

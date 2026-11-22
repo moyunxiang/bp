@@ -108,6 +108,8 @@ export interface KplHeroStat {
   g1Recent: { pick: number; ban: number };
   g1Year: { pick: number; ban: number };
   teamGames: number;
+  /** 共现窗口（一年）内按分路的出场次数，分母是 pairs.teamGames */
+  lanesYear?: number[];
 }
 
 export interface KplStats {
@@ -127,6 +129,11 @@ export interface KplStats {
     minN: number;
     list: { a: number; b: number; n: number; expected: number; lift: number }[];
   };
+  /**
+   * 选人响应统计（供选人模型使用）。vs：[c, e, 实际次数, 期望次数]，对面已亮出 e 之后 c 被选；
+   * ally：[c, a, 实际次数, 期望次数]，队友已选 a 之后 c 被选。期望次数按 c 在同一赛事中的平均被选概率计算。
+   */
+  resp?: { windowDays: number; from: string; to: string; decisions: number; vs: [number, number, number, number][]; ally: [number, number, number, number][] };
   heroes: Record<string, KplHeroStat>;
 }
 
@@ -199,6 +206,24 @@ export interface CommentaryItem {
   status: VerifyStatus;
 }
 
+// ---------- 英雄教学（连招、细节、克制关系；来自B站教学视频，逐条核对过字幕出处）----------
+
+export interface GuideRef {
+  bvid: string;
+  /** 视频里讲到这一点的时间（秒） */
+  t: number;
+}
+
+export interface HeroGuide {
+  id: number;
+  videos: { bvid: string; title: string; uploader: string; date: string; seconds: number }[];
+  /** steps：数字按官方技能顺序（"1"=1技能…），"A"=普攻，"闪"=闪现，其余为文字 */
+  combos: { steps: string[]; name: string; level: '基础' | '进阶'; note: string; refs: GuideRef[]; sources: number }[];
+  tips: { title: string; text: string; refs: GuideRef[]; sources: number }[];
+  /** type：counter=本英雄克制 hero；countered=被 hero 克制；synergy=配合 */
+  matchups: { type: 'counter' | 'countered' | 'synergy'; hero: number; claim: string; refs: GuideRef[]; sources: number }[];
+}
+
 // ---------- 战术体系 ----------
 
 export interface Archetype {
@@ -244,7 +269,9 @@ export interface Bundle {
   rules: Rule[];
   tags: TagDef[];
   patches: PatchNote[];
-  kpl: Pick<KplStats, 'coverage' | 'heat' | 'pairs' | 'source'> | null;
+  kpl: Pick<KplStats, 'coverage' | 'heat' | 'pairs' | 'source' | 'resp'> | null;
+  /** 由职业赛BP训练出的选人模型（各分项的系数）；没有时使用手工权重 */
+  model: PickModel | null;
   comps: KplComps | null;
   archetypes: Archetype[];
   equipment: {
@@ -253,6 +280,26 @@ export interface Bundle {
     summoners: { id: number; name: string; desc: string }[];
   };
   commentary: CommentaryItem[];
+  /** 英雄教学内容，键为英雄ID */
+  guides: Record<string, HeroGuide>;
+}
+
+// ---------- 选人模型 ----------
+
+/**
+ * 选人模型：条件 logit，P(选英雄 i) ∝ exp(Σ 系数 × 分项)。训练目标是职业队在每一手实际选了谁。
+ * 系数按阶段分别拟合（第1–2手、第3–6手、第7–10手），并归一化到“分路匹配”的系数为1。
+ */
+export interface PickModel {
+  trainedAt: string;
+  /** 训练数据范围 */
+  train: { from: string; to: string; picks: number };
+  features: string[];
+  /** 每个阶段的系数：phases[k].mult[分项] */
+  phases: { name: string; fromOrder: number; toOrder: number; mult: Record<string, number> }[];
+  /** 为了保证“会看对方阵容”而设定的下限（见数据说明页） */
+  floors: Record<string, number>;
+  note: string;
 }
 
 // ---------- 回测 ----------

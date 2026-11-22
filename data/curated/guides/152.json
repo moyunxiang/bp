@@ -1,0 +1,225 @@
+{
+  "id": 152,
+  "videos": [
+    {
+      "bvid": "BV1wxzNBEEVf",
+      "title": "昭君“显微级”教学！必学8大盲区，终极上分密码！",
+      "uploader": "公瑾干货教学",
+      "date": "2026-01-23",
+      "seconds": 382
+    },
+    {
+      "bvid": "BV1oyKh6NEqq",
+      "title": "昭君的预判教学",
+      "uploader": "爱吃果冻-国服昭君",
+      "date": "2026-07-21",
+      "seconds": 332
+    }
+  ],
+  "combos": [
+    {
+      "steps": [
+        "2",
+        "3",
+        "强化普攻",
+        "1"
+      ],
+      "name": "蹲人瞬秒连招",
+      "level": "进阶",
+      "note": "二技能控住后先接大招，再立刻接强化普攻和一技能，瞬间打出高爆发",
+      "refs": [
+        {
+          "bvid": "BV1wxzNBEEVf",
+          "t": 174
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "tips": [
+    {
+      "title": "一技能探草范围",
+      "text": "一技能有看不见的特效范围，伤害为零但提供大范围真实视野，指示器离草丛一个身位时就松手，可远距离探草并让隐身的兰陵王、阿轲显形",
+      "refs": [
+        {
+          "bvid": "BV1wxzNBEEVf",
+          "t": 53
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "吃技能触发冰冷",
+      "text": "物理伤害打在护盾上不论破没破、距离远近都会被减速，所以团战里可以主动去吃敌方留在地上的技能来控制对手",
+      "refs": [
+        {
+          "bvid": "BV1wxzNBEEVf",
+          "t": 89
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "碎盾伤害高范围大",
+      "text": "碎盾伤害比一二技能都高，范围与大招相同，可用于抢线留人和收割残血",
+      "refs": [
+        {
+          "bvid": "BV1wxzNBEEVf",
+          "t": 116
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "护盾破后接大招卡双盾",
+      "text": "护盾被打破时立刻接大招能马上再刷一个护盾，身板更硬还能连炸两次护盾",
+      "refs": [
+        {
+          "bvid": "BV1wxzNBEEVf",
+          "t": 132
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "提前空A叠强化普攻",
+      "text": "强化普攻可以提前空放两次叠出来，对线和支援时养成提前空A的习惯，进场后控制和伤害更高",
+      "refs": [
+        {
+          "bvid": "BV1wxzNBEEVf",
+          "t": 149
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "冰冻后接强化普攻",
+      "text": "攻击被二技能冰冻的敌人会多一段额外伤害，对面被冰冻时接一发强化普攻就能瞬间打出六段伤害",
+      "refs": [
+        {
+          "bvid": "BV1wxzNBEEVf",
+          "t": 168
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "蹲草空A要隐藏弹道",
+      "text": "蹲草空A时对面能看到普攻弹道，要借助草丛隐藏普攻，或朝远离敌方的方向空A",
+      "refs": [
+        {
+          "bvid": "BV1wxzNBEEVf",
+          "t": 188
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "一级学二技能",
+      "text": "一级敌方移速最慢，先用一级自带的减速技能和碎盾减速，再接二技能必中，能轻松拿下一血",
+      "refs": [
+        {
+          "bvid": "BV1wxzNBEEVf",
+          "t": 264
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "二技能卡对方抬手",
+      "text": "二技能有严重前摇，要卡敌方释放技能抬手的瞬间，往敌人脚下稍微靠后的位置放，也可让队友先控或在草丛反蹲",
+      "refs": [
+        {
+          "bvid": "BV1wxzNBEEVf",
+          "t": 288
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "对付强突脸英雄",
+      "text": "遇到强突脸英雄不要追着放技能，等他们突进时往自己脚下或射手脚下放二技能就必中",
+      "refs": [
+        {
+          "bvid": "BV1wxzNBEEVf",
+          "t": 311
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "matchups": [
+    {
+      "type": "counter",
+      "hero": 153,
+      "claim": "一技能的真实视野范围大，能让隐身的兰陵王显形",
+      "refs": [
+        {
+          "bvid": "BV1wxzNBEEVf",
+          "t": 45
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "counter",
+      "hero": 116,
+      "claim": "一技能的真实视野范围大，能让隐身的阿轲显形",
+      "refs": [
+        {
+          "bvid": "BV1wxzNBEEVf",
+          "t": 45
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "counter",
+      "hero": 190,
+      "claim": "诸葛亮丢一技能会停顿，停顿时容易被二技能冻住",
+      "refs": [
+        {
+          "bvid": "BV1oyKh6NEqq",
+          "t": 235
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "counter",
+      "hero": 563,
+      "claim": "海诺丢技能会停顿，停顿时容易被二技能冻住，要找他丢技能的规律",
+      "refs": [
+        {
+          "bvid": "BV1oyKh6NEqq",
+          "t": 182
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "counter",
+      "hero": 130,
+      "claim": "宫本清兵时会贴着兵线，二技能丢在兵线上能命中",
+      "refs": [
+        {
+          "bvid": "BV1oyKh6NEqq",
+          "t": 68
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "counter",
+      "hero": 193,
+      "claim": "铠位移上来后会用强化普攻打兵线，二技能直接丢兵线上就能冻住",
+      "refs": [
+        {
+          "bvid": "BV1oyKh6NEqq",
+          "t": 104
+        }
+      ],
+      "sources": 1
+    }
+  ]
+}

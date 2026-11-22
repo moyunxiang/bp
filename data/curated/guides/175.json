@@ -1,0 +1,339 @@
+{
+  "id": 175,
+  "videos": [
+    {
+      "bvid": "BV1gtnt6nEuw",
+      "title": "邪修流钟馗：赛季最逆天打法！称霸对抗路指日可待！",
+      "uploader": "老凡Fv",
+      "date": "2026-10-23",
+      "seconds": 187
+    },
+    {
+      "bvid": "BV174ZTBcEUM",
+      "title": "“守着他：你的钟馗连招用对了吗？”、今天帮大家真正玩透钟馗！【CF手游马年新春攻略】",
+      "uploader": "小石头光溜溜国服教学",
+      "date": "2026-02-16",
+      "seconds": 897
+    },
+    {
+      "bvid": "BV1xa3iz4Ezy",
+      "title": "《王者荣耀》钟馗必学的6个技巧",
+      "uploader": "張大虾呀",
+      "date": "2025-07-06",
+      "seconds": 193
+    }
+  ],
+  "combos": [
+    {
+      "steps": [
+        "2",
+        "1",
+        "3",
+        "闪",
+        "1"
+      ],
+      "name": "对抗路钩拍吸闪连招",
+      "level": "进阶",
+      "note": "2技能勾来、1技能拍一下，开大后闪现跟进，大招结束再补一次1技能",
+      "refs": [
+        {
+          "bvid": "BV1gtnt6nEuw",
+          "t": 124
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "steps": [
+        "2",
+        "闪"
+      ],
+      "name": "回拉连招",
+      "level": "基础",
+      "note": "2技能勾到后再放闪现，可把敌人拉到防御塔下",
+      "refs": [
+        {
+          "bvid": "BV174ZTBcEUM",
+          "t": 333
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "steps": [
+        "1",
+        "3"
+      ],
+      "name": "1技能内圈接大招",
+      "level": "基础",
+      "note": "1技能内圈命中才叠印记，大招吸时才有控制效果",
+      "refs": [
+        {
+          "bvid": "BV174ZTBcEUM",
+          "t": 246
+        },
+        {
+          "bvid": "BV1xa3iz4Ezy",
+          "t": 134
+        }
+      ],
+      "sources": 2
+    },
+    {
+      "steps": [
+        "闪",
+        "1",
+        "3"
+      ],
+      "name": "闪现进人群群控",
+      "level": "进阶",
+      "note": "闪现进人群，1技能打出范围标记再接大招群体控制，开团要确保队友跟上",
+      "refs": [
+        {
+          "bvid": "BV1xa3iz4Ezy",
+          "t": 146
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "steps": [
+        "2",
+        "1",
+        "3"
+      ],
+      "name": "打位移英雄二一等大",
+      "level": "进阶",
+      "note": "对公孙离这类位移多的英雄，勾完拍一下先等其位移，再决定往哪放大招",
+      "refs": [
+        {
+          "bvid": "BV174ZTBcEUM",
+          "t": 777
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "tips": [
+    {
+      "title": "过肩摔",
+      "text": "勾到目标后朝目标前方移动，可把目标勾到身后；勾得越远越容易成功，但并不稳定",
+      "refs": [
+        {
+          "bvid": "BV1xa3iz4Ezy",
+          "t": 107
+        },
+        {
+          "bvid": "BV174ZTBcEUM",
+          "t": 91
+        }
+      ],
+      "sources": 2
+    },
+    {
+      "title": "左右方向勾人",
+      "text": "勾到目标后往左移动目标到自己右边，往右移动则到左边",
+      "refs": [
+        {
+          "bvid": "BV1xa3iz4Ezy",
+          "t": 112
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "二闪的几种细节",
+      "text": "钩子出手瞬间闪现用于开团，敌人来不及反应；错过瞬间再闪，无论是否勾到都会把敌人扯到身后",
+      "refs": [
+        {
+          "bvid": "BV174ZTBcEUM",
+          "t": 687
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "勾完先后退再开大",
+      "text": "2技能勾到后稍微往后走一点再放大招，避免敌人走到身后导致大招放空",
+      "refs": [
+        {
+          "bvid": "BV174ZTBcEUM",
+          "t": 720
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "开智能施法追踪",
+      "text": "设置里打开智能施法追踪，长按2技能钩子会自动锁敌追击，提高命中率",
+      "refs": [
+        {
+          "bvid": "BV1xa3iz4Ezy",
+          "t": 61
+        },
+        {
+          "bvid": "BV174ZTBcEUM",
+          "t": 357
+        }
+      ],
+      "sources": 2
+    },
+    {
+      "title": "对线时勾辅助更容易中",
+      "text": "对面射手一定会躲钩子，辅助不那么想躲，有时还会替射手挡，所以勾辅助命中率更高",
+      "refs": [
+        {
+          "bvid": "BV174ZTBcEUM",
+          "t": 621
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "开局勾Buff没勾到就去线上",
+      "text": "对面打野打Buff时勾一个出来骚扰；勾不到不要留恋转去野区别处，丢了先机，直接去对线",
+      "refs": [
+        {
+          "bvid": "BV1xa3iz4Ezy",
+          "t": 36
+        },
+        {
+          "bvid": "BV174ZTBcEUM",
+          "t": 549
+        }
+      ],
+      "sources": 2
+    },
+    {
+      "title": "卡视野与预判出钩",
+      "text": "利用我方视野卡位出钩，或预判敌人技能落点提前出钩；夏侯惇放技能站原地，适合抓前摇勾",
+      "refs": [
+        {
+          "bvid": "BV174ZTBcEUM",
+          "t": 829
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "四分钟后多去河道",
+      "text": "钟馗不是对线英雄，四分钟之后少在线上待着，多去河道，打团时勾人",
+      "refs": [
+        {
+          "bvid": "BV174ZTBcEUM",
+          "t": 579
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "对抗路等队友控制再勾",
+      "text": "打对抗路时等辅助或队友放出控制技能再勾回来，更容易命中",
+      "refs": [
+        {
+          "bvid": "BV1gtnt6nEuw",
+          "t": 144
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "matchups": [
+    {
+      "type": "countered",
+      "hero": 113,
+      "claim": "庄周能用技能解控，钩子容易被解掉",
+      "refs": [
+        {
+          "bvid": "BV1xa3iz4Ezy",
+          "t": 158
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 133,
+      "claim": "狄仁杰能用技能解控，钩子容易被解掉",
+      "refs": [
+        {
+          "bvid": "BV1xa3iz4Ezy",
+          "t": 158
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 105,
+      "claim": "廉颇能用技能或霸体解控，钩子容易被解掉",
+      "refs": [
+        {
+          "bvid": "BV1xa3iz4Ezy",
+          "t": 158
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "counter",
+      "hero": 126,
+      "claim": "夏侯惇放技能时站在原地，钟馗可以在其施法前摇勾中",
+      "refs": [
+        {
+          "bvid": "BV174ZTBcEUM",
+          "t": 847
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 505,
+      "claim": "瑶能用技能或霸体解控，钩子容易被解掉",
+      "refs": [
+        {
+          "bvid": "BV1xa3iz4Ezy",
+          "t": 160
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 504,
+      "claim": "能召唤小弟，小弟会用技能主动吃掉钟馗的钩子",
+      "refs": [
+        {
+          "bvid": "BV1xa3iz4Ezy",
+          "t": 166
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 533,
+      "claim": "能召唤小弟，小弟会用技能主动吃掉钟馗的钩子",
+      "refs": [
+        {
+          "bvid": "BV1xa3iz4Ezy",
+          "t": 167
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 527,
+      "claim": "能召唤小弟，小弟会用技能主动吃掉钟馗的钩子",
+      "refs": [
+        {
+          "bvid": "BV1xa3iz4Ezy",
+          "t": 167
+        }
+      ],
+      "sources": 1
+    }
+  ]
+}

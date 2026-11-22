@@ -10,8 +10,8 @@
 
 | 页面 | 内容 |
 |---|---|
-| BP助手 | 排位赛、巅峰赛、自由模拟三种规则；全程可只用键盘录入；自动推测分路，可手动指定；Pick/Ban推荐带推荐分、可信程度和理由；候选对比；我的英雄池与理论最优切换；研究模式可展开每一项得分的原文依据和双方关系图 |
-| 英雄百科 | 官方技能原文、四维、机制标签（带原文引用）、长处与短处、技能联动、克制/被克/配合关系及依据、官方推荐出装、近期版本改动 |
+| BP助手 | 排位赛、巅峰赛、自由模拟三种规则；全程可只用键盘录入；自动推测分路，可手动指定；Pick/Ban推荐带推荐分、可信程度和理由，排序由职业赛BP训练的选人模型给出；候选对比；我的英雄池与理论最优切换；研究模式可展开每一项得分的原文依据和双方关系图 |
+| 英雄百科 | 官方技能原文、四维、连招与操作细节（提炼自B站教学视频，逐条带视频出处）、机制标签（带原文引用）、长处与短处、技能联动、克制/被克/配合关系及依据、官方推荐出装、近期版本改动 |
 | 关系图谱 | 单英雄的克制/被克制/配合图，可点击继续探索；双方阵容对阵图，可按对线、团战、前期、后期筛选 |
 | 阵容库 | 战术体系定义；职业赛中自动发现的阵容与三人组合（只有出现次数）；阵容分析（分路、构成、体系、协同、被克点、替代英雄）；自定义、收藏、对比 |
 | 我的 | 英雄池与熟练度、默认偏好、收藏、导入导出 |
@@ -24,7 +24,8 @@
 - **克制和配合不由模型直接下结论**，而是由一张人工审定的规则表（`data/curated/rules.json`）根据标签计算。规则给出的是倾向，并写明成立条件。
 - **没有依据就显示“暂无结论”**。约七成的英雄对之间没有任何结论，推荐时不会假设它们存在克制或配合。
 - **没有路人局胜率、登场率、禁用率**（官方营地需要登录，没有使用），所以全站没有任何胜率或强度排名。职业赛数据只展示次数和样本量。
-- **推荐分不是胜率**，是可解释的分项之和。
+- **推荐分不是胜率**，是可解释的分项按系数加总。系数由一个条件logit模型从职业赛BP中学出（预测职业队每一手选了谁），在没参与训练的2026年对局上检验过才采用；模型、系数和回测结果都在数据说明页公开。
+- **连招和细节必须有视频出处**。每一条都记录了视频和时间点，脚本逐字核对过它在字幕里确实出现；原始字幕不进仓库。
 - 官方技能原文变化后，对应英雄的档案会自动标为“待复核”并停止参与计分。
 
 ## 本地运行
@@ -45,8 +46,8 @@ npm run e2e        # 构建后跑端到端冒烟测试（使用本机 Chrome）
 
 ```bash
 npm run update-data                 # 官方资料、公告、职业赛增量、重新校验、生成数据包
-npm run update-data -- --backtest   # 另外重跑回测（约1–2分钟）
-npm run update-data -- --commentary # 另外发现B站解说并读取字幕（需要 .env.local）
+npm run update-data -- --backtest   # 另外重跑回测并重新训练选人模型（约3分钟）
+npm run update-data -- --commentary # 另外读取B站教学视频字幕（需要先取得登录Cookie，见下）
 git add -A && git commit -m "Update data" && git push   # 推送后自动重新发布
 ```
 
@@ -62,7 +63,7 @@ git add -A && git commit -m "Update data" && git push   # 推送后自动重新�
 | `npx tsx scripts/build-profiles.ts` | 校验机制档案的原文引用并合并 |
 | `npm run build:data` | 生成 `public/data/bundle.json` |
 | `npm run validate` | 校验数据包（引用完整性、原文引用、存疑内容不计分） |
-| `npm run backtest` | 用职业赛历史对局回测推荐排序 |
+| `npm run backtest` | 用职业赛历史对局回测推荐排序，并训练选人模型（写入 `data/derived/model.json`） |
 
 ### 更新机制档案（新英雄，或技能被调整后）
 
@@ -74,12 +75,15 @@ git add -A && git commit -m "Update data" && git push   # 推送后自动重新�
 4. `npx tsx scripts/build-profiles.ts` 查看一致率；有分歧时按 `docs/curation/adjudicate.md` 裁定。
 5. `npx tsx scripts/build-profiles.ts --stamp` 记录当前技能原文的版本，再 `npm run build:data && npm run validate`。
 
-### 解说视频
+### 英雄教学（连招、细节、克制关系）
 
-1. 把 `.env.example` 复制为 `.env.local`，填入自己的B站 `SESSDATA`（只保存在本机，不进仓库）。
-2. `npx tsx scripts/commentary/discover.ts` 发现候选视频；`npx tsx scripts/commentary/fetch-subtitles.ts` 读取AI字幕到 `data/raw/commentary/`（不进仓库）。脚本低频访问，遇到风控会立即停止。
-3. 在 Claude Code 里按 `docs/curation/commentary.md` 把字幕提炼成条目，写到 `data/curated/commentary/`。
-4. `npx tsx scripts/commentary/build.ts` 汇总并自动核实，然后 `npm run build:data`。
+1. `python3 scripts/commentary/refresh-cookie.py`：从本机 Chrome 读出自己的B站登录 Cookie，写进 `.env.local`（只保存在本机，不进仓库，脚本不打印任何值）。第一次运行系统可能询问是否允许读取钥匙串。需要先在 Chrome 里登录过B站。
+2. `npx tsx scripts/commentary/hero-guides.ts`：按英雄搜索教学视频并读取AI字幕到 `data/raw/commentary/`（不进仓库）。每个英雄最多取3个不同UP主的视频，“公瑾干货教学”优先；请求间隔不少于3秒，遇到风控立即停止，可以断点续跑。全部英雄约需两小时。
+3. `npx tsx scripts/commentary/prepare-guides.ts` 生成提炼输入；在 Claude Code 里让子任务按 `docs/curation/guides.md` 提炼，写到 `data/raw/commentary/distilled/`。
+4. `npx tsx scripts/commentary/build-guides.ts`：逐字核对每条内容的字幕出处，丢弃对不上的，把通过的条目（只有结论和视频链接）写入 `data/curated/guides/`。
+5. `npx tsx scripts/commentary/build.ts && npm run build:data && npm run validate`。
+
+教学视频里讲到的克制关系会作为“解说”证据进入关系库（权重最低一档）；如果它和官方页面的说明方向相反、又只有一个UP主这么说，就记为存疑，不参与计分；如果只是和按职业、标签推出的“机制倾向”相反，两边都保留，由净值决定。
 
 抖音需要登录才能访问内容，没有使用。
 
@@ -90,9 +94,9 @@ git add -A && git commit -m "Update data" && git push   # 推送后自动重新�
 ## 目录
 
 ```
-scripts/        抓取、整理、校验、回测
+scripts/        抓取、整理、校验、回测与模型训练
 data/raw/       第三方原始数据（职业赛逐局、公告正文、字幕），不进仓库
-data/curated/   机制档案、盲审与裁定记录、规则表、战术体系定义、外号
+data/curated/   机制档案、盲审与裁定记录、规则表、战术体系定义、外号、教学提炼结果
 data/derived/   脚本产出的整理结果（官方资料、聚合统计、档案合并结果、回测报告）
 public/data/    前端加载的数据包
 user/           个人数据的公开默认值
@@ -108,7 +112,8 @@ docs/curation/  机制档案和解说条目的撰写、盲审、裁定规范
 - 版本公告：官网公告接口，只保留标题、日期、链接和逐条改动。
 - 职业赛BP：腾讯官方赛事数据中心。职业赛是系列赛内全局BP，与单局排位不同，所以只使用每个系列第一局的禁选次数、选手分路和同队共现，不计算胜率。原始逐局数据不进仓库。
 - 排位选人顺序（蓝1 → 红2 → 蓝2 → 红2 → 蓝2 → 红1）没有找到官方文字说明，按通行顺序实现；禁用位数量可在界面上调整。
-- 回测衡量的是“职业队实际选的英雄排在推荐列表的第几位”，目标是模仿职业选择，不代表选得最好，也不能说明路人局的效果。结果见数据说明页。
+- 选人模型学的是职业队的选择；回测衡量的是“职业队实际选的英雄排在推荐列表的第几位”，不代表选得最好，也不能说明路人局的效果。结果见数据说明页。
+- 连招与细节来自B站教学视频的自动字幕，字幕本身有识别错误；提炼由语言模型完成，脚本只能保证“视频里确实讲到了这句话”，不能保证提炼的理解完全正确，所以每条都附了可点击的出处。
 
 ## 声明
 

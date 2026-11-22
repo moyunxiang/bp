@@ -8,12 +8,14 @@ import { HeroHeader } from '../components/wiki/HeroHeader.tsx';
 import { SkillsSection } from '../components/wiki/SkillsSection.tsx';
 import { TagOverview } from '../components/wiki/TagOverview.tsx';
 import { ProfileSection } from '../components/wiki/ProfileSection.tsx';
+import { GuideSection, guideCount } from '../components/wiki/GuideSection.tsx';
 import { RelationsSection } from '../components/wiki/RelationsSection.tsx';
 import { BuildsSection } from '../components/wiki/BuildsSection.tsx';
 import { heroPatches, PatchesSection } from '../components/wiki/PatchesSection.tsx';
 
 const NAV = [
   { id: 'skills', label: '技能' },
+  { id: 'guide', label: '连招与细节' },
   { id: 'tags', label: '机制标签' },
   { id: 'profile', label: '机制解读' },
   { id: 'relations', label: '克制与配合' },
@@ -77,6 +79,7 @@ function HeroDetail({ hero }: { hero: HeroData }) {
   const p = hero.profile;
   const counts: Record<string, number | null> = {
     skills: hero.skills.length,
+    guide: guideCount(bundle.guides?.[hero.id]) || null,
     tags: p ? new Set(p.tags.map((t) => t.tag)).size : null,
     profile: null,
     relations: [...rel.counters(hero.id), ...rel.counteredBy(hero.id), ...rel.synergies(hero.id)].filter((r) => r.weight > 0).length,
@@ -91,6 +94,7 @@ function HeroDetail({ hero }: { hero: HeroData }) {
       <div className="min-w-0 space-y-4">
         <HeroHeader hero={hero} />
         <SkillsSection hero={hero} />
+        <GuideSection hero={hero} />
         <TagOverview hero={hero} />
         <ProfileSection hero={hero} />
         <RelationsSection hero={hero} />

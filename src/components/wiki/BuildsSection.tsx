@@ -2,7 +2,7 @@
 import { useMemo } from 'react';
 import type { HeroData } from '../../types.ts';
 import { fmtDate, useEngine } from '../../lib/data.ts';
-import { Empty } from '../ui.tsx';
+import { Empty, GameIcon } from '../ui.tsx';
 import { SubTitle, WikiSection } from './WikiSection.tsx';
 
 const RUNE_COLOR: Record<string, [string, string]> = {
@@ -44,9 +44,12 @@ export function BuildsSection({ hero }: { hero: HeroData }) {
                   const it = items.get(id);
                   return (
                     <li key={`${id}-${i}`} className="rounded-md border border-line bg-panel p-2.5" title={it?.desc}>
-                      <div className="flex items-baseline gap-1.5">
-                        <span className="text-[11px] text-dim">{i + 1}</span>
-                        <span className={`text-[13px] font-medium ${it ? 'text-ink' : 'text-mute'}`}>{it ? it.name : `未知装备#${id}`}</span>
+                      <div className="flex items-center gap-2">
+                        <GameIcon kind="item" id={id} name={it?.name} size={38} />
+                        <div className="min-w-0">
+                          <div className="text-[11px] leading-none text-dim">第{i + 1}件</div>
+                          <div className={`mt-1 truncate text-[13px] font-medium ${it ? 'text-ink' : 'text-mute'}`}>{it ? it.name : `未知装备#${id}`}</div>
+                        </div>
                       </div>
                       {it?.desc && <p className="mt-1 line-clamp-3 text-[11.5px] leading-snug text-mute">{it.desc}</p>}
                     </li>
@@ -70,8 +73,8 @@ export function BuildsSection({ hero }: { hero: HeroData }) {
                 const r = runes.get(id);
                 const color = r ? RUNE_COLOR[r.color] : undefined;
                 return (
-                  <li key={`${id}-${i}`} className="flex items-start gap-2.5">
-                    <span className={`mt-[5px] h-2.5 w-2.5 shrink-0 rotate-45 rounded-[2px] ${color?.[1] ?? 'bg-dim'}`} title={color ? `${color[0]}铭文` : undefined} />
+                  <li key={`${id}-${i}`} className="flex items-center gap-2.5">
+                    <GameIcon kind="rune" id={id} name={r?.name} size={34} />
                     <div className="min-w-0">
                       <span className={`text-[13px] font-medium ${r ? 'text-ink' : 'text-mute'}`}>{r ? r.name : `未知铭文#${id}`}</span>
                       {color && <span className="ml-1.5 text-[11px] text-dim">{color[0]}</span>}
@@ -94,9 +97,12 @@ export function BuildsSection({ hero }: { hero: HeroData }) {
               {hero.summoners.map((id, i) => {
                 const s = summoners.get(id);
                 return (
-                  <li key={`${id}-${i}`}>
-                    <span className={`text-[13px] font-medium ${s ? 'text-ink' : 'text-mute'}`}>{s ? s.name : `未知召唤师技能#${id}`}</span>
-                    {s?.desc && <p className="text-[12px] leading-relaxed text-mute">{s.desc}</p>}
+                  <li key={`${id}-${i}`} className="flex items-center gap-2.5">
+                    <GameIcon kind="summoner" id={id} name={s?.name} size={38} />
+                    <div className="min-w-0">
+                      <span className={`text-[13px] font-medium ${s ? 'text-ink' : 'text-mute'}`}>{s ? s.name : `未知召唤师技能#${id}`}</span>
+                      {s?.desc && <p className="text-[12px] leading-relaxed text-mute">{s.desc}</p>}
+                    </div>
                   </li>
                 );
               })}

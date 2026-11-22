@@ -1,0 +1,121 @@
+{
+  "id": 113,
+  "videos": [
+    {
+      "bvid": "BV1iACwB3EDn",
+      "title": "控制英雄最严厉的父亲，庄周保姆级教学 ，后手拿到就是一分！",
+      "uploader": "i坤王者万象棋",
+      "date": "2025-11-10",
+      "seconds": 740
+    }
+  ],
+  "combos": [],
+  "tips": [
+    {
+      "title": "空放2技能给队友加速",
+      "text": "蓝量充足时可以空放2技能给队友加速，顺便蹭助攻；团战时在队友旁边用2技能也能给加速",
+      "refs": [
+        {
+          "bvid": "BV1iACwB3EDn",
+          "t": 48
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "1技能探草",
+      "text": "女娲不在旁边时，用1技能飞蝴蝶去探草，因为这时容易被打状态",
+      "refs": [
+        {
+          "bvid": "BV1iACwB3EDn",
+          "t": 111
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "大招留蓝解关键控制",
+      "text": "对面控制多时大招要留着，用来解掉对队友有威胁的控制；回家前也留一个开大的蓝量",
+      "refs": [
+        {
+          "bvid": "BV1iACwB3EDn",
+          "t": 237
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "title": "当软辅玩，别吃伤害",
+      "text": "庄周偏脆、续航不够、怕被抽状态，打法是开视野、丢完E就走、给减速，不要吃太多伤害",
+      "refs": [
+        {
+          "bvid": "BV1iACwB3EDn",
+          "t": 223
+        }
+      ],
+      "sources": 1
+    }
+  ],
+  "matchups": [
+    {
+      "type": "counter",
+      "hero": 194,
+      "claim": "苏烈有进攻压力，庄周盯住他的位置、不让他找人数差起节奏，他就很难打出作用",
+      "refs": [
+        {
+          "bvid": "BV1iACwB3EDn",
+          "t": 178
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "counter",
+      "hero": 120,
+      "claim": "庄周大招解控免控，能废掉白起这类团控开团",
+      "refs": [
+        {
+          "bvid": "BV1iACwB3EDn",
+          "t": 584
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "counter",
+      "hero": 127,
+      "claim": "对面有两个及以上团控英雄时庄周大招能化解开团，甄姬的控制点也被废掉",
+      "refs": [
+        {
+          "bvid": "BV1iACwB3EDn",
+          "t": 73
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 187,
+      "claim": "庄周大招的解控不包括东皇的压制",
+      "refs": [
+        {
+          "bvid": "BV1iACwB3EDn",
+          "t": 56
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 156,
+      "claim": "庄周大招的解控不包括张良的压制",
+      "refs": [
+        {
+          "bvid": "BV1iACwB3EDn",
+          "t": 56
+        }
+      ],
+      "sources": 1
+    }
+  ]
+}

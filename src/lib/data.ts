@@ -2,7 +2,7 @@
 import { create } from 'zustand';
 import type { Bundle, HeroData, TagDef } from '../types.ts';
 import { buildRelations } from '../engine/relations.ts';
-import { buildMeta, type Engine } from '../engine/recommend.ts';
+import { buildMeta, buildResp, type Engine } from '../engine/recommend.ts';
 
 interface DataState {
   status: 'loading' | 'ready' | 'error';
@@ -31,7 +31,7 @@ export const useData = create<DataState>((set, get) => ({
 export function makeEngine(bundle: Bundle): Engine {
   const tagMap = new Map(bundle.tags.map((t) => [t.id, t]));
   const rel = buildRelations(bundle, (id) => tagMap.get(id)?.name ?? id);
-  return { bundle, byId: new Map(bundle.heroes.map((h) => [h.id, h])), rel, ...buildMeta(bundle) };
+  return { bundle, byId: new Map(bundle.heroes.map((h) => [h.id, h])), rel, ...buildMeta(bundle), resp: buildResp(bundle), model: bundle.model ?? null };
 }
 
 /** 组件内使用：数据未就绪时页面不会渲染，所以这里可以断言非空 */

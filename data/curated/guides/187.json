@@ -1,0 +1,47 @@
+{
+  "id": 187,
+  "videos": [
+    {
+      "bvid": "BV17vME66Ehg",
+      "title": "一玩镜就被克制？2分钟教你如何反制东皇、张良等硬控英雄！",
+      "uploader": "王者荣耀慕矢幻影镜",
+      "date": "2026-07-09",
+      "seconds": 174
+    },
+    {
+      "bvid": "BV12GT96JEdb",
+      "title": "克制东皇张良",
+      "uploader": "梨花BUG",
+      "date": "2026-07-06",
+      "seconds": 215
+    }
+  ],
+  "combos": [],
+  "tips": [],
+  "matchups": [
+    {
+      "type": "countered",
+      "hero": 563,
+      "claim": "海诺被控就能开出回溯大招，骗光东皇一套大招后满血反打",
+      "refs": [
+        {
+          "bvid": "BV12GT96JEdb",
+          "t": 147
+        }
+      ],
+      "sources": 1
+    },
+    {
+      "type": "countered",
+      "hero": 531,
+      "claim": "东皇手短，镜机动高，可以拉扯他",
+      "refs": [
+        {
+          "bvid": "BV17vME66Ehg",
+          "t": 53
+        }
+      ],
+      "sources": 1
+    }
+  ]
+}
