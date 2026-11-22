@@ -148,7 +148,7 @@ export function EgoGraph({ heroId, perSector, kinds, scene, selected, onSelect, 
                     暂无结论
                   </text>
                   <text x={g.empty.x} y={g.empty.y + d.font + 5} textAnchor="middle" fontSize={d.font - 1.5} className="fill-dim">
-                    {sec.total ? `另有${sec.total}条不符合筛选` : '没有已核实的关系'}
+                    {sec.total ? `共${sec.total}条，均不符合当前筛选` : '没有已核实的关系'}
                   </text>
                 </g>
               )}

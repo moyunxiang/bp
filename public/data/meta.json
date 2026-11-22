@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T05:20:37.895Z",
+  "generatedAt": "2026-11-22T05:36:02.545Z",
   "officialFetchedAt": "2026-11-22T04:45:34.870Z",
   "newsFetchedAt": "2026-11-22T04:51:46.826Z",
   "season": "S45「月照长安」",
@@ -10,18 +10,18 @@
     "skills": 570,
     "officialEdges": 829,
     "officialStale": 0,
-    "relationsScored": 3405,
+    "relationsScored": 3423,
     "counterRelations": 1768,
-    "synergyRelations": 1637,
+    "synergyRelations": 1655,
     "withOfficial": 829,
     "withRule": 2675,
-    "withKpl": 87,
+    "withKpl": 107,
     "withCommentary": 0,
     "rules": 13,
-    "pairCoveragePct": 30.9,
+    "pairCoveragePct": 31,
     "patches": 40,
     "commentary": 0,
-    "kplBattles": 1307
+    "kplBattles": 2100
   },
   "profileReport": {
     "generatedAt": "2026-11-22T05:11:54.393Z",
@@ -44,7 +44,213 @@
       "孙权 3/6"
     ]
   },
-  "backtest": null,
+  "backtest": {
+    "generatedAt": "2026-11-22T05:22:39.670Z",
+    "note": "回测衡量的是“职业队实际选的英雄排在推荐列表的第几位”，目标是模仿职业选择，不代表选得最好，也不能说明在路人局的效果。职业赛是系列赛全局BP，候选集已剔除本队在该系列中用过的英雄；每个赛事只使用开赛之前的数据。并列名次按中间值计算。",
+    "train": {
+      "from": "",
+      "to": "",
+      "picks": 0
+    },
+    "test": {
+      "from": "2026-04-25",
+      "to": "2026-11-14",
+      "picks": 9780,
+      "battles": 978
+    },
+    "methods": [
+      {
+        "id": "pop",
+        "name": "基线：按赛前出场次数",
+        "top5": 0.2952,
+        "top10": 0.4527,
+        "mrr": 0.1929
+      },
+      {
+        "id": "pop_lane",
+        "name": "基线：出场次数 + 只留有分路位置的英雄",
+        "top5": 0.3782,
+        "top10": 0.5779,
+        "mrr": 0.2421
+      },
+      {
+        "id": "engine",
+        "name": "引擎：默认权重（全部分项）",
+        "top5": 0.2796,
+        "top10": 0.4424,
+        "mrr": 0.1955
+      },
+      {
+        "id": "engine_no_rel",
+        "name": "引擎：去掉克制、配合、先手暴露",
+        "top5": 0.3953,
+        "top10": 0.5736,
+        "mrr": 0.271
+      },
+      {
+        "id": "engine_no_meta",
+        "name": "引擎：去掉职业赛热度",
+        "top5": 0.0904,
+        "top10": 0.198,
+        "mrr": 0.0823
+      },
+      {
+        "id": "engine_rel_only",
+        "name": "引擎：只用克制、配合、先手暴露和分路",
+        "top5": 0.0884,
+        "top10": 0.1904,
+        "mrr": 0.0805
+      }
+    ],
+    "byPhase": [
+      {
+        "phase": "第1–2手",
+        "n": 1956,
+        "methods": [
+          {
+            "id": "pop",
+            "name": "基线：按赛前出场次数",
+            "top5": 0.4151,
+            "top10": 0.5869,
+            "mrr": 0.2279
+          },
+          {
+            "id": "pop_lane",
+            "name": "基线：出场次数 + 只留有分路位置的英雄",
+            "top5": 0.4151,
+            "top10": 0.5869,
+            "mrr": 0.2279
+          },
+          {
+            "id": "engine",
+            "name": "引擎：默认权重（全部分项）",
+            "top5": 0.4182,
+            "top10": 0.5588,
+            "mrr": 0.3033
+          },
+          {
+            "id": "engine_no_rel",
+            "name": "引擎：去掉克制、配合、先手暴露",
+            "top5": 0.4678,
+            "top10": 0.5956,
+            "mrr": 0.33
+          },
+          {
+            "id": "engine_no_meta",
+            "name": "引擎：去掉职业赛热度",
+            "top5": 0.0225,
+            "top10": 0.0961,
+            "mrr": 0.0437
+          },
+          {
+            "id": "engine_rel_only",
+            "name": "引擎：只用克制、配合、先手暴露和分路",
+            "top5": 0.0225,
+            "top10": 0.0961,
+            "mrr": 0.0437
+          }
+        ]
+      },
+      {
+        "phase": "第3–6手",
+        "n": 3912,
+        "methods": [
+          {
+            "id": "pop",
+            "name": "基线：按赛前出场次数",
+            "top5": 0.3241,
+            "top10": 0.4895,
+            "mrr": 0.218
+          },
+          {
+            "id": "pop_lane",
+            "name": "基线：出场次数 + 只留有分路位置的英雄",
+            "top5": 0.3597,
+            "top10": 0.5552,
+            "mrr": 0.2414
+          },
+          {
+            "id": "engine",
+            "name": "引擎：默认权重（全部分项）",
+            "top5": 0.2531,
+            "top10": 0.3947,
+            "mrr": 0.1686
+          },
+          {
+            "id": "engine_no_rel",
+            "name": "引擎：去掉克制、配合、先手暴露",
+            "top5": 0.3131,
+            "top10": 0.4951,
+            "mrr": 0.2207
+          },
+          {
+            "id": "engine_no_meta",
+            "name": "引擎：去掉职业赛热度",
+            "top5": 0.0823,
+            "top10": 0.1759,
+            "mrr": 0.0724
+          },
+          {
+            "id": "engine_rel_only",
+            "name": "引擎：只用克制、配合、先手暴露和分路",
+            "top5": 0.0813,
+            "top10": 0.171,
+            "mrr": 0.0711
+          }
+        ]
+      },
+      {
+        "phase": "第7–10手（第二轮禁用之后）",
+        "n": 3912,
+        "methods": [
+          {
+            "id": "pop",
+            "name": "基线：按赛前出场次数",
+            "top5": 0.2063,
+            "top10": 0.3487,
+            "mrr": 0.1503
+          },
+          {
+            "id": "pop_lane",
+            "name": "基线：出场次数 + 只留有分路位置的英雄",
+            "top5": 0.3783,
+            "top10": 0.5961,
+            "mrr": 0.25
+          },
+          {
+            "id": "engine",
+            "name": "引擎：默认权重（全部分项）",
+            "top5": 0.2367,
+            "top10": 0.432,
+            "mrr": 0.1687
+          },
+          {
+            "id": "engine_no_rel",
+            "name": "引擎：去掉克制、配合、先手暴露",
+            "top5": 0.4412,
+            "top10": 0.6411,
+            "mrr": 0.2917
+          },
+          {
+            "id": "engine_no_meta",
+            "name": "引擎：去掉职业赛热度",
+            "top5": 0.1324,
+            "top10": 0.271,
+            "mrr": 0.1114
+          },
+          {
+            "id": "engine_rel_only",
+            "name": "引擎：只用克制、配合、先手暴露和分路",
+            "top5": 0.1286,
+            "top10": 0.2569,
+            "mrr": 0.1084
+          }
+        ]
+      }
+    ],
+    "adopted": "engine",
+    "adoptedReason": "训练数据不足，没有进行权重拟合，使用默认权重。"
+  },
   "pending": {
     "needsReview": [],
     "missingProfile": []

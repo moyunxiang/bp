@@ -1,5 +1,5 @@
 // 英雄搜索选择：输入框 + 下拉结果。支持中文名、拼音、首字母、外号；方向键选择，回车确认，Esc关闭。
-import { useId, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { searchHeroes } from '../../lib/search.ts';
 import { sortByName, useEngine } from '../../lib/data.ts';
 import type { HeroData } from '../../types.ts';
@@ -26,6 +26,12 @@ export function HeroPicker({ onPick, disabledReason, placeholder = '搜索英雄
   const [open, setOpen] = useState(!!autoFocus);
   const [active, setActive] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+
+  // 键盘移动时让当前项保持可见
+  useEffect(() => {
+    listRef.current?.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest' });
+  }, [active]);
 
   const sorted = useMemo(() => [...engine.bundle.heroes].sort(sortByName), [engine]);
   const results = useMemo(() => {
@@ -94,6 +100,7 @@ export function HeroPicker({ onPick, disabledReason, placeholder = '搜索英雄
       {showList && (
         <ul
           id={listId}
+          ref={listRef}
           role="listbox"
           className="absolute left-0 right-0 top-[calc(100%+4px)] z-40 max-h-[360px] overflow-y-auto rounded-lg border border-line2 bg-panel2 p-1 shadow-xl shadow-black/40"
         >

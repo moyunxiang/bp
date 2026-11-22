@@ -19,66 +19,77 @@
 - 子任务模型只用Opus或Sonnet，不用Fable。
 - 提交不加任何Claude署名。
 
-## 当前状态
+## 当前状态（2026-11-22 13:40 HKT）
 
-见文末“交接”。
+**已完成并验证**：
+- 数据链路：官方英雄资料（140英雄、570技能、829条官方关系边）、正式服公告（近200天79条）、KPL逐局BP抓取与聚合、数据包生成与校验。
+- 机制档案：140/140已盲审，标签一致率90.0%，分歧148条已裁定，已核实标签1429条；规则表13条；可计分关系约3400条，英雄对覆盖率约31%。
+- 推荐引擎：分路推断、BP规则（排位/巅峰/自由，禁用位可调，多形态互斥，限时英雄排除）、Pick/Ban评分、可信程度、阵容分析、替代英雄。
+- 页面：BP助手、英雄百科（列表+详情）、关系图谱（单英雄+阵容对阵）、阵容库、我的、数据说明。
+- 测试：`npm test` 36项通过；`npx playwright test` 7项通过（含纯键盘录完10禁10选）。
+
+**进行中 / 待办**：见文末“交接”。
+
+## 关键结论
+
+- **回测**：单英雄克制关系对预测职业队选人几乎没有帮助（拟合系数接近0）；按最初的权重加入克制分项会让Top10命中率从约61%降到约45%。因此默认权重改为“职业赛热度+分路”定大致排序，克制/配合/需求/暴露只做小幅调整。拟合权重在指标上略高，但等于不看对方阵容，**没有采用**。路人局效果无法验证。
+- KPL“系列赛出现率”被全局BP拉满，没有区分度；改用每个系列第一局的禁选次数。
+- 本机直连时B站未登录搜索返回412，解说链路必须有用户的Cookie才能跑。
+- KPL接口单次响应4–10秒，全量抓取要几个小时。
 
 ## 技术方案（当前有效）
 
 - 纯静态：Vite + React + TypeScript + Tailwind；hash路由；zustand；自绘SVG图谱。
-- 数据脚本：Node + tsx + zod，在本地运行；GitHub Actions只用已提交的数据包构建。
-- 知识原则：LLM只从官方技能原文**提取带引用的机制标签**，克制/配合关系由规则表计算；另一子任务盲审。
-- 证据级别：`official` > `rule` > `kpl` > `commentary`；只有`verified`且非`stale`的条目计分。
-- KPL只用：系列首局禁用/选取率、选手分路分布、同队共现提升度（样本≥30）。不算胜率。
+- 数据脚本：Node + tsx + zod，在本地运行；GitHub Actions只用已提交的数据包校验、测试、构建、发布。
+- 知识原则：LLM只从官方技能原文**提取带引用的机制标签**，克制/配合关系由规则表计算；另一模型盲审；分歧由第三方裁定。
+- 证据级别：`official` > `rule` > `kpl` > `commentary`；只有已核实且未过期的证据计分。
+- KPL只用：系列第一局禁选次数、选手分路、同队共现提升度（样本≥30）。不算胜率。
 
-## 目录
+## 关键文件
 
+| 位置 | 内容 |
+|---|---|
+| `src/engine/` | `recommend.ts`（评分与权重）、`relations.ts`（证据权重与关系索引）、`rules.ts`、`lanes.ts`、`draft.ts`、`comp.ts` |
+| `src/pages/`、`src/components/` | 各页面；`components/bp/`是BP助手 |
+| `scripts/` | `fetch-*`、`parse-official`、`build-profiles`、`build-kpl`、`build-data`、`validate`、`backtest`、`update-data`、`commentary/*` |
+| `data/curated/` | `tags.json`、`rules.json`、`archetypes.json`、`aliases.json`、`heroes/`、`review/`、`adjudication/`、`stamps.json` |
+| `data/derived/` | 官方资料、公告、KPL聚合、档案合并结果、回测报告 |
+| `data/raw/` | 原始抓取结果，不进仓库（可重新抓取） |
+| `docs/curation/` | 档案撰写、盲审、裁定、解说提炼规范 |
+| `user/profile.json` | 英雄池、偏好、收藏的公开默认值 |
+
+## 运行与验收命令
+
+```bash
+npm run dev                 # 开发
+npm run build               # 类型检查 + 构建
+npm test                    # 单元测试
+npx playwright test         # 端到端（需先 build；使用本机Chrome）
+npm run update-data         # 更新数据（加 -- --backtest 重跑回测）
+npm run validate            # 校验数据包
+npx tsx scripts/shot.ts <png> <hash路径>   # 用本机Chrome以1440宽度截图检查页面
 ```
-scripts/        抓取、整理、校验、回测
-data/raw/       第三方原始数据（.gitignore）
-data/curated/   机制档案、规则表、别名、战术体系定义
-data/derived/   KPL聚合、自动发现阵容、解说条目
-public/data/    前端数据包 + meta.json
-user/           英雄池、偏好、收藏、自定义阵容（公开）
-src/engine/     BP评分、分路推断、阵容分析
-src/pages/      BP助手 / 英雄百科 / 图谱 / 阵容库 / 我的 / 数据说明
-```
-
-## 已验证的数据源
-
-| 数据 | 来源 | 备注 |
-|---|---|---|
-| 英雄列表 | `pvp.qq.com/web201605/js/herolist.json` | 140个；`roles`不可靠 |
-| 技能/四维/官方关系 | `pvp.qq.com/web201605/herodetail/{id_name}.shtml` | GBK；两套模板；数字版页面已过时 |
-| 图片 | `game.gtimg.cn/images/yxzj/img201606/...` | 可热链 |
-| 公告 | `apps.game.qq.com/cmc/cross`（chanid=1762）、`wmp/v3.1/public/searchNews.php` | 无需签名 |
-| KPL逐局BP | `prod.comp.smoba.qq.com/leaguesite/{leagues,matches,battle}/open` | 2020–2026约1万局 |
-| B站 | 搜索与元数据免登录；字幕需Cookie | `/view`被412风控，不绕过 |
-
-不可用（不做）：王者营地路人数据、抖音、NGA、知乎、贴吧、灰机wiki、玩加BP。
-
-## 里程碑
-
-- P0：官方数据抓取与解析；机制档案（10个试点→140个）；规则表；BP引擎；BP助手页面；部署。
-- P1：KPL抓取聚合与回测；英雄百科；图谱；阵容库；我的英雄池；数据说明页。
-- P2：B站解说发现与提炼（等用户提供Cookie）。
 
 ## 风险与假设
 
-- 腾讯接口无公开条款，可能改版或加签名 → 单线程、限速、本地缓存，失败时保留旧数据。
-- 排位选人顺序（蓝1→红2→蓝2→红2→蓝2→红1）无官方文本，为**假设** → 规则可配置。
-- 用Cookie自动抓B站字幕可能触发风控，协议条款未核实 → 低频、有上限、遇风控即停。
-- 本机设有`HTTPS_PROXY`；脚本访问国内域名需直连。
+- 腾讯接口无公开条款，可能改版或加签名 → 单线程发起、限速、本地缓存，失败时保留旧数据。
+- 排位选人顺序（蓝1→红2→蓝2→红2→蓝2→红1）无官方文本，为**假设** → 禁用位数量可配置，自由模式不限顺序。
+- 多形态英雄（元流之子）禁用时按形态计、选人时互斥：职业赛规则如此，排位是否相同**未验证**。
+- 规则表里的“通用机制”（如压制不受霸体影响）是人工写的，没有逐条找到官方出处。
+- 用Cookie自动读B站字幕可能触发风控，协议条款未核实 → 低频、有上限、遇风控即停。
+- 本机设有`HTTPS_PROXY`；脚本访问国内域名直连；Playwright访问本地预览服务需排除代理（已在配置里处理）。
 
 ## 非目标
 
 KPL复盘页面、BO5/BO7模拟、全局大关系网、社区、截图识别、多轮BP搜索树、任何路人局胜率统计。
 
-## 运行与验收命令
+## 废弃路线
 
-（随实现补全）
+- KPL“系列赛出现率”作热度（被全局BP拉满）。
+- 让LLM直接写“谁克制谁”（改为标签+规则）。
+- 版本因素用百分位并对无职业赛数据的英雄扣分（改为只加分）。
+- 克制分项的高权重（回测显示有害）。
 
 ## 交接
 
-- 2026-11-22 12:40 HKT：计划获批，仓库刚`git init`，尚无代码。下一步：脚手架 + 官方数据抓取。
-- 完整计划原文：`~/.claude/plans/pasted-content-id-7771-bp-dem-tidy-lemur-of-01d14a73-e146-4f90-acef-566fecda8453.md`
+见 `log.md` 最后一节。新会话先读本文件，再运行 `npm test && npm run validate` 确认现状。

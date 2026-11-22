@@ -236,9 +236,16 @@ async function main() {
   const get = (id: string) => overall.find((m) => m.id === id)!;
   const engineM = get('engine');
   const fitted = theta ? get('fitted') : null;
-  // 只有在测试集上 Top10 至少高出2个百分点才采用拟合权重
-  const adoptFitted = !!fitted && fitted.top10 - engineM.top10 >= 0.02;
+  const laneMeta = get('lane_meta');
   const base = get('pop_lane');
+  const pp = (x: number) => `${(x * 100).toFixed(1)}%`;
+  // 网站始终使用默认权重。拟合权重只作为对照：它在这个指标上更高，但克制分项的系数接近0，
+  // 等于不再考虑对方选了什么，与“根据克制和配合给出建议”的目的不符。
+  const adoptedReason = fitted
+    ? `默认权重的Top10命中率为${pp(engineM.top10)}；由训练集拟合的权重为${pp(fitted.top10)}；只用热度和分路为${pp(laneMeta.top10)}。` +
+      `拟合结果中克制分项的系数为${theta![FEATS.indexOf('counter')]}（职业赛热度为${theta![FEATS.indexOf('meta')]}），接近于不使用克制关系。` +
+      '网站需要根据对方阵容给出有依据的建议，所以没有采用拟合权重，而是保留克制与配合分项并把它们的权重调低到基本不影响这项指标的程度。'
+    : `默认权重的Top10命中率为${pp(engineM.top10)}，只用热度和分路为${pp(laneMeta.top10)}。训练数据不足，没有进行权重拟合。`;
   const report: BacktestReport = {
     generatedAt: new Date().toISOString(),
     note: '回测衡量的是“职业队实际选的英雄排在推荐列表的第几位”，目标是模仿职业选择，不代表选得最好，也不能说明在路人局的效果。职业赛是系列赛全局BP，候选集已剔除本队在该系列中用过的英雄；每个赛事只使用开赛之前的数据。并列名次按中间值计算。',
@@ -249,12 +256,8 @@ async function main() {
       const sub = test.filter(f);
       return { phase, n: sub.length, methods: evalAll(sub) };
     }),
-    adopted: adoptFitted ? 'fitted' : 'engine',
-    adoptedReason: adoptFitted
-      ? `拟合权重在测试集上的Top10命中率比默认权重高${((fitted!.top10 - engineM.top10) * 100).toFixed(1)}个百分点，达到采用门槛（2个百分点）。`
-      : fitted
-        ? `拟合权重在测试集上的Top10命中率为${(fitted.top10 * 100).toFixed(1)}%，默认权重为${(engineM.top10 * 100).toFixed(1)}%，差距未达到采用门槛（2个百分点），继续使用默认权重。`
-        : '训练数据不足，没有进行权重拟合，使用默认权重。',
+    adopted: 'engine',
+    adoptedReason,
   };
   if (theta) (report as BacktestReport & { fittedTheta?: Record<string, number> }).fittedTheta = Object.fromEntries(FEATS.map((k, i) => [k, theta[i]]));
   if (!NO_WRITE) await writeJson(resolve(ROOT, 'data/derived/backtest.json'), report);
@@ -264,7 +267,7 @@ async function main() {
   console.log(`\n测试集：${report.test.from} ~ ${report.test.to}，${report.test.battles}局，${report.test.picks}次选人决策`);
   for (const m of overall) console.log(`  ${m.name.padEnd(28, '　')} Top5 ${pct(m.top5)}  Top10 ${pct(m.top10)}  MRR ${m.mrr.toFixed(3)}`);
   for (const p of report.byPhase) console.log(`  [${p.phase}] n=${p.n}  ` + p.methods.map((m) => `${m.id} ${pct(m.top10)}`).join('  '));
-  console.log(`引擎相对“出场次数+分路”基线：Top10 ${((engineM.top10 - base.top10) * 100).toFixed(1)}个百分点`);
+  console.log(`默认权重相对“出场次数+分路”基线：Top10 ${((engineM.top10 - base.top10) * 100).toFixed(1)}个百分点；相对“只用热度+分路”：${((engineM.top10 - laneMeta.top10) * 100).toFixed(1)}个百分点`);
   console.log(report.adoptedReason);
 }
 

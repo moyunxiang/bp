@@ -46,14 +46,15 @@ export function AboutPage() {
   }, [rel]);
 
   const parts: { key: PartKey; desc: string }[] = [
-    { key: 'counter', desc: `每个已核实克制单位 ${DW.counterPerUnit} 分，同路再乘 ${DW.counterSameLane}，上限 ${DW.counterCap}` },
-    { key: 'synergy', desc: `每个已核实配合单位 ${DW.synergyPerUnit} 分，上限 ${DW.synergyCap}` },
-    { key: 'needs', desc: `补足己方阵容缺口，上限 ${DW.needsCap}` },
-    { key: 'lane', desc: `位置合适 +${DW.laneFit}，位置不符 ${DW.laneMiss}` },
-    { key: 'meta', desc: `职业赛出现次数换算的参考项，幅度 ${DW.metaRange}，另有版本公告项 ${DW.patch}` },
-    { key: 'exposure', desc: `后选方仍可针对的风险，每单位 ${DW.exposurePerUnit} 分，上限 ${DW.exposureCap}` },
-    { key: 'pool', desc: `英雄池熟练度，每级 +${DW.poolPerLevel}` },
+    { key: 'counter', desc: `候选克制对方已选英雄时加分，被对方克制时扣分：每条关系按它的证据权重 × ${DW.counterPerUnit} 分，同路对线再 × ${DW.counterSameLane}；合计不超过 ±${DW.counterCap}` },
+    { key: 'synergy', desc: `与己方已选英雄有配合关系时加分：每条关系按证据权重 × ${DW.synergyPerUnit} 分；合计不超过 ${DW.synergyCap}` },
+    { key: 'needs', desc: `从第三手起，看候选能否补上阵容缺口（伤害类型、前排、硬控、开团、清线），越接近选完权重越大；合计不超过 ±${DW.needsCap}` },
+    { key: 'lane', desc: `按候选在己方空缺分路上的适配度（0–1）计分，范围约 ±${DW.laneFit / 2}；己方剩下的分路都不是它的常规位置时为 ${DW.laneMiss}` },
+    { key: 'meta', desc: `职业赛第一局的出场率（被选次数+被禁次数）÷ 局数 × ${DW.metaRange}，只加分不扣分；最近45天内官方公告标题写明“增强/削弱”的英雄另计 ±${DW.patch}` },
+    { key: 'exposure', desc: `对方还有选人机会时，按“还没被禁、又克制它”的英雄的证据权重扣分，对方剩余手数越多扣得越多；最多扣 ${DW.exposureCap}` },
+    { key: 'pool', desc: `只在“我的英雄池”模式下计算：熟练度每高一级 +${DW.poolPerLevel}` },
   ];
+
 
   const MethodRows = ({ ms, adopted }: { ms: BacktestMethod[]; adopted?: string }) => (
     <>
@@ -62,7 +63,7 @@ export function AboutPage() {
           <Td>{m.name}{m.id === adopted && <span className="ml-1.5 text-[11px] text-gold">采用</span>}</Td>
           <Td>{pct(m.top5)}（{m.top5.toFixed(3)}）</Td>
           <Td>{pct(m.top10)}（{m.top10.toFixed(3)}）</Td>
-          <Td>{pct(m.mrr)}（{m.mrr.toFixed(3)}）</Td>
+          <Td>{m.mrr.toFixed(3)}</Td>
         </tr>
       ))}
     </>
@@ -102,7 +103,7 @@ export function AboutPage() {
             <thead><tr><Th>数据</Th><Th>来源</Th><Th>用途</Th><Th>是否参与计分</Th></tr></thead>
             <tbody>
               <tr><Td>英雄资料与官方关系</Td><Td>王者荣耀官网英雄详情页（pvp.qq.com）</Td><Td>英雄、技能原文、官方给出的克制与配合说明</Td><Td>参与（官方证据）；技能原文用于机制推导</Td></tr>
-              <tr><Td>版本公告</Td><Td>官网公告接口</Td><Td>标注英雄近期调整，提示相关结论可能过期</Td><Td>仅作小幅提示项</Td></tr>
+              <tr><Td>版本公告</Td><Td>官网公告接口</Td><Td>在英雄页展示逐条改动；标题写明“增强/削弱”的英雄在推荐分里小幅加减</Td><Td>参与（仅标题写明方向的改动，幅度很小）</Td></tr>
               <tr><Td>职业赛BP</Td><Td>腾讯官方赛事数据中心，{bundle.kpl ? <>覆盖 {fmtDate(bundle.kpl.coverage.from)} 至 {fmtDate(bundle.kpl.coverage.to)}，抓取 {n(bundle.kpl.coverage.battlesFetched)} 局、可用 {n(bundle.kpl.coverage.battlesUsable)} 局</> : '尚未收录'}</Td><Td>禁选次数、选手分路、同队共现</Td><Td>参与（职业赛证据，有上限）；不计算胜率</Td></tr>
               <tr><Td>解说视频</Td><Td>B站</Td><Td>解说条目作为补充证据{(c.commentary ?? 0) > 0 ? `，已收录 ${n(c.commentary)} 条` : ''}</Td><Td>{(c.commentary ?? 0) > 0 ? '参与（权重最低档）' : '尚未收录'}</Td></tr>
             </tbody>
@@ -197,9 +198,18 @@ export function AboutPage() {
                 </div>
               ))}
               <div className="rounded-md bg-panel2 p-3 text-[12px] text-mute">
-                <b className="text-sub">列说明：</b>Top5/Top10命中率＝职业队实际所选英雄出现在推荐前5/前10的比例；MRR＝实际所选英雄排名倒数的平均值，范围0–1。表中括号内为原始比例（三位小数）。
+                <b className="text-sub">列说明：</b>Top5/Top10命中率＝职业队实际所选英雄出现在推荐前5/前10的比例；MRR＝实际所选英雄排名倒数的平均值，范围0–1，越大越好。命中率括号内为原始比例（三位小数）。
               </div>
-              <p>采用的方法：<span className="text-ink">{bundle.meta.backtest?.methods.find((m) => m.id === bt.adopted)?.name ?? bt.adopted}</span>。{bt.adoptedReason}</p>
+              <p>
+                网站实际使用的方法：<span className="text-ink">{bt.methods.find((m) => m.id === bt.adopted)?.name ?? bt.adopted}</span>。{bt.adoptedReason}
+              </p>
+              <div className="rounded-md border border-line bg-panel2 p-3 text-[12.5px] leading-relaxed">
+                <b className="text-ink">怎么读这张表：</b>
+                “只用热度+分路”一行不含任何克制、配合信息；它和“引擎：默认权重”一行的差距，就是克制、配合、阵容需求、先手暴露这些分项对“模仿职业选择”的净影响。
+                回测的结论是：单英雄之间的克制关系对预测职业队的选择几乎没有帮助，职业队的选择主要由版本热度和分路决定。
+                这不等于克制关系在路人局没有用，但现有数据无法验证路人局的效果。因此网站让“职业赛热度 + 分路”决定大致排序，克制与配合只在其上做小幅调整，并把每一条依据都展示出来，由你自己判断。
+                另外，默认权重在调整时参考过同一年的回测结果，所以“引擎：默认权重”一行的成绩略偏乐观。
+              </div>
             </>
           )}
         </Sec>

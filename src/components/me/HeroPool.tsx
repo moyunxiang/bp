@@ -50,7 +50,7 @@ export function HeroPool() {
               <span className="text-[13px] font-medium text-ink">{LANE_NAME[c.l]}</span>
               <span className="text-[12px] text-mute">已加入 {c.joined}/{c.all.length}</span>
             </div>
-            <div className="flex flex-col gap-1">
+            <div className="grid grid-cols-[repeat(auto-fill,minmax(58px,1fr))] gap-x-1 gap-y-2">
               {c.shown.map((h) => {
                 const lv = level.get(h.id) ?? 0;
                 return (
@@ -59,16 +59,18 @@ export function HeroPool() {
                     type="button"
                     onClick={() => cycle(h)}
                     aria-pressed={lv > 0}
-                    title={lv ? `熟练度 ${lv}，点击切换` : '点击加入英雄池'}
-                    className={`flex items-center gap-2 rounded-md border px-1.5 py-1 text-left text-[13px] transition-colors hover:bg-panel3 focus-visible:outline focus-visible:outline-1 focus-visible:outline-blue ${lv ? 'border-blue/60 bg-blue/15 text-ink' : 'border-transparent text-mute'}`}
+                    title={lv ? `${h.name}：熟练度 ${lv}，点击切换` : `${h.name}：点击加入英雄池`}
+                    className="group flex flex-col items-center gap-1 rounded-lg px-0.5 py-1 transition-colors hover:bg-panel3"
                   >
-                    <HeroAvatar hero={h} size={26} dim={!lv} />
-                    <span className="min-w-0 flex-1 truncate">{h.name}</span>
-                    <span className="w-9 text-right text-[12px] text-gold">{STARS[lv]}</span>
+                    <span className="relative">
+                      <HeroAvatar hero={h} size={44} ring={lv ? 'rgb(236 185 92 / 0.9)' : undefined} className={lv ? '' : 'opacity-55 transition-opacity group-hover:opacity-100'} />
+                      {lv > 0 && <span className="absolute inset-x-0 -bottom-1 text-center text-[10px] leading-none text-gold [text-shadow:0_0_3px_#000,0_0_3px_#000]">{STARS[lv]}</span>}
+                    </span>
+                    <span className={`w-full truncate text-center text-[11.5px] ${lv ? 'text-ink' : 'text-mute'}`}>{h.name}</span>
                   </button>
                 );
               })}
-              {c.shown.length === 0 && <div className="px-1 py-3 text-center text-[12px] text-dim">没有符合条件的英雄</div>}
+              {c.shown.length === 0 && <div className="col-span-full px-1 py-3 text-center text-[12px] text-dim">没有符合条件的英雄</div>}
             </div>
           </div>
         ))}
