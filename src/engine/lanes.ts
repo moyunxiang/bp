@@ -72,13 +72,15 @@ export function assignLanes(slots: LaneSlot[]): LaneAssignment {
  * 候选英雄加入队伍后的分路适配度（0–1）：
  * 允许已选英雄为它让路，取“加入后的最优分配得分 − 加入前的得分”。
  */
-export function laneFitFor(candidate: HeroData, team: LaneSlot[], wantLane?: Lane | null): { fit: number; lane: Lane | null } {
-  if (team.length >= 5) return { fit: 0, lane: null };
+export function laneFitFor(candidate: HeroData, team: LaneSlot[], wantLane?: Lane | null): { fit: number; lane: Lane | null; teamLanes: Lane[] } {
+  if (team.length >= 5) return { fit: 0, lane: null, teamLanes: [] };
   const before = assignLanes(team);
   const after = assignLanes([...team, { hero: candidate, locked: wantLane ?? null }]);
   const lane = after.lanes[after.lanes.length - 1] ?? null;
-  if (wantLane) return { fit: Math.max(0, candidate.lanes[wantLane - 1]), lane: wantLane };
-  return { fit: Math.max(0, Math.min(1, after.score - before.score)), lane };
+  // teamLanes：候选加入后，已选队友各自被分到的路（与 team 同序）
+  const teamLanes = after.lanes.slice(0, team.length);
+  if (wantLane) return { fit: Math.max(0, candidate.lanes[wantLane - 1]), lane: wantLane, teamLanes };
+  return { fit: Math.max(0, Math.min(1, after.score - before.score)), lane, teamLanes };
 }
 
 /** 英雄权重最高的分路 */

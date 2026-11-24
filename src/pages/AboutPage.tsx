@@ -4,11 +4,12 @@ import { Empty } from '../components/ui.tsx';
 import { W } from '../engine/relations.ts';
 import { COMP_FLOORS, FLOOR_POINTS } from '../engine/comp.ts';
 import { DEFAULT_WEIGHTS as DW, PART_NAME, type PartKey } from '../engine/recommend.ts';
-import type { BacktestMethod } from '../types.ts';
+import { LANING_POINTS, laneView } from '../engine/laning.ts';
+import { LANE_NAME, type BacktestMethod, type Lane, type LaneAspect } from '../types.ts';
 
 const TOC = [
   ['update', '更新状态'], ['sources', '数据来源'], ['counts', '数量一览'], ['profile', '机制档案核实'], ['scoring', '证据等级与计分'],
-  ['rules', '规则表'], ['model', '选人模型'], ['backtest', '回测'], ['outcome', '胜负检验'], ['pending', '待复核清单'], ['limits', '已知限制'], ['copyright', '版权声明'],
+  ['rules', '规则表'], ['model', '选人模型'], ['laning', '对线强弱'], ['backtest', '回测'], ['outcome', '胜负检验'], ['pending', '待复核清单'], ['limits', '已知限制'], ['copyright', '版权声明'],
 ] as const;
 
 const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
@@ -33,7 +34,7 @@ const Stat = ({ label, value, hint }: { label: string; value: ReactNode; hint?: 
 
 export function AboutPage() {
   const engine = useEngine();
-  const { bundle, rel } = engine;
+  const { bundle, rel, laning } = engine;
   const { meta } = bundle;
   const c = meta.counts;
   const fr = freshness(meta.generatedAt);
@@ -46,10 +47,28 @@ export function AboutPage() {
     return m;
   }, [rel]);
 
+  // 对线说法的覆盖面：各路常用英雄（适配权重≥0.3，不含限时英雄）里，有可用说法的有多少
+  const laneCoverage = useMemo(() => {
+    const rows: { lane: Lane; label: string; aspects: LaneAspect[] }[] = [
+      { lane: 1, label: '对线强弱', aspects: ['lane', 'early'] },
+      { lane: 3, label: '对线强弱', aspects: ['lane', 'early'] },
+      { lane: 3, label: '清线抢线', aspects: ['clear'] },
+      { lane: 4, label: '对线强弱', aspects: ['duo', 'lane', 'early'] },
+      { lane: 5, label: '清线抢线', aspects: ['clear'] },
+      { lane: 5, label: '双人对线', aspects: ['duo', 'lane'] },
+    ];
+    return rows.map((r) => {
+      const hs = bundle.heroes.filter((h) => !h.isLimited && h.lanes[r.lane - 1] >= 0.3);
+      const levels = hs.map((h) => r.aspects.map((a) => laneView(laning, h.id, a, r.lane)).find((v) => v)?.level);
+      return { ...r, total: hs.length, known: levels.filter((l) => l && l !== 'mixed').length, mixed: levels.filter((l) => l === 'mixed').length };
+    });
+  }, [bundle, laning]);
+
   const parts: { key: PartKey; desc: string }[] = [
     { key: 'counter', desc: `候选克制对方已选英雄时加分，被对方克制时扣分：每条关系按它的证据权重 × ${DW.counterPerUnit} 分，同路对线再 × ${DW.counterSameLane}；合计不超过 ±${DW.counterCap}` },
     { key: 'synergy', desc: `与己方已选英雄有配合关系时加分：每条关系按证据权重 × ${DW.synergyPerUnit} 分；合计不超过 ${DW.synergyCap}` },
     { key: 'needs', desc: `阵容底线：从第三手起，看候选能否补上本方的缺口（硬控、坦克或战士、法术伤害、物理伤害为硬性底线；第二个硬控、第二个坦克或战士、范围硬控、先手开团、清线为“最好有”）。能补的加分，越接近选完加得越多；选了之后已经不可能达到的扣分；合计不超过 ±${DW.needsCap}` },
+    { key: 'laning', desc: `对线强弱：教学视频里解说对候选“清线抢线快慢、对线强弱、双人对线强弱”的明确说法。和对面同路英雄的强弱差每档 ${LANING_POINTS.perStep} 分；解说点名说它对某个对手占优或吃亏时 ±${LANING_POINTS.direct} 分；对面这一路还没人时按它自己的说法 ±${LANING_POINTS.alone} 分；合计不超过 ±${DW.laningCap}。没有说法的英雄这一项为0` },
     { key: 'lane', desc: `按候选在己方空缺分路上的适配度（0–1）计分，范围约 ±${DW.laneFit / 2}；己方剩下的分路都不是它的常规位置时为 ${DW.laneMiss}` },
     { key: 'meta', desc: `职业赛第一局的出场率（被选次数+被禁次数）÷ 局数 × ${DW.metaRange}，只加分不扣分；最近45天内官方公告标题写明“增强/削弱”的英雄另计 ±${DW.patch}` },
     { key: 'exposure', desc: `对方还有选人机会时，按“还没被禁、又克制它”的英雄的证据权重扣分，对方剩余手数越多扣得越多；最多扣 ${DW.exposureCap}` },
@@ -126,6 +145,7 @@ export function AboutPage() {
               <tr><Td>版本公告</Td><Td>官网公告接口</Td><Td>在英雄页展示逐条改动；标题写明“增强/削弱”的英雄在推荐分里小幅加减</Td><Td>参与（仅标题写明方向的改动，幅度很小）</Td></tr>
               <tr><Td>职业赛BP</Td><Td>腾讯官方赛事数据中心，{bundle.kpl ? <>覆盖 {fmtDate(bundle.kpl.coverage.from)} 至 {fmtDate(bundle.kpl.coverage.to)}，抓取 {n(bundle.kpl.coverage.battlesFetched)} 局、可用 {n(bundle.kpl.coverage.battlesUsable)} 局</> : '尚未收录'}</Td><Td>禁选次数、选手分路、同队共现</Td><Td>参与（职业赛证据，有上限）；不计算胜率</Td></tr>
               <tr><Td>路人局英雄榜</Td><Td>王者营地英雄榜的公开分享页{bundle.camp ? `，数据日期 ${fmtDate(bundle.camp.updateTime)}` : '（尚未收录）'}</Td><Td>各位置热度前10的档位、胜率、登场率、禁用率，用于“分路梯度”页和英雄页</Td><Td>不参与</Td></tr>
+              <tr><Td>对线说法</Td><Td>B站教学视频的字幕{bundle.laning ? `：读了 ${n(bundle.laning.scope.heroVideos)} 个按英雄的教学视频和 ${n(bundle.laning.scope.topicVideos)} 个讲对线的专题视频，引用了其中 ${n(Object.keys(bundle.laning.videos).length)} 个` : '（尚未收录）'}</Td><Td>解说明确说过的“清线抢线快慢、对线强弱、双人对线强弱、前期强弱”，用于对线判断和英雄页</Td><Td>{bundle.laning ? `参与（“对线强弱”分项，上限 ±${DW.laningCap}）` : '尚未收录'}</Td></tr>
               <tr><Td>解说视频</Td><Td>B站</Td><Td>解说条目作为补充证据{(c.commentary ?? 0) > 0 ? `，已收录 ${n(c.commentary)} 条` : ''}</Td><Td>{(c.commentary ?? 0) > 0 ? '参与（权重最低档）' : '尚未收录'}</Td></tr>
             </tbody>
           </table>
@@ -223,11 +243,12 @@ export function AboutPage() {
                 </tbody>
               </table>
               <div className="rounded-md border border-line bg-panel2 p-3 text-[12.5px] leading-relaxed">
-                <b className="text-ink">三处人为设定：</b>
+                <b className="text-ink">几处人为设定：</b>
                 ①“克制与被克”的系数不低于 {bundle.model.floors.counter}。模型学到的这个系数接近0，意思是机制克制对预测职业队选谁帮助很小；但网站的用途是按对方阵容给建议，所以保留手工权重的力度。
                 ②“分路匹配”的系数不低于 {bundle.model.floors.lane}，保证你指定位置时一定生效。
                 {bundle.model.floors.needs != null && <>③“阵容底线”的系数不低于 {bundle.model.floors.needs}，原因见下面的“阵容底线”。</>}
-                {' '}①和③合起来的回测代价见下表“不设系数下限”与“线上使用”两行之差。
+                {bundle.model.floors.laning != null && <>④“对线强弱”的系数不低于 {bundle.model.floors.laning}：依据是解说的说法，只覆盖一部分英雄，它是给你的对局建议，不要求能预测职业队选人。</>}
+                {' '}这些设定合起来的回测代价见下表“不设系数下限”与“线上使用”两行之差；其中加入“对线强弱”这一项的影响是“上一版模型”与“线上使用”两行之差。
                 {bundle.model.lanePhases ? ' 另外，当你设定了“我打某路”时，候选只剩能打这个位置的英雄，这时使用另一组专门拟合的系数（回测里的“指定位置专用系数”）。' : ''}
                 <br />
                 <b className="text-ink">局限：</b>模型学的是职业队的选择。职业赛是系列赛全局BP、五人配合固定，与单排环境不同；“职业赛针对选择”“职业赛同队选择”反映的是选人习惯，其中一部分只是同一时期都热门。路人局的效果没有数据可以验证。
@@ -252,6 +273,38 @@ export function AboutPage() {
                   <p className="text-[12px] text-mute">随机对照：每个位置按该位置近一年的出场频率独立抽一个英雄，共4万组。“坦克或战士”按官方主职业（副职业为坦克也算）；硬控、范围硬控、先手开团、清线按已核实的技能标签。</p>
                 </div>
               )}
+            </>
+          )}
+        </Sec>
+
+        <Sec id="about-laning" title="对线强弱">
+          {!bundle.laning ? <Empty>尚未收录对线说法。</Empty> : (
+            <>
+              <p>
+                三路对线、中辅抢线、射辅对线的判断，依据只有一种：<b className="text-ink">B站教学视频里解说明确说过的话</b>。
+                官方职业赛接口只有终局数据，没有前几分钟的经济；官方技能原文也推不出对线胜负；王者营地的对位数据需要登录。所以这里不做任何推算，只整理解说的说法，并且每条都能点开视频对应的时间点核对。
+              </p>
+              <p>
+                流程：一个模型从字幕里提炼说法并给出逐字引用 → 脚本核对引用确实出现在该视频对应时间前后60秒的字幕里 → 另一个模型只看字幕独立复核“解说有没有这么说、方向对不对、是不是在讲对线”。
+                共提炼 {n(bundle.laning.scope.extracted)} 条，引用核对通过 {n(bundle.laning.scope.verified)} 条，复核剔除 {n(bundle.laning.scope.reviewDropped)} 条，同一个视频（包括被别的账号转载的同一段内容）对同一件事的重复说法合并后，保留 {n(bundle.laning.claims.length)} 条，涉及 {n(new Set(bundle.laning.claims.map((x) => x.hero)).size)} 个英雄。其中点名了具体对手的 {n(bundle.laning.claims.filter((x) => x.vs != null).length)} 条，点名了搭档的 {n(bundle.laning.claims.filter((x) => x.with != null).length)} 条。
+              </p>
+              <table className="w-full max-w-3xl text-[13px]">
+                <thead><tr><Th>位置</Th><Th>方面</Th><Th>常打这一路的英雄数</Th><Th>有结论</Th><Th>说法不一</Th><Th>没有说法</Th></tr></thead>
+                <tbody>
+                  {laneCoverage.map((r, i) => (
+                    <tr key={i}><Td>{LANE_NAME[r.lane]}</Td><Td>{r.label}</Td><Td>{r.total}</Td><Td>{r.known}（{r.total ? Math.round((r.known / r.total) * 100) : 0}%）</Td><Td>{r.mixed}</Td><Td>{r.total - r.known - r.mixed}</Td></tr>
+                  ))}
+                </tbody>
+              </table>
+              <div className="rounded-md bg-panel2 p-3 text-[12px] text-mute">
+                <b className="text-sub">列说明：</b>常打这一路的英雄＝该路适配权重不低于0.3的非限时英雄；有结论＝至少有一条适用于这一路的说法，并且汇总后是强、弱或一般；说法不一＝不同UP主说法相反，不下结论。对抗路、中路、发育路的“对线强弱”在没有对线说法时用“前期强弱”的说法代替；发育路优先用双人对线的说法。
+              </div>
+              <ul className="list-disc pl-5">
+                <li><b className="text-ink">怎么汇总：</b>按不同UP主计数（同一位UP主的多个视频只算一个来源）。只有一种说法就用它；强、弱两种说法都有时，多的一方至少多出两位UP主才下结论，否则显示“说法不一”。</li>
+                <li><b className="text-ink">怎么比：</b>单人对线里，解说点名说过“甲对乙占优/吃亏”的，以它为准；否则比较双方各自的说法（强、一般、弱）。中辅抢线把中路和游走两个人的清线说法加在一起比，射辅对线把射手和辅助的说法加在一起比。只有一方有说法时写“可能占优/可能吃亏”，都没有就写“暂无结论”。</li>
+                <li><b className="text-ink">怎么进入BP：</b>选人推荐里是单独的“对线强弱”分项（分值见上面的分项说明）；禁用推荐里，对方拿到后会在线上压制本方已选英雄的（点名的说法 {LANING_POINTS.direct} 分，强弱差每档 {LANING_POINTS.perStep} 分），以及解说点名说它对线压制“打算选的英雄”或英雄池里英雄的，会加分并写明理由，合计不超过 {DW.laningCap} 分。只是自己对线强、和本方没有可比对象的不加分。</li>
+                <li><b className="text-ink">局限：</b>这是解说个人的看法，不是统计数据；讲某个英雄的视频容易偏向这个英雄；多数结论只有一位UP主的说法；对线强弱会随版本改动变化，每条说法都标了视频日期；覆盖面有限（见上表），没有说法的英雄不参与比较。</li>
+              </ul>
             </>
           )}
         </Sec>
@@ -306,7 +359,7 @@ export function AboutPage() {
               </p>
               <div className="rounded-md border border-line bg-panel2 p-3 text-[12.5px] leading-relaxed">
                 <b className="text-ink">怎么读这张表：</b>
-                “手工权重”是模型上线前使用的固定权重；“上一版模型”是第一次训练的模型（9个分项）；“当前模型”多了“近60天该位置选取”和“职业赛禁用率”两个分项。
+                “手工权重”是模型上线前使用的固定权重；“上一版模型”是加入“对线强弱”之前的模型（11个分项，其余设定相同）；“当前模型”多了“对线强弱”这一项。
                 统计数据按周滚动重建，所以每一手用到的都是当时最新的数据，和你实际使用网站时的情形一致。
                 各方法之间的差距只说明谁更接近职业队的选择，不能说明在路人局谁的建议更好。
               </div>
@@ -362,6 +415,7 @@ export function AboutPage() {
           <ul className="list-disc pl-5">
             <li>路人局数据只有王者营地公开页面给出的部分：每个位置热度最高的10个英雄的档位、胜率、登场率、禁用率。完整榜单和英雄之间的对位胜率需要在营地App里登录才能看到，没有使用，所以路人局数据只用于“分路梯度”页和英雄页的展示，不参与推荐计分。</li>
             <li>“打法”（BP助手、阵容库、阵容对比里）的文字是通用战术说明：由打法表（{n(c.playbook)}条）和战术体系定义（{n(c.archetypes)}个）给出，按双方阵容的官方职业和已核实技能标签触发，每条都能展开看到触发它的英雄和技能原文。它们是人工撰写、经另一个模型复核的内容，没有用对局数据验证过，不代表胜率；其中的集火目标和分路对位来自关系库的证据计分。</li>
+            <li>对线判断（三路对线、中辅抢线、射辅对线）只整理教学视频里解说的说法，覆盖面有限，详见上面的“对线强弱”一节；没有前几分钟经济这类对线数据可用。</li>
             <li>职业赛是系列赛全局BP，与单局排位不同，所以只使用了每个系列第一局的禁选次数、选手分路和同队共现，不计算胜率。</li>
             <li>官方关系每个英雄只有6条，且部分说明撰写时间较早。</li>
             <li>抖音等需要登录的平台未使用。</li>

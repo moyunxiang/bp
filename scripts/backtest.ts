@@ -27,26 +27,34 @@ import { makeEngine } from '../src/lib/data.ts';
 import { newDraft, place, type DraftState, type Side } from '../src/engine/draft.ts';
 import { DEFAULT_WEIGHTS, recommendPicks, type Engine, type PartKey } from '../src/engine/recommend.ts';
 import { FLOOR_POINTS } from '../src/engine/comp.ts';
+import { LANING_POINTS } from '../src/engine/laning.ts';
 import type { BacktestMethod, BacktestReport, PickModel } from '../src/types.ts';
 
 const arg = (name: string) => process.argv.find((a) => a.startsWith(`--${name}=`))?.split('=')[1];
 const NO_RULES = process.argv.includes('--no-rules');
 const FLOOR_POINTS_ARG = arg('floor-points');
-const NO_WRITE = process.argv.includes('--no-write') || NO_RULES || !!FLOOR_POINTS_ARG;
+const LANING_POINTS_ARG = arg('laning-points');
+const NO_WRITE = process.argv.includes('--no-write') || NO_RULES || !!FLOOR_POINTS_ARG || !!LANING_POINTS_ARG;
 if (FLOOR_POINTS_ARG) {
   const [must, should] = FLOOR_POINTS_ARG.split(',').map(Number);
   if (!Number.isFinite(must) || !Number.isFinite(should)) throw new Error('--floor-points 的写法：--floor-points=6,2.5');
   Object.assign(FLOOR_POINTS, { must, should });
   console.log(`诊断：阵容底线分值改为 硬伤${must} / 最好有${should}`);
 }
+if (LANING_POINTS_ARG) {
+  const [perStep, direct, alone] = LANING_POINTS_ARG.split(',').map(Number);
+  if (![perStep, direct, alone].every(Number.isFinite)) throw new Error('--laning-points 的写法：--laning-points=2,3,1（每档强弱差, 点名对手, 对面未选时）');
+  Object.assign(LANING_POINTS, { perStep, direct, alone });
+  console.log(`诊断：对线强弱分值改为 每档${perStep} / 点名对手${direct} / 对面未选${alone}`);
+}
 const STEP_DAYS = Number(arg('step-days') ?? 7);
 const MIN_TRAIN = 2000;
 
-const FEATS: PartKey[] = ['counter', 'synergy', 'needs', 'lane', 'meta', 'exposure', 'proVs', 'proAlly', 'lanePick', 'lanePickRecent', 'banPri'];
+const FEATS: PartKey[] = ['counter', 'synergy', 'needs', 'lane', 'meta', 'exposure', 'proVs', 'proAlly', 'lanePick', 'lanePickRecent', 'banPri', 'laning'];
 /** 手工权重使用的分项 */
 const OLD: PartKey[] = ['counter', 'synergy', 'needs', 'lane', 'meta', 'exposure'];
-/** 上一版模型使用的分项（对照用） */
-const PREV: PartKey[] = [...OLD, 'proVs', 'proAlly', 'lanePick'];
+/** 上一版模型使用的分项（对照用）：没有“对线强弱” */
+const PREV: PartKey[] = FEATS.filter((k) => k !== 'laning');
 const K = FEATS.length;
 const PHASES: { name: string; fromOrder: number; toOrder: number }[] = [
   { name: '第1–2手', fromOrder: 1, toOrder: 2 },
@@ -58,8 +66,12 @@ const phaseOf = (order: number) => PHASES.findIndex((p) => order >= p.fromOrder 
  *  克制：训练目标是模仿职业队选人，学到的克制系数很小；网站的用途是按对方阵容给建议，所以不低于手工权重。
  *  分路：开局前两手队友还没选人，分路分项对所有英雄都一样，学到的系数是0；但用户指定“我打某路”时必须生效。
  *  阵容底线：职业队按位置选常用英雄就自然带齐了前排、控制和两种伤害（随机拼各位置常用英雄，满足比例几乎一样），
- *  职业赛里基本不出现缺口，所以学不出这一项的力度；路人局会出现缺口，按手工分值（系数1）执行。 */
-const FLOORS: Record<string, number> = { counter: 1, lane: 1, needs: 1 };
+ *  职业赛里基本不出现缺口，所以学不出这一项的力度；路人局会出现缺口，按手工分值（系数1）执行。
+ *  对线强弱：依据是教学视频里解说的说法，只覆盖一部分英雄；和克制一样，它是给用户的对局建议，不要求能预测职业队选人，
+ *  所以同样不低于手工分值。它对命中率的影响见回测里“上一版模型”与“线上使用”两行之差。 */
+const FLOORS: Record<string, number> = { counter: 1, lane: 1, needs: 1, laning: 1 };
+/** 上一版模型的系数下限：没有“对线强弱”这一项 */
+const PREV_FLOORS: Record<string, number> = { ...FLOORS, laning: 0 };
 
 /** 一组候选：分项矩阵 + 实际所选的下标 */
 interface View {
@@ -240,7 +252,7 @@ function train(decs: Decision[]): Fitted {
   const phase = fitPhases(decs);
   return {
     old: fit(decs, OLD),
-    prev: fitPhases(decs, PREV).map((th) => normalize(th, scale, FLOORS)),
+    prev: fitPhases(decs, PREV).map((th) => normalize(th, scale, PREV_FLOORS)),
     phase,
     final: phase.map((th) => normalize(th, scale, FLOORS)),
     // 指定位置后的专用系数：候选都能打这个位置，分路分项几乎不起作用，其余分项的相对重要性也不同
@@ -256,9 +268,9 @@ function report(test: Decision[], f: Fitted) {
     ['pop_lane', '基线：出场次数 + 只留有分路位置的英雄', (d, i) => d.pop[i] + (d.laneOk[i] ? 1e6 : 0)],
     ['engine', '手工权重（原有6个分项）', sumOf(OLD)],
     ['fitted', '拟合：只重新拟合原有6个分项的系数', dot(f.old)],
-    ['model_prev', '上一版模型（9个分项）', byPhase(f.prev)],
-    ['model_phase', '当前模型（11个分项），不设系数下限', byPhase(f.phase)],
-    ['model_final', '当前模型（11个分项），克制与阵容底线系数不低于1（线上使用）', byPhase(f.final)],
+    ['model_prev', '上一版模型（11个分项，没有“对线强弱”，其余相同）', byPhase(f.prev)],
+    ['model_phase', '当前模型（12个分项），不设系数下限', byPhase(f.phase)],
+    ['model_final', '当前模型（12个分项），克制、阵容底线、对线强弱的系数不低于1（线上使用）', byPhase(f.final)],
   ];
   const overall = methods.map(([id, name, sc]) => evaluate(test, id, name, sc));
   const phases: [string, (d: Decision) => boolean][] = [
@@ -374,7 +386,7 @@ async function main() {
     `2025训练、2026测试：当前模型Top10命中率${pct(get(rA, 'model_final').top10)}，上一版模型${pct(get(rA, 'model_prev').top10)}，手工权重${pct(get(rA, 'engine').top10)}，“出场次数+分路”基线${pct(get(rA, 'pop_lane').top10)}。` +
     `最近一届（${names.get(last) ?? last}）留出：当前模型${pct(get(rB, 'model_final').top10)}，上一版模型${pct(get(rB, 'model_prev').top10)}，手工权重${pct(get(rB, 'engine').top10)}。` +
     (adoptModel ? '模型更好，线上采用。' : '模型没有在两种切分上都更好，线上继续用手工权重。') +
-    `不设系数下限时分别为${pct(get(rA, 'model_phase').top10)}和${pct(get(rB, 'model_phase').top10)}：模型学到的克制系数和阵容底线系数都很小，说明这两项对预测职业队选人帮助不大（职业队的阵容几乎不出现缺前排、缺控制的情况）；网站需要按对方阵容给建议，路人局也会出现阵容缺口，所以这两项保持在手工分值的力度，命中率上的差距就是这样做的代价。` +
+    `上一版模型没有“对线强弱”这一项，其余相同；它与当前模型的差就是加入对线强弱对命中率的影响。不设系数下限时分别为${pct(get(rA, 'model_phase').top10)}和${pct(get(rB, 'model_phase').top10)}：模型学到的克制系数和阵容底线系数都很小，说明这两项对预测职业队选人帮助不大（职业队的阵容几乎不出现缺前排、缺控制的情况）；网站需要按对方阵容给建议，路人局也会出现阵容缺口，所以克制、阵容底线、对线强弱三项保持在手工分值的力度，命中率上的差距就是这样做的代价。` +
     `指定位置后（只在能打该位置的英雄里排），最近一届的前3命中率：专用系数${pct(getL(rB, 'model_lane').top3!)}，通用模型${pct(getL(rB, 'model_final').top3!)}，按该位置出场次数排${pct(getL(rB, 'lane_pop').top3!)}；` +
     (adoptLane ? '专用系数不差于通用模型，用户指定位置时采用专用系数。' : '专用系数没有更好，用户指定位置时仍用通用模型。');
 

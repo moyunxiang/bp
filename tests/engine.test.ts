@@ -13,7 +13,8 @@ import { COMP_FLOORS, FLOOR_POINTS, isBruiser, matchArchetypes, needsScore, subs
 import { matchHero, searchHeroes } from '../src/lib/search.ts';
 import { TIER_MIN, laneTiers } from '../src/engine/tiers.ts';
 import { buildPlaybook, type PlayContext } from '../src/engine/playbook.ts';
-import { LANES } from '../src/types.ts';
+import { LANES, type LaneClaim, type LaningData } from '../src/types.ts';
+import { LANING_POINTS, buildLaneIndex, consensus, laneDuels, laneView, laningScore } from '../src/engine/laning.ts';
 
 let bundle: Bundle;
 let engine: Engine;
@@ -609,6 +610,140 @@ describe('局内打法', () => {
       expect(a.play, a.id).toBeDefined();
       for (const k of ['early', 'mid', 'fight', 'avoid'] as const) expect(a.play![k].length, `${a.id}.${k}`).toBeGreaterThan(10);
       expect(a.against!.length, a.id).toBeGreaterThan(10);
+    }
+  });
+});
+
+describe('对线判断', () => {
+  // 用构造的说法测试计算逻辑，不依赖真实说法的内容（真实说法会随提炼更新）
+  const data = (): LaningData => {
+    const c = (heroName: string, aspect: LaneClaim['aspect'], level: LaneClaim['level'], bvid: string, extra: Partial<LaneClaim> = {}): LaneClaim => ({ hero: hero(heroName).id, aspect, level, claim: '测试用说法', bvid, t: 10, ...extra });
+    return {
+      generatedAt: '2026-11-23T00:00:00Z',
+      scope: { heroVideos: 0, topicVideos: 0, extracted: 0, verified: 0, reviewDropped: 0, kept: 0 },
+      // A1、A2 是同一位UP主的两个视频
+      videos: { A1: { title: 'a1', uploader: '甲', mid: 1, date: '2026-10-01' }, A2: { title: 'a2', uploader: '甲', mid: 1, date: '2026-10-02' }, B1: { title: 'b1', uploader: '乙', mid: 2, date: '2026-10-03' }, C1: { title: 'c1', uploader: '丙', mid: 3, date: '2026-10-04' }, D1: { title: 'd1', uploader: '丁', mid: 4, date: '2026-10-05' } },
+      claims: [
+        c('嬴政', 'clear', 'strong', 'A1'),
+        c('嬴政', 'clear', 'strong', 'B1'),
+        c('貂蝉', 'clear', 'weak', 'A1'),
+        c('孙尚香', 'lane', 'strong', 'A1'),
+        c('后羿', 'lane', 'weak', 'A1'),
+        c('后羿', 'lane', 'strong', 'B1'),
+        c('马可波罗', 'lane', 'weak', 'B1', { vs: hero('孙尚香').id }),
+        c('公孙离', 'duo', 'strong', 'C1', { with: hero('大乔').id }),
+        c('吕布', 'lane', 'strong', 'A1', { lane: '对抗路' }),
+        c('狄仁杰', 'lane', 'weak', 'A1'),
+      ],
+    };
+  };
+  const slot = (name: string, locked: 1 | 2 | 3 | 4 | 5) => ({ hero: hero(name), locked });
+
+  it('同一位UP主的多个视频只算一个来源；强弱说法都有时，多的一方至少多两位UP主才下结论', () => {
+    const ix = buildLaneIndex(data());
+    const mk = (level: LaneClaim['level'], bvid: string): LaneClaim => ({ hero: 1, aspect: 'lane', level, claim: 'x', bvid, t: 0 });
+    expect(consensus([mk('strong', 'A1'), mk('strong', 'A2')], ix.uploader)).toEqual({ level: 'strong', uploaders: 1 });
+    expect(consensus([mk('strong', 'A1'), mk('weak', 'B1')], ix.uploader).level).toBe('mixed');
+    expect(consensus([mk('strong', 'A1'), mk('strong', 'B1'), mk('weak', 'C1')], ix.uploader).level).toBe('mixed');
+    expect(consensus([mk('strong', 'A1'), mk('strong', 'B1'), mk('strong', 'C1'), mk('weak', 'D1')], ix.uploader)).toEqual({ level: 'strong', uploaders: 3 });
+    expect(laneView(ix, hero('嬴政').id, 'clear')).toMatchObject({ level: 'strong', uploaders: 2 });
+    expect(laneView(ix, hero('后羿').id, 'lane')!.level).toBe('mixed');
+    expect(laneView(ix, hero('小乔').id, 'lane')).toBeNull();
+  });
+
+  it('标明了分路的说法只在英雄走那一路时适用', () => {
+    const ix = buildLaneIndex(data());
+    expect(laneView(ix, hero('吕布').id, 'lane', 1)!.level).toBe('strong');
+    expect(laneView(ix, hero('吕布').id, 'lane', 2)).toBeNull();
+  });
+
+  it('单人对线：有点名双方的说法以它为准，换边后结论相反', () => {
+    const ix = buildLaneIndex(data());
+    const bot = (a: string, e: string) => laneDuels(ix, [slot(a, 4)], [slot(e, 4)]).find((d) => d.key === 'bot')!;
+    expect(bot('孙尚香', '马可波罗')).toMatchObject({ edge: 'ally', basis: 'direct' });
+    expect(bot('马可波罗', '孙尚香')).toMatchObject({ edge: 'enemy', basis: 'direct' });
+    // 没有点名的说法：按双方各自的说法比较
+    expect(bot('孙尚香', '狄仁杰')).toMatchObject({ edge: 'ally', basis: 'both' });
+    // 一方说法不一、另一方没有说法：不下结论
+    expect(bot('后羿', '鲁班七号')).toMatchObject({ edge: 'unknown' });
+    // 只有一方有说法：给出倾向，并标明只有一方
+    expect(bot('孙尚香', '鲁班七号')).toMatchObject({ edge: 'ally', basis: 'one' });
+  });
+
+  it('中辅抢线看中路和游走的清线说法；射辅对线会用到搭档说法', () => {
+    const ix = buildLaneIndex(data());
+    const mid = laneDuels(ix, [slot('嬴政', 3), slot('张飞', 5)], [slot('貂蝉', 3), slot('蔡文姬', 5)]).find((d) => d.key === 'midRoam')!;
+    expect(mid).toMatchObject({ edge: 'ally', basis: 'both', score: { ally: 1, enemy: -1 } });
+    expect(mid.ally.map((a) => a.hero.name)).toEqual(['嬴政', '张飞']);
+    const duo = laneDuels(ix, [slot('公孙离', 4), slot('大乔', 5)], [slot('狄仁杰', 4), slot('蔡文姬', 5)]).find((d) => d.key === 'botRoam')!;
+    expect(duo.pairs).toHaveLength(1);
+    expect(duo).toMatchObject({ edge: 'ally', score: { ally: 1, enemy: -1 } });
+    // 没有数据时不输出任何对线
+    expect(laneDuels(buildLaneIndex(null), [slot('嬴政', 3)], [slot('貂蝉', 3)])).toEqual([]);
+  });
+
+  it('选人加减分：点名对手、强弱差、对面未选三种情况；没有说法的英雄为0', () => {
+    const ix = buildLaneIndex(data());
+    const at = (...xs: [1 | 2 | 3 | 4 | 5, string][]) => new Map(xs.map(([l, n]) => [l, hero(n)]));
+    const sum = (name: string, lane: 1 | 2 | 3 | 4 | 5, enemy: Map<1 | 2 | 3 | 4 | 5, HeroData>) => laningScore(ix, hero(name), lane, new Map(), enemy).reduce((s, x) => s + x.delta, 0);
+    expect(sum('孙尚香', 4, at([4, '马可波罗']))).toBe(LANING_POINTS.direct);
+    expect(sum('马可波罗', 4, at([4, '孙尚香']))).toBe(-LANING_POINTS.direct);
+    expect(sum('嬴政', 3, at([3, '貂蝉']))).toBe(2 * LANING_POINTS.perStep);
+    expect(sum('貂蝉', 3, at([3, '嬴政']))).toBe(-2 * LANING_POINTS.perStep);
+    expect(sum('嬴政', 3, new Map())).toBe(LANING_POINTS.alone);
+    expect(sum('小乔', 3, at([3, '嬴政']))).toBe(0);
+    // 射手的“对线强”不在发育路对线和射辅对线里各算一遍
+    expect(laningScore(ix, hero('孙尚香'), 4, new Map(), at([4, '狄仁杰'], [5, '蔡文姬']))).toHaveLength(1);
+  });
+
+  it('推荐里有“对线强弱”分项，数值不超过上限，理由写明是解说的说法', () => {
+    const e2: Engine = { ...engine, laning: buildLaneIndex(data()) };
+    let d = setBanCount(newDraft('ranked'), 0);
+    d = fill(d, pick('blue', 0), '马可波罗');
+    const recs = recommendPicks(e2, d, { side: 'red', mult: {} });
+    const part = (name: string) => recs.find((r) => r.hero.name === name)!.parts.find((p) => p.key === 'laning')!;
+    expect(part('孙尚香').value).toBe(LANING_POINTS.direct);
+    expect(part('孙尚香').items[0].text).toMatch(/解说认为它对马可波罗占优/);
+    expect(part('小乔').value).toBe(0);
+    for (const r of recs) expect(Math.abs(r.parts.find((p) => p.key === 'laning')!.value)).toBeLessThanOrEqual(DEFAULT_WEIGHTS.laningCap);
+  });
+
+  it('禁用推荐也看对线：压制本方已选的、打算选的、英雄池里的英雄；反方向和没有说法的不加分', () => {
+    const e2: Engine = { ...engine, laning: buildLaneIndex(data()) };
+    const laningOf = (d: DraftState, name: string, opts: Partial<Parameters<typeof recommendBans>[2]> = {}) =>
+      (recommendBans(e2, d, { side: 'blue', ...opts }).find((b) => b.hero.name === name)?.items ?? []).filter((i) => /解说认为/.test(i.text));
+    // 本方已选马可波罗：孙尚香对线压制它（有点名的说法）
+    let d = fill(newDraft('free'), pick('blue', 0), '马可波罗');
+    const direct = laningOf(d, '孙尚香');
+    expect(direct).toHaveLength(1);
+    expect(direct[0].delta).toBe(LANING_POINTS.direct);
+    expect(direct[0].text).toMatch(/对马可波罗占优/);
+    // 反过来：本方选了孙尚香，马可波罗对线吃亏，不会因为对线被推荐禁用
+    d = fill(newDraft('free'), pick('blue', 0), '孙尚香');
+    expect(laningOf(d, '马可波罗')).toEqual([]);
+    // 本方已选貂蝉（清线慢）：嬴政（清线快）在中辅抢线上占优，文字里把另一方称作“本方”
+    d = fill(newDraft('free'), pick('blue', 0), '貂蝉');
+    const clear = laningOf(d, '嬴政');
+    expect(clear).toHaveLength(1);
+    expect(clear[0].text).toMatch(/本方貂蝉清线慢/);
+    // 还没选人：只按“打算选的英雄”和英雄池看点名的说法；只是自己对线强（没有可比对象）不加分
+    const empty = newDraft('ranked');
+    expect(laningOf(empty, '孙尚香')).toEqual([]);
+    expect(laningOf(empty, '孙尚香', { intents: [hero('马可波罗').id] })[0].text).toMatch(/打算选的马可波罗/);
+    expect(laningOf(empty, '孙尚香', { pool: [{ id: hero('马可波罗').id, level: 3 }] })[0].text).toMatch(/英雄池：马可波罗/);
+    // 合计不超过上限
+    for (const b of recommendBans(e2, d, { side: 'blue' })) expect(b.items.filter((i) => /解说认为/.test(i.text)).reduce((s, i) => s + i.delta, 0)).toBeLessThanOrEqual(DEFAULT_WEIGHTS.laningCap + 0.05);
+  });
+
+  it('真实数据：每条说法都指向存在的英雄和已收录的视频，不带字幕原文', () => {
+    const ln = bundle.laning!;
+    expect(ln.claims.length).toBeGreaterThan(100);
+    const ids = new Set(bundle.heroes.map((h) => h.id));
+    for (const c of ln.claims) {
+      expect(ids.has(c.hero)).toBe(true);
+      expect(ln.videos[c.bvid], c.bvid).toBeDefined();
+      expect(c).not.toHaveProperty('quote');
+      expect(c.claim.length).toBeGreaterThan(3);
     }
   });
 });

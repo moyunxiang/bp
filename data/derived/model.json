@@ -1,5 +1,5 @@
 {
-  "trainedAt": "2026-11-22T16:27:37.136Z",
+  "trainedAt": "2026-11-24T05:42:12.886Z",
   "train": {
     "from": "2025-02-26",
     "to": "2026-11-14",
@@ -16,7 +16,8 @@
     "proAlly",
     "lanePick",
     "lanePickRecent",
-    "banPri"
+    "banPri",
+    "laning"
   ],
   "phases": [
     {
@@ -28,13 +29,14 @@
         "synergy": 0,
         "needs": 1,
         "lane": 1,
-        "meta": 0.201,
-        "exposure": 2.113,
-        "proVs": 1.37,
+        "meta": 0.144,
+        "exposure": 2.291,
+        "proVs": 1.357,
         "proAlly": 0,
         "lanePick": 0,
-        "lanePickRecent": 4.143,
-        "banPri": 0.964
+        "lanePickRecent": 4.189,
+        "banPri": 1.033,
+        "laning": 1
       }
     },
     {
@@ -47,12 +49,13 @@
         "needs": 1,
         "lane": 1.509,
         "meta": 0,
-        "exposure": 0.986,
+        "exposure": 0.985,
         "proVs": 0.785,
         "proAlly": 0.714,
         "lanePick": 0,
-        "lanePickRecent": 3.846,
-        "banPri": 0.676
+        "lanePickRecent": 3.845,
+        "banPri": 0.675,
+        "laning": 1
       }
     },
     {
@@ -61,16 +64,17 @@
       "toOrder": 10,
       "mult": {
         "counter": 1,
-        "synergy": 0.232,
+        "synergy": 0.233,
         "needs": 1,
         "lane": 1,
         "meta": 0,
         "exposure": 0,
-        "proVs": 0.636,
-        "proAlly": 0.428,
-        "lanePick": 0.51,
-        "lanePickRecent": 2.737,
-        "banPri": 0.366
+        "proVs": 0.634,
+        "proAlly": 0.427,
+        "lanePick": 0.517,
+        "lanePickRecent": 2.727,
+        "banPri": 0.369,
+        "laning": 1
       }
     }
   ],
@@ -84,13 +88,14 @@
         "synergy": 0,
         "needs": 1,
         "lane": 1,
-        "meta": 0.583,
-        "exposure": 1.015,
-        "proVs": 1.807,
+        "meta": 0.562,
+        "exposure": 1.08,
+        "proVs": 1.805,
         "proAlly": 0,
         "lanePick": 0,
-        "lanePickRecent": 3.89,
-        "banPri": 1.054
+        "lanePickRecent": 3.917,
+        "banPri": 1.06,
+        "laning": 1
       }
     },
     {
@@ -99,16 +104,17 @@
       "toOrder": 6,
       "mult": {
         "counter": 1,
-        "synergy": 0.834,
+        "synergy": 0.832,
         "needs": 1,
         "lane": 1,
         "meta": 0,
-        "exposure": 0.668,
-        "proVs": 1.092,
-        "proAlly": 1.148,
-        "lanePick": 0.444,
-        "lanePickRecent": 3.759,
-        "banPri": 1.257
+        "exposure": 0.697,
+        "proVs": 1.091,
+        "proAlly": 1.15,
+        "lanePick": 0.458,
+        "lanePickRecent": 3.741,
+        "banPri": 1.261,
+        "laning": 1
       }
     },
     {
@@ -117,23 +123,25 @@
       "toOrder": 10,
       "mult": {
         "counter": 1,
-        "synergy": 0.024,
+        "synergy": 0.025,
         "needs": 1,
         "lane": 1.082,
         "meta": 0,
-        "exposure": 0.106,
-        "proVs": 0.729,
+        "exposure": 0.154,
+        "proVs": 0.727,
         "proAlly": 0.427,
-        "lanePick": 0.52,
-        "lanePickRecent": 2.863,
-        "banPri": 0.498
+        "lanePick": 0.533,
+        "lanePickRecent": 2.846,
+        "banPri": 0.503,
+        "laning": 1
       }
     }
   ],
   "floors": {
     "counter": 1,
     "lane": 1,
-    "needs": 1
+    "needs": 1,
+    "laning": 1
   },
   "note": "条件logit模型：预测职业队在每一手选了谁。系数非负，按阶段分别拟合，统一缩放到“单组模型里分路匹配的系数=1”。评估见回测；线上系数用全部对局重新拟合。"
 }

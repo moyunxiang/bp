@@ -1,0 +1,1735 @@
+{
+  "note": "教学视频对线说法的独立复核结论。drop 的条目不进入网站。",
+  "items": [
+    {
+      "key": "阿古朵|early|||BV1KpsG6VEBv|35",
+      "verdict": "keep",
+      "reason": "解说明确说阿古朵这类打野四级后强、四级前很弱"
+    },
+    {
+      "key": "阿古朵|lane|||BV17SKqzKEn3|62",
+      "verdict": "keep",
+      "reason": "解说说射手位放生赤甲后4分钟内暴击拉满，对线打团无敌"
+    },
+    {
+      "key": "艾琳|duo||张飞|BV1pU8y6VEhP|94",
+      "verdict": "drop",
+      "reason": "只是这局拿艾琳张飞与马可瑶对比的阵容分析，不是一般结论"
+    },
+    {
+      "key": "艾琳|early|||BV1255g6CEQf|81",
+      "verdict": "keep",
+      "reason": "解说明确说艾琳前期比较强，发力期早"
+    },
+    {
+      "key": "艾琳|early|||BV1jaq1BUEUj|77",
+      "verdict": "keep",
+      "reason": "解说明确说艾琳前期比较强，发力期早"
+    },
+    {
+      "key": "艾琳|lane|||BV1255g6CEQf|70",
+      "verdict": "keep",
+      "reason": "解说说艾琳对上虞姬、元射、苍都挺好打，因法球流铭文带肉"
+    },
+    {
+      "key": "艾琳|lane|||BV1jaq1BUEUj|67",
+      "verdict": "keep",
+      "reason": "解说说艾琳对上虞姬、元射、苍都挺好打，因法球流铭文带肉"
+    },
+    {
+      "key": "艾琳|lane|戈娅||BV1PyuAzpEFE|84",
+      "verdict": "keep",
+      "reason": "解说明确说艾琳对线戈娅最难打，因一技能很难命中"
+    },
+    {
+      "key": "艾琳|lane|孙权||BV1Aqhg62Enb|40",
+      "verdict": "keep",
+      "reason": "解说明确说艾琳一级打孙权是优势，可以抢线升二"
+    },
+    {
+      "key": "敖隐|duo||大乔|BV1ngLQ6HED4|18",
+      "verdict": "drop",
+      "reason": "优势来自这局大乔对廉颇的辅助对位，不是敖隐配大乔的一般结论"
+    },
+    {
+      "key": "敖隐|lane|||BV1255g6CEQf|34",
+      "verdict": "keep",
+      "reason": "与原视频同内容：龙人(即熬影)对线优先级很高，能打多数射手"
+    },
+    {
+      "key": "敖隐|lane|||BV1jaq1BUEUj|31",
+      "verdict": "keep",
+      "reason": "解说说龙人(即熬影)对线优先级很高，能打艾琳苍戈娅元射；上下文中龙人与熬影互指"
+    },
+    {
+      "key": "敖隐|lane|鲁班七号||BV1ngLQ6HED4|11",
+      "verdict": "keep",
+      "reason": "解说说敖隐打鲁班一级劣势、二级均势、三级大优势"
+    },
+    {
+      "key": "白起|lane|夏侯惇||BV1C2Jv64E1x|389",
+      "verdict": "drop",
+      "reason": "是对局中期讲两者强势期不同、该去支援，没有明确说对线吃亏"
+    },
+    {
+      "key": "百里守约|duo||墨子|BV1nHGN6mEA3|114",
+      "verdict": "drop",
+      "reason": "只是组合分档评级和很恶心的笼统评价，没有提对线强弱"
+    },
+    {
+      "key": "百里守约|early|||BV1UH3T6hE6Z|181",
+      "verdict": "drop",
+      "reason": "只是某次河道交手时说守约不放二技能出伤慢，不是前期整体弱的判断"
+    },
+    {
+      "key": "百里守约|early|||BV1yQxk6ZEVq|304",
+      "verdict": "keep",
+      "reason": "解说说守约只要狙得准，前期输出总量排射手顶尖"
+    },
+    {
+      "key": "百里守约|lane|||BV1GGng6qETo|452",
+      "verdict": "drop",
+      "reason": "强弱取决于自己狙得准不准，狙不准玩不了，方向依赖操作前提"
+    },
+    {
+      "key": "扁鹊|lane|小乔||BV1pU8y6VEhP|101",
+      "verdict": "drop",
+      "reason": "解说只说没有优势，看不出是吃亏还是均势"
+    },
+    {
+      "key": "不知火舞|clear|||BV1cLoMBeEx2|24",
+      "verdict": "keep",
+      "reason": "解说明确说不知火舞前期清线能力较弱"
+    },
+    {
+      "key": "不知火舞|early|||BV1et4y1F7Ct|183",
+      "verdict": "drop",
+      "reason": "只说前期伤害不够时依赖二技能先手，是用法提示，未评价前期强弱"
+    },
+    {
+      "key": "蔡文姬|duo|||BV1J49UBqELe|7",
+      "verdict": "drop",
+      "reason": "解说说蔡文姬续航能保证射手对线不输，且是针对瑶的语境，强度方向不明确"
+    },
+    {
+      "key": "蔡文姬|lane|||BV1FFdqB5Esn|245",
+      "verdict": "keep",
+      "reason": "解说明确说蔡文姬的强势点在于对线，能压制对面"
+    },
+    {
+      "key": "苍|clear|||BV16oCVYsEjr|611",
+      "verdict": "keep",
+      "reason": "解说说苍不能像孙尚香那样贯穿清线，不出影刃清线能力弱"
+    },
+    {
+      "key": "苍|early|||BV16oCVYsEjr|837",
+      "verdict": "keep",
+      "reason": "解说说苍到四级就是小强势期，大招能打高伤害拿人头"
+    },
+    {
+      "key": "苍|lane|||BV1255g6CEQf|98",
+      "verdict": "drop",
+      "reason": "解说只说苍是兜底型射手、打部分射手好打，未明确说苍对线强"
+    },
+    {
+      "key": "苍|lane|||BV16oCVYsEjr|770",
+      "verdict": "keep",
+      "reason": "解说说苍一级对拼强度在射手里属高一档，容易打出对线优势"
+    },
+    {
+      "key": "苍|lane|||BV1BvNR6vE6s|250",
+      "verdict": "keep",
+      "reason": "解说说苍对线很强，暴击流前期伤害比一般射手高"
+    },
+    {
+      "key": "苍|lane|||BV1jaq1BUEUj|95",
+      "verdict": "drop",
+      "reason": "解说只说苍是兜底型射手、打部分射手好打，“只要对线强”识别不清，未明确说苍对线强"
+    },
+    {
+      "key": "苍|lane|敖隐||BV1255g6CEQf|105",
+      "verdict": "keep",
+      "reason": "解说明确说苍打奥影不好打，奥影这版本对线很强"
+    },
+    {
+      "key": "苍|lane|敖隐||BV1jaq1BUEUj|102",
+      "verdict": "keep",
+      "reason": "解说明确说苍打熬影不好打，熬影这版本对线很强"
+    },
+    {
+      "key": "苍|lane|元流之子(射手)||BV1255g6CEQf|103",
+      "verdict": "keep",
+      "reason": "解说说苍打原设(元射)中规中矩，即五五开"
+    },
+    {
+      "key": "苍|lane|元流之子(射手)||BV1jaq1BUEUj|99",
+      "verdict": "keep",
+      "reason": "解说说苍打原色(元射，同UP另一视频也说苍元射五五开)中规中矩"
+    },
+    {
+      "key": "曹操|clear|||BV126a4zXEmG|13",
+      "verdict": "drop",
+      "reason": "解说是在教攒被动的抢线操作技巧，不是在评价曹操清线快慢"
+    },
+    {
+      "key": "曹操|lane|||BV1B8wszdEBB|28",
+      "verdict": "keep",
+      "reason": "解说明确说曹操叠满五层被动后不惧怕任何人，说法带了条件"
+    },
+    {
+      "key": "曹操|lane|狂铁||BV15gLp6fEpu|69",
+      "verdict": "keep",
+      "reason": "解说明确说四级前曹操换血完全换不过狂铁，只能抗压"
+    },
+    {
+      "key": "嫦娥|clear|||BV1a2WV6QEPz|33",
+      "verdict": "keep",
+      "reason": "解说说嫦娥一级清线能力较强，海月贸然堵线会吃亏"
+    },
+    {
+      "key": "嫦娥|clear|||BV1cUsu6ZE49|94",
+      "verdict": "keep",
+      "reason": "解说明确说中路嫦娥因抢线快，前期每波线后都会来抓对抗路"
+    },
+    {
+      "key": "嫦娥|clear|||BV1hK3v6LEND|17",
+      "verdict": "keep",
+      "reason": "解说说嫦娥的强势点是极强的线权能力"
+    },
+    {
+      "key": "嫦娥|clear|||BV1nGyjBsELA|362",
+      "verdict": "keep",
+      "reason": "解说说嫦娥这种英雄有绝对线权，辅助去不去都不改变抢线结果"
+    },
+    {
+      "key": "嫦娥|early|||BV13RKJ6fEjH|54",
+      "verdict": "keep",
+      "reason": "解说在阵容分析中明确说嫦娥前期强势"
+    },
+    {
+      "key": "嫦娥|lane|||BV1hK3v6LEND|166",
+      "verdict": "keep",
+      "reason": "解说说嫦娥最不怕换血，放两个技能就回满"
+    },
+    {
+      "key": "嫦娥|lane|米莱狄||BV1cZJU64Enh|0",
+      "verdict": "keep",
+      "reason": "解说明确说嫦娥打米莱狄确实很难打"
+    },
+    {
+      "key": "嫦娥|lane|周瑜||BV1yyHm6PEYn|5",
+      "verdict": "keep",
+      "reason": "解说(嫦娥视角)说周瑜不好打，所以让他先抢线"
+    },
+    {
+      "key": "程咬金|early|||BV1umni6zEz9|63",
+      "verdict": "keep",
+      "reason": "解说一般性地说程咬金四级前没大招很弱"
+    },
+    {
+      "key": "程咬金|lane|曹操||BV15qj16YE9x|27",
+      "verdict": "keep",
+      "reason": "解说明确说曹操一级爆发低、对线打不过程咬金，可正常抢线"
+    },
+    {
+      "key": "程咬金|lane|马超||BV15qj16YE9x|84",
+      "verdict": "keep",
+      "reason": "解说在一级对线视频中明确说程咬金打马超比较简单"
+    },
+    {
+      "key": "蚩奼|clear|||BV1fWJXzLEwk|893",
+      "verdict": "keep",
+      "reason": "解说明确说蚩奼清线能力很快，过线能力很强"
+    },
+    {
+      "key": "蚩奼|clear|||BV1Q1Ja68EHs|164",
+      "verdict": "keep",
+      "reason": "解说说一技能聚兵加范围普攻能光速秒兵线，加快发育"
+    },
+    {
+      "key": "蚩奼|early|||BV1fWJXzLEwk|869",
+      "verdict": "keep",
+      "reason": "解说说蚩奼四级很强，在打野里算前列，但身板脆"
+    },
+    {
+      "key": "蚩奼|lane|||BV1etnC6vEPr|366",
+      "verdict": "keep",
+      "reason": "解说说前期弓形态长手打短手，对线压制力很强"
+    },
+    {
+      "key": "达摩|clear|||BV1YpzmBnEvU|31",
+      "verdict": "keep",
+      "reason": "解说说达摩(字幕作劳达)清线速度和穿墙摆在那，带线远强于白起"
+    },
+    {
+      "key": "达摩|early|大禹||BV1EYWm6bEuu|14",
+      "verdict": "keep",
+      "reason": "解说明确说达摩前期比大禹强不少，对方没伤害没控制"
+    },
+    {
+      "key": "达摩|lane|白起||BV1YpzmBnEvU|16",
+      "verdict": "keep",
+      "reason": "解说说达摩和白起对线期双方都很难弄死对方，对线无聊"
+    },
+    {
+      "key": "达摩|lane|曹操||BV1YpzmBnEvU|84",
+      "verdict": "keep",
+      "reason": "解说说曹操四级后大招CD比达摩短，对线和带线从头压达摩"
+    },
+    {
+      "key": "达摩|lane|程咬金||BV1YpzmBnEvU|108",
+      "verdict": "drop",
+      "reason": "说程咬金能追着达摩打但打不死他，并把程咬金排得很低，方向不清"
+    },
+    {
+      "key": "达摩|lane|关羽||BV1YpzmBnEvU|163",
+      "verdict": "keep",
+      "reason": "解说说同水平关羽对线期卡线消耗，能把达摩当傻子"
+    },
+    {
+      "key": "达摩|lane|花木兰||BV1YpzmBnEvU|256",
+      "verdict": "drop",
+      "reason": "解说说四级前达摩压木兰、四级后反过来，对线期方向随等级而变"
+    },
+    {
+      "key": "达摩|lane|姬小满||BV1YpzmBnEvU|286",
+      "verdict": "keep",
+      "reason": "解说说达摩对线姬小满真的不虚，出布甲鞋护手能压他经验"
+    },
+    {
+      "key": "达摩|lane|狂铁||BV1YpzmBnEvU|306",
+      "verdict": "drop",
+      "reason": "字幕混乱看不出是谁压制谁，且狂铁被评为最高档，方向可能相反"
+    },
+    {
+      "key": "达摩|lane|刘邦||BV1YpzmBnEvU|353",
+      "verdict": "keep",
+      "reason": "解说说刘邦对线存在感几乎为零，对达摩没有威胁"
+    },
+    {
+      "key": "达摩|lane|吕布||BV1YpzmBnEvU|379",
+      "verdict": "keep",
+      "reason": "解说说现在的吕布达摩真不好打，对线期很难打"
+    },
+    {
+      "key": "达摩|lane|马超||BV1YpzmBnEvU|399",
+      "verdict": "keep",
+      "reason": "解说说达摩对线打不过马超；理由里熬十分钟一句其实是讲蒙恬的"
+    },
+    {
+      "key": "达摩|lane|芈月||BV1YpzmBnEvU|428",
+      "verdict": "keep",
+      "reason": "解说说达摩只有一级能在芈月面前晃一下，之后被压"
+    },
+    {
+      "key": "达摩|lane|盘古||BV1YpzmBnEvU|450",
+      "verdict": "drop",
+      "reason": "虽说盘古意外好打，但又说盘古前期有压制、成型后才不怕，对线方向不清"
+    },
+    {
+      "key": "达摩|lane|影||BV17WYY6rED5|147",
+      "verdict": "keep",
+      "reason": "解说明确说出攻速鞋的影打不过达摩，出布甲鞋的影才难打"
+    },
+    {
+      "key": "妲己|clear|||BV1oLn8zjE9E|43",
+      "verdict": "keep",
+      "reason": "解说明确把清线快列为妲己的优点"
+    },
+    {
+      "key": "妲己|clear|||BV1uVsc6SEdc|45",
+      "verdict": "keep",
+      "reason": "解说明确说先出小法典时妲己抢线速度非常快"
+    },
+    {
+      "key": "妲己|clear|弈星||BV1yLP2zYERU|27",
+      "verdict": "keep",
+      "reason": "解说明确说妲己打弈星线权五五开，双方都是两个技能过一波线"
+    },
+    {
+      "key": "大乔|clear|||BV16ha2z8EpC|53",
+      "verdict": "keep",
+      "reason": "解说说大乔一般没有线权，就算辅助帮忙清线也很慢"
+    },
+    {
+      "key": "大乔|clear|||BV1Cnwez9EJ9|37",
+      "verdict": "keep",
+      "reason": "解说明确说大乔没有线权，前期不必看重中线"
+    },
+    {
+      "key": "大乔|clear|||BV1hK3v6LEND|413",
+      "verdict": "keep",
+      "reason": "解说明确说大乔清线能力很弱"
+    },
+    {
+      "key": "大乔|clear|苏烈||BV1qBHv6SEaS|30",
+      "verdict": "keep",
+      "reason": "解说说大乔一级抢线肯定比苏烈快，远程普攻消耗也占便宜"
+    },
+    {
+      "key": "大司命|early|||BV1pU8y6VEhP|104",
+      "verdict": "keep",
+      "reason": "解说明确说大司命前期强势有线权"
+    },
+    {
+      "key": "刀锋宝贝|early|||BV1A8sA62Eoc|296",
+      "verdict": "keep",
+      "reason": "解说说刀锋强度前弱后强，前期不能死要避战发育，两三件套才起飞"
+    },
+    {
+      "key": "狄仁杰|duo||元流之子(辅助)|BV1nHGN6mEA3|89",
+      "verdict": "keep",
+      "reason": "解说说原辅狄仁杰组合线上几乎没有射手对线打得过，还能塔外点塔"
+    },
+    {
+      "key": "狄仁杰|lane|百里守约||BV1jvMt6aEye|25",
+      "verdict": "drop",
+      "reason": "是这一局的出装建议，且以守约不百发百中为前提，不是一般结论"
+    },
+    {
+      "key": "狄仁杰|lane|后羿||BV1wxdQBXEsS|45",
+      "verdict": "keep",
+      "reason": "解说明确说狄仁杰打后羿都是长手射手，对线强度五五开"
+    },
+    {
+      "key": "狄仁杰|lane|孙权||BV1zeLE6dEMQ|0",
+      "verdict": "keep",
+      "reason": "解说开头明确说狄仁杰打孙权挺好打"
+    },
+    {
+      "key": "狄仁杰|lane|元流之子(射手)||BV19ssp6DEsG|560",
+      "verdict": "keep",
+      "reason": "解说明确说狄仁杰前期对线根本打不了元流之子射手，换血被抽"
+    },
+    {
+      "key": "东皇太一|early|||BV1rr6bBEEpK|19",
+      "verdict": "keep",
+      "reason": "解说明确说东皇一级非常强、前期非常强势"
+    },
+    {
+      "key": "东皇太一|lane|||BV1pTeUzkEiX|75",
+      "verdict": "drop",
+      "reason": "是对局中被这一个东皇压制的即时反应，非一般性对线判断，理由中近战部分字幕无据"
+    },
+    {
+      "key": "东皇太一|lane|||BV1rr6bBEEpK|21",
+      "verdict": "keep",
+      "reason": "解说明确说东皇一级时己方二级也打不过，抢线可能被单杀"
+    },
+    {
+      "key": "盾山|clear|||BV13tHw6EEiM|196",
+      "verdict": "keep",
+      "reason": "解说说一级背队友用强普能帮队友光速抢线"
+    },
+    {
+      "key": "盾山|lane|||BV12paU6aEQM|22",
+      "verdict": "keep",
+      "reason": "解说明确说盾山对线强度太高，常和射手连体抢第一波线"
+    },
+    {
+      "key": "朵莉亚|duo||敖隐|BV1PGUsBwEgV|125",
+      "verdict": "drop",
+      "reason": "讲的是这一局与对面射辅的拉扯，搭档是否敖隐也不够清楚，理由前半句字幕无据"
+    },
+    {
+      "key": "朵莉亚|lane|||BV1qPZ4BmE5a|396",
+      "verdict": "keep",
+      "reason": "解说说先出宝石加法穿鞋伤害高续航足，对线无敌"
+    },
+    {
+      "key": "暃|early|||BV1KpsG6VEBv|35",
+      "verdict": "keep",
+      "reason": "解说明确说暃这类打野四级后强，短板是四级前太弱"
+    },
+    {
+      "key": "暃|lane|||BV1KpsG6VEBv|56",
+      "verdict": "drop",
+      "reason": "这局暃是打野，说的是他下对抗路抓人打不过本局白起玄策，不是对抗路对线强弱"
+    },
+    {
+      "key": "干将莫邪|clear|||BV1w4a2zPE2s|113",
+      "verdict": "keep",
+      "reason": "解说明确说干将清线速度非常快，能拿线权去支援"
+    },
+    {
+      "key": "高渐离|early|||BV1JiZVBEE9Q|160",
+      "verdict": "keep",
+      "reason": "解说明确说四级有狂暴的高渐离非常强势，属前期强势期"
+    },
+    {
+      "key": "戈娅|early|||BV1T4bC61E9J|158",
+      "verdict": "keep",
+      "reason": "解说明确说要运用戈娅前期强度推线压制、白嫖状态"
+    },
+    {
+      "key": "戈娅|lane|||BV1nAeh63Eu9|0",
+      "verdict": "drop",
+      "reason": "开头称版本对线最强，随后又说多次削弱后已没有当初线上强势，方向矛盾且偏版本评价"
+    },
+    {
+      "key": "公孙离|lane|||BV1yQxk6ZEVq|512",
+      "verdict": "keep",
+      "reason": "解说明确说现在阿离对线能力和发育速度都缺"
+    },
+    {
+      "key": "公孙离|lane|敖隐||BV1255g6CEQf|48",
+      "verdict": "keep",
+      "reason": "与原视频同内容：阿离对线打不过龙人(熬影)"
+    },
+    {
+      "key": "公孙离|lane|敖隐||BV1jaq1BUEUj|45",
+      "verdict": "keep",
+      "reason": "解说说阿离对线打不过龙人(熬影)，并纠正为除虞姬外都能打"
+    },
+    {
+      "key": "公孙离|lane|戈娅||BV1Qxd8BGEW5|19",
+      "verdict": "keep",
+      "reason": "射辅对线分析中明确说阿离打戈娅全时期被压制"
+    },
+    {
+      "key": "公孙离|lane|虞姬||BV1GQu46RENG|535",
+      "verdict": "drop",
+      "reason": "讲的是这一局双方辅助都在中时的情况，且字幕说一打二也不落下风，与理由相反"
+    },
+    {
+      "key": "关羽|early|||BV1T3gK6xELU|33",
+      "verdict": "keep",
+      "reason": "解说说关羽一级很厉害，出布甲也打不过，但理由文字与字幕不符需改"
+    },
+    {
+      "key": "鬼谷子|early|||BV1NfeizEEiV|89",
+      "verdict": "keep",
+      "reason": "解说说鬼谷子二级就是强势期，不太依赖等级"
+    },
+    {
+      "key": "海诺|clear|||BV16ha2z8EpC|129",
+      "verdict": "keep",
+      "reason": "解说说海诺清线速度太快，对线海诺一般拿不到线权"
+    },
+    {
+      "key": "海诺|clear|||BV1U3HW6BEsd|301",
+      "verdict": "keep",
+      "reason": "解说明确说海诺前期清线速度很快，清完可直接去反对面野猪"
+    },
+    {
+      "key": "海诺|early|||BV1U3HW6BEsd|329",
+      "verdict": "keep",
+      "reason": "解说说海诺前期没大招时自身强度不高，也不具备单杀能力"
+    },
+    {
+      "key": "海月|clear|||BV1a2WV6QEPz|32",
+      "verdict": "keep",
+      "reason": "解说说削弱后清不掉一波线，失去了线权优势"
+    },
+    {
+      "key": "海月|early|||BV1a2WV6QEPz|52",
+      "verdict": "keep",
+      "reason": "解说说海月二级战斗力不明显，削弱后没有战斗力"
+    },
+    {
+      "key": "后羿|lane|苍||BV189WbzGEhC|10",
+      "verdict": "keep",
+      "reason": "解说明确说后羿对线苍前期不好打，因苍的小狼烦人"
+    },
+    {
+      "key": "花木兰|early|||BV1agLa6SEgc|90",
+      "verdict": "keep",
+      "reason": "解说明确把花木兰列为前期没有续航的弱势英雄"
+    },
+    {
+      "key": "花木兰|lane|||BV1xBNJ62ERC|234",
+      "verdict": "keep",
+      "reason": "解说称熟练连招后木兰是对抗路活阎王，同水平少有人能稳压"
+    },
+    {
+      "key": "花木兰|lane|程咬金||BV1K2hCzfEcx|48",
+      "verdict": "drop",
+      "reason": "是这一局抢野怪送状态后的局内感叹，不是对程咬金的一般对线结论"
+    },
+    {
+      "key": "花木兰|lane|东皇太一||BV1xBNJ62ERC|243",
+      "verdict": "keep",
+      "reason": "解说说遇到东皇用二闪沉默让其放不出大招并推到塔下"
+    },
+    {
+      "key": "花木兰|lane|狂铁||BV1xBNJ62ERC|245",
+      "verdict": "keep",
+      "reason": "解说说打狂铁更容易，沉默后续航护盾都放不出来"
+    },
+    {
+      "key": "花木兰|lane|夏洛特||BV1xBNJ62ERC|238",
+      "verdict": "keep",
+      "reason": "解说说对线夏洛特用沉默加霸体可以直接拿捏"
+    },
+    {
+      "key": "黄忠|early|||BV1MhWv6GE8M|162",
+      "verdict": "keep",
+      "reason": "解说说黄忠没有明显弱势期，前期靠二技能和被动对拼很强"
+    },
+    {
+      "key": "姬小满|clear|白起||BV1MQU7BHEQT|209",
+      "verdict": "keep",
+      "reason": "解说点评白起时明确说小满抢线也抢不过白起"
+    },
+    {
+      "key": "姬小满|clear|元歌||BV16H5M6cEmt|47",
+      "verdict": "keep",
+      "reason": "解说说小满前期线权速率与元歌差距很大，抢完线可去偷对面野区"
+    },
+    {
+      "key": "姬小满|lane|貂蝉||BV1MQU7BHEQT|166",
+      "verdict": "keep",
+      "reason": "貂蝉被评为拉完了，解说说她冷却太高，交二技能后小满一套能斩杀"
+    },
+    {
+      "key": "姬小满|lane|花木兰||BV1MQU7BHEQT|69",
+      "verdict": "keep",
+      "reason": "排行把花木兰列为顶级威胁，说她开免伤霸体能把灌伤害的小满留下"
+    },
+    {
+      "key": "姬小满|lane|老夫子||BV1MQU7BHEQT|76",
+      "verdict": "keep",
+      "reason": "老夫子被评为拉完了，解说说他前期无法无限免伤，二技能过后小满可打满伤害"
+    },
+    {
+      "key": "姬小满|lane|孙策||BV1MQU7BHEQT|104",
+      "verdict": "keep",
+      "reason": "解说说小满打不动孙策，孙策也没有留下小满的能力，属五五开"
+    },
+    {
+      "key": "姬小满|lane|夏侯惇||BV1MQU7BHEQT|194",
+      "verdict": "keep",
+      "reason": "解说说小满打不动夏侯惇但他也杀不了小满，不理他就行，属五五开"
+    },
+    {
+      "key": "姬小满|lane|项羽||BV1MQU7BHEQT|232",
+      "verdict": "keep",
+      "reason": "解说说项羽被动减伤让小满打不死、根本打不动，且要怕他的大招"
+    },
+    {
+      "key": "姬小满|lane|杨戬||BV1MQU7BHEQT|199",
+      "verdict": "keep",
+      "reason": "解说明确说小满对线不可能打得过杨戬，只能卡线"
+    },
+    {
+      "key": "姬小满|lane|影||BV1GyyVzdES5|102",
+      "verdict": "drop",
+      "reason": "是实战局解说，依据本局已出两件布甲和这次换血结果，不是对线影的一般判断"
+    },
+    {
+      "key": "姬小满|lane|元歌||BV16H5M6cEmt|77",
+      "verdict": "keep",
+      "reason": "解说补充对线理解：小满打元歌时二级元歌清完线不敢碰野怪，小满可瞬秒他"
+    },
+    {
+      "key": "姬小满|lane|钟无艳||BV1MQU7BHEQT|140",
+      "verdict": "drop",
+      "reason": "反击和护盾那段理由属于前一个被点评的英雄，不是钟无艳，理由张冠李戴"
+    },
+    {
+      "key": "伽罗|clear|||BV1PyuAzpEFE|50",
+      "verdict": "keep",
+      "reason": "解说说伽罗这版本弱到连兵线都清不动"
+    },
+    {
+      "key": "伽罗|duo||明世隐|BV1nHGN6mEA3|198",
+      "verdict": "drop",
+      "reason": "讲的是伽罗被刺客战士针对难保和拖后期，不是发育路对线强弱"
+    },
+    {
+      "key": "伽罗|lane|||BV19ssp6DEsG|441",
+      "verdict": "drop",
+      "reason": "解说说伽罗只在一级占优，二级起打不过多数射手，笼统写对线强不准确"
+    },
+    {
+      "key": "伽罗|lane|||BV1VV4y1d7Zs|102",
+      "verdict": "keep",
+      "reason": "解说说利用射程优势对线可轻松压制同水平射手"
+    },
+    {
+      "key": "姜子牙|clear|||BV1fRGAzxEXZ|468",
+      "verdict": "drop",
+      "reason": "这是中期等级领先时的说法，同视频说一级不抢线，理由缺了这个条件"
+    },
+    {
+      "key": "姜子牙|clear|||BV1niMR61EqF|29",
+      "verdict": "keep",
+      "reason": "解说说姜子牙最怕第一波线，对线猫咪墨子没线权只能后手清"
+    },
+    {
+      "key": "姜子牙|clear|安琪拉||BV1n48CzUEFP|70",
+      "verdict": "keep",
+      "reason": "解说把安琪拉列为清线能力强的英雄，姜子牙一级应先帮打野后手清线"
+    },
+    {
+      "key": "姜子牙|clear|干将莫邪||BV1n48CzUEFP|70",
+      "verdict": "keep",
+      "reason": "解说把干将列为清线能力强的英雄，姜子牙一级应先帮打野后手清线"
+    },
+    {
+      "key": "姜子牙|clear|小乔||BV1n48CzUEFP|70",
+      "verdict": "keep",
+      "reason": "解说把小乔列为清线能力强的英雄，姜子牙一级应先帮打野后手清线"
+    },
+    {
+      "key": "姜子牙|early|||BV1fRGAzxEXZ|173",
+      "verdict": "keep",
+      "reason": "解说明确说速刷蹭经验领先一级时姜子牙这个阶段无敌，说法带了条件"
+    },
+    {
+      "key": "姜子牙|lane|不知火舞||BV1n48CzUEFP|94",
+      "verdict": "keep",
+      "reason": "解说明确说面对不知火舞这类一级清线弱的英雄，姜子牙前期容易打出压制"
+    },
+    {
+      "key": "姜子牙|lane|妲己||BV1n48CzUEFP|94",
+      "verdict": "keep",
+      "reason": "解说明确说面对妲己这类一级清线弱的英雄，姜子牙前期容易打出压制"
+    },
+    {
+      "key": "金蝉|early|||BV1pWTk6GE49|184",
+      "verdict": "drop",
+      "reason": "只讲一级先清线不打人、二级才能打人的操作，没说整体前期弱"
+    },
+    {
+      "key": "橘右京|early|||BV17Mp7znEBy|1",
+      "verdict": "keep",
+      "reason": "解说说橘子前期强度很高，前期爆发和灵活性突出"
+    },
+    {
+      "key": "橘右京|early|||BV1Y58m6PEEz|0",
+      "verdict": "keep",
+      "reason": "解说开头直说橘右京前期几乎成神、后期查无此人"
+    },
+    {
+      "key": "铠|early|||BV17QzPBrEZj|50",
+      "verdict": "keep",
+      "reason": "解说改口说铠前期比较弱但也不算弱，四级大招稍强，属一般"
+    },
+    {
+      "key": "铠|lane|镜||BV1srnN6GEa8|268",
+      "verdict": "drop",
+      "reason": "解说说两者克制不好说，镜不会和铠正面打，方向不明确"
+    },
+    {
+      "key": "铠|lane|盘古||BV1srnN6GEa8|35",
+      "verdict": "drop",
+      "reason": "讲的是峡谷中遭遇时的克制关系，没有明确指对线期"
+    },
+    {
+      "key": "空空儿|clear|||BV19YoeYqE4i|902",
+      "verdict": "keep",
+      "reason": "解说说空空儿去中路清线能力弱，帮不了法师快速清线，转线慢"
+    },
+    {
+      "key": "空空儿|duo|||BV19YoeYqE4i|909",
+      "verdict": "keep",
+      "reason": "解说说空空儿前期跟射手连体以压制为主，强在消耗换血，配强势射手能打出优势"
+    },
+    {
+      "key": "空空儿|early|||BV14GnB63E8f|33",
+      "verdict": "keep",
+      "reason": "解说明确说空空儿在射手和辅助里前期强度算高，说法带了位置条件"
+    },
+    {
+      "key": "空空儿|lane|狂铁||BV14GnB63E8f|26",
+      "verdict": "keep",
+      "reason": "解说明确说空空儿走对抗时狂铁这类英雄能把它吊着打"
+    },
+    {
+      "key": "狂铁|clear|影||BV1XJvCBwECd|17",
+      "verdict": "keep",
+      "reason": "解说说狂铁打影肯定能先手清线，强度比影高"
+    },
+    {
+      "key": "狂铁|early|||BV1HEa66NESd|70",
+      "verdict": "keep",
+      "reason": "解说明确说狂铁是靠前期强度打出优势的"
+    },
+    {
+      "key": "狂铁|early|||BV1NfeizEEiV|333",
+      "verdict": "keep",
+      "reason": "解说说要避开前期狂铁的强势期"
+    },
+    {
+      "key": "狂铁|early|||BV1Q5HXzuEbD|130",
+      "verdict": "drop",
+      "reason": "解说只是比较肉装和输出装狂铁的前期战斗力，不是英雄本身前期强"
+    },
+    {
+      "key": "兰陵王|early|||BV1qpF7zhEaP|123",
+      "verdict": "keep",
+      "reason": "解说说兰陵王前期数值确实很低，满血脆皮也别想单杀"
+    },
+    {
+      "key": "兰陵王|lane|关羽||BV15BtQz4E4b|28",
+      "verdict": "keep",
+      "reason": "解说明确说关羽做出肉装前打不过兰陵王"
+    },
+    {
+      "key": "老夫子|clear|元歌||BV1Fhtb6XEuK|0",
+      "verdict": "keep",
+      "reason": "解说明确说对线元歌可以抢线，抢完线元歌没机会争赤甲"
+    },
+    {
+      "key": "老夫子|early|||BV1agLa6SEgc|90",
+      "verdict": "keep",
+      "reason": "解说明确把老夫子列为前期没有续航的弱势英雄"
+    },
+    {
+      "key": "老夫子|early|||BV1tgbW6RErk|24",
+      "verdict": "keep",
+      "reason": "解说明确说老夫子前期没什么话语权、前期比较弱"
+    },
+    {
+      "key": "老夫子|lane|花木兰||BV1Fhtb6XEuK|266",
+      "verdict": "drop",
+      "reason": "只在木兰一级敢抢线时能打死，解说也说一般木兰不抢线，四级后更难打"
+    },
+    {
+      "key": "老夫子|lane|芈月||BV1Fhtb6XEuK|50",
+      "verdict": "keep",
+      "reason": "解说明确说对线芈月没招，怎么打都打不过只能抗压"
+    },
+    {
+      "key": "老夫子|lane|盘古||BV1Fhtb6XEuK|364",
+      "verdict": "keep",
+      "reason": "解说明确说打盘古一级不要抢线，抢线就会死"
+    },
+    {
+      "key": "老夫子|lane|司空震||BV1Fhtb6XEuK|236",
+      "verdict": "keep",
+      "reason": "解说明确说没出电刀时老夫子打不过司空震，说法带了条件"
+    },
+    {
+      "key": "李信|clear|||BV1aB1KBDE5S|160",
+      "verdict": "keep",
+      "reason": "解说说李信四级前清线很慢，可趁机拿红隼"
+    },
+    {
+      "key": "李信|early|||BV1aB1KBDE5S|155",
+      "verdict": "keep",
+      "reason": "解说说李信四级前跟小兵没什么区别"
+    },
+    {
+      "key": "李信|lane|||BV1D7gW6VExo|48",
+      "verdict": "drop",
+      "reason": "解说说四级前李信拿不到资源、四级后才有线权，强弱随等级反转"
+    },
+    {
+      "key": "李元芳|early|||BV1GuojBrEWW|91",
+      "verdict": "keep",
+      "reason": "解说明确说李元芳一级学二技能能滚，前期出节奏能力很强"
+    },
+    {
+      "key": "刘邦|lane|||BV1B8KV6QELS|15",
+      "verdict": "keep",
+      "reason": "解说明确说对抗路刘邦没有对线能力，要放弃对线"
+    },
+    {
+      "key": "刘邦|lane|||BV1o53m6tEXs|115",
+      "verdict": "keep",
+      "reason": "解说直接说刘邦压根不是打对线的英雄，面对对线劣势只求不死"
+    },
+    {
+      "key": "刘备|clear|||BV17oBFBZEgH|325",
+      "verdict": "keep",
+      "reason": "解说说刘备前期弱势体现在抓人、反野、抢线权上"
+    },
+    {
+      "key": "刘备|early|||BV17oBFBZEgH|212",
+      "verdict": "keep",
+      "reason": "解说明确说刘备前期非常弱势，易被入侵野区"
+    },
+    {
+      "key": "刘禅|early|||BV1L3L16tET8|1023",
+      "verdict": "keep",
+      "reason": "解说明确说刘禅前期比较弱，到中后期才真正强"
+    },
+    {
+      "key": "刘禅|lane|杨玉环||BV1L3L16tET8|288",
+      "verdict": "keep",
+      "reason": "解说明确说对面是杨玉环这类远程辅助配远程射手时刘禅摸不到人不好打"
+    },
+    {
+      "key": "卢雅那|lane|||BV1gDxt6AExh|48",
+      "verdict": "keep",
+      "reason": "解说明确说卢雅那二技能远可无伤消耗，反复消耗对面遭不住"
+    },
+    {
+      "key": "鲁班大师|clear|||BV1TPW86xEem|22",
+      "verdict": "keep",
+      "reason": "解说明确说鲁班大师一级抢线和打状态能力都很强"
+    },
+    {
+      "key": "鲁班大师|early|||BV1TPW86xEem|68",
+      "verdict": "keep",
+      "reason": "解说明确说前期鲁班大师伤害是所有辅助中最高的"
+    },
+    {
+      "key": "鲁班大师|lane|盾山||BV12paU6aEQM|154",
+      "verdict": "keep",
+      "reason": "解说明确说三级鲁班大师会被盾山压着打，盾山前期更强"
+    },
+    {
+      "key": "鲁班七号|duo||盾山|BV1nHGN6mEA3|141",
+      "verdict": "drop",
+      "reason": "讲的是组合整体强度和四保一，没有提线上对线强弱"
+    },
+    {
+      "key": "露娜|early|||BV1esxK66EtY|947",
+      "verdict": "keep",
+      "reason": "解说明确说露娜是典型的前期谁都能反野的英雄"
+    },
+    {
+      "key": "露娜|early|||BV1KpsG6VEBv|35",
+      "verdict": "keep",
+      "reason": "解说把露娜列入四级前非常弱势的打野"
+    },
+    {
+      "key": "马可波罗|clear|||BV13RKJ6fEjH|114",
+      "verdict": "drop",
+      "reason": "解说说马可容易被卡线，属线上被压制而非清线慢，类别对不上"
+    },
+    {
+      "key": "马可波罗|duo||瑶|BV1nHGN6mEA3|130",
+      "verdict": "keep",
+      "reason": "解说说马瑶组合前期自己玩得难受、一直被压着，给到最低档"
+    },
+    {
+      "key": "马可波罗|early|||BV13RKJ6fEjH|53",
+      "verdict": "keep",
+      "reason": "解说在阵容分析中明确说马可波罗前期弱势"
+    },
+    {
+      "key": "马可波罗|early|||BV1Vy8n6ZEgr|244",
+      "verdict": "keep",
+      "reason": "解说说马可是坐牢射手，前期基本不出节奏只需抗压"
+    },
+    {
+      "key": "马可波罗|lane|||BV19ssp6DEsG|359",
+      "verdict": "keep",
+      "reason": "解说明确说马可一级很弱，大多会放弃抢线去刷野或塔下等线"
+    },
+    {
+      "key": "蒙恬|early|||BV1o53m6tEXs|231",
+      "verdict": "keep",
+      "reason": "解说明确说蒙恬前期强度非常高"
+    },
+    {
+      "key": "蒙恬|early|||BV1Vh8G6vE7u|150",
+      "verdict": "keep",
+      "reason": "解说说抢完线要利用蒙恬前期强度把优势辐射给队友"
+    },
+    {
+      "key": "蒙恬|lane|||BV1f6Lp6MEBa|27",
+      "verdict": "keep",
+      "reason": "解说说蒙恬是线霸，基本对线都能拿到优势"
+    },
+    {
+      "key": "蒙恬|lane|芈月||BV1LWtRzYEE8|153",
+      "verdict": "keep",
+      "reason": "解说明确说蒙恬克芈月，凭前期强势四级前能压住芈月"
+    },
+    {
+      "key": "蒙犽|clear|||BV1t5sd6iEY5|382",
+      "verdict": "drop",
+      "reason": "只是总结用一技能清线的操作建议，同视频还说他没有抢线能力"
+    },
+    {
+      "key": "蒙犽|duo|||BV1t5sd6iEY5|51",
+      "verdict": "drop",
+      "reason": "是针对这局敌方盘古的阵容分析，不是一般的双人对线结论"
+    },
+    {
+      "key": "蒙犽|lane|||BV16a4y1r7RG|40",
+      "verdict": "keep",
+      "reason": "解说说出重装流后身板硬不怕刺客，对线打团都无敌"
+    },
+    {
+      "key": "蒙犽|lane|||BV1t5sd6iEY5|98",
+      "verdict": "keep",
+      "reason": "解说说新版被动回血加塔下血包，赖线能力极强"
+    },
+    {
+      "key": "米莱狄|clear|||BV1oLn8zjE9E|79",
+      "verdict": "drop",
+      "reason": "只是说这一局米莱狄机器人没了时清线慢，属于特定条件，不是一般结论"
+    },
+    {
+      "key": "米莱狄|lane|嫦娥||BV1cZJU64Enh|2",
+      "verdict": "keep",
+      "reason": "解说明确说嫦娥打米莱狄很难打，米莱狄对线很恶心"
+    },
+    {
+      "key": "芈月|lane|||BV1C4uBzDErx|106",
+      "verdict": "keep",
+      "reason": "解说说芈月对线有多恶心玩对抗路的都知道"
+    },
+    {
+      "key": "芈月|lane|曹操||BV1qp5S6rE88|48",
+      "verdict": "keep",
+      "reason": "解说把曹操列为芈月对线压力比较大的英雄，需先出护甲鞋"
+    },
+    {
+      "key": "芈月|lane|后羿||BV1LWtRzYEE8|53",
+      "verdict": "drop",
+      "reason": "这是solo赛某一局的过程描述，对手是村服后羿，不足以作一般结论"
+    },
+    {
+      "key": "芈月|lane|影||BV1qp5S6rE88|204",
+      "verdict": "keep",
+      "reason": "解说明确说线上1V1对线影芈月有优势"
+    },
+    {
+      "key": "墨子|clear|||BV1cLoMBeEx2|38",
+      "verdict": "keep",
+      "reason": "解说明确说墨子是前期清线比较慢的英雄"
+    },
+    {
+      "key": "哪吒|early|||BV1is5B66EoB|249",
+      "verdict": "keep",
+      "reason": "解说说哪吒前期确实有点弱，要等大红刀加布甲鞋才强势"
+    },
+    {
+      "key": "哪吒|lane|||BV1iu9iBhECn|188",
+      "verdict": "keep",
+      "reason": "解说说哪吒前期对线单挑很强，除少数克制英雄外都能稳压"
+    },
+    {
+      "key": "娜可露露|early|||BV1KpsG6VEBv|35",
+      "verdict": "keep",
+      "reason": "解说把露露与暃、阿古朵、露娜并列，说四级前实在太弱"
+    },
+    {
+      "key": "娜可露露|early|||BV1YAsJ6uEGV|128",
+      "verdict": "keep",
+      "reason": "解说反复说露露前期啥也做不了，只能吃兵线刷野"
+    },
+    {
+      "key": "牛魔|early|||BV1bXsh6YEAM|13",
+      "verdict": "keep",
+      "reason": "解说明确说牛魔打野强势点是前期可以无限打架"
+    },
+    {
+      "key": "牛魔|lane|||BV1LTTTz7E3T|180",
+      "verdict": "keep",
+      "reason": "解说说前期被动给高双抗，对线有队友时可大胆换血压制对面"
+    },
+    {
+      "key": "女娲|clear|||BV1noU3B9EZ7|228",
+      "verdict": "keep",
+      "reason": "解说明确说女娲一级清线非常难受"
+    },
+    {
+      "key": "女娲|early|||BV1sLyaztErJ|494",
+      "verdict": "keep",
+      "reason": "解说明确说一级女娲偏弱，要保发育，二三级后再游走"
+    },
+    {
+      "key": "盘古|lane|||BV1oTzyYWEgi|44",
+      "verdict": "keep",
+      "reason": "解说说边路盘古数值高，没有对抗路前期打得过"
+    },
+    {
+      "key": "裴擒虎|early|||BV1SmTJ64EsR|284",
+      "verdict": "keep",
+      "reason": "解说说老虎主打前期节奏压制，克制前期弱的英雄"
+    },
+    {
+      "key": "桑启|clear|||BV185ED66E8M|17",
+      "verdict": "keep",
+      "reason": "解说明确说桑启不具备抢线能力，但一级打状态能力强"
+    },
+    {
+      "key": "桑启|duo||孙尚香|BV1J7Wr6LEJg|44",
+      "verdict": "keep",
+      "reason": "解说明确说孙尚香配桑启前期伤害高，对线有非常大的优势"
+    },
+    {
+      "key": "桑启|lane|||BV1Vy8n6ZEgr|64",
+      "verdict": "keep",
+      "reason": "解说说桑启前期换血永远不亏，拍子数值高"
+    },
+    {
+      "key": "上官婉儿|clear|||BV1cLoMBeEx2|77",
+      "verdict": "keep",
+      "reason": "解说明确说上官婉儿一二技能清线比较快"
+    },
+    {
+      "key": "上官婉儿|clear|||BV1CLsK6XECb|50",
+      "verdict": "keep",
+      "reason": "解说说婉儿一级清兵无力，九成情况清线比对面中路慢"
+    },
+    {
+      "key": "少司缘|early|||BV11MnC6EEPx|32",
+      "verdict": "keep",
+      "reason": "解说一般性地说少司缘是一级最容易出节奏的辅助，一级比赵怀真强"
+    },
+    {
+      "key": "少司缘|early|||BV1PGGx65Eq4|153",
+      "verdict": "keep",
+      "reason": "解说明确说少司缘一级非常强势，可配合强势中野进对面野区"
+    },
+    {
+      "key": "守约|early|||BV15nu26mECq|83",
+      "verdict": "keep",
+      "reason": "解说说守约四级前没位移，很好打他的状态"
+    },
+    {
+      "key": "司空震|clear|||BV12wtr6cEMR|98",
+      "verdict": "keep",
+      "reason": "解说说带十个霸者没有穿透时抢线速度非常慢"
+    },
+    {
+      "key": "司空震|early|||BV12wtr6cEMR|93",
+      "verdict": "drop",
+      "reason": "解说只说一级无敌，并明确说二级就不一定，不能概括为前期强"
+    },
+    {
+      "key": "司空震|early|曹操||BV11u3h6oE1r|631",
+      "verdict": "drop",
+      "reason": "解说说曹操本质克制司空震、中期很恶心，仅四级前可压，且类别应为对线不是前期"
+    },
+    {
+      "key": "司空震|lane|关羽||BV11u3h6oE1r|85",
+      "verdict": "keep",
+      "reason": "解说明确说司空震算边路里好打关羽的，并给出一级打法"
+    },
+    {
+      "key": "司空震|lane|老夫子||BV11u3h6oE1r|479",
+      "verdict": "keep",
+      "reason": "解说明确把对线老夫子列为司空震有对线优势的对位"
+    },
+    {
+      "key": "司空震|lane|马超||BV11u3h6oE1r|477",
+      "verdict": "keep",
+      "reason": "解说明确把对线马超列为司空震有对线优势的对位"
+    },
+    {
+      "key": "司空震|lane|芈月||BV11u3h6oE1r|196",
+      "verdict": "keep",
+      "reason": "解说明确说前期司空震会完全打不过芈月，要避战"
+    },
+    {
+      "key": "司空震|lane|亚连||BV11u3h6oE1r|401",
+      "verdict": "keep",
+      "reason": "解说明确说亚连完全打不过司空震，属英雄克制"
+    },
+    {
+      "key": "司空震|lane|影||BV11u3h6oE1r|31",
+      "verdict": "keep",
+      "reason": "解说明确说影前期能压司空震，四级后也打不过，需等电刀"
+    },
+    {
+      "key": "司空震|lane|元歌||BV11u3h6oE1r|290",
+      "verdict": "keep",
+      "reason": "解说明确说元歌无论前期对线还是中期都被司空震拿捏"
+    },
+    {
+      "key": "苏烈|early|||BV1SmTJ64EsR|297",
+      "verdict": "keep",
+      "reason": "解说把苏烈列为前期强势的辅助"
+    },
+    {
+      "key": "孙膑|duo|||BV1zxsB6KEA5|737",
+      "verdict": "drop",
+      "reason": "解说说孙膑保不住人是在讲团战和射手自保，不是发育路对线强弱"
+    },
+    {
+      "key": "孙膑|early|||BV13RKJ6fEjH|132",
+      "verdict": "keep",
+      "reason": "解说明确说孙膑的劣势在于前期无力"
+    },
+    {
+      "key": "孙膑|early|||BV1EF6DY7E7Z|138",
+      "verdict": "keep",
+      "reason": "解说明确说孙膑前期比较拉胯，打法以稳住前期为主"
+    },
+    {
+      "key": "孙膑|early|||BV1zxsB6KEA5|388",
+      "verdict": "keep",
+      "reason": "解说明确说前期孙膑实在太弱，什么都做不了"
+    },
+    {
+      "key": "孙膑|lane|公孙离||BV1EF6DY7E7Z|18",
+      "verdict": "keep",
+      "reason": "解说明确说公孙离对线直接克制孙膑，能挡技能"
+    },
+    {
+      "key": "孙膑|lane|廉颇||BV1EF6DY7E7Z|464",
+      "verdict": "drop",
+      "reason": "这句是中期一次交战时说的，看不出是在讲发育路对线强弱"
+    },
+    {
+      "key": "孙策|clear|||BV13exk63Eie|313",
+      "verdict": "keep",
+      "reason": "解说明确说孙策清线能力很快，能快速抢线游走"
+    },
+    {
+      "key": "孙策|early|||BV13exk63Eie|352",
+      "verdict": "keep",
+      "reason": "解说说孙策是前中期英雄，前期单杀和作战能力强"
+    },
+    {
+      "key": "孙策|lane|||BV13exk63Eie|268",
+      "verdict": "keep",
+      "reason": "解说说孙策是典型前期对线强的英雄，一打二不怕"
+    },
+    {
+      "key": "孙权|early|||BV1JDpQ6zEv2|62",
+      "verdict": "drop",
+      "reason": "解说讲孙权总缩塔下难以被抓，没有说他前期弱"
+    },
+    {
+      "key": "孙权|lane|||BV1t9Eq6iE1g|38",
+      "verdict": "keep",
+      "reason": "解说说一级孙权靠被动减伤，1V1对线几乎所有射手都能五五开"
+    },
+    {
+      "key": "孙尚香|duo||太乙真人|BV1nHGN6mEA3|30",
+      "verdict": "drop",
+      "reason": "这是射辅组合的分档评级，讲发育和保护，没有说线上对线强弱"
+    },
+    {
+      "key": "孙尚香|early|||BV1HLpv6bEV1|381",
+      "verdict": "keep",
+      "reason": "解说明确说孙尚香前期强度非常高，对线可频繁换血打残对面"
+    },
+    {
+      "key": "孙尚香|early|||BV1J7Wr6LEJg|42",
+      "verdict": "keep",
+      "reason": "解说明确说孙尚香前期强度很高、伤害高"
+    },
+    {
+      "key": "孙尚香|early|||BV1PYhvziEqg|48",
+      "verdict": "keep",
+      "reason": "解说明确说孙尚香强度曲线是前期强、中期疲软、后期强"
+    },
+    {
+      "key": "孙尚香|lane|||BV1255g6CEQf|174",
+      "verdict": "keep",
+      "reason": "解说明确说香香不是强在对线，对线一般"
+    },
+    {
+      "key": "孙尚香|lane|||BV19ssp6DEsG|483",
+      "verdict": "keep",
+      "reason": "解说说孙尚香二级多了二技能输出大增，并明说孙尚香前期强"
+    },
+    {
+      "key": "孙尚香|lane|||BV1HLpv6bEV1|272",
+      "verdict": "keep",
+      "reason": "解说明确说孙尚香前期对线压制能力很强"
+    },
+    {
+      "key": "孙尚香|lane|||BV1jaq1BUEUj|171",
+      "verdict": "keep",
+      "reason": "解说明确说孙尚香不是强在对线，强在团战，对线一般"
+    },
+    {
+      "key": "孙尚香|lane|||BV1PYhvziEqg|13",
+      "verdict": "keep",
+      "reason": "解说明确说孙尚香是对线非常强势的射手"
+    },
+    {
+      "key": "孙尚香|lane|李信||BV1PYhvziEqg|55",
+      "verdict": "keep",
+      "reason": "解说明确说四级后打不过李信、数值远比不过，说法带了四级后的条件"
+    },
+    {
+      "key": "王维|clear|||BV15saw62E5X|496",
+      "verdict": "keep",
+      "reason": "解说明确说王维前期清线能力弱一档，要等一技能冷却"
+    },
+    {
+      "key": "王昭君|clear|||BV1fRGAzxEXZ|380",
+      "verdict": "keep",
+      "reason": "解说说对面王昭君清线太慢，方向与说法一致"
+    },
+    {
+      "key": "王昭君|lane|||BV1wxzNBEEVf|278",
+      "verdict": "drop",
+      "reason": "只是讲一级学二技能的连招技巧能拿一血，没有评价对线强弱"
+    },
+    {
+      "key": "武则天|early|||BV1GhNY6fEnH|0",
+      "verdict": "keep",
+      "reason": "解说明确说武则天基础数值高，前期就拥有高伤害"
+    },
+    {
+      "key": "西施|clear|||BV15nu26mECq|575",
+      "verdict": "drop",
+      "reason": "是后期守高地时的局内感叹，不是对线期清线抢线的一般判断"
+    },
+    {
+      "key": "西施|lane|||BV1uEY1zCEA3|623",
+      "verdict": "drop",
+      "reason": "只说西施不像小乔单线特别强、吃配合，没明确说对线弱"
+    },
+    {
+      "key": "夏侯惇|early|||BV1RDsq6FEcz|94",
+      "verdict": "keep",
+      "reason": "解说明确说夏侯惇的强势期从一级就开始"
+    },
+    {
+      "key": "夏洛特|clear|狂铁||BV1agLa6SEgc|203",
+      "verdict": "keep",
+      "reason": "解说明确说夏洛特一级对狂铁清线速度差得远，不能抢线"
+    },
+    {
+      "key": "夏洛特|clear|司空震||BV1C4uBzDErx|178",
+      "verdict": "keep",
+      "reason": "解说说对司空震一级根本拿不到线权"
+    },
+    {
+      "key": "夏洛特|lane|貂蝉||BV1C4uBzDErx|303",
+      "verdict": "keep",
+      "reason": "解说说打貂蝉和打马超一样比较简单"
+    },
+    {
+      "key": "夏洛特|lane|狂铁||BV1C4uBzDErx|291",
+      "verdict": "drop",
+      "reason": "只说对狂铁基本不可能单杀，看不出是五五开还是吃亏"
+    },
+    {
+      "key": "夏洛特|lane|马超||BV1C4uBzDErx|303",
+      "verdict": "keep",
+      "reason": "解说说打马超比较简单，抢线后直接压制"
+    },
+    {
+      "key": "夏洛特|lane|芈月||BV1C4uBzDErx|135",
+      "verdict": "keep",
+      "reason": "解说说二技能有回复可大胆和芈月换血，不怕芈月"
+    },
+    {
+      "key": "项羽|clear|||BV14WHN6mEU3|118",
+      "verdict": "drop",
+      "reason": "是这一局辅助移速出装下的观察，清线慢只是顺带，不是一般结论"
+    },
+    {
+      "key": "项羽|clear|||BV1nvrgBeEPx|99",
+      "verdict": "drop",
+      "reason": "解说是在教一技能找角度推兵的操作，没有评价项羽清线快慢"
+    },
+    {
+      "key": "项羽|early|||BV1pU8y6VEhP|105",
+      "verdict": "keep",
+      "reason": "解说说项羽依赖装备成型偏后期，即需要发育"
+    },
+    {
+      "key": "项羽|lane|||BV14WHN6mEU3|106",
+      "verdict": "drop",
+      "reason": "讲的是辅助项羽不适合跟射手连体，不是项羽一般的对线强弱"
+    },
+    {
+      "key": "小乔|clear|大乔||BV1K2546oEb3|23",
+      "verdict": "keep",
+      "reason": "解说明确说小乔前期打大乔线权绝对拿得到，两个一技能清一波线"
+    },
+    {
+      "key": "小乔|early|||BV18hTe6vEq7|39",
+      "verdict": "keep",
+      "reason": "解说一般性地说小乔前期斩杀线高，几乎没人能从她手上抢资源"
+    },
+    {
+      "key": "小乔|lane|||BV1FroXBsEgU|2",
+      "verdict": "keep",
+      "reason": "解说明确说小乔一级就能出节奏，对线压制力极强"
+    },
+    {
+      "key": "小乔|lane|||BV1uEY1zCEA3|623",
+      "verdict": "keep",
+      "reason": "解说顺带说小乔是单线能力特别强的英雄"
+    },
+    {
+      "key": "小乔|lane|高渐离||BV1ALo9BwEuZ|15",
+      "verdict": "keep",
+      "reason": "解说说四级前小乔比高渐离强势，且手长可在对线期压制他"
+    },
+    {
+      "key": "小乔|lane|弈星||BV1KFQzB7Exp|20",
+      "verdict": "keep",
+      "reason": "解说说弈星对线小乔不好打，反向即小乔对弈星占优，方向一致"
+    },
+    {
+      "key": "心魔六耳|early|||BV17cNs67E83|21",
+      "verdict": "keep",
+      "reason": "解说明确说六耳数值高、吃暴击加成，所以前中期十分强势"
+    },
+    {
+      "key": "心魔六耳|early|||BV1nqgv6cEpm|672",
+      "verdict": "keep",
+      "reason": "解说明确说心魔六耳从一级开始就有强度"
+    },
+    {
+      "key": "心魔六耳|early|||BV1Y67b6JEHM|787",
+      "verdict": "keep",
+      "reason": "解说说出装偏暴力容错低，前期偏发育不打死架，出到装备才是强势期"
+    },
+    {
+      "key": "玄策|early|||BV1JDpQ6zEv2|3",
+      "verdict": "keep",
+      "reason": "解说说玄策前期抓人能力超强，前期中小团战非常强"
+    },
+    {
+      "key": "雅典娜|lane|哪吒||BV1DKWi67E98|0",
+      "verdict": "keep",
+      "reason": "解说开头直说雅典娜在对抗路不好打哪吒"
+    },
+    {
+      "key": "亚连|lane|曹操||BV1SDVf6JE8W|21",
+      "verdict": "drop",
+      "reason": "解说只说铭文带肉后前期不怕曹操，看不出占优，可能只是五五开"
+    },
+    {
+      "key": "亚连|lane|狂铁||BV1wtu4zHEvn|90",
+      "verdict": "keep",
+      "reason": "解说说狂铁这类线霸对亚连来说都是玩具"
+    },
+    {
+      "key": "亚连|lane|司空震||BV1wtu4zHEvn|224",
+      "verdict": "keep",
+      "reason": "解说说亚连打司空震基本打不过，要边打边撤"
+    },
+    {
+      "key": "亚连|lane|孙策||BV1wtu4zHEvn|363",
+      "verdict": "keep",
+      "reason": "解说说对孙策二级照样能打，二级亚连无敌"
+    },
+    {
+      "key": "亚连|lane|夏洛特||BV1wtu4zHEvn|242",
+      "verdict": "keep",
+      "reason": "解说说夏洛特二级时亚连肯定打不过"
+    },
+    {
+      "key": "亚连|lane|杨戬||BV1wtu4zHEvn|40",
+      "verdict": "keep",
+      "reason": "解说说亚连克制杨戬，二级强度碾压对面"
+    },
+    {
+      "key": "亚瑟|clear|||BV1VcxA68E7x|88",
+      "verdict": "keep",
+      "reason": "解说说带全肉铭文时红莲出来前清线很慢且没有线权"
+    },
+    {
+      "key": "亚瑟|lane|吕布||BV1oixz63EdR|96",
+      "verdict": "drop",
+      "reason": "解说只说带特定出装后前期换血不怕，看不出五五开，理由中后期部分字幕里没有"
+    },
+    {
+      "key": "亚瑟|lane|吕布||BV1Qcs66cE4i|28",
+      "verdict": "drop",
+      "reason": "出自主播间改数值的单挑约战，不是正常对线场景，类别对不上"
+    },
+    {
+      "key": "亚瑟|lane|哪吒||BV1VcxA68E7x|467",
+      "verdict": "keep",
+      "reason": "解说明确说哪吒打不过亚瑟，碰到哪吒选亚瑟随便打"
+    },
+    {
+      "key": "杨戬|early|||BV1TgCtBaEJS|261",
+      "verdict": "keep",
+      "reason": "解说明确说杨戬一级没有作战能力，打杨戬要先抢线"
+    },
+    {
+      "key": "杨戬|lane|||BV1HUcMz1EbY|31",
+      "verdict": "drop",
+      "reason": "讲的是杨戬整体版本强度略逊热门边路，不是明确的对线强弱判断"
+    },
+    {
+      "key": "杨玉环|clear|||BV1ALnBzJEXq|339",
+      "verdict": "keep",
+      "reason": "解说明确说杨玉环本身清线能力比较弱，需要打野帮忙过线"
+    },
+    {
+      "key": "杨玉环|clear|||BV1bEZLBBEzv|265",
+      "verdict": "keep",
+      "reason": "解说把清线快列为辅助玉环的第一个优势"
+    },
+    {
+      "key": "杨玉环|clear|||BV1zhXYBRE6j|231",
+      "verdict": "keep",
+      "reason": "解说说玉环强势点在于清线刷野能力"
+    },
+    {
+      "key": "杨玉环|clear|女娲||BV1QLTq6GE2V|17",
+      "verdict": "keep",
+      "reason": "解说明确说一级线权上杨玉环对女娲百分百优势"
+    },
+    {
+      "key": "杨玉环|duo|||BV1bEZLBBEzv|279",
+      "verdict": "keep",
+      "reason": "解说说辅助玉环不适合连体射手打对线，应帮中路拿线权"
+    },
+    {
+      "key": "杨玉环|early|||BV1zhXYBRE6j|225",
+      "verdict": "keep",
+      "reason": "解说说玉环单体和控制弱，前期不要有杀心，需度过弱势期"
+    },
+    {
+      "key": "曜|lane|阿古朵||BV1c2gD6gEYZ|17",
+      "verdict": "keep",
+      "reason": "解说明确说对线阿古朵感觉五五开"
+    },
+    {
+      "key": "弈星|clear|||BV1KFQzB7Exp|836",
+      "verdict": "drop",
+      "reason": "解说把没线权归因于自己常中路一打二的情况，不是弈星清线慢"
+    },
+    {
+      "key": "弈星|clear|||BV1nGyjBsELA|419",
+      "verdict": "drop",
+      "reason": "讲的是队友弈星配合辅助踩技能秒清的技巧，不是弈星自身清线快慢的判断"
+    },
+    {
+      "key": "弈星|clear|||BV1nVHXehEyh|149",
+      "verdict": "keep",
+      "reason": "解说说二技能放兵线中间就能快速抢线支援"
+    },
+    {
+      "key": "弈星|clear|||BV1ocrhB7EcJ|24",
+      "verdict": "keep",
+      "reason": "解说明确说弈星一般没有线权，只能补塔刀吃后手线"
+    },
+    {
+      "key": "弈星|clear|嫦娥||BV1tdrnYnEiG|198",
+      "verdict": "keep",
+      "reason": "解说说中路弈星抢线比嫦娥慢，需要辅助帮忙抢线"
+    },
+    {
+      "key": "弈星|lane|小乔||BV1KFQzB7Exp|18",
+      "verdict": "keep",
+      "reason": "解说明确说一般来说弈星对线小乔不好打，因小乔手长伤害高"
+    },
+    {
+      "key": "嬴政|clear|||BV1wDdnBNE5t|835",
+      "verdict": "keep",
+      "reason": "解说讲压塔时明确说嬴政抢线抢得快，对面兵线先没"
+    },
+    {
+      "key": "嬴政|early|||BV1TUrxYhEXG|26",
+      "verdict": "keep",
+      "reason": "解说明确说嬴政从前期一直强到后期，开局可直接压制兵线"
+    },
+    {
+      "key": "嬴政|early|||BV1wDdnBNE5t|1492",
+      "verdict": "keep",
+      "reason": "解说明确说嬴政就是前期强的英雄，前期要多打架"
+    },
+    {
+      "key": "嬴政|lane|王昭君||BV1TUrxYhEXG|105",
+      "verdict": "keep",
+      "reason": "解说明确说遇到没线权的英雄如王昭君时嬴政不强，只能打消耗守野区"
+    },
+    {
+      "key": "影|clear|||BV1rKgr61EEo|44",
+      "verdict": "keep",
+      "reason": "解说说改版后一二技能清线刷野都快得多，抢完第一波线可先去支援"
+    },
+    {
+      "key": "影|early|||BV1rKgr61EEo|15",
+      "verdict": "keep",
+      "reason": "解说说改版后影前中期压制力强很多，可凭前期强度滚雪球，后期不如以前"
+    },
+    {
+      "key": "影|lane|马超||BV1rKgr61EEo|253",
+      "verdict": "drop",
+      "reason": "只说马超没那么好打需卡出枪后摇，且本局刚单杀马超，看不出影对线吃亏"
+    },
+    {
+      "key": "虞姬|lane|||BV1255g6CEQf|120",
+      "verdict": "keep",
+      "reason": "解说明确说虞姬对线无敌，只怕艾琳"
+    },
+    {
+      "key": "虞姬|lane|||BV1jaq1BUEUj|117",
+      "verdict": "keep",
+      "reason": "解说明确说虞姬对线无敌，是版本对线优先级，只怕艾琳"
+    },
+    {
+      "key": "虞姬|lane|||BV1S5UgBYEnV|147",
+      "verdict": "keep",
+      "reason": "解说说对线大部分射手时技能用好对线压制力非常强"
+    },
+    {
+      "key": "元歌|lane|司空震||BV15oaz6JE5X|109",
+      "verdict": "keep",
+      "reason": "解说说司空震这类强势支援型边路元歌基本对线打不过，只能后手清线"
+    },
+    {
+      "key": "元流之子(法师)|clear|||BV1ox9WBcEoS|315",
+      "verdict": "keep",
+      "reason": "解说说新版群体伤害大幅提升，前期可用强普和二技能快速清多个兵线"
+    },
+    {
+      "key": "元流之子(射手)|clear|||BV16P7uzpESV|303",
+      "verdict": "keep",
+      "reason": "字幕讲的是元流之子射手，对线期靠一技能攒流打强普，能快速清掉一线兵"
+    },
+    {
+      "key": "元流之子(射手)|early|||BV1ZT5XzbEAX|194",
+      "verdict": "drop",
+      "reason": "说的是本局活动模式加盾阵营下一级不比伽罗弱，且需辅助在场，属特定对局和模式"
+    },
+    {
+      "key": "元流之子(射手)|lane|||BV19ssp6DEsG|520",
+      "verdict": "keep",
+      "reason": "解说明确说元流之子射手四级前很厉害，狄仁杰前期打不了他"
+    },
+    {
+      "key": "元流之子(射手)|lane|||BV1GGng6qETo|390",
+      "verdict": "keep",
+      "reason": "解说明确说元射对线基本上是最强射手"
+    },
+    {
+      "key": "元流之子(射手)|lane|||BV1yQxk6ZEVq|247",
+      "verdict": "keep",
+      "reason": "解说明确说源流射手前期对线强度很高"
+    },
+    {
+      "key": "元流之子(射手)|lane|苍||BV1GGng6qETo|381",
+      "verdict": "keep",
+      "reason": "解说明确说苍和元射对线五五开，想压元射很难"
+    },
+    {
+      "key": "元流之子(射手)|lane|戈娅||BV1GGng6qETo|333",
+      "verdict": "keep",
+      "reason": "解说据十场模拟明确说元射对线克戈娅，戈娅一级被压到尾"
+    },
+    {
+      "key": "元流之子(坦克)|early|||BV1ww8gzoE3b|70",
+      "verdict": "keep",
+      "reason": "解说说这是前期强度，伤害回血都有，除了手短没有缺点，强度极高"
+    },
+    {
+      "key": "元流之子(坦克)|lane|露娜||BV1ww8gzoE3b|46",
+      "verdict": "drop",
+      "reason": "露娜本局是打野，说的是她进场时能控到底的克制关系，不是对线"
+    },
+    {
+      "key": "元流之子(坦克)|lane|孙权||BV1ww8gzoE3b|48",
+      "verdict": "drop",
+      "reason": "只是泛说克制孙权，指他冲进来时可控住一套，没有说是对线层面"
+    },
+    {
+      "key": "云缨|early|||BV18pZ7BCEVe|1019",
+      "verdict": "keep",
+      "reason": "解说说凭云缨前期强度足以在边路一打二"
+    },
+    {
+      "key": "云中君|early|||BV1pBxe6vEh9|47",
+      "verdict": "drop",
+      "reason": "只提到四级强势点，同时又说开局弱、前期常出不了节奏，方向不清"
+    },
+    {
+      "key": "张良|clear|沈梦溪||BV1Q2Ks6zETE|85",
+      "verdict": "keep",
+      "reason": "解说明确说带88法穿铭文的张良即使对线沈梦溪也能抢线，清完转边"
+    },
+    {
+      "key": "张良|early|||BV1cp5h6fEtu|39",
+      "verdict": "keep",
+      "reason": "解说说一级带法穿铭文的张良非常强势，反野最快"
+    },
+    {
+      "key": "赵怀真|clear|||BV1wf7S6ZEiC|83",
+      "verdict": "keep",
+      "reason": "解说明确说赵怀真一级清线很快，原因是一技能能聚兵"
+    },
+    {
+      "key": "赵怀真|early|||BV15wbq6BEMQ|132",
+      "verdict": "keep",
+      "reason": "解说说二级一套约1100伤害，称其为二级最强英雄，抢野怪没人抢得过"
+    },
+    {
+      "key": "赵怀真|early|||BV1RjGM62EkH|93",
+      "verdict": "keep",
+      "reason": "解说明确说辅助赵怀真前期节奏灵活强势、伤害高"
+    },
+    {
+      "key": "赵怀真|lane|||BV1HCuY6sETd|47",
+      "verdict": "keep",
+      "reason": "解说明确说赵怀真没什么续航，对线被打状态很难受"
+    },
+    {
+      "key": "赵怀真|lane|||BV1RjGM62EkH|154",
+      "verdict": "keep",
+      "reason": "解说明确说赵怀真四级时在线上特别强势，对面很难反制"
+    },
+    {
+      "key": "赵怀真|lane|||BV1wf7S6ZEiC|275",
+      "verdict": "drop",
+      "reason": "说的是游走辅助去中路聚兵帮清线、找机会开团，不是中路对线换血压制"
+    },
+    {
+      "key": "甄姬|clear|||BV1cLoMBeEx2|18",
+      "verdict": "keep",
+      "reason": "解说明确称甄姬清线极慢，二技能最多弹射三个目标"
+    },
+    {
+      "key": "甄姬|clear|||BV1nGyjBsELA|365",
+      "verdict": "drop",
+      "reason": "方向相反：解说说甄姬是“绝对无线权”的英雄，即抢不到线"
+    },
+    {
+      "key": "甄姬|clear|||BV1u9AHzqEWp|111",
+      "verdict": "keep",
+      "reason": "解说明确说甄姬一级清线速度慢得像老牛拉砖"
+    },
+    {
+      "key": "甄姬|clear|||BV1xW8R63EEv|29",
+      "verdict": "keep",
+      "reason": "解说明确说对面中路甄姬属于清线极其慢的英雄"
+    },
+    {
+      "key": "甄姬|early|||BV1bkuz6JE2W|82",
+      "verdict": "keep",
+      "reason": "解说明确说甄姬前期本来就弱、不好支援"
+    },
+    {
+      "key": "甄姬|lane|扁鹊||BV1bkuz6JE2W|79",
+      "verdict": "drop",
+      "reason": "解说只是教一级对扁鹊别换血、补好刀，又说对面耗线正合我意，方向不清"
+    },
+    {
+      "key": "钟馗|early|||BV1knayzbEiJ|79",
+      "verdict": "keep",
+      "reason": "解说明确说钟馗前期强度在当前版本偏弱"
+    },
+    {
+      "key": "钟馗|lane|||BV174ZTBcEUM|583",
+      "verdict": "keep",
+      "reason": "解说明确说钟馗不是对线英雄，在线上不强"
+    },
+    {
+      "key": "钟馗|lane|||BV1gtnt6nEuw|10",
+      "verdict": "keep",
+      "reason": "解说说邪修流钟馗对线一般战士开局两个一技能就打到一丝血"
+    },
+    {
+      "key": "周瑜|clear|||BV1hpz1BkEPU|217",
+      "verdict": "keep",
+      "reason": "解说明确说周瑜前期除了清线快点就没有其他优势"
+    },
+    {
+      "key": "周瑜|lane|||BV1hpz1BkEPU|81",
+      "verdict": "drop",
+      "reason": "解说说的是周瑜能拿线权，属清线抢线；且又说周瑜前期除清线快外无其他优势"
+    },
+    {
+      "key": "猪八戒|early|||BV1f7CdBhECh|39",
+      "verdict": "keep",
+      "reason": "解说明确说猪八戒是四级前强、四级后弱的英雄"
+    },
+    {
+      "key": "猪八戒|lane|貂蝉||BV1f7CdBhECh|91",
+      "verdict": "keep",
+      "reason": "解说说猪八戒打对抗路除芈月和貂蝉比较难打外基本都打得过"
+    },
+    {
+      "key": "猪八戒|lane|芈月||BV1f7CdBhECh|91",
+      "verdict": "keep",
+      "reason": "解说说猪八戒打对抗路除芈月和貂蝉比较难打外基本都打得过"
+    }
+  ]
+}

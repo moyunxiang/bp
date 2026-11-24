@@ -3,6 +3,7 @@ import { LANE_NAME, type Bundle, type HeroData, type Lane, type PickModel } from
 import { assignLanes, laneFitFor, type LaneSlot } from './lanes.ts';
 import { bestEvidenceLevel, type Relation, type RelationIndex } from './relations.ts';
 import { needsScore } from './comp.ts';
+import { LANING_POINTS, directLaneEdge, lanesOf, laningScore, type LaneIndex } from './laning.ts';
 import { enemyCanStillRespond, other, pickedIds, unavailableReason, type DraftState, type Side, type Slot } from './draft.ts';
 
 /** 各分项的权重与上限。回测脚本可以覆盖这些值。 */
@@ -14,6 +15,8 @@ export interface Weights {
   synergyCap: number;
   /** 阵容底线（缺前排、缺控制、伤害单一等）合计的上限；各条分值见 comp.ts 的 FLOOR_POINTS */
   needsCap: number;
+  /** 对线强弱（解说的说法）合计的上限；各档分值见 laning.ts 的 LANING_POINTS */
+  laningCap: number;
   laneFit: number;
   laneMiss: number;
   metaRange: number;
@@ -40,6 +43,7 @@ export const DEFAULT_WEIGHTS: Weights = {
   synergyPerUnit: 1.8,
   synergyCap: 5,
   needsCap: 12,
+  laningCap: 6,
   laneFit: 10,
   laneMiss: -25,
   metaRange: 12,
@@ -53,11 +57,12 @@ export const DEFAULT_WEIGHTS: Weights = {
   banRange: 10,
 };
 
-export type PartKey = 'counter' | 'synergy' | 'needs' | 'lane' | 'meta' | 'exposure' | 'proVs' | 'proAlly' | 'lanePick' | 'lanePickRecent' | 'banPri' | 'pool';
+export type PartKey = 'counter' | 'synergy' | 'needs' | 'laning' | 'lane' | 'meta' | 'exposure' | 'proVs' | 'proAlly' | 'lanePick' | 'lanePickRecent' | 'banPri' | 'pool';
 export const PART_NAME: Record<PartKey, string> = {
   counter: '克制与被克',
   synergy: '配合己方',
   needs: '阵容需求',
+  laning: '对线强弱',
   lane: '分路匹配',
   meta: '版本因素',
   exposure: '先手暴露',
@@ -147,6 +152,8 @@ export interface Engine {
   /** 职业赛选人响应：键 respKey(候选, 已选英雄) → [实际次数, 期望次数] */
   resp: { vs: Map<number, [number, number]>; ally: Map<number, [number, number]> };
   model: PickModel | null;
+  /** 对线档案索引（教学视频里解说的说法） */
+  laning: LaneIndex;
 }
 
 export function buildResp(bundle: Bundle): Engine['resp'] {
@@ -217,6 +224,7 @@ export function recommendPicks(engine: Engine, d: DraftState, opts: RecommendOpt
   const allies = allySlots.map((s) => s.hero);
   const enemies = enemySlots.map((s) => s.hero);
   const enemyLanes = assignLanes(enemySlots);
+  const enemyAt = new Map(enemySlots.map((s, i) => [enemyLanes.lanes[i], s.hero]));
   const slot: Slot = { side, kind: 'pick', index: Math.max(0, d.picks[side].indexOf(null)) };
   const poolMap = opts.pool ? new Map(opts.pool.map((p) => [p.id, p.level])) : null;
   const enemyResponds = enemyCanStillRespond(d, side);
@@ -282,6 +290,11 @@ export function recommendPicks(engine: Engine, d: DraftState, opts: RecommendOpt
     // ---- 阵容需求 ----
     const needItems = needsScore(h, allies);
     parts.push({ key: 'needs', value: round1(clamp(needItems.reduce((s, x) => s + x.delta, 0), -W.needsCap, W.needsCap)), items: needItems });
+
+    // ---- 对线强弱（教学视频里解说的说法；没有说法的英雄为0）----
+    const teamAt = new Map(allySlots.map((s, i) => [lf.teamLanes[i], s.hero]));
+    const laningItems = lf.fit < 0.15 ? [] : laningScore(engine.laning, h, lf.lane, teamAt, enemyAt);
+    parts.push({ key: 'laning', value: round1(clamp(laningItems.reduce((s, x) => s + x.delta, 0), -W.laningCap, W.laningCap)), items: laningItems });
 
     // ---- 版本因素 ----
     const metaItems: ReasonItem[] = [];
@@ -385,10 +398,10 @@ export function recommendPicks(engine: Engine, d: DraftState, opts: RecommendOpt
     // 一句话理由：优先说克制、配合、阵容需求；不够两条再补职业赛数据；最后带一条最主要的风险
     const say = (i: ReasonItem) => i.short ?? i.text.replace(/（.*?）/g, '');
     const byKey = (k: PartKey) => parts.find((p) => p.key === k)?.items ?? [];
-    const core = [...byKey('counter'), ...byKey('synergy'), ...byKey('needs'), ...byKey('proVs').filter((i) => i.short), ...byKey('proAlly').filter((i) => i.short)].filter((i) => i.delta >= 0.5).sort((a, b) => b.delta - a.delta);
+    const core = [...byKey('counter'), ...byKey('synergy'), ...byKey('needs'), ...byKey('laning'), ...byKey('proVs').filter((i) => i.short), ...byKey('proAlly').filter((i) => i.short)].filter((i) => i.delta >= 0.5).sort((a, b) => b.delta - a.delta);
     const positives = core.slice(0, 2).map(say);
     if (positives.length < 2) positives.push(...[...byKey('lanePickRecent'), ...byKey('lanePick'), ...byKey('meta')].filter((i) => i.delta >= 1).slice(0, 2 - positives.length).map(say));
-    const risk = [...byKey('counter'), ...byKey('needs'), ...byKey('lane'), ...byKey('exposure')].filter((i) => i.delta <= -0.7).sort((a, b) => a.delta - b.delta)[0];
+    const risk = [...byKey('counter'), ...byKey('needs'), ...byKey('laning'), ...byKey('lane'), ...byKey('exposure')].filter((i) => i.delta <= -0.7).sort((a, b) => a.delta - b.delta)[0];
     const headline = [...positives, ...(risk ? [risk.short ?? `注意${say(risk)}`] : [])].join('；') || '没有突出的加分或减分项';
 
     out.push({ hero: h, score, parts, headline, confidence, coverage: { covered, total }, confidenceNote, lane: lf.lane, threats: threatList.slice(0, 3) });
@@ -424,6 +437,7 @@ export function recommendBans(engine: Engine, d: DraftState, opts: BanOptions): 
   const allies = pickedIds(d, side).map((id) => byId.get(id)!).filter(Boolean);
   const enemies = pickedIds(d, other(side)).map((id) => byId.get(id)!).filter(Boolean);
   const enemySlots = teamSlots(d, other(side), byId);
+  const allyAt = lanesOf(teamSlots(d, side, byId));
   const slot: Slot = { side, kind: 'ban', index: Math.max(0, d.bans[side].indexOf(null)) };
   const intents = (opts.intents ?? []).map((id) => byId.get(id)).filter((h): h is HeroData => !!h);
   // 英雄池里可能要用的英雄：指定了位置时只看能打这个位置的
@@ -443,8 +457,30 @@ export function recommendBans(engine: Engine, d: DraftState, opts: BanOptions): 
     if (enemyFull) continue;
 
     // 对方能不能用上它：对方剩余分路要有它的位置
-    const fit = enemySlots.length ? laneFitFor(h, enemySlots).fit : 1;
+    const lf = laneFitFor(h, enemySlots);
+    const fit = enemySlots.length ? lf.fit : 1;
     if (fit < 0.15) continue;
+
+    // 对线（解说的说法）：对方拿到它之后，在线上压制本方已选的、打算选的、英雄池里的英雄。合计不超过 laningCap。
+    const laningItems: ReasonItem[] = [];
+    const enemyTeamAt = new Map(enemySlots.map((s, i) => [lf.teamLanes[i], s.hero]));
+    for (const n of laningScore(engine.laning, h, lf.lane, enemyTeamAt, allyAt, '本方')) if (n.basis !== 'alone' && n.delta > 0) laningItems.push({ delta: n.delta, text: n.text });
+    for (const a of intents) {
+      if (allies.includes(a)) continue;
+      const e = directLaneEdge(engine.laning, h, a);
+      if (e && e.net > 0) laningItems.push({ delta: LANING_POINTS.direct, text: `${LANE_NAME[e.lane]}对线：解说认为它对打算选的${a.name}占优`, hero: a });
+    }
+    if (poolHeroes.length && !intents.length) {
+      const hit = poolHeroes.filter((p) => !allies.includes(p.hero) && (directLaneEdge(engine.laning, h, p.hero)?.net ?? 0) > 0);
+      if (hit.length) {
+        const w = hit.reduce((s, p) => s + 0.6 + 0.2 * p.level, 0) / Math.max(3, poolHeroes.length);
+        laningItems.push({ delta: round1(w * LANING_POINTS.direct * 2), text: `解说认为它对线压制我的英雄池：${hit.slice(0, 3).map((p) => p.hero.name).join('、')}${hit.length > 3 ? '等' : ''}` });
+      }
+    }
+    const laningSum = laningItems.reduce((s, x) => s + x.delta, 0);
+    const laningScale = laningSum > DEFAULT_WEIGHTS.laningCap ? DEFAULT_WEIGHTS.laningCap / laningSum : 1;
+    for (const x of laningItems) items.push({ ...x, delta: round1(x.delta * laningScale) });
+    if (laningItems.length) evidence++;
 
     for (const a of allies) {
       const w = rel.net(h.id, a.id);

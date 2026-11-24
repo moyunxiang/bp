@@ -118,6 +118,38 @@ test('BP助手：选人时提示我方阵容还缺什么，推荐理由里说明
   expect(errors).toEqual([]);
 });
 
+test('对线判断：打法里有三路对线、中辅抢线、射辅对线，说法可以点开看视频出处；选人面板、英雄页、数据说明都有对应内容', async ({ page }) => {
+  const errors = watchErrors(page);
+  // 阵容对比：花木兰 澜 嬴政 孙尚香 大乔 对 老夫子 娜可露露 小乔 马可波罗 张飞
+  await page.goto('./#/comps?tab=compare&a=154-528-110-111-191&b=139-162-106-132-171');
+  const duels = page.locator('#compare-play').getByTestId('lane-duels');
+  await expect(duels.locator('[data-lane-duel]')).toHaveCount(5);
+  for (const t of ['对抗路对线', '中路对线', '发育路对线', '中辅抢线', '射辅对线']) await expect(duels.getByText(t, { exact: true })).toBeVisible();
+  // 中辅抢线：嬴政有清线说法，展开后能看到带时间点的视频链接
+  const mid = duels.locator('[data-lane-duel="midRoam"]');
+  await expect(mid).toContainText('嬴政');
+  await mid.getByRole('button').click();
+  await expect(mid.locator('a[href*="bilibili.com/video/"]').first()).toBeVisible();
+
+  // BP助手：双方各有英雄后，选人面板出现对线摘要
+  await page.goto('./');
+  await page.getByLabel('每方禁用').selectOption('0');
+  for (const h of ['sunshangxiang', 'makeboluo']) await typeHero(page, h);
+  await expect(page.getByTestId('lane-bar')).toContainText('对线');
+
+  // 英雄页：对线一节列出解说的说法和出处
+  await page.goto('./#/heroes/110');
+  const sec = page.locator('#laning');
+  await expect(sec.getByRole('heading', { name: '对线' })).toBeVisible();
+  await expect(sec.locator('a[href*="bilibili.com/video/"]').first()).toBeVisible();
+
+  // 数据说明：写明依据和覆盖面
+  await page.goto('./#/about');
+  await expect(page.locator('#about-laning')).toContainText('教学视频里解说明确说过的话');
+  await expect(page.locator('#about-laning')).toContainText('常打这一路的英雄数');
+  expect(errors).toEqual([]);
+});
+
 test('英雄池：加入后BP助手可以只在池内推荐', async ({ page }) => {
   const errors = watchErrors(page);
   await page.goto('./#/me');

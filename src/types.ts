@@ -242,6 +242,38 @@ export interface HeroGuide {
   matchups: { type: 'counter' | 'countered' | 'synergy'; hero: number; claim: string; refs: GuideRef[]; sources: number }[];
 }
 
+// ---------- 对线档案（清线抢线、对线强弱、射辅组合；来自B站教学视频里解说的明确说法，逐条核对过字幕出处并经独立复核）----------
+
+/** clear=清线抢线速度；lane=对线强度；duo=发育路双人对线（射手或辅助）；early=前期强度 */
+export type LaneAspect = 'clear' | 'lane' | 'duo' | 'early';
+export type LaneLevel = 'strong' | 'weak' | 'even';
+export type LaneName = '对抗路' | '中路' | '发育路' | '游走' | '打野';
+
+export interface LaneClaim {
+  hero: number;
+  aspect: LaneAspect;
+  level: LaneLevel;
+  /** 只针对这个对手成立（对线 vs 时占优/吃亏） */
+  vs?: number;
+  /** 只在和这个队友搭档时成立 */
+  with?: number;
+  /** 解说说的是这个英雄走哪一路时的情况；没有说明时为空 */
+  lane?: LaneName;
+  /** 用自己的话概括的说法，包含原因或条件 */
+  claim: string;
+  bvid: string;
+  /** 视频里讲到这一点的时间（秒） */
+  t: number;
+}
+
+export interface LaningData {
+  generatedAt: string;
+  scope: { heroVideos: number; topicVideos: number; extracted: number; verified: number; reviewDropped: number; kept: number };
+  /** 被引用的视频，键为 bvid。mid 是来源（UP主）编号；sameAs 表示这个视频的内容和另一个视频重复（转载），mid 已记成原视频的UP主 */
+  videos: Record<string, { title: string; uploader: string; mid: number; date: string; sameAs?: string }>;
+  claims: LaneClaim[];
+}
+
 // ---------- 战术体系 ----------
 
 export interface Archetype {
@@ -346,6 +378,8 @@ export interface Bundle {
   commentary: CommentaryItem[];
   /** 英雄教学内容，键为英雄ID */
   guides: Record<string, HeroGuide>;
+  /** 对线档案：教学视频里关于对线强弱、抢线快慢的说法；没有时为 null */
+  laning: LaningData | null;
   /** 王者营地英雄榜（路人局，各位置热度前10）；没有抓到时为 null */
   camp: CampData | null;
 }

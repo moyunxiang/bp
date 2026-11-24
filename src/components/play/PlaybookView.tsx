@@ -9,6 +9,7 @@ import { buildPlaybook, type FocusRow, type LaneMatchup, type PlayItem } from '.
 import type { Relation } from '../../engine/relations.ts';
 import { RelationCard, TagQuotes } from '../Evidence.tsx';
 import { GameIcon, HeroAvatar, LaneBadge } from '../ui.tsx';
+import { LANING_NOTE, LaneDuelList } from './LaneDuels.tsx';
 
 type Tone = 'plan' | 'opening' | 'danger' | 'build';
 const TONE: Record<Tone, { dot: string; title: string }> = {
@@ -333,7 +334,13 @@ export function PlaybookView({ ally, enemy = [], allyLocks, enemyLocks, ownOnly 
             </Section>
           )}
 
-          <Section tone="plan" title="分路对位" hint={`按双方的分路推断逐路对比；结论来自关系库（官方说明、机制推导、解说），没有依据的显示“暂无结论”。${LANE_NAME[4]}和${LANE_NAME[5]}实际是二对二，这里只比同位置。`}>
+          {bundle.laning && (
+            <Section tone="plan" title="对线强弱与抢线" hint={`三路对线、中辅抢线、射辅对线。${LANING_NOTE}点开每一行看说法和视频出处。`}>
+              <LaneDuelList ally={ally} enemy={enemy} allyLocks={allyLocks} enemyLocks={enemyLocks} />
+            </Section>
+          )}
+
+          <Section tone="plan" title="分路对位（克制关系）" hint={`按双方的分路推断逐路对比；结论来自关系库（官方说明、机制推导、解说），没有依据的显示“暂无结论”。${LANE_NAME[4]}和${LANE_NAME[5]}实际是二对二，这里只比同位置。`}>
             {p.lanes.map((m) => (
               <LaneRow key={m.lane} m={m} />
             ))}

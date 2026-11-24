@@ -183,11 +183,25 @@ async function main() {
     });
   }
 
+  // 对线档案：英雄、视频都要存在，方面和强弱取值合法，不含强度排名表述，不携带字幕原文
+  const ln = b.laning;
+  if (ln) {
+    for (const [i, c] of ln.claims.entries()) {
+      const where = `对线说法#${i}`;
+      if (!ids.has(c.hero) || (c.vs != null && (!ids.has(c.vs) || c.vs === c.hero)) || (c.with != null && (!ids.has(c.with) || c.with === c.hero))) err(`${where}: 指向无效英雄`);
+      if (!['clear', 'lane', 'duo', 'early'].includes(c.aspect) || !['strong', 'weak', 'even'].includes(c.level)) err(`${where}: 方面或强弱取值无效`);
+      if (c.with != null && c.aspect !== 'duo' && c.aspect !== 'clear') err(`${where}: 搭档说法只能是双人对线或清线`);
+      if (!ln.videos[c.bvid] || !(c.t >= 0)) err(`${where}: 出处无效 ${c.bvid}@${c.t}`);
+      if (/胜率|T0|T1|版本答案|必选|必ban/i.test(c.claim)) err(`${where}: 含禁用表述：${c.claim.slice(0, 30)}`);
+      if ('quote' in c || 'ref' in c) err(`${where}: 带了字幕原文`);
+    }
+  }
+
   // 个人数据引用的英雄必须存在
   const profile = await readJson<{ pool: { id: number }[]; favoriteHeroes: number[]; customComps: { heroes: number[] }[] }>(resolve(ROOT, 'user/profile.json'));
   for (const id of [...profile.pool.map((p) => p.id), ...profile.favoriteHeroes, ...profile.customComps.flatMap((c) => c.heroes)]) if (!ids.has(id)) err(`user/profile.json 引用了不存在的英雄 ${id}`);
 
-  console.log(`校验：英雄 ${b.heroes.length}，关系 ${rel.all.length}，规则 ${b.rules.length}，打法条目 ${b.playbook?.length ?? 0}，教学条目 ${guideItems}；错误 ${errors.length}，提醒 ${warns.length}`);
+  console.log(`校验：英雄 ${b.heroes.length}，关系 ${rel.all.length}，规则 ${b.rules.length}，打法条目 ${b.playbook?.length ?? 0}，教学条目 ${guideItems}，对线说法 ${b.laning?.claims.length ?? 0}；错误 ${errors.length}，提醒 ${warns.length}`);
   if (warns.length) console.log(warns.slice(0, 20).map((w) => `  提醒 ${w}`).join('\n'));
   if (errors.length) {
     console.log(errors.slice(0, 50).map((e) => `  错误 ${e}`).join('\n'));

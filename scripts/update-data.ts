@@ -51,6 +51,7 @@ async function main() {
     run('读取字幕', 'scripts/commentary/fetch-subtitles.ts');
   }
   run('核对并汇总英雄教学内容', 'scripts/commentary/build-guides.ts');
+  run('核对并汇总对线档案', 'scripts/commentary/laning.ts', ['--build']);
   run('汇总解说条目', 'scripts/commentary/build.ts');
   // 6. 回测并重新训练选人模型（可选，约12分钟）
   if (has('--backtest')) run('回测', 'scripts/backtest.ts');

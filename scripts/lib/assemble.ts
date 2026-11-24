@@ -14,6 +14,7 @@ import {
   type HeroProfile,
   type KplComps,
   type KplStats,
+  type LaningData,
   type OfficialEdge,
   type OfficialHero,
   type OutcomeTest,
@@ -41,6 +42,7 @@ export interface Inputs {
   model: PickModel | null;
   outcomeTest: OutcomeTest | null;
   guides: HeroGuide[];
+  laning: LaningData | null;
   camp: CampData | null;
   commentary: CommentaryItem[];
   rules: Rule[];
@@ -66,6 +68,7 @@ export async function loadInputs(): Promise<Inputs> {
     model: await optional<PickModel | null>(D('derived/model.json'), null),
     outcomeTest: await optional<OutcomeTest | null>(D('derived/outcome-test.json'), null),
     guides: (await optional<{ guides: HeroGuide[] }>(D('derived/guides.json'), { guides: [] })).guides,
+    laning: await optional<LaningData | null>(D('curated/laning.json'), null),
     camp: await optional<CampData | null>(D('derived/camp.json'), null),
     commentary: (await optional<{ items: CommentaryItem[] }>(D('derived/commentary.json'), { items: [] })).items,
     rules: (await readJson<{ rules: Rule[] }>(D('curated/rules.json'))).rules,
@@ -198,6 +201,7 @@ export function assemble(inp: Inputs): { bundle: Bundle; staleEdges: number } {
     equipment: inp.equipment,
     commentary: inp.commentary,
     guides: Object.fromEntries(inp.guides.filter((g) => byId.has(g.id)).map((g) => [g.id, g])),
+    laning: inp.laning ? { ...inp.laning, claims: inp.laning.claims.filter((c) => byId.has(c.hero) && (c.vs == null || byId.has(c.vs)) && (c.with == null || byId.has(c.with))) } : null,
     camp: inp.camp,
   };
   return { bundle, staleEdges };
